@@ -1,0 +1,11 @@
+/* TEAM */
+Founder: Louis Wieshofer
+Location: Vienna, Austria
+Contact: Louis.Wieshofer@louwietec.com
+
+/* SITE */
+Built with: HTML, Tailwind CSS, Nginx
+Standards: HTML5, CSS3, Schema.org
+
+/* THANKS */
+Built with conviction.

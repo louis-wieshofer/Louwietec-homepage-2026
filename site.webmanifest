@@ -1,0 +1,10 @@
+{
+  "name": "LOUWIETEC",
+  "short_name": "LOUWIETEC",
+  "description": "We make companies unstoppable.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0F",
+  "theme_color": "#0B0B0F",
+  "lang": "en"
+}
