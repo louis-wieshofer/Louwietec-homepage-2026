@@ -23,16 +23,26 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/output.css">
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Lenis smooth scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
 </head>
 <body>
 
     <!-- Skip to main content -->
     <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
+    <!-- Custom cursor -->
+    <div class="cursor-outer" id="cursor-outer" aria-hidden="true"></div>
+    <div class="cursor-inner" id="cursor-inner" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav class="nav scrolled" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
-            <a href="/" class="nav-logo" aria-label="LOUWIETEC Home">
+            <a href="/" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
                 <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC" width="36" height="36" style="border-radius: 4px;">
             </a>
             <div class="nav-links">

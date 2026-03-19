@@ -46,6 +46,9 @@
     <link rel="stylesheet" href="/css/output.css">
     <link rel="stylesheet" href="/css/styles.css">
 
+    <!-- Lenis smooth scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
@@ -72,10 +75,27 @@
     }
     </script>
 </head>
-<body>
+<body class="loading">
 
     <!-- Skip to main content -->
     <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-monogram">
+            <img src="/assets/louwietec-monogram.jpg" alt="" width="80" height="80">
+        </div>
+        <div class="preloader-line"></div>
+        <div class="preloader-panel preloader-panel--top"></div>
+        <div class="preloader-panel preloader-panel--bottom"></div>
+    </div>
+
+    <!-- Custom cursor -->
+    <div class="cursor-outer" id="cursor-outer" aria-hidden="true"></div>
+    <div class="cursor-inner" id="cursor-inner" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
     <!-- Layer 0: Dot-grid canvas -->
     <canvas id="network-grid" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
@@ -88,11 +108,11 @@
     <!-- Navigation -->
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
-            <a href="/" class="nav-logo" aria-label="LOUWIETEC Home">
+            <a href="/" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
                 <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC" width="36" height="36" style="border-radius: 4px;">
             </a>
             <div class="nav-links">
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#contact" class="nav-link" data-magnetic>Contact</a>
                 <a href="/impressum.html" class="nav-link">Impressum</a>
             </div>
         </div>
@@ -111,8 +131,9 @@
 
             <div class="hero-content">
 
-                <!-- Monogram with glow -->
+                <!-- Monogram with glow + particle canvas -->
                 <div class="hero-monogram">
+                    <canvas id="monogram-particles" width="200" height="200" aria-hidden="true"></canvas>
                     <div class="hero-monogram-glow">
                         <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC Monogram" width="160" height="160">
                     </div>
@@ -122,10 +143,10 @@
                 <div class="hero-gold-line" aria-hidden="true"></div>
 
                 <!-- Title -->
-                <h1 class="hero-title">LOUWIETEC</h1>
+                <h1 class="hero-title" data-reveal><span class="reveal-line">LOUWIETEC</span></h1>
 
                 <!-- Tagline -->
-                <p class="hero-tagline">We make companies unstoppable.</p>
+                <p class="hero-tagline" data-reveal><span class="reveal-line">We make companies unstoppable.</span></p>
 
             </div>
 
@@ -137,25 +158,31 @@
             </div>
         </section>
 
+        <!-- Divider: Hero → Thesis -->
+        <div class="section-divider" aria-hidden="true"></div>
+
         <!-- Section 2: THESIS -->
         <section id="thesis" class="section-thesis" aria-label="Thesis">
             <div class="glass-card thesis-card" data-animate="fade-scale">
                 <span class="thesis-quote-mark" aria-hidden="true">&ldquo;</span>
-                <p class="thesis-text">
-                    Most enterprises lose millions to satisfactory performance.
-                    Not to failure — to the gap between where they are
-                    and where they could be.
+                <p class="thesis-text" data-reveal>
+                    <span class="reveal-line">Most enterprises lose millions to satisfactory performance.</span>
+                    <span class="reveal-line">Not to failure — to the gap between where they are</span>
+                    <span class="reveal-line">and where they could be.</span>
                 </p>
                 <p class="thesis-accent">We close that gap.</p>
             </div>
         </section>
+
+        <!-- Divider: Thesis → What We Do -->
+        <div class="section-divider" aria-hidden="true"></div>
 
         <!-- Section 3: WHAT WE DO -->
         <section id="what-we-do" class="section-whatwedo" aria-label="What we do">
             <div class="split-layout">
                 <div class="split-left" data-animate="fade-left">
                     <span class="decorative-number" aria-hidden="true" style="top: -2rem; right: -1rem;">01</span>
-                    <h2>What we do</h2>
+                    <h2 data-reveal><span class="reveal-line">What we do</span></h2>
                     <div class="gold-line"></div>
                 </div>
                 <div class="split-right" data-animate="fade-right">
@@ -171,11 +198,14 @@
             </div>
         </section>
 
+        <!-- Divider: What We Do → How We Work -->
+        <div class="section-divider" aria-hidden="true"></div>
+
         <!-- Section 4: HOW WE WORK -->
         <section id="how-we-work" class="section-howwework" aria-label="How we work">
             <div class="section-heading" data-animate>
                 <span class="decorative-number" aria-hidden="true" style="top: -3rem; right: 0;">02</span>
-                <h2>How we work</h2>
+                <h2 data-reveal><span class="reveal-line">How we work</span></h2>
                 <div class="gold-line"></div>
             </div>
 
@@ -203,6 +233,9 @@
             </div>
         </section>
 
+        <!-- Divider: How We Work → Numbers -->
+        <div class="section-divider" aria-hidden="true"></div>
+
         <!-- Section 5: NUMBERS -->
         <section id="numbers" class="section-numbers" aria-label="Key figures">
             <div class="gradient-divider" data-animate></div>
@@ -210,17 +243,17 @@
                 <div class="numbers-inner">
                     <span class="diamond-decorator" aria-hidden="true">&#9670;</span>
                     <div class="number-item">
-                        <span class="number-value" data-count="6">0</span>
+                        <span class="number-value" data-count="6" data-reveal><span class="reveal-line">0</span></span>
                         <span class="number-label">Systems built</span>
                     </div>
                     <div class="number-divider" aria-hidden="true"></div>
                     <div class="number-item">
-                        <span class="number-value" data-count="182">0</span>
+                        <span class="number-value" data-count="182" data-reveal><span class="reveal-line">0</span></span>
                         <span class="number-label">Features deployed</span>
                     </div>
                     <div class="number-divider" aria-hidden="true"></div>
                     <div class="number-item">
-                        <span class="number-value" data-count="0" data-suffix=" &euro;">0 &euro;</span>
+                        <span class="number-value" data-count="0" data-suffix=" &euro;" data-reveal><span class="reveal-line">0 &euro;</span></span>
                         <span class="number-label">Required upfront</span>
                     </div>
                     <span class="diamond-decorator" aria-hidden="true">&#9670;</span>
@@ -229,10 +262,13 @@
             <div class="gradient-divider" data-animate></div>
         </section>
 
+        <!-- Divider: Numbers → Principles -->
+        <div class="section-divider" aria-hidden="true"></div>
+
         <!-- Section 6: PRINCIPLES -->
         <section id="principles" class="section-principles" aria-label="Principles">
             <div class="principles-heading" data-animate>
-                <h2>Principles</h2>
+                <h2 data-reveal><span class="reveal-line">Principles</span></h2>
                 <div class="gradient-divider" style="margin-top: 1.25rem;"></div>
             </div>
 
@@ -255,15 +291,18 @@
             </div>
         </section>
 
+        <!-- Divider: Principles → Contact -->
+        <div class="section-divider" aria-hidden="true"></div>
+
         <!-- Section 7: CONTACT -->
         <section id="contact" class="section-contact" aria-label="Contact">
             <div class="gradient-divider" style="margin-bottom: 4rem;" data-animate></div>
             <div data-animate>
                 <img src="/assets/louwietec-monogram.jpg" alt="" width="48" height="48" class="contact-watermark" aria-hidden="true">
-                <h2 class="contact-heading">Get in touch.</h2>
+                <h2 class="contact-heading" data-reveal><span class="reveal-line">Get in touch.</span></h2>
                 <p class="contact-name">Louis Wieshofer</p>
                 <p class="contact-role">Founder</p>
-                <a href="mailto:Louis.Wieshofer@louwietec.com" class="contact-email">Louis.Wieshofer@louwietec.com</a>
+                <a href="mailto:Louis.Wieshofer@louwietec.com" class="contact-email" data-magnetic>Louis.Wieshofer@louwietec.com</a>
                 <p class="contact-location">Vienna, Austria</p>
                 <p class="contact-note">We respond within 24 hours.</p>
             </div>
