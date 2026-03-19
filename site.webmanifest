@@ -4,7 +4,7 @@
   "description": "We make companies unstoppable.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0B0B0F",
-  "theme_color": "#0B0B0F",
+  "background_color": "#09090B",
+  "theme_color": "#09090B",
   "lang": "en"
 }

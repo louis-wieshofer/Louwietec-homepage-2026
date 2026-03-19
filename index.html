@@ -15,7 +15,7 @@
     <meta name="geo.placename" content="Vienna">
     <meta name="geo.position" content="48.2082;16.3738">
     <meta name="ICBM" content="48.2082, 16.3738">
-    <meta name="theme-color" content="#0B0B0F">
+    <meta name="theme-color" content="#09090B">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://louwietec.com/">
@@ -34,14 +34,13 @@
     <meta name="twitter:description" content="AI systems company. Pure outcome basis. Vienna, Austria.">
 
     <!-- Favicon -->
-    <!-- REPLACE: Add favicon files (favicon.ico, favicon.svg, apple-touch-icon.png) -->
-    <link rel="icon" type="image/png" href="/assets/lw-monogram.png">
+    <link rel="icon" type="image/png" href="/assets/louwietec-monogram.jpg">
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/output.css">
@@ -82,10 +81,7 @@
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
             <a href="/" class="nav-logo" aria-label="LOUWIETEC Home">
-                <!-- REPLACE: Replace this SVG with <img src="/assets/lw-monogram.png" alt="LOUWIETEC" width="36" height="36"> when ready -->
-                <svg width="36" height="36" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LW Monogram">
-                    <text x="60" y="56" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="58" fill="white" letter-spacing="2">LW</text>
-                </svg>
+                <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC" width="36" height="36" style="border-radius: 4px;">
             </a>
             <div class="nav-links">
                 <a href="#contact" class="nav-link">Contact</a>
@@ -97,21 +93,18 @@
     <!-- Main Content -->
     <main id="main">
 
-        <!-- ═══════════════════════════════════════════════
-             Section 1: HERO
-             ═══════════════════════════════════════════════ -->
+        <!-- Section 1: HERO -->
         <section id="hero" class="hero" aria-label="Introduction">
             <div class="hero-content">
 
-                <!-- Monogram -->
+                <!-- Monogram with gold glow -->
                 <div class="hero-monogram">
-                    <!-- REPLACE: Replace this SVG with <img src="/assets/lw-monogram.png" alt="LOUWIETEC Monogram" class="monogram-img" width="180" height="120"> when ready -->
-                    <svg class="monogram-hero-svg" width="180" height="120" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LW Monogram">
-                        <text x="90" y="78" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="72" fill="white" letter-spacing="4">LW</text>
-                    </svg>
+                    <div class="hero-monogram-glow">
+                        <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC Monogram" width="140" height="140">
+                    </div>
                 </div>
 
-                <!-- Title -->
+                <!-- Title — weight 300, letter-spacing animates on load -->
                 <h1 class="hero-title">LOUWIETEC</h1>
 
                 <!-- Tagline -->
@@ -119,19 +112,18 @@
 
             </div>
 
-            <!-- Scroll Indicator -->
+            <!-- Scroll Indicator: line + animated gold dot -->
             <div class="scroll-indicator" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A7A85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
+                <div class="scroll-indicator-line">
+                    <div class="scroll-indicator-dot"></div>
+                </div>
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════
-             Section 2: THESIS
-             ═══════════════════════════════════════════════ -->
-        <section id="thesis" class="section-padding" aria-label="Thesis">
-            <div class="fade-in">
+        <!-- Section 2: THESIS -->
+        <section id="thesis" class="section-padding spotlight" aria-label="Thesis">
+            <div class="decorative-line decorative-line--wide" data-animate></div>
+            <div style="margin-top: 4rem; margin-bottom: 4rem;" data-animate>
                 <p class="thesis-text">
                     Most enterprises lose millions to satisfactory performance.<br>
                     Not to failure — to the gap between where they are<br>
@@ -139,18 +131,18 @@
                 </p>
                 <p class="thesis-accent">We close that gap.</p>
             </div>
+            <div class="decorative-line decorative-line--wide" data-animate></div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════
-             Section 3: WHAT WE DO
-             ═══════════════════════════════════════════════ -->
+        <!-- Section 3: WHAT WE DO -->
         <section id="what-we-do" class="section-padding" aria-label="What we do">
             <div class="content-wrapper">
-                <div class="fade-in">
-                    <h2 class="section-heading">What we do</h2>
-                    <div class="gold-line"></div>
+                <div class="heading-with-marker" data-animate>
+                    <span class="gold-marker"></span>
+                    <h2>What we do</h2>
                 </div>
-                <div class="prose fade-in">
+                <div class="gold-divider" data-animate></div>
+                <div class="prose" data-animate>
                     <p>LOUWIETEC is an AI systems company that partners with enterprises on a pure outcome basis.</p>
                     <p>We build and deploy proprietary AI systems into our clients' operations. We charge nothing upfront — no licenses, no retainers, no consulting fees. Instead, we take a share of the measurable savings our systems create.</p>
                     <p>If we don't deliver results, we don't earn. It's that simple.</p>
@@ -159,32 +151,31 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════
-             Section 4: HOW WE WORK
-             ═══════════════════════════════════════════════ -->
+        <!-- Section 4: HOW WE WORK -->
         <section id="how-we-work" class="section-padding" aria-label="How we work">
             <div class="content-wrapper">
-                <div class="fade-in">
-                    <h2 class="section-heading">How we work</h2>
-                    <div class="gold-line"></div>
+                <div class="heading-with-marker" data-animate>
+                    <span class="gold-marker"></span>
+                    <h2>How we work</h2>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12 mt-12 fade-in-stagger">
-                    <div class="fade-in">
+                <div class="gold-divider" data-animate></div>
+                <div class="steps-grid" data-animate-stagger>
+                    <div class="elevated-card" data-animate>
                         <span class="step-number">01</span>
                         <h3 class="step-title">Analyze</h3>
                         <p class="step-desc">We study your operations and identify where efficiency is lost — often in places no one has looked.</p>
                     </div>
-                    <div class="fade-in">
+                    <div class="elevated-card" data-animate>
                         <span class="step-number">02</span>
                         <h3 class="step-title">Baseline</h3>
                         <p class="step-desc">We fix a historical performance baseline. Everything above it is shared value.</p>
                     </div>
-                    <div class="fade-in">
+                    <div class="elevated-card" data-animate>
                         <span class="step-number">03</span>
                         <h3 class="step-title">Deploy</h3>
                         <p class="step-desc">Custom AI systems go live on our infrastructure. Fully managed. Fully owned by us.</p>
                     </div>
-                    <div class="fade-in">
+                    <div class="elevated-card" data-animate>
                         <span class="step-number">04</span>
                         <h3 class="step-title">Share</h3>
                         <p class="step-desc">You keep the savings. We keep our share. Aligned incentives. No surprises.</p>
@@ -193,60 +184,60 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════
-             Section 5: NUMBERS
-             ═══════════════════════════════════════════════ -->
-        <section id="numbers" class="section-padding" aria-label="Key figures">
+        <!-- Section 5: NUMBERS -->
+        <section id="numbers" class="section-padding spotlight" aria-label="Key figures">
             <div class="content-wrapper">
-                <div class="numbers-grid fade-in">
+                <div class="numbers-grid" data-animate>
                     <div class="number-item">
-                        <span class="number-value">6</span>
+                        <span class="number-value" data-count="6">0</span>
                         <span class="number-label">Systems built.</span>
                     </div>
                     <div class="number-divider" aria-hidden="true"></div>
                     <div class="number-item">
-                        <span class="number-value">182</span>
+                        <span class="number-value" data-count="182">0</span>
                         <span class="number-label">Features deployed.</span>
                     </div>
                     <div class="number-divider" aria-hidden="true"></div>
                     <div class="number-item">
-                        <span class="number-value">0 &euro;</span>
+                        <span class="number-value" data-count="0" data-suffix=" &euro;">0 &euro;</span>
                         <span class="number-label">Required upfront.</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════
-             Section 6: PRINCIPLES
-             ═══════════════════════════════════════════════ -->
+        <!-- Section 6: PRINCIPLES -->
         <section id="principles" class="section-padding" aria-label="Principles">
-            <div class="content-wrapper" style="text-align: center;">
-                <h2 class="section-heading fade-in" style="text-align: center; margin-bottom: 4rem;">Principles</h2>
-
-                <div class="fade-in" style="margin-bottom: 4rem;">
-                    <p class="principle-title">Outcome-based.</p>
-                    <p class="principle-desc">We earn only when you do. Our economics are mathematically aligned with yours.</p>
+            <div class="content-wrapper">
+                <div class="heading-with-marker" data-animate style="justify-content: center;">
+                    <span class="gold-marker"></span>
+                    <h2>Principles</h2>
                 </div>
+                <div class="gold-divider" data-animate style="margin-left: auto; margin-right: auto;"></div>
 
-                <div class="fade-in" style="margin-bottom: 4rem;">
-                    <p class="principle-title">Permanent infrastructure.</p>
-                    <p class="principle-desc">Every system we build becomes part of your operations. Not a tool you rent — an asset that compounds.</p>
-                </div>
+                <div style="display: flex; flex-direction: column; gap: 3rem; align-items: center; margin-top: 1rem;">
+                    <div class="principle-block" data-animate>
+                        <p class="principle-title">Outcome-based.</p>
+                        <p class="principle-desc">We earn only when you do. Our economics are mathematically aligned with yours.</p>
+                    </div>
 
-                <div class="fade-in">
-                    <p class="principle-title">Long-term conviction.</p>
-                    <p class="principle-desc">We don't take projects. We take partnerships. The companies we work with, we work with for years.</p>
+                    <div class="principle-block" data-animate>
+                        <p class="principle-title">Permanent infrastructure.</p>
+                        <p class="principle-desc">Every system we build becomes part of your operations. Not a tool you rent — an asset that compounds.</p>
+                    </div>
+
+                    <div class="principle-block" data-animate>
+                        <p class="principle-title">Long-term conviction.</p>
+                        <p class="principle-desc">We don't take projects. We take partnerships. The companies we work with, we work with for years.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════
-             Section 7: CONTACT
-             ═══════════════════════════════════════════════ -->
-        <section id="contact" class="section-padding" aria-label="Contact">
+        <!-- Section 7: CONTACT -->
+        <section id="contact" class="section-padding spotlight" aria-label="Contact">
             <div class="content-wrapper" style="text-align: center;">
-                <div class="fade-in">
+                <div data-animate>
                     <h2 class="contact-heading">Get in touch.</h2>
                     <p class="contact-name">Louis Wieshofer</p>
                     <p class="contact-role">Founder</p>
