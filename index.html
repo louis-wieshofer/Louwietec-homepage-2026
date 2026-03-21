@@ -3,53 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary Meta Tags -->
     <title>LOUWIETEC — We make companies unstoppable.</title>
-    <meta name="description" content="LOUWIETEC is an AI systems company that partners with enterprises on a pure outcome basis. We build proprietary AI systems, charge nothing upfront, and share the measurable savings we create. Vienna, Austria.">
-    <meta name="keywords" content="LOUWIETEC, AI systems, enterprise AI, outcome-based, Vienna, Austria, AI investment, process automation, AI infrastructure, artificial intelligence, enterprise solutions">
+    <meta name="description" content="LOUWIETEC is an AI systems company that partners with enterprises on a pure outcome basis. Zero upfront. Shared savings. Vienna, Austria.">
+    <meta name="keywords" content="LOUWIETEC, AI systems, enterprise AI, outcome-based, Vienna, Austria">
     <meta name="author" content="Louis Wieshofer">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <meta name="language" content="en">
-    <meta name="geo.region" content="AT-9">
-    <meta name="geo.placename" content="Vienna">
-    <meta name="geo.position" content="48.2082;16.3738">
-    <meta name="ICBM" content="48.2082, 16.3738">
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#07070A">
-
-    <!-- Canonical -->
     <link rel="canonical" href="https://louwietec.com/">
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louwietec.com/">
     <meta property="og:title" content="LOUWIETEC — We make companies unstoppable.">
     <meta property="og:description" content="AI systems company. Pure outcome basis. Vienna, Austria.">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="LOUWIETEC">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="LOUWIETEC — We make companies unstoppable.">
     <meta name="twitter:description" content="AI systems company. Pure outcome basis. Vienna, Austria.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/louwietec-monogram.jpg">
+    <link rel="icon" type="image/jpeg" href="/assets/louwietec-monogram.jpg">
     <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/output.css">
     <link rel="stylesheet" href="/css/styles.css">
-
-    <!-- Lenis smooth scroll -->
     <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
-
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -57,30 +34,18 @@
         "name": "LOUWIETEC",
         "url": "https://louwietec.com",
         "description": "AI systems company that partners with enterprises on a pure outcome basis.",
-        "founder": {
-            "@type": "Person",
-            "name": "Louis Wieshofer",
-            "jobTitle": "Founder"
-        },
-        "foundingLocation": {
-            "@type": "Place",
-            "name": "Vienna, Austria"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "Louis.Wieshofer@louwietec.com",
-            "contactType": "general"
-        },
+        "founder": { "@type": "Person", "name": "Louis Wieshofer", "jobTitle": "Founder" },
+        "foundingLocation": { "@type": "Place", "name": "Vienna, Austria" },
+        "contactPoint": { "@type": "ContactPoint", "email": "Louis.Wieshofer@louwietec.com", "contactType": "general" },
         "slogan": "We make companies unstoppable."
     }
     </script>
 </head>
-<body class="loading">
+<body class="loading page-home">
 
-    <!-- Skip to main content -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- Preloader -->
+    <!-- Preloader (homepage only) -->
     <div class="preloader" id="preloader" aria-hidden="true">
         <div class="preloader-monogram">
             <img src="/assets/louwietec-monogram.jpg" alt="" width="80" height="80">
@@ -90,14 +55,10 @@
         <div class="preloader-panel preloader-panel--bottom"></div>
     </div>
 
-    <!-- Custom cursor -->
-    <div class="cursor-outer" id="cursor-outer" aria-hidden="true"></div>
-    <div class="cursor-inner" id="cursor-inner" aria-hidden="true"></div>
+    <!-- Custom cursor (gold dot only) -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
 
-    <!-- Scroll progress -->
-    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-
-    <!-- Layer 0: Dot-grid canvas -->
+    <!-- Layer 0: Dot-grid -->
     <canvas id="network-grid" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
 
     <!-- Layer 1: Gradient orbs -->
@@ -106,51 +67,59 @@
     <div class="gradient-orb gradient-orb--3" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
             <a href="/" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
-                <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC" width="36" height="36" style="border-radius: 4px;">
+                <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC" width="32" height="32">
             </a>
             <div class="nav-links">
-                <a href="#contact" class="nav-link" data-magnetic>Contact</a>
-                <a href="/impressum.html" class="nav-link">Impressum</a>
+                <a href="/about.html" class="nav-link" data-magnetic>About</a>
+                <a href="/approach.html" class="nav-link" data-magnetic>Approach</a>
+                <a href="/principles.html" class="nav-link" data-magnetic>Principles</a>
+                <a href="/contact.html" class="nav-link" data-magnetic>Contact</a>
             </div>
+            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+            <a href="/about.html" class="mobile-menu-link">About</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="/approach.html" class="mobile-menu-link">Approach</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="/principles.html" class="mobile-menu-link">Principles</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="/contact.html" class="mobile-menu-link">Contact</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="/impressum.html" class="mobile-menu-link mobile-menu-link--small">Impressum</a>
+        </div>
+    </div>
+
     <main id="main">
 
-        <!-- Section 1: HERO -->
+        <!-- HERO (100vh) -->
         <section id="hero" class="hero" aria-label="Introduction">
-
-            <!-- Corner brackets -->
+            <canvas id="gradient-mesh" class="gradient-mesh-canvas" aria-hidden="true"></canvas>
             <div class="hero-brackets" aria-hidden="true">
                 <span></span><span></span><span></span><span></span>
             </div>
-
             <div class="hero-content">
-
-                <!-- Monogram with glow + particle canvas -->
-                <div class="hero-monogram">
+                <div class="hero-monogram monogram-breathing">
                     <canvas id="monogram-particles" width="200" height="200" aria-hidden="true"></canvas>
                     <div class="hero-monogram-glow">
                         <img src="/assets/louwietec-monogram.jpg" alt="LOUWIETEC Monogram" width="160" height="160">
                     </div>
                 </div>
-
-                <!-- Gold line under monogram -->
                 <div class="hero-gold-line" aria-hidden="true"></div>
-
-                <!-- Title -->
                 <h1 class="hero-title" data-reveal><span class="reveal-line">LOUWIETEC</span></h1>
-
-                <!-- Tagline -->
-                <p class="hero-tagline" data-reveal><span class="reveal-line">We make companies unstoppable.</span></p>
-
+                <p class="hero-tagline" id="hero-tagline"></p>
             </div>
-
-            <!-- Scroll indicator -->
             <div class="scroll-indicator" aria-hidden="true">
                 <div class="scroll-indicator-line">
                     <div class="scroll-indicator-dot"></div>
@@ -158,153 +127,83 @@
             </div>
         </section>
 
-        <!-- Divider: Hero → Thesis -->
+        <!-- Divider -->
         <div class="section-divider" aria-hidden="true"></div>
 
-        <!-- Section 2: THESIS -->
-        <section id="thesis" class="section-thesis" aria-label="Thesis">
-            <div class="glass-card thesis-card" data-animate="fade-scale">
+        <!-- THESIS -->
+        <section class="section-thesis" aria-label="Thesis">
+            <div class="glass-card thesis-card" data-tilt data-animate="fade-scale">
                 <span class="thesis-quote-mark" aria-hidden="true">&ldquo;</span>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">Most enterprises lose millions to satisfactory performance.</span>
-                    <span class="reveal-line">Not to failure — to the gap between where they are</span>
-                    <span class="reveal-line">and where they could be.</span>
+                    <span class="reveal-line">Most enterprises lose millions</span>
+                    <span class="reveal-line">to satisfactory performance.</span>
                 </p>
-                <p class="thesis-accent">We close that gap.</p>
+                <p class="thesis-text" data-reveal style="margin-top: 1.5rem;">
+                    <span class="reveal-line">Not to failure — to the gap between</span>
+                    <span class="reveal-line">where they are and where they could be.</span>
+                </p>
+                <p class="thesis-accent" data-reveal><span class="reveal-line">We close that gap.</span></p>
             </div>
         </section>
 
-        <!-- Divider: Thesis → What We Do -->
+        <!-- Divider -->
         <div class="section-divider" aria-hidden="true"></div>
 
-        <!-- Section 3: WHAT WE DO -->
-        <section id="what-we-do" class="section-whatwedo" aria-label="What we do">
-            <div class="split-layout">
-                <div class="split-left" data-animate="fade-left">
-                    <span class="decorative-number" aria-hidden="true" style="top: -2rem; right: -1rem;">01</span>
-                    <h2 data-reveal><span class="reveal-line">What we do</span></h2>
-                    <div class="gold-line"></div>
-                </div>
-                <div class="split-right" data-animate="fade-right">
-                    <div class="glass-card">
-                        <div class="prose">
-                            <p>LOUWIETEC is an AI systems company that partners with enterprises on a pure outcome basis.</p>
-                            <p>We build and deploy proprietary AI systems into our clients' operations. We charge nothing upfront — no licenses, no retainers, no consulting fees. Instead, we take a share of the measurable savings our systems create.</p>
-                            <p><span class="prose-highlight">If we don't deliver results, we don't earn.</span> It's that simple.</p>
-                            <p>This model exists because we believe the companies that build the future shouldn't ask their clients to take the risk. We take it ourselves.</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- WHAT WE ARE (short intro) -->
+        <section class="section-intro" aria-label="What we are">
+            <div class="intro-text" data-animate>
+                <p>LOUWIETEC is an AI systems company that invests technology into enterprises and shares the outcome.</p>
+                <p style="margin-top: 1.5rem;"><span class="prose-highlight">We build. We deploy. We optimize.</span><br>Our clients pay nothing upfront — only a share of the measurable savings we create.</p>
+                <p style="margin-top: 2.5rem;">
+                    <a href="/about.html" class="cta-link" data-magnetic>Learn more about us &rarr;</a>
+                </p>
             </div>
         </section>
 
-        <!-- Divider: What We Do → How We Work -->
+        <!-- Divider -->
         <div class="section-divider" aria-hidden="true"></div>
 
-        <!-- Section 4: HOW WE WORK -->
-        <section id="how-we-work" class="section-howwework" aria-label="How we work">
-            <div class="section-heading" data-animate>
-                <span class="decorative-number" aria-hidden="true" style="top: -3rem; right: 0;">02</span>
-                <h2 data-reveal><span class="reveal-line">How we work</span></h2>
-                <div class="gold-line"></div>
-            </div>
-
-            <div class="bento-grid">
-                <div class="glass-card bento-large" data-animate data-delay="0s">
-                    <span class="bento-number">01</span>
-                    <h3 class="bento-title">Analyze</h3>
-                    <p class="bento-desc">We study your operations and identify where efficiency is lost — often in places no one has looked.</p>
-                </div>
-                <div class="glass-card" data-animate data-delay="0.1s">
-                    <span class="bento-number">02</span>
-                    <h3 class="bento-title">Baseline</h3>
-                    <p class="bento-desc">We fix a historical performance baseline. Everything above it is shared value.</p>
-                </div>
-                <div class="glass-card" data-animate data-delay="0.2s">
-                    <span class="bento-number">03</span>
-                    <h3 class="bento-title">Deploy</h3>
-                    <p class="bento-desc">Custom AI systems go live on our infrastructure. Fully managed. Fully owned by us.</p>
-                </div>
-                <div class="glass-card bento-large" data-animate data-delay="0.3s">
-                    <span class="bento-number">04</span>
-                    <h3 class="bento-title">Share</h3>
-                    <p class="bento-desc">You keep the savings. We keep our share. Aligned incentives. No surprises.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Divider: How We Work → Numbers -->
-        <div class="section-divider" aria-hidden="true"></div>
-
-        <!-- Section 5: NUMBERS -->
-        <section id="numbers" class="section-numbers" aria-label="Key figures">
-            <div class="gradient-divider" data-animate></div>
-            <div class="glass-card numbers-card" data-animate style="margin-top: 3rem; margin-bottom: 3rem;">
-                <div class="numbers-inner">
-                    <span class="diamond-decorator" aria-hidden="true">&#9670;</span>
+        <!-- NUMBERS (6 items, 2x3 grid) -->
+        <section class="section-numbers" aria-label="Key figures">
+            <div class="glass-card numbers-card" data-tilt data-animate>
+                <div class="numbers-grid">
                     <div class="number-item">
-                        <span class="number-value" data-count="6" data-reveal><span class="reveal-line">0</span></span>
-                        <span class="number-label">Systems built</span>
+                        <span class="number-value number-reveal" data-target="6">6</span>
+                        <span class="number-label">Systems built.</span>
                     </div>
-                    <div class="number-divider" aria-hidden="true"></div>
                     <div class="number-item">
-                        <span class="number-value" data-count="182" data-reveal><span class="reveal-line">0</span></span>
-                        <span class="number-label">Features deployed</span>
+                        <span class="number-value number-reveal" data-target="182">182</span>
+                        <span class="number-label">Features deployed.</span>
                     </div>
-                    <div class="number-divider" aria-hidden="true"></div>
                     <div class="number-item">
-                        <span class="number-value" data-count="0" data-suffix=" &euro;" data-reveal><span class="reveal-line">0 &euro;</span></span>
-                        <span class="number-label">Required upfront</span>
+                        <span class="number-value number-reveal" data-target="160000" data-suffix="+">160,000+</span>
+                        <span class="number-label">Lines of code.</span>
                     </div>
-                    <span class="diamond-decorator" aria-hidden="true">&#9670;</span>
-                </div>
-            </div>
-            <div class="gradient-divider" data-animate></div>
-        </section>
-
-        <!-- Divider: Numbers → Principles -->
-        <div class="section-divider" aria-hidden="true"></div>
-
-        <!-- Section 6: PRINCIPLES -->
-        <section id="principles" class="section-principles" aria-label="Principles">
-            <div class="principles-heading" data-animate>
-                <h2 data-reveal><span class="reveal-line">Principles</span></h2>
-                <div class="gradient-divider" style="margin-top: 1.25rem;"></div>
-            </div>
-
-            <div class="principles-grid">
-                <div class="glass-card principle-card" data-animate data-delay="0s">
-                    <div class="principle-gold-line"></div>
-                    <p class="principle-title">Outcome-based.</p>
-                    <p class="principle-desc">We earn only when you do. Our economics are mathematically aligned with yours.</p>
-                </div>
-                <div class="glass-card principle-card" data-animate data-delay="0.12s">
-                    <div class="principle-gold-line"></div>
-                    <p class="principle-title">Permanent infrastructure.</p>
-                    <p class="principle-desc">Every system we build becomes part of your operations. Not a tool you rent — an asset that compounds.</p>
-                </div>
-                <div class="glass-card principle-card" data-animate data-delay="0.24s">
-                    <div class="principle-gold-line"></div>
-                    <p class="principle-title">Long-term conviction.</p>
-                    <p class="principle-desc">We don't take projects. We take partnerships. The companies we work with, we work with for years.</p>
+                    <div class="number-item">
+                        <span class="number-value number-reveal" data-target="0" data-suffix=" &euro;">0 &euro;</span>
+                        <span class="number-label">Required upfront.</span>
+                    </div>
+                    <div class="number-item">
+                        <span class="number-value number-reveal" data-target="24" data-suffix="h">24h</span>
+                        <span class="number-label">Response time.</span>
+                    </div>
+                    <div class="number-item">
+                        <span class="number-value number-reveal" data-target="50" data-suffix="/50">50/50</span>
+                        <span class="number-label">Shared outcome.</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Divider: Principles → Contact -->
+        <!-- Divider -->
         <div class="section-divider" aria-hidden="true"></div>
 
-        <!-- Section 7: CONTACT -->
-        <section id="contact" class="section-contact" aria-label="Contact">
-            <div class="gradient-divider" style="margin-bottom: 4rem;" data-animate></div>
-            <div data-animate>
-                <img src="/assets/louwietec-monogram.jpg" alt="" width="48" height="48" class="contact-watermark" aria-hidden="true">
-                <h2 class="contact-heading" data-reveal><span class="reveal-line">Get in touch.</span></h2>
-                <p class="contact-name">Louis Wieshofer</p>
-                <p class="contact-role">Founder</p>
-                <a href="mailto:Louis.Wieshofer@louwietec.com" class="contact-email" data-magnetic>Louis.Wieshofer@louwietec.com</a>
-                <p class="contact-location">Vienna, Austria</p>
-                <p class="contact-note">We respond within 24 hours.</p>
+        <!-- CTA -->
+        <section class="section-cta" aria-label="Call to action">
+            <h2 class="cta-heading" data-reveal><span class="reveal-line">Ready to explore what's possible?</span></h2>
+            <div class="cta-links" data-animate>
+                <a href="/approach.html" class="cta-link" data-magnetic>Our Approach &rarr;</a>
+                <a href="/contact.html" class="cta-link cta-link--gold" data-magnetic>Get in touch &rarr;</a>
             </div>
         </section>
 
@@ -312,17 +211,28 @@
 
     <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
-        <p class="footer-text">
-            &copy; 2026 LOUWIETEC
-            <span class="footer-separator">&middot;</span>
-            Vienna, Austria
-            <span class="footer-separator">&middot;</span>
-            <a href="/impressum.html" class="footer-link">Impressum</a>
-        </p>
+        <div class="footer-inner">
+            <div class="footer-watermark" aria-hidden="true">
+                <img src="/assets/louwietec-monogram.jpg" alt="" width="300" height="300">
+            </div>
+            <div class="footer-monogram">
+                <img src="/assets/louwietec-monogram.jpg" alt="" width="24" height="24" style="border-radius:4px;">
+            </div>
+            <div class="footer-links">
+                <a href="/about.html" class="footer-link">About</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="/approach.html" class="footer-link">Approach</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="/principles.html" class="footer-link">Principles</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="/contact.html" class="footer-link">Contact</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="/impressum.html" class="footer-link">Impressum</a>
+            </div>
+            <p class="footer-text">&copy; 2026 LOUWIETEC <span class="footer-separator">&middot;</span> Vienna, Austria</p>
+        </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="/js/main.js"></script>
-
 </body>
 </html>

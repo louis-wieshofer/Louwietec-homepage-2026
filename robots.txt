@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://louwietec.com/sitemap.xml
 
+# AI Crawlers
 User-agent: GPTBot
 Allow: /
 

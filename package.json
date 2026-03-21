@@ -1,16 +1,16 @@
 {
   "name": "louwietec-homepage",
-  "version": "1.0.0",
-  "description": "LOUWIETEC — We make companies unstoppable.",
+  "version": "2.0.0",
+  "private": true,
+  "description": "LOUWIETEC — Multi-page website V6",
   "scripts": {
     "build": "tailwindcss -i src/input.css -o css/output.css --minify",
     "watch": "tailwindcss -i src/input.css -o css/output.css --watch"
   },
-  "author": "Louis Wieshofer",
-  "license": "UNLICENSED",
-  "private": true,
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
-  }
+  },
+  "author": "Louis Wieshofer",
+  "license": "UNLICENSED"
 }
