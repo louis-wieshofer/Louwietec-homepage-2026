@@ -15,14 +15,14 @@
     --bg-primary: #0A0E1A;
     --bg-elevated: #0F1424;
     --bg-card: rgba(255, 255, 255, 0.03);
-    --accent-gold: rgba(140, 170, 220, 0.55);
-    --accent-gold-hover: #B0CCF0;
-    --gold-subtle: rgba(140, 170, 220, 0.1);
+    --accent-gold: rgba(70, 140, 220, 0.6);
+    --accent-gold-hover: #5BA8E8;
+    --gold-subtle: rgba(70, 140, 220, 0.1);
     --text-primary: #EDEDED;
     --text-secondary: #6B6B76;
     --text-tertiary: #3A3A44;
     --border-subtle: rgba(255, 255, 255, 0.06);
-    --border-hover: rgba(140, 170, 220, 0.15);
+    --border-hover: rgba(70, 140, 220, 0.15);
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', system-ui, sans-serif;
     --max-content: 1100px;
@@ -224,7 +224,7 @@ ul, ol {
 .cursor-dot--hover {
     width: 24px;
     height: 24px;
-    background: rgba(140, 170, 220, 0.35);
+    background: rgba(70, 140, 220, 0.35);
 }
 
 @media (pointer: coarse) {
@@ -548,7 +548,7 @@ ul, ol {
 .mobile-menu-divider {
     width: 48px;
     height: 1px;
-    background: rgba(140, 170, 220, 0.12);
+    background: rgba(70, 140, 220, 0.12);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -664,7 +664,7 @@ ul, ol {
     position: absolute;
     width: 40px;
     height: 40px;
-    border-color: rgba(140, 170, 220, 0.12);
+    border-color: rgba(70, 140, 220, 0.12);
     border-style: solid;
 }
 
@@ -716,7 +716,7 @@ ul, ol {
 
 @keyframes monogramBreath {
     0%, 100% { transform: scale(1); filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.05)); }
-    50% { transform: scale(1.02); filter: drop-shadow(0 0 60px rgba(140, 170, 220, 0.1)); }
+    50% { transform: scale(1.02); filter: drop-shadow(0 0 60px rgba(70, 140, 220, 0.1)); }
 }
 
 .hero-gold-line {
@@ -961,7 +961,7 @@ ul, ol {
 
 @keyframes glowPulse {
     0% { text-shadow: none; }
-    40% { text-shadow: 0 0 20px rgba(140, 170, 220, 0.2), 0 0 40px rgba(140, 170, 220, 0.08); }
+    40% { text-shadow: 0 0 20px rgba(70, 140, 220, 0.2), 0 0 40px rgba(70, 140, 220, 0.08); }
     100% { text-shadow: none; }
 }
 
@@ -1158,7 +1158,7 @@ ul, ol {
     position: absolute;
     width: 24px;
     height: 24px;
-    border-color: rgba(140, 170, 220, 0.1);
+    border-color: rgba(70, 140, 220, 0.1);
     border-style: solid;
     pointer-events: none;
 }
@@ -1179,7 +1179,7 @@ ul, ol {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 3rem;
-    color: rgba(140, 170, 220, 0.3);
+    color: rgba(70, 140, 220, 0.3);
     line-height: 1;
     margin-bottom: 0.75rem;
 }
