@@ -71,7 +71,7 @@
                 phase: Math.random() * Math.PI * 2,
                 speedX: (Math.random() - 0.5) * 0.3,
                 speedY: (Math.random() - 0.5) * 0.3,
-                color: isGold ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.28)'
+                color: isGold ? 'rgba(140,170,220,0.25)' : 'rgba(255,255,255,0.18)'
             });
         }
     };
@@ -98,12 +98,14 @@
             ctx.fill();
         }
         if (!this.isSmall) {
-            ctx.strokeStyle = 'rgba(255,255,255,0.12)';
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 1;
             for (var j = 0; j < pts.length; j++) {
                 for (var k = j + 1; k < pts.length; k++) {
                     var dx = pts[j].x - pts[k].x, dy = pts[j].y - pts[k].y;
-                    if (dx * dx + dy * dy < 14400) {
+                    var distSq = dx * dx + dy * dy;
+                    if (distSq < 22500) {
+                        var alpha = (1 - distSq / 22500) * 0.18;
+                        ctx.strokeStyle = 'rgba(140,170,220,' + alpha.toFixed(3) + ')';
                         ctx.beginPath();
                         ctx.moveTo(pts[j].x, pts[j].y);
                         ctx.lineTo(pts[k].x, pts[k].y);
@@ -156,8 +158,8 @@
             var cy = (b.y + Math.cos(this.frame * b.speedY + b.phaseY) * 0.2) * h;
             var r = b.radius * Math.min(w, h);
             var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-            grad.addColorStop(0, 'rgba(255,255,255,' + b.opacity + ')');
-            grad.addColorStop(1, 'rgba(255,255,255,0)');
+            grad.addColorStop(0, 'rgba(140,170,220,' + b.opacity + ')');
+            grad.addColorStop(1, 'rgba(140,170,220,0)');
             ctx.fillStyle = grad;
             ctx.fillRect(0, 0, w, h);
         }
@@ -195,7 +197,7 @@
             p.angle += p.speed;
             ctx.beginPath();
             ctx.arc(cx + Math.cos(p.angle) * p.radiusX, cy + Math.sin(p.angle) * p.radiusY, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255,255,255,' + p.opacity + ')';
+            ctx.fillStyle = 'rgba(140,170,220,' + p.opacity + ')';
             ctx.fill();
         }
         requestAnimationFrame(function () { self.loop(); });
@@ -259,7 +261,7 @@
                 var r = card.getBoundingClientRect();
                 card.style.setProperty('--glow-x', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
                 card.style.setProperty('--glow-y', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
-                card.style.setProperty('--card-glow', 'rgba(255,255,255,0.06)');
+                card.style.setProperty('--card-glow', 'rgba(140,170,220,0.06)');
             });
             card.addEventListener('mouseleave', function () {
                 card.style.setProperty('--card-glow', 'transparent');
@@ -449,7 +451,7 @@
         function show() {
             var m = document.createElement('div');
             m.textContent = 'Built by a 14-year-old.';
-            m.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);z-index:10000;font-family:var(--font-display);font-size:2rem;color:rgba(255,255,255,0.5);pointer-events:none;text-align:center;animation:easterEggFade 3s ease-out forwards;';
+            m.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);z-index:10000;font-family:var(--font-display);font-size:2rem;color:rgba(140,170,220,0.5);pointer-events:none;text-align:center;animation:easterEggFade 3s ease-out forwards;';
             document.body.appendChild(m);
             setTimeout(function () { if (m.parentNode) m.parentNode.removeChild(m); }, 3200);
         }
@@ -469,7 +471,7 @@
             var dist = Math.sqrt(dx * dx + dy * dy);
             var prox = Math.max(0, 1 - dist / 400);
             var blur = 80 + prox * 80, op = 0.1 + prox * 0.15;
-            glow.style.boxShadow = '0 0 ' + blur + 'px rgba(255,255,255,' + op.toFixed(3) + '),0 0 ' + (blur * 2) + 'px rgba(255,255,255,' + (op * 0.4).toFixed(3) + ')';
+            glow.style.boxShadow = '0 0 ' + blur + 'px rgba(140,170,220,' + op.toFixed(3) + '),0 0 ' + (blur * 2) + 'px rgba(140,170,220,' + (op * 0.4).toFixed(3) + ')';
         });
     }
 

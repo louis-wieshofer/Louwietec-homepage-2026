@@ -3,7 +3,7 @@
   "short_name": "LOUWIETEC",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#07070A",
-  "theme_color": "#07070A",
+  "background_color": "#0A0E1A",
+  "theme_color": "#0A0E1A",
   "lang": "en"
 }
