@@ -3,7 +3,7 @@
    5 pages + Impressum. Shared stylesheet.
 
    Layers: dot-grid, gradient mesh (home), orbs, glass cards, content
-   Global: cursor (gold dot), Lenis, tilt, glow, reveals, parallax,
+   Global: cursor (white dot), Lenis, tilt, glow, reveals, parallax,
            magnetic, dividers, noise, orbs, brackets, easter egg
    Home only: preloader, typing, mesh, trail, particles, breathing
    Contact only: full-page light inversion
@@ -15,14 +15,14 @@
     --bg-primary: #07070A;
     --bg-elevated: #0C0C10;
     --bg-card: rgba(255, 255, 255, 0.03);
-    --accent-gold: #B8952A;
-    --accent-gold-hover: #D4AF37;
-    --gold-subtle: rgba(184, 149, 42, 0.15);
+    --accent-gold: rgba(255, 255, 255, 0.5);
+    --accent-gold-hover: #FFFFFF;
+    --gold-subtle: rgba(255, 255, 255, 0.08);
     --text-primary: #EDEDED;
     --text-secondary: #6B6B76;
     --text-tertiary: #3A3A44;
     --border-subtle: rgba(255, 255, 255, 0.06);
-    --border-hover: rgba(184, 149, 42, 0.15);
+    --border-hover: rgba(255, 255, 255, 0.12);
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', system-ui, sans-serif;
     --max-content: 1100px;
@@ -224,7 +224,7 @@ ul, ol {
 .cursor-dot--hover {
     width: 24px;
     height: 24px;
-    background: rgba(184, 149, 42, 0.5);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 @media (pointer: coarse) {
@@ -281,7 +281,7 @@ ul, ol {
 .gradient-orb--1 {
     width: 600px;
     height: 600px;
-    background: rgba(184, 149, 42, 0.03);
+    background: rgba(255, 255, 255, 0.02);
     top: -10%;
     left: -5%;
     animation: float-orb-1 60s ease-in-out infinite;
@@ -290,7 +290,7 @@ ul, ol {
 .gradient-orb--2 {
     width: 500px;
     height: 500px;
-    background: rgba(184, 149, 42, 0.02);
+    background: rgba(255, 255, 255, 0.015);
     top: 50%;
     right: -10%;
     animation: float-orb-2 45s ease-in-out infinite;
@@ -548,7 +548,7 @@ ul, ol {
 .mobile-menu-divider {
     width: 48px;
     height: 1px;
-    background: rgba(184, 149, 42, 0.2);
+    background: rgba(255, 255, 255, 0.12);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -664,7 +664,7 @@ ul, ol {
     position: absolute;
     width: 40px;
     height: 40px;
-    border-color: rgba(184, 149, 42, 0.2);
+    border-color: rgba(255, 255, 255, 0.12);
     border-style: solid;
 }
 
@@ -693,7 +693,7 @@ ul, ol {
 .hero-monogram-glow {
     display: inline-block;
     border-radius: 16px;
-    box-shadow: 0 0 80px rgba(184, 149, 42, 0.1), 0 0 160px rgba(184, 149, 42, 0.04);
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.06), 0 0 160px rgba(255, 255, 255, 0.02);
 }
 
 .hero-monogram-glow img {
@@ -715,8 +715,8 @@ ul, ol {
 }
 
 @keyframes monogramBreath {
-    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 40px rgba(184, 149, 42, 0.08)); }
-    50% { transform: scale(1.02); filter: drop-shadow(0 0 60px rgba(184, 149, 42, 0.15)); }
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.05)); }
+    50% { transform: scale(1.02); filter: drop-shadow(0 0 60px rgba(255, 255, 255, 0.1)); }
 }
 
 .hero-gold-line {
@@ -961,7 +961,7 @@ ul, ol {
 
 @keyframes glowPulse {
     0% { text-shadow: none; }
-    40% { text-shadow: 0 0 20px rgba(184, 149, 42, 0.3), 0 0 40px rgba(184, 149, 42, 0.1); }
+    40% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.06); }
     100% { text-shadow: none; }
 }
 
@@ -1158,7 +1158,7 @@ ul, ol {
     position: absolute;
     width: 24px;
     height: 24px;
-    border-color: rgba(184, 149, 42, 0.15);
+    border-color: rgba(255, 255, 255, 0.1);
     border-style: solid;
     pointer-events: none;
 }
@@ -1179,8 +1179,7 @@ ul, ol {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 3rem;
-    color: var(--accent-gold);
-    opacity: 0.6;
+    color: rgba(255, 255, 255, 0.25);
     line-height: 1;
     margin-bottom: 0.75rem;
 }
@@ -1671,16 +1670,16 @@ ul, ol {
 .contact-email {
     font-weight: 400;
     font-size: 1.25rem;
-    color: var(--accent-gold);
+    color: #CCCCCC;
     display: inline-block;
-    border-bottom: 1px solid var(--border-hover);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding-bottom: 2px;
     transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-email:hover {
-    color: var(--accent-gold-hover);
-    border-color: var(--accent-gold-hover);
+    color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 .contact-location {
@@ -1818,12 +1817,12 @@ body.page-contact .contact-name {
 }
 
 body.page-contact .contact-email {
-    color: #B8952A;
+    color: #CCCCCC;
 }
 
 body.page-contact .contact-email:hover {
-    color: #8B6914;
-    border-color: #8B6914;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 body.page-contact .expect-content h2 {

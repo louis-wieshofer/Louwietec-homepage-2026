@@ -71,7 +71,7 @@
                 phase: Math.random() * Math.PI * 2,
                 speedX: (Math.random() - 0.5) * 0.3,
                 speedY: (Math.random() - 0.5) * 0.3,
-                color: isGold ? 'rgba(184,149,42,0.08)' : 'rgba(255,255,255,0.07)'
+                color: isGold ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.07)'
             });
         }
     };
@@ -156,8 +156,8 @@
             var cy = (b.y + Math.cos(this.frame * b.speedY + b.phaseY) * 0.2) * h;
             var r = b.radius * Math.min(w, h);
             var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-            grad.addColorStop(0, 'rgba(184,149,42,' + b.opacity + ')');
-            grad.addColorStop(1, 'rgba(184,149,42,0)');
+            grad.addColorStop(0, 'rgba(255,255,255,' + b.opacity + ')');
+            grad.addColorStop(1, 'rgba(255,255,255,0)');
             ctx.fillStyle = grad;
             ctx.fillRect(0, 0, w, h);
         }
@@ -195,13 +195,13 @@
             p.angle += p.speed;
             ctx.beginPath();
             ctx.arc(cx + Math.cos(p.angle) * p.radiusX, cy + Math.sin(p.angle) * p.radiusY, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(184,149,42,' + p.opacity + ')';
+            ctx.fillStyle = 'rgba(255,255,255,' + p.opacity + ')';
             ctx.fill();
         }
         requestAnimationFrame(function () { self.loop(); });
     };
 
-    /* ── CustomCursor (V6: gold dot only, hover-grow) ──────── */
+    /* ── CustomCursor (V6: dot only, hover-grow) ─────────────── */
 
     function CustomCursor() {
         if (window.matchMedia('(pointer:coarse)').matches) return;
@@ -259,7 +259,7 @@
                 var r = card.getBoundingClientRect();
                 card.style.setProperty('--glow-x', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
                 card.style.setProperty('--glow-y', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
-                card.style.setProperty('--card-glow', 'rgba(184,149,42,0.06)');
+                card.style.setProperty('--card-glow', 'rgba(255,255,255,0.06)');
             });
             card.addEventListener('mouseleave', function () {
                 card.style.setProperty('--card-glow', 'transparent');
@@ -449,7 +449,7 @@
         function show() {
             var m = document.createElement('div');
             m.textContent = 'Built by a 14-year-old.';
-            m.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);z-index:10000;font-family:var(--font-display);font-size:2rem;color:#B8952A;pointer-events:none;text-align:center;animation:easterEggFade 3s ease-out forwards;';
+            m.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);z-index:10000;font-family:var(--font-display);font-size:2rem;color:rgba(255,255,255,0.5);pointer-events:none;text-align:center;animation:easterEggFade 3s ease-out forwards;';
             document.body.appendChild(m);
             setTimeout(function () { if (m.parentNode) m.parentNode.removeChild(m); }, 3200);
         }
@@ -469,7 +469,7 @@
             var dist = Math.sqrt(dx * dx + dy * dy);
             var prox = Math.max(0, 1 - dist / 400);
             var blur = 80 + prox * 80, op = 0.1 + prox * 0.15;
-            glow.style.boxShadow = '0 0 ' + blur + 'px rgba(184,149,42,' + op.toFixed(3) + '),0 0 ' + (blur * 2) + 'px rgba(184,149,42,' + (op * 0.4).toFixed(3) + ')';
+            glow.style.boxShadow = '0 0 ' + blur + 'px rgba(255,255,255,' + op.toFixed(3) + '),0 0 ' + (blur * 2) + 'px rgba(255,255,255,' + (op * 0.4).toFixed(3) + ')';
         });
     }
 
