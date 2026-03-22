@@ -71,7 +71,7 @@
                 phase: Math.random() * Math.PI * 2,
                 speedX: (Math.random() - 0.5) * 0.3,
                 speedY: (Math.random() - 0.5) * 0.3,
-                color: isGold ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.07)'
+                color: isGold ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.28)'
             });
         }
     };
@@ -98,7 +98,7 @@
             ctx.fill();
         }
         if (!this.isSmall) {
-            ctx.strokeStyle = 'rgba(255,255,255,0.025)';
+            ctx.strokeStyle = 'rgba(255,255,255,0.12)';
             ctx.lineWidth = 0.5;
             for (var j = 0; j < pts.length; j++) {
                 for (var k = j + 1; k < pts.length; k++) {
