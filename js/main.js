@@ -98,23 +98,22 @@
         var pts = this.points;
         var t = this.frame * 0.005;
 
-        // Draw connections first (behind nodes)
+        // Draw connections (thinner lines on small screens for performance)
         var connColor = this.inverted ? 'rgba(60,60,80,' : 'rgba(70,140,220,';
-        if (!this.isSmall) {
-            ctx.lineWidth = 0.8;
-            for (var j = 0; j < pts.length; j++) {
-                for (var k = j + 1; k < pts.length; k++) {
-                    var dx = pts[j].x - pts[k].x, dy = pts[j].y - pts[k].y;
-                    var distSq = dx * dx + dy * dy;
-                    var maxDist = (pts[j].isHub || pts[k].isHub) ? 40000 : 25600;
-                    if (distSq < maxDist) {
-                        var alpha = (1 - distSq / maxDist) * 0.22;
-                        ctx.strokeStyle = connColor + alpha.toFixed(3) + ')';
-                        ctx.beginPath();
-                        ctx.moveTo(pts[j].x, pts[j].y);
-                        ctx.lineTo(pts[k].x, pts[k].y);
-                        ctx.stroke();
-                    }
+        var maxDistScale = this.isSmall ? 0.6 : 1;
+        ctx.lineWidth = this.isSmall ? 0.5 : 0.8;
+        for (var j = 0; j < pts.length; j++) {
+            for (var k = j + 1; k < pts.length; k++) {
+                var dx = pts[j].x - pts[k].x, dy = pts[j].y - pts[k].y;
+                var distSq = dx * dx + dy * dy;
+                var maxDist = ((pts[j].isHub || pts[k].isHub) ? 40000 : 25600) * maxDistScale;
+                if (distSq < maxDist) {
+                    var alpha = (1 - distSq / maxDist) * 0.22;
+                    ctx.strokeStyle = connColor + alpha.toFixed(3) + ')';
+                    ctx.beginPath();
+                    ctx.moveTo(pts[j].x, pts[j].y);
+                    ctx.lineTo(pts[k].x, pts[k].y);
+                    ctx.stroke();
                 }
             }
         }
