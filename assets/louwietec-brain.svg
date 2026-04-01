@@ -1,106 +1,130 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" fill="white">
-  <!-- Brain circuit logo - white on transparent -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <!--
+    Brain circuit logo — top-down view, two hemispheres
+    Scalloped outer edge, central trunk, branches with circuit nodes
+    White on transparent background
+  -->
 
-  <!-- Left hemisphere outline (scalloped brain shape) -->
+  <!-- Left hemisphere scalloped outline -->
   <path d="
-    M200 430
-    C200 430, 195 400, 190 370
-    C185 340, 170 320, 155 300
-    C135 275, 110 260, 90 235
-    C65 205, 45 175, 40 145
-    C35 120, 38 95, 48 75
-    C58 55, 75 40, 95 30
-    C115 20, 138 18, 158 22
-    C175 26, 188 35, 195 50
-    C198 58, 200 70, 200 80
-  " fill="none" stroke="white" stroke-width="6"/>
+    M256 460
+    C240 460, 225 440, 215 420
+    C200 395, 180 375, 155 360
+    C130 340, 100 310, 80 280
+    C60 250, 45 220, 40 190
+    C35 160, 38 130, 50 105
+    C60 80, 78 60, 100 48
+    C122 36, 145 32, 168 36
+    C190 40, 210 52, 225 70
+    C238 85, 248 105, 252 130
+    C254 150, 256 170, 256 190
+  " fill="none"/>
 
-  <!-- Right hemisphere outline (scalloped brain shape) -->
+  <!-- Left hemisphere bumps -->
   <path d="
-    M200 430
-    C200 430, 205 400, 210 370
-    C215 340, 230 320, 245 300
-    C265 275, 290 260, 310 235
-    C335 205, 355 175, 360 145
-    C365 120, 362 95, 352 75
-    C342 55, 325 40, 305 30
-    C285 20, 262 18, 242 22
-    C225 26, 212 35, 205 50
-    C202 58, 200 70, 200 80
-  " fill="none" stroke="white" stroke-width="6"/>
-
-  <!-- Brain bumps - left side -->
+    M40 190 C28 190, 20 170, 22 150 C24 132, 35 115, 50 105
+  " fill="none"/>
   <path d="
-    M40 145 C25 145, 18 130, 20 115 C22 100, 32 90, 48 75
-    M90 235 C70 240, 52 230, 48 215 C44 200, 50 185, 65 175
-    M155 300 C140 310, 120 305, 110 290 C100 275, 102 260, 110 250
-    M95 30 C85 20, 90 8, 105 5 C120 2, 140 8, 158 22
-    M48 75 C38 68, 30 55, 35 42 C40 30, 55 22, 75 20
-  " fill="none" stroke="white" stroke-width="6"/>
-
-  <!-- Brain bumps - right side -->
+    M80 280 C62 285, 45 270, 42 250 C39 232, 45 215, 58 200
+  " fill="none"/>
   <path d="
-    M360 145 C375 145, 382 130, 380 115 C378 100, 368 90, 352 75
-    M310 235 C330 240, 348 230, 352 215 C356 200, 350 185, 335 175
-    M245 300 C260 310, 280 305, 290 290 C300 275, 298 260, 290 250
-    M305 30 C315 20, 310 8, 295 5 C280 2, 260 8, 242 22
-    M352 75 C362 68, 370 55, 365 42 C360 30, 345 22, 325 20
-  " fill="none" stroke="white" stroke-width="6"/>
+    M155 360 C135 368, 115 358, 105 340 C95 322, 98 305, 108 290
+  " fill="none"/>
+  <path d="
+    M100 48 C90 36, 95 22, 112 16 C130 10, 150 16, 168 36
+  " fill="none"/>
+  <path d="
+    M50 105 C40 92, 35 72, 42 58 C50 44, 65 36, 82 34
+  " fill="none"/>
 
-  <!-- Central stem -->
-  <line x1="200" y1="80" x2="200" y2="380" stroke="white" stroke-width="5"/>
+  <!-- Right hemisphere scalloped outline -->
+  <path d="
+    M256 460
+    C272 460, 287 440, 297 420
+    C312 395, 332 375, 357 360
+    C382 340, 412 310, 432 280
+    C452 250, 467 220, 472 190
+    C477 160, 474 130, 462 105
+    C452 80, 434 60, 412 48
+    C390 36, 367 32, 344 36
+    C322 40, 302 52, 287 70
+    C274 85, 264 105, 260 130
+    C258 150, 256 170, 256 190
+  " fill="none"/>
 
-  <!-- Left branches (organic, curved) -->
-  <!-- Branch 1 - top left -->
-  <path d="M200 120 C180 110, 150 100, 120 80" fill="none" stroke="white" stroke-width="4"/>
-  <path d="M150 100 C140 85, 125 75, 105 60" fill="none" stroke="white" stroke-width="3"/>
-  <path d="M120 80 C105 82, 85 90, 70 105" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="120" cy="80" r="6"/>
-  <circle cx="70" cy="105" r="5"/>
-  <circle cx="105" cy="60" r="5"/>
+  <!-- Right hemisphere bumps -->
+  <path d="
+    M472 190 C484 190, 492 170, 490 150 C488 132, 477 115, 462 105
+  " fill="none"/>
+  <path d="
+    M432 280 C450 285, 467 270, 470 250 C473 232, 467 215, 454 200
+  " fill="none"/>
+  <path d="
+    M357 360 C377 368, 397 358, 407 340 C417 322, 414 305, 404 290
+  " fill="none"/>
+  <path d="
+    M412 48 C422 36, 417 22, 400 16 C382 10, 362 16, 344 36
+  " fill="none"/>
+  <path d="
+    M462 105 C472 92, 477 72, 470 58 C462 44, 447 36, 430 34
+  " fill="none"/>
 
-  <!-- Branch 2 - mid left -->
-  <path d="M200 190 C175 185, 145 180, 110 190" fill="none" stroke="white" stroke-width="4"/>
-  <path d="M145 182 C130 170, 110 155, 85 150" fill="none" stroke="white" stroke-width="3"/>
-  <path d="M110 190 C95 200, 75 215, 65 230" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="110" cy="190" r="6"/>
-  <circle cx="85" cy="150" r="5"/>
-  <circle cx="65" cy="230" r="5"/>
+  <!-- Central trunk -->
+  <line x1="256" y1="130" x2="256" y2="430" stroke-width="9"/>
 
-  <!-- Branch 3 - lower left -->
-  <path d="M200 270 C180 265, 155 265, 130 275" fill="none" stroke="white" stroke-width="4"/>
-  <path d="M155 266 C145 255, 130 240, 115 235" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="130" cy="275" r="6"/>
-  <circle cx="115" cy="235" r="5"/>
+  <!-- === LEFT BRANCHES (organic, curved) === -->
 
-  <!-- Branch 4 - bottom left -->
-  <path d="M200 340 C185 335, 170 328, 160 315" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="160" cy="315" r="5"/>
+  <!-- Left branch 1 — top -->
+  <path d="M256 180 C230 170, 190 155, 150 130" stroke-width="7"/>
+  <path d="M190 155 C175 140, 155 125, 130 105" stroke-width="5.5"/>
+  <path d="M150 130 C130 135, 105 148, 85 170" stroke-width="5.5"/>
+  <circle cx="150" cy="130" r="10" fill="white" stroke="none"/>
+  <circle cx="130" cy="105" r="8" fill="white" stroke="none"/>
+  <circle cx="85" cy="170" r="8" fill="white" stroke="none"/>
 
-  <!-- Right branches (angular, circuit-like) -->
-  <!-- Branch 1 - top right -->
-  <path d="M200 120 L240 100 L280 80" fill="none" stroke="white" stroke-width="4"/>
-  <path d="M240 100 L255 70 L275 55" fill="none" stroke="white" stroke-width="3"/>
-  <path d="M280 80 L310 95 L330 110" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="280" cy="80" r="6"/>
-  <circle cx="275" cy="55" r="5"/>
-  <circle cx="330" cy="110" r="5"/>
+  <!-- Left branch 2 — middle -->
+  <path d="M256 250 C225 245, 185 240, 140 255" stroke-width="7"/>
+  <path d="M185 242 C168 225, 145 205, 115 195" stroke-width="5.5"/>
+  <path d="M140 255 C120 268, 95 285, 80 305" stroke-width="5.5"/>
+  <circle cx="140" cy="255" r="10" fill="white" stroke="none"/>
+  <circle cx="115" cy="195" r="8" fill="white" stroke="none"/>
+  <circle cx="80" cy="305" r="8" fill="white" stroke="none"/>
 
-  <!-- Branch 2 - mid right -->
-  <path d="M200 190 L245 182 L290 190" fill="none" stroke="white" stroke-width="4"/>
-  <path d="M245 182 L265 160 L290 148" fill="none" stroke="white" stroke-width="3"/>
-  <path d="M290 190 L315 205 L335 225" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="290" cy="190" r="6"/>
-  <circle cx="290" cy="148" r="5"/>
-  <circle cx="335" cy="225" r="5"/>
+  <!-- Left branch 3 — lower -->
+  <path d="M256 330 C235 325, 210 322, 180 335" stroke-width="6"/>
+  <path d="M210 323 C198 308, 180 292, 160 285" stroke-width="5"/>
+  <circle cx="180" cy="335" r="9" fill="white" stroke="none"/>
+  <circle cx="160" cy="285" r="7" fill="white" stroke="none"/>
 
-  <!-- Branch 3 - lower right -->
-  <path d="M200 270 L250 266 L275 275" fill="none" stroke="white" stroke-width="4"/>
-  <path d="M250 266 L268 248 L285 238" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="275" cy="275" r="6"/>
-  <circle cx="285" cy="238" r="5"/>
+  <!-- Left branch 4 — bottom -->
+  <path d="M256 390 C240 385, 225 378, 210 365" stroke-width="5"/>
+  <circle cx="210" cy="365" r="7" fill="white" stroke="none"/>
 
-  <!-- Branch 4 - bottom right -->
-  <path d="M200 340 L225 332 L245 318" fill="none" stroke="white" stroke-width="3"/>
-  <circle cx="245" cy="318" r="5"/>
+  <!-- === RIGHT BRANCHES (angular, circuit-like) === -->
+
+  <!-- Right branch 1 — top -->
+  <path d="M256 180 L310 155 L370 130" stroke-width="7"/>
+  <path d="M310 155 L335 125 L365 105" stroke-width="5.5"/>
+  <path d="M370 130 L400 148 L430 170" stroke-width="5.5"/>
+  <circle cx="370" cy="130" r="10" fill="white" stroke="none"/>
+  <circle cx="365" cy="105" r="8" fill="white" stroke="none"/>
+  <circle cx="430" cy="170" r="8" fill="white" stroke="none"/>
+
+  <!-- Right branch 2 — middle -->
+  <path d="M256 250 L320 242 L375 255" stroke-width="7"/>
+  <path d="M320 242 L348 220 L395 195" stroke-width="5.5"/>
+  <path d="M375 255 L405 272 L432 305" stroke-width="5.5"/>
+  <circle cx="375" cy="255" r="10" fill="white" stroke="none"/>
+  <circle cx="395" cy="195" r="8" fill="white" stroke="none"/>
+  <circle cx="432" cy="305" r="8" fill="white" stroke="none"/>
+
+  <!-- Right branch 3 — lower -->
+  <path d="M256 330 L310 323 L340 335" stroke-width="6"/>
+  <path d="M310 323 L330 305 L355 285" stroke-width="5"/>
+  <circle cx="340" cy="335" r="9" fill="white" stroke="none"/>
+  <circle cx="355" cy="285" r="7" fill="white" stroke="none"/>
+
+  <!-- Right branch 4 — bottom -->
+  <path d="M256 390 L285 380 L308 365" stroke-width="5"/>
+  <circle cx="308" cy="365" r="7" fill="white" stroke="none"/>
 </svg>
