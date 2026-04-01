@@ -155,7 +155,6 @@ ul, ol {
 }
 
 .preloader-monogram img {
-    border-radius: 10px;
     display: block;
 }
 
@@ -411,7 +410,7 @@ ul, ol {
 }
 
 .nav-logo img {
-    border-radius: 4px;
+    /* no border-radius — floating brain */
 }
 
 .nav-links {
@@ -692,12 +691,10 @@ ul, ol {
 
 .hero-monogram-glow {
     display: inline-block;
-    border-radius: 16px;
-    box-shadow: 0 0 80px rgba(255, 255, 255, 0.06), 0 0 160px rgba(255, 255, 255, 0.02);
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.06)) drop-shadow(0 0 80px rgba(255, 255, 255, 0.02));
 }
 
 .hero-monogram-glow img {
-    border-radius: 14px;
     display: block;
 }
 
@@ -1871,7 +1868,6 @@ body.page-contact .section-divider {
     width: 300px;
     height: auto;
     opacity: 0.015;
-    border-radius: 16px;
 }
 
 .footer-monogram {
@@ -1881,7 +1877,7 @@ body.page-contact .section-divider {
 }
 
 .footer-monogram img {
-    border-radius: 4px;
+    /* no border-radius — floating brain */
 }
 
 .footer-links {

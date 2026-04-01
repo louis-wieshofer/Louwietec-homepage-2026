@@ -500,7 +500,7 @@
             var dist = Math.sqrt(dx * dx + dy * dy);
             var prox = Math.max(0, 1 - dist / 400);
             var blur = 80 + prox * 80, op = 0.1 + prox * 0.15;
-            glow.style.boxShadow = '0 0 ' + blur + 'px rgba(70,140,220,' + op.toFixed(3) + '),0 0 ' + (blur * 2) + 'px rgba(70,140,220,' + (op * 0.4).toFixed(3) + ')';
+            glow.style.filter = 'drop-shadow(0 0 ' + blur + 'px rgba(70,140,220,' + op.toFixed(3) + ')) drop-shadow(0 0 ' + (blur * 2) + 'px rgba(70,140,220,' + (op * 0.4).toFixed(3) + '))';
         });
     }
 
