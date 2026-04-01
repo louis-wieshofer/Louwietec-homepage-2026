@@ -29,7 +29,7 @@
 
     /* ── NetworkGrid ───────────────────────────────────────── */
 
-    function NetworkGrid(canvas) {
+    function NetworkGrid(canvas, inverted) {
         if (!canvas) return;
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
@@ -37,6 +37,7 @@
         this.frame = 0;
         this.opacity = 1;
         this.parallaxOffset = 0;
+        this.inverted = !!inverted;
         this.isMobile = window.innerWidth < 768;
         this.isSmall = window.innerWidth < 480;
         this.resize();
@@ -76,7 +77,9 @@
                 speedY: (Math.random() - 0.5) * (isHub ? 0.15 : 0.3),
                 isHub: isHub,
                 radius: isHub ? (2.5 + Math.random() * 1.5) : (1.2 + Math.random() * 0.8),
-                color: isAccent ? 'rgba(70,140,220,' : 'rgba(180,200,230,',
+                color: this.inverted
+                    ? (isAccent ? 'rgba(70,140,220,' : 'rgba(60,60,80,')
+                    : (isAccent ? 'rgba(70,140,220,' : 'rgba(180,200,230,'),
                 baseAlpha: isHub ? (0.5 + Math.random() * 0.3) : (0.15 + Math.random() * 0.15),
                 pulsePhase: Math.random() * Math.PI * 2
             });
@@ -96,6 +99,7 @@
         var t = this.frame * 0.005;
 
         // Draw connections first (behind nodes)
+        var connColor = this.inverted ? 'rgba(60,60,80,' : 'rgba(70,140,220,';
         if (!this.isSmall) {
             ctx.lineWidth = 0.8;
             for (var j = 0; j < pts.length; j++) {
@@ -105,7 +109,7 @@
                     var maxDist = (pts[j].isHub || pts[k].isHub) ? 40000 : 25600;
                     if (distSq < maxDist) {
                         var alpha = (1 - distSq / maxDist) * 0.22;
-                        ctx.strokeStyle = 'rgba(70,140,220,' + alpha.toFixed(3) + ')';
+                        ctx.strokeStyle = connColor + alpha.toFixed(3) + ')';
                         ctx.beginPath();
                         ctx.moveTo(pts[j].x, pts[j].y);
                         ctx.lineTo(pts[k].x, pts[k].y);
@@ -452,10 +456,12 @@
         var audio = null, canPlay = false;
         function unlock() {
             if (audio) return;
-            audio = new Audio('/assets/click.mp3');
-            audio.volume = 0.3;
-            audio.load();
-            canPlay = true;
+            try {
+                audio = new Audio('assets/click.mp3');
+                audio.volume = 0.3;
+                audio.load();
+                canPlay = true;
+            } catch (e) { /* audio asset not available */ }
             document.removeEventListener('click', unlock);
             document.removeEventListener('touchstart', unlock);
         }
@@ -617,13 +623,11 @@
                 });
             });
 
-            // 2. Canvases (contact page has none)
+            // 2. Canvases
             try {
-                if (!isContact) {
-                    var gridCanvas = document.getElementById('network-grid');
-                    var grid = gridCanvas ? new NetworkGrid(gridCanvas) : null;
-                    gridRef = grid;
-                }
+                var gridCanvas = document.getElementById('network-grid');
+                var grid = gridCanvas ? new NetworkGrid(gridCanvas, isContact) : null;
+                gridRef = grid;
 
                 if (isHome) {
                     new GradientMesh(document.getElementById('gradient-mesh'));

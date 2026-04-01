@@ -15,9 +15,9 @@
     --bg-primary: #0A0E1A;
     --bg-elevated: #0F1424;
     --bg-card: rgba(255, 255, 255, 0.03);
-    --accent-gold: rgba(70, 140, 220, 0.6);
-    --accent-gold-hover: #5BA8E8;
-    --gold-subtle: rgba(70, 140, 220, 0.1);
+    --accent: rgba(70, 140, 220, 0.6);
+    --accent-hover: #5BA8E8;
+    --accent-subtle: rgba(70, 140, 220, 0.1);
     --text-primary: #EDEDED;
     --text-secondary: #6B6B76;
     --text-tertiary: #3A3A44;
@@ -121,7 +121,7 @@ ul, ol {
     position: absolute;
     top: -100%;
     left: 1rem;
-    background: var(--accent-gold);
+    background: var(--accent);
     color: var(--bg-primary);
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
@@ -161,7 +161,7 @@ ul, ol {
 .preloader-line {
     width: 60px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
     transform: scaleX(0);
     animation: preloaderLine 0.5s ease-out 0.6s forwards;
 }
@@ -211,7 +211,7 @@ ul, ol {
     position: fixed;
     width: 6px;
     height: 6px;
-    background: var(--accent-gold);
+    background: var(--accent);
     border-radius: 50%;
     pointer-events: none;
     z-index: 150;
@@ -238,7 +238,7 @@ ul, ol {
     width: 100%;
     max-width: 200px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
     margin: 0 auto;
     border: none;
     transform: scaleX(0);
@@ -427,7 +427,7 @@ ul, ol {
 
 .nav-link {
     font-family: var(--font-body);
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -451,7 +451,7 @@ ul, ol {
     gap: 5px;
     background: none;
     border: none;
-    padding: 8px;
+    padding: 0.5rem;
     cursor: pointer;
     z-index: 110;
     position: relative;
@@ -467,7 +467,7 @@ ul, ol {
     display: block;
     width: 24px;
     height: 1px;
-    background: var(--accent-gold);
+    background: var(--accent);
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -530,7 +530,7 @@ ul, ol {
 }
 
 .mobile-menu-link:hover {
-    color: var(--accent-gold);
+    color: var(--accent);
 }
 
 .mobile-menu.open .mobile-menu-link {
@@ -589,21 +589,15 @@ ul, ol {
 .page-header-title {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
     color: var(--text-primary);
     letter-spacing: 0.01em;
-}
-
-@media (min-width: 768px) {
-    .page-header-title {
-        font-size: 3.5rem;
-    }
 }
 
 .page-header-gold-line {
     width: 60px;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--accent);
     margin: 1.5rem auto;
 }
 
@@ -720,7 +714,7 @@ ul, ol {
     width: 100px;
     height: 1px;
     margin: 1.5rem auto 2rem;
-    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
     opacity: 0;
     transform: scaleX(0);
 }
@@ -732,7 +726,7 @@ ul, ol {
 .hero-title {
     font-family: var(--font-body);
     font-weight: 300;
-    font-size: 2.5rem;
+    font-size: clamp(2.2rem, 5vw + 1rem, 4.5rem);
     letter-spacing: 0.6em;
     text-transform: uppercase;
     color: var(--text-primary);
@@ -744,30 +738,18 @@ ul, ol {
     animation: heroTitle 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s forwards;
 }
 
-@media (min-width: 768px) {
-    .hero-title {
-        font-size: 4.5rem;
-    }
-}
-
 .hero-tagline {
     font-family: var(--font-display);
     font-weight: 400;
     font-style: italic;
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.35rem);
     color: var(--text-secondary);
     letter-spacing: 0.03em;
     min-height: 1.6em;
 }
 
-@media (min-width: 768px) {
-    .hero-tagline {
-        font-size: 1.35rem;
-    }
-}
-
 .typing-cursor {
-    color: var(--accent-gold);
+    color: var(--accent);
     font-weight: 300;
     animation: cursorBlink 0.6s step-end infinite;
 }
@@ -832,7 +814,7 @@ ul, ol {
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: var(--accent-gold);
+    background: var(--accent);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -852,7 +834,7 @@ ul, ol {
     width: 100%;
     max-width: 200px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
     margin: 0 auto;
     border: none;
 }
@@ -862,7 +844,7 @@ ul, ol {
 .decorative-number {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 8rem;
+    font-size: clamp(5rem, 8vw + 2rem, 10rem);
     line-height: 1;
     color: var(--text-primary);
     opacity: 0.04;
@@ -871,11 +853,11 @@ ul, ol {
     user-select: none;
 }
 
-@media (min-width: 768px) {
-    .decorative-number {
-        font-size: 10rem;
-    }
-}
+/* ── Utility Classes ──────────────────────────────────────── */
+
+.mt-sm { margin-top: 1.5rem; }
+.mt-md { margin-top: 2.5rem; }
+.thesis-card--centered { max-width: 900px; margin-left: auto; margin-right: auto; }
 
 /* ── Thesis / Quote Card ──────────────────────────────────── */
 
@@ -918,6 +900,10 @@ ul, ol {
         top: -1.5rem;
         left: 1.5rem;
     }
+}
+
+.thesis-text + .thesis-text {
+    margin-top: 1.5rem;
 }
 
 .thesis-text {
@@ -1036,21 +1022,15 @@ ul, ol {
 .split-left h2 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 2vw + 0.5rem, 2.5rem);
     color: var(--text-primary);
     letter-spacing: 0.01em;
-}
-
-@media (min-width: 768px) {
-    .split-left h2 {
-        font-size: 2.5rem;
-    }
 }
 
 .split-left .gold-line {
     width: 60px;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--accent);
     margin-top: 1rem;
 }
 
@@ -1090,20 +1070,14 @@ ul, ol {
 .section-heading h2 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 2vw + 0.5rem, 2.5rem);
     color: var(--text-primary);
-}
-
-@media (min-width: 768px) {
-    .section-heading h2 {
-        font-size: 2.5rem;
-    }
 }
 
 .section-heading .gold-line {
     width: 60px;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--accent);
     margin-top: 1rem;
 }
 
@@ -1247,17 +1221,11 @@ ul, ol {
 .number-value {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 3vw + 1rem, 3.5rem);
     color: var(--text-primary);
     line-height: 1;
     display: block;
     letter-spacing: -0.02em;
-}
-
-@media (min-width: 768px) {
-    .number-value {
-        font-size: 3.5rem;
-    }
 }
 
 .number-label {
@@ -1329,7 +1297,7 @@ ul, ol {
 .capability-gold-line {
     width: 30px;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--accent);
     margin-bottom: 1.25rem;
 }
 
@@ -1372,7 +1340,7 @@ ul, ol {
 .enterprise-card .gold-line {
     width: 40px;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--accent);
     margin-bottom: 1.25rem;
 }
 
@@ -1419,7 +1387,7 @@ ul, ol {
 .founder-gold-line {
     width: 40px;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--accent);
     margin: 1.5rem auto 2rem;
 }
 
@@ -1535,7 +1503,7 @@ ul, ol {
 .principle-gold-line {
     width: 50px;
     height: 2px;
-    background: var(--accent-gold);
+    background: var(--accent);
     margin: 1rem 0 1.5rem;
 }
 
@@ -1596,15 +1564,9 @@ ul, ol {
 .cta-heading {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
     color: var(--text-primary);
     margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-    .cta-heading {
-        font-size: 2rem;
-    }
 }
 
 .cta-links {
@@ -1617,7 +1579,7 @@ ul, ol {
 .cta-link {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--text-secondary);
@@ -1628,16 +1590,16 @@ ul, ol {
 
 .cta-link:hover {
     color: var(--text-primary);
-    border-color: var(--accent-gold);
+    border-color: var(--accent);
 }
 
 .cta-link--gold {
-    color: var(--accent-gold);
+    color: var(--accent);
 }
 
 .cta-link--gold:hover {
-    color: var(--accent-gold-hover);
-    border-color: var(--accent-gold-hover);
+    color: var(--accent-hover);
+    border-color: var(--accent-hover);
 }
 
 /* ── Contact Page Sections ─────────────────────────────────── */
@@ -1721,7 +1683,7 @@ ul, ol {
 }
 
 .expect-bullet {
-    color: var(--accent-gold);
+    color: var(--accent);
     font-size: 0.5rem;
     flex-shrink: 0;
     margin-top: 0.6rem;
@@ -1742,6 +1704,10 @@ ul, ol {
     font-size: 1rem;
     color: var(--text-secondary);
     line-height: 1.85;
+}
+
+.closing-text + .closing-text {
+    margin-top: 1.5rem;
 }
 
 /* ── Contact Page: Full Inversion ──────────────────────────── */
@@ -1774,7 +1740,7 @@ body.page-contact .nav-link--active {
 }
 
 body.page-contact .hamburger-line {
-    background: var(--accent-gold);
+    background: var(--accent);
 }
 
 body.page-contact .mobile-menu {
@@ -1786,7 +1752,7 @@ body.page-contact .mobile-menu-link {
 }
 
 body.page-contact .mobile-menu-link:hover {
-    color: var(--accent-gold);
+    color: var(--accent);
 }
 
 body.page-contact .mobile-menu-divider {
@@ -1814,7 +1780,7 @@ body.page-contact .contact-name {
 }
 
 body.page-contact .contact-email {
-    color: #CCCCCC;
+    color: #6B6B76;
 }
 
 body.page-contact .contact-email:hover {
@@ -1835,7 +1801,7 @@ body.page-contact .closing-text .prose-highlight {
 }
 
 body.page-contact .section-divider {
-    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 /* ── Footer ────────────────────────────────────────────────── */
@@ -1885,7 +1851,7 @@ body.page-contact .section-divider {
 }
 
 .footer-link {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     color: var(--text-tertiary);
     transition: color 0.3s ease;
 }
@@ -1902,7 +1868,7 @@ body.page-contact .section-divider {
 }
 
 .footer-text {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     color: var(--text-tertiary);
 }
 
@@ -1968,8 +1934,7 @@ body.page-contact .section-divider {
 .impressum-content {
     max-width: 600px;
     margin: 0 auto;
-    padding-top: 8rem;
-    padding-bottom: 4rem;
+    padding: 8rem 1.5rem 4rem;
 }
 
 .impressum-content h1 {
@@ -2002,7 +1967,7 @@ body.page-contact .section-divider {
 }
 
 .impressum-content a:hover {
-    color: var(--accent-gold);
+    color: var(--accent);
 }
 
 .impressum-back {
@@ -2047,12 +2012,12 @@ body.page-contact ::-webkit-scrollbar-thumb {
 /* ── Selection ─────────────────────────────────────────────── */
 
 ::selection {
-    background: var(--accent-gold);
+    background: var(--accent);
     color: var(--bg-primary);
 }
 
 ::-moz-selection {
-    background: var(--accent-gold);
+    background: var(--accent);
     color: var(--bg-primary);
 }
 
@@ -2065,6 +2030,184 @@ body.page-contact ::-webkit-scrollbar-thumb {
 }
 
 /* ── Print ─────────────────────────────────────────────────── */
+
+/* ── Small Phones (max 480px) ─────────────────────────────── */
+
+@media (max-width: 480px) {
+    .page-header {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+
+    .section-thesis {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .section-split {
+        padding: 4rem 1.25rem;
+    }
+
+    .section-bento {
+        padding: 4rem 1.25rem;
+    }
+
+    .section-numbers {
+        padding: 3rem 1.25rem;
+    }
+
+    .section-capabilities {
+        padding: 4rem 1.25rem;
+    }
+
+    .section-cta {
+        padding: 4rem 1.25rem;
+    }
+
+    .section-intro,
+    .section-founder {
+        padding: 4rem 1.25rem;
+    }
+
+    .thesis-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .hero-monogram-glow img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .preloader-monogram img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-brackets {
+        inset: 5%;
+    }
+
+    .hero-brackets span {
+        width: 30px;
+        height: 30px;
+    }
+
+    .numbers-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .numbers-card {
+        padding: 2rem 1rem;
+    }
+
+    .capability-card {
+        padding: 1.5rem;
+    }
+
+    .section-contact-info {
+        padding: 1.5rem 1.25rem 3rem;
+    }
+
+    .cta-links {
+        gap: 1.25rem;
+    }
+
+    .footer-inner {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .split-layout {
+        gap: 2rem;
+    }
+
+    .bento-grid {
+        gap: 1rem;
+    }
+
+    .contact-email {
+        font-size: 1rem;
+    }
+}
+
+/* ── Tablets / iPad (768px–1023px) ────────────────────────── */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .bento-grid {
+        gap: 1rem;
+    }
+
+    .split-layout {
+        gap: 2.5rem;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enterprise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── Small Laptops / iPad Pro (1024px+) ───────────────────── */
+
+@media (min-width: 1024px) {
+    .nav-link {
+        font-size: 0.8125rem;
+    }
+
+    .split-layout {
+        gap: 5rem;
+    }
+
+    .bento-grid {
+        gap: 1.5rem;
+    }
+
+    .section-thesis,
+    .section-split,
+    .section-bento,
+    .section-capabilities {
+        padding: 9rem 2.5rem;
+    }
+
+    .section-numbers {
+        padding: 7rem 2.5rem;
+    }
+}
+
+/* ── Large Desktops (1440px+) ─────────────────────────────── */
+
+@media (min-width: 1440px) {
+    :root {
+        --max-content: 1200px;
+    }
+
+    .nav-inner {
+        max-width: 1300px;
+        padding: 0 3rem;
+    }
+
+    .hero-monogram-glow img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .section-thesis,
+    .section-split,
+    .section-bento,
+    .section-capabilities {
+        padding: 10rem 3rem;
+    }
+
+    .section-numbers {
+        padding: 8rem 3rem;
+    }
+
+    .footer-inner {
+        padding: 4rem 3rem;
+    }
+}
 
 @media print {
     body {
