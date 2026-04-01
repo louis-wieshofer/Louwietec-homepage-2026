@@ -2127,6 +2127,51 @@ body.page-contact ::-webkit-scrollbar-thumb {
     .contact-email {
         font-size: 1rem;
     }
+
+    /* Glass cards: tighter padding on small phones */
+    .glass-card {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    /* Number reveal: prevent overflow during animation */
+    .number-reveal {
+        font-size: 5rem;
+    }
+
+    .number-reveal.revealed {
+        font-size: 2.5rem;
+    }
+
+    /* Hero title: reduce letter-spacing to prevent overflow */
+    .hero-title {
+        letter-spacing: 0.3em;
+    }
+
+    @keyframes heroTitle {
+        from { opacity: 0; letter-spacing: 0.45em; }
+        to { opacity: 1; letter-spacing: 0.3em; }
+    }
+
+    /* Enterprise grid: tighter gap */
+    .enterprise-grid {
+        gap: 1rem;
+    }
+
+    /* Contact name/role sizing */
+    .contact-name {
+        font-size: 1.25rem;
+    }
+
+    /* Expect section tighter */
+    .expect-content h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Impressum content: reduce top padding */
+    .impressum-content {
+        padding-top: 5rem;
+    }
 }
 
 /* ── Tablets / iPad (768px–1023px) ────────────────────────── */
