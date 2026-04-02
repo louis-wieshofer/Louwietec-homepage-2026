@@ -156,6 +156,7 @@ ul, ol {
 
 .preloader-monogram img {
     display: block;
+    mix-blend-mode: screen;
 }
 
 .preloader-line {
@@ -410,7 +411,7 @@ ul, ol {
 }
 
 .nav-logo img {
-    /* no border-radius — floating brain */
+    mix-blend-mode: screen;
 }
 
 .nav-links {
@@ -690,6 +691,7 @@ ul, ol {
 
 .hero-monogram-glow img {
     display: block;
+    mix-blend-mode: screen;
 }
 
 #monogram-particles {
@@ -1804,6 +1806,10 @@ body.page-contact .section-divider {
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
+body.page-contact .nav-logo img {
+    mix-blend-mode: multiply;
+}
+
 /* ── Footer ────────────────────────────────────────────────── */
 
 .site-footer {
@@ -1834,6 +1840,7 @@ body.page-contact .section-divider {
     width: 300px;
     height: auto;
     opacity: 0.015;
+    mix-blend-mode: screen;
 }
 
 .footer-monogram {
@@ -1843,7 +1850,7 @@ body.page-contact .section-divider {
 }
 
 .footer-monogram img {
-    /* no border-radius — floating brain */
+    mix-blend-mode: screen;
 }
 
 .footer-links {
