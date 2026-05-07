@@ -57,7 +57,6 @@
 
 ### Page Header
 - **Titel:** About
-- **Untertitel:** An AI systems company built for a new era of enterprise partnership.
 
 ### Our Story (01)
 - LOUWIETEC was founded on a simple observation: the enterprise software industry is built on a broken model.
@@ -104,16 +103,28 @@ Deployment is not the finish line — it's the starting point. Our systems learn
 
 ### Page Header
 - **Titel:** Approach
-- **Untertitel:** How we turn enterprise inefficiency into shared value.
 
-### The Model (01)
-- Most AI companies sell licenses. You pay whether the software works or not. Most consultancies sell hours. You pay whether their advice delivers or not.
-- **We sell neither.**
-- LOUWIETEC operates on a pure outcome basis. We build and deploy AI systems into your operations at our own cost. We charge nothing upfront — no license fees, no implementation costs, no consulting retainers.
-- Instead, we establish a fixed performance baseline using your historical data — typically the average of the last seven to ten years. This baseline is locked. It never changes. It never gets renegotiated.
-- Everything our systems save above that baseline is split. You keep your share. We keep ours. If our systems save nothing, we earn nothing.
-- This means we only deploy systems we're confident will deliver. And it means every euro of engineering we invest is a bet on your success.
-- **The result: zero risk for you. Total alignment between us.**
+### Model
+
+- **Heading:** Model
+
+**Statement 01 — Lead**
+Every euro of engineering we invest is a bet on your success.
+
+**Statement 01 — Follow**
+If our systems save nothing, we earn nothing.
+
+**Statement 02 — Lead**
+We don't build tools you rent. We don't take projects. We don't run a sales funnel.
+
+**Statement 02 — Follow**
+We take partnerships. Or nothing.
+
+**Statement 03 — Lead**
+Most AI companies sell licenses. Most consultancies sell hours.
+
+**Statement 03 — Follow**
+Both are paid before the result is in.
 
 ### How It Works (02) — 4 Steps
 
@@ -129,26 +140,6 @@ We build custom AI systems tailored to your specific operations and deploy them 
 **04 — Share**
 As our systems generate savings, we split the value. Transparent reporting. Auditable metrics. No hidden fees, no surprises. The partnership compounds over time — the longer we work together, the more value we create.
 
-### Capabilities (6 Karten)
-
-**Predictive Analysis**
-Our systems identify patterns in operational data and predict issues before they become costly — from maintenance failures to cash flow disruptions.
-
-**Process Automation**
-Repetitive tasks that consume your team's time are handled by AI systems that work around the clock. Faster, cheaper, and without human error.
-
-**Real-Time Decision Support**
-Dashboards and alerts that give your leadership team the information they need when they need it — not in a monthly report, but in the moment.
-
-**Cost Intelligence**
-Granular visibility into where money is spent, where it's wasted, and where small changes create outsized savings.
-
-**Customer Operations**
-AI-powered systems that handle customer inquiries, route requests, and resolve issues at a fraction of the cost and time of traditional support teams.
-
-**Portfolio Optimization**
-For organizations managing assets, properties, or investments: AI systems that optimize allocation, predict performance, and identify opportunities.
-
 ### Key Figures
 (gleich wie Homepage)
 
@@ -163,7 +154,6 @@ For organizations managing assets, properties, or investments: AI systems that o
 
 ### Page Header
 - **Titel:** Principles
-- **Untertitel:** What we believe, and why it matters.
 
 ### Our Thesis
 - The enterprise software industry is built on a model that serves vendors, not clients.
@@ -219,7 +209,6 @@ The companies we work with, we work with for years. That's not a constraint. Tha
 
 ### Page Header
 - **Titel:** Get in touch.
-- **Untertitel:** We're selective about who we work with. But when we commit, we commit completely.
 
 ### Contact Info
 - **Name:** Louis Wieshofer

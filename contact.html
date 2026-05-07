@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — LOUWIETEC</title>
-    <meta name="description" content="Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria. We respond within 24 hours.">
+    <title data-i18n="meta.contact.title">Contact — LOUWIETEC</title>
+    <meta name="description" content="Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria. We respond within 24 hours." data-i18n-attr="content:meta.contact.description">
     <meta name="keywords" content="LOUWIETEC, Louis Wieshofer, contact, AI systems, AI company Vienna, enterprise AI Austria">
     <meta name="author" content="Louis Wieshofer">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#F0EDE6">
     <link rel="canonical" href="https://louwietec.com/contact.html">
+    <link rel="alternate" hreflang="en" href="https://louwietec.com/contact.html">
+    <link rel="alternate" hreflang="de" href="https://louwietec.com/contact.html?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://louwietec.com/contact.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louwietec.com/contact.html">
-    <meta property="og:title" content="Contact — LOUWIETEC">
-    <meta property="og:description" content="Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria.">
+    <meta property="og:title" content="Contact — LOUWIETEC" data-i18n-attr="content:meta.contact.og_title">
+    <meta property="og:description" content="Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria." data-i18n-attr="content:meta.contact.og_description">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="LOUWIETEC">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact — LOUWIETEC">
-    <meta name="twitter:description" content="Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria.">
+    <meta name="twitter:title" content="Contact — LOUWIETEC" data-i18n-attr="content:meta.contact.twitter_title">
+    <meta name="twitter:description" content="Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria." data-i18n-attr="content:meta.contact.twitter_description">
     <meta property="og:image" content="https://louwietec.com/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:image" content="https://louwietec.com/assets/og-image.png">
     <link rel="icon" type="image/png" href="assets/louwietec-brain.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter/Inter-VariableFont-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair/PlayfairDisplay-VariableFont-latin.woff2" crossorigin>
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
@@ -71,7 +73,7 @@
 </head>
 <body class="page-contact">
 
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link" data-i18n="nav.skip_link">Skip to main content</a>
 
     <!-- Custom cursor -->
     <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
@@ -80,18 +82,23 @@
     <canvas id="network-grid" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main_navigation">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
+            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home" data-i18n-attr="aria-label:nav.logo_home">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="32" height="32">
             </a>
             <div class="nav-links">
-                <a href="about.html" class="nav-link" data-magnetic>About</a>
-                <a href="approach.html" class="nav-link" data-magnetic>Approach</a>
-                <a href="principles.html" class="nav-link" data-magnetic>Principles</a>
-                <a href="contact.html" class="nav-link" data-magnetic>Contact</a>
+                <a href="about.html" class="nav-link" data-magnetic data-i18n="nav.about">About</a>
+                <a href="approach.html" class="nav-link" data-magnetic data-i18n="nav.approach">Approach</a>
+                <a href="principles.html" class="nav-link" data-magnetic data-i18n="nav.principles">Principles</a>
+                <a href="contact.html" class="nav-link" data-magnetic data-i18n="nav.contact">Contact</a>
             </div>
-            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+            <div class="lang-toggle" role="group" aria-label="Language">
+                <button type="button" class="lang-toggle__btn lang-toggle__btn--active" data-lang="en" aria-pressed="true">EN</button>
+                <span class="lang-toggle__separator" aria-hidden="true">/</span>
+                <button type="button" class="lang-toggle__btn" data-lang="de" aria-pressed="false">DE</button>
+            </div>
+            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false" data-i18n-attr="aria-label:nav.menu_button">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -102,36 +109,37 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <div class="mobile-menu-inner">
-            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="about.html" class="mobile-menu-link" data-i18n="nav.about">About</a>
             <div class="mobile-menu-divider"></div>
-            <a href="approach.html" class="mobile-menu-link">Approach</a>
+            <a href="approach.html" class="mobile-menu-link" data-i18n="nav.approach">Approach</a>
             <div class="mobile-menu-divider"></div>
-            <a href="principles.html" class="mobile-menu-link">Principles</a>
+            <a href="principles.html" class="mobile-menu-link" data-i18n="nav.principles">Principles</a>
             <div class="mobile-menu-divider"></div>
-            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="contact.html" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
             <div class="mobile-menu-divider"></div>
-            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small">Impressum</a>
+            <a href="privacy.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.privacy">Privacy</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.impressum">Impressum</a>
         </div>
     </div>
 
     <main id="main">
 
         <!-- Page Header -->
-        <section class="page-header" aria-label="Page header">
-            <h1 class="page-header-title" data-reveal><span class="reveal-line">Get in touch.</span></h1>
-            <p class="page-header-subtitle" data-animate>We're selective about who we work with. But when we commit, we commit completely.</p>
+        <section class="page-header" aria-label="Page header" data-i18n-attr="aria-label:aria.section.page_header">
+            <h1 class="page-header-title" data-reveal><span class="reveal-line" data-i18n="contact.header.title">Get in touch.</span></h1>
         </section>
 
         <!-- Divider -->
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- Contact Info -->
-        <section class="section-contact-info" aria-label="Contact information">
+        <section class="section-contact-info" aria-label="Contact information" data-i18n-attr="aria-label:aria.section.contact_information">
             <div class="contact-info-inner" data-animate>
-                <p class="contact-name">Louis Wieshofer</p>
-                <p class="contact-role">Founder</p>
+                <p class="contact-name" data-i18n="contact.info.name">Louis Wieshofer</p>
+                <p class="contact-role" data-i18n="contact.info.role">Founder</p>
                 <a class="contact-email" href="mailto:Office@louwietec.com" data-magnetic>Office@louwietec.com</a>
-                <p class="contact-location">Vienna, Austria</p>
+                <p class="contact-location" data-i18n="contact.info.location">Vienna, Austria</p>
             </div>
         </section>
 
@@ -139,21 +147,21 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- What to Expect -->
-        <section class="section-expect" aria-label="What to expect">
+        <section class="section-expect" aria-label="What to expect" data-i18n-attr="aria-label:aria.section.what_to_expect">
             <div class="expect-content" data-animate>
-                <h2>What to expect</h2>
+                <h2 data-i18n="contact.expect.heading">What to expect</h2>
                 <ul class="expect-list">
                     <li class="expect-item">
                         <span class="expect-bullet">&#9670;</span>
-                        <span>A response within 24 hours.</span>
+                        <span data-i18n="contact.expect.item1">A response within 24 hours.</span>
                     </li>
                     <li class="expect-item">
                         <span class="expect-bullet">&#9670;</span>
-                        <span>An honest assessment of whether our model fits your situation.</span>
+                        <span data-i18n="contact.expect.item2">An honest assessment of whether our model fits your situation.</span>
                     </li>
                     <li class="expect-item">
                         <span class="expect-bullet">&#9670;</span>
-                        <span>If it does — a concrete proposal within two weeks.</span>
+                        <span data-i18n="contact.expect.item3">If it does — a concrete proposal within two weeks.</span>
                     </li>
                 </ul>
             </div>
@@ -163,10 +171,10 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- Closing -->
-        <section class="section-closing" aria-label="Closing">
+        <section class="section-closing" aria-label="Closing" data-i18n-attr="aria-label:aria.section.closing">
             <div class="closing-inner" data-animate>
-                <p class="closing-text">We don't do sales calls. We don't send brochures. We have a conversation, we listen, and if we believe we can deliver results, we propose a partnership.</p>
-                <p class="closing-text"><span class="prose-highlight">If not, we'll tell you honestly.</span></p>
+                <p class="closing-text" data-i18n="contact.closing.p1">We don't do sales calls. We don't send brochures. We have a conversation, we listen, and if we believe we can deliver results, we propose a partnership.</p>
+                <p class="closing-text"><span class="prose-highlight" data-i18n="contact.closing.p2_highlight">If not, we'll tell you honestly.</span></p>
             </div>
         </section>
 
@@ -176,15 +184,18 @@
     <footer class="site-footer inverted-footer" role="contentinfo">
         <div class="footer-inner">
             <p class="footer-text">
-                &copy; 2026 LOUWIETEC
+                <span data-i18n="footer.copyright">&copy; 2026 LOUWIETEC</span>
                 <span class="footer-separator">&middot;</span>
-                Vienna, Austria
+                <span data-i18n="footer.location">Vienna, Austria</span>
                 <span class="footer-separator">&middot;</span>
-                <a href="impressum.html" class="footer-link">Impressum</a>
+                <a href="privacy.html" class="footer-link" data-i18n="footer.link_privacy">Privacy</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="impressum.html" class="footer-link" data-i18n="footer.link_impressum">Impressum</a>
             </p>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

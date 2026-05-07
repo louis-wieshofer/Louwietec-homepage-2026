@@ -1,0 +1,354 @@
+{
+  "nav": {
+    "about": "About",
+    "approach": "Approach",
+    "principles": "Principles",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "impressum": "Impressum",
+    "skip_link": "Skip to main content",
+    "menu_button": "Menu",
+    "main_navigation": "Main navigation",
+    "logo_home": "LOUWIETEC Home"
+  },
+  "footer": {
+    "copyright": "© 2026 LOUWIETEC",
+    "location": "Vienna, Austria",
+    "link_about": "About",
+    "link_approach": "Approach",
+    "link_principles": "Principles",
+    "link_contact": "Contact",
+    "link_privacy": "Privacy",
+    "link_impressum": "Impressum"
+  },
+  "aria": {
+    "section": {
+      "page_header": "Page header",
+      "page_introduction": "Page introduction",
+      "introduction": "Introduction",
+      "thesis": "Thesis",
+      "what_we_are": "What we are",
+      "key_figures": "Key figures",
+      "call_to_action": "Call to action",
+      "our_story": "Our story",
+      "what_we_believe": "What we believe",
+      "built_for_enterprise": "Built for enterprise",
+      "founder": "Founder",
+      "how_it_works": "How it works",
+      "three_principles": "Three principles",
+      "our_thesis": "Our thesis",
+      "a_note_on_trust": "A note on trust",
+      "contact_information": "Contact information",
+      "what_to_expect": "What to expect",
+      "closing": "Closing"
+    }
+  },
+  "image": {
+    "alt_logo": "LOUWIETEC",
+    "alt_logo_label": "LOUWIETEC logo",
+    "alt_loading": "LOUWIETEC loading",
+    "alt_monogram": "LOUWIETEC Monogram"
+  },
+  "home": {
+    "hero": {
+      "title": "LOUWIETEC",
+      "tagline": "We make companies unstoppable."
+    },
+    "thesis": {
+      "line1": "Most enterprises lose millions",
+      "line2": "to satisfactory performance.",
+      "line3": "Not to failure — to the gap between",
+      "line4": "where they are and where they could be.",
+      "line5": "We close that gap."
+    },
+    "intro": {
+      "p1": "LOUWIETEC is an AI systems company that invests technology into enterprises and shares the outcome.",
+      "p2_html": "<span class=\"prose-highlight\">We build. We deploy. We optimize.</span><br>Our clients pay nothing upfront — only a share of the measurable savings we create.",
+      "cta": "Learn more about us →"
+    },
+    "numbers": {
+      "label_systems": "Systems built.",
+      "label_features": "Features deployed.",
+      "label_loc": "Lines of code.",
+      "label_upfront": "Required upfront.",
+      "label_response": "Response time.",
+      "label_outcome": "Shared outcome."
+    },
+    "cta": {
+      "heading": "Ready to explore what's possible?",
+      "link_approach": "Our Approach →",
+      "link_contact": "Get in touch →"
+    }
+  },
+  "about": {
+    "header": {
+      "title": "About"
+    },
+    "story": {
+      "heading": "Our story",
+      "p1": "LOUWIETEC was founded on a simple observation: the enterprise software industry is built on a broken model.",
+      "p2": "Companies pay millions for systems they hope will work. Consultants bill thousands of hours with no guarantee of results. Vendors lock clients into multi-year contracts before delivering a single euro of value.",
+      "p3_highlight": "What if we took the risk instead?",
+      "p4": "What if we built the systems, deployed them, ran them — and only earned money when they actually delivered measurable savings? Not theoretical savings in a pitch deck. Real savings. Auditable. Transparent. Undeniable.",
+      "p5": "That question became LOUWIETEC.",
+      "p6": "Today, we build proprietary AI systems that we deploy directly into our clients' operations. We charge nothing upfront. We take a share of the value we create — and nothing more.",
+      "p7": "Our model aligns us completely with our clients. When they grow, we grow. When they save, we save. There is no scenario where we succeed and our client doesn't.",
+      "p8_highlight": "That's not a sales pitch. That's arithmetic."
+    },
+    "thesis": {
+      "p1_html": "We believe the next generation of enterprise technology will not be sold. <span style=\"color:var(--text-primary);font-weight:700;\">It will be invested.</span>",
+      "p2": "Software licenses, hourly billing, retainer agreements — these are relics of an era where technology was a cost center. In the world we're building, technology is an investment with measurable returns.",
+      "p3": "Every system we build is a bet on our client's success. We bet our engineering. We bet our infrastructure. We bet our time. And we only win when the numbers prove we were right.",
+      "p4_html": "<span style=\"color:var(--text-primary);font-weight:700;\">This is not altruism. This is conviction.</span> We build systems that work, and we're willing to prove it with our own economics."
+    },
+    "enterprise": {
+      "card_heading": "Built for enterprise.",
+      "card1": {
+        "title": "Proprietary infrastructure.",
+        "body": "Every system runs on infrastructure we own and manage. No shared environments. No third-party dependencies your IT team needs to worry about. We handle security, uptime, and maintenance — you handle your business."
+      },
+      "card2": {
+        "title": "European data compliance.",
+        "body": "All data processing happens within EU jurisdictions. Full GDPR compliance is not an add-on — it's the foundation. We build privacy into the architecture, not as an afterthought."
+      },
+      "card3": {
+        "title": "Seamless integration.",
+        "body": "Our systems connect to your existing tools and workflows through secure APIs. No rip-and-replace. No disruption. We fit into your operations, not the other way around."
+      },
+      "card4": {
+        "title": "Continuous optimization.",
+        "body": "Deployment is not the finish line — it's the starting point. Our systems learn, adapt, and improve continuously. Every month, the savings grow. That's the compound effect of AI done right."
+      }
+    },
+    "founder": {
+      "name": "Louis Wieshofer",
+      "role": "Founder",
+      "bio_html": "Built LOUWIETEC from the ground up — from the first line of code to the business model to the vision for what enterprise AI can become when aligned with client success.<br>Based in Vienna. Building for Europe."
+    },
+    "cta": {
+      "heading": "Want to understand how we work?",
+      "link_approach": "Our Approach →"
+    }
+  },
+  "approach": {
+    "header": {
+      "title": "Approach"
+    },
+    "modell": {
+      "heading": "Model",
+      "statement1": {
+        "lead": "Every euro of engineering we invest is a bet on your success.",
+        "follow": "If our systems save nothing, we earn nothing."
+      },
+      "statement2": {
+        "lead": "We don't build tools you rent. We don't take projects. We don't run a sales funnel.",
+        "follow": "We take partnerships. Or nothing."
+      },
+      "statement3": {
+        "lead": "Most AI companies sell licenses. Most consultancies sell hours.",
+        "follow": "Both are paid before the result is in."
+      }
+    },
+    "howitworks": {
+      "heading": "How it works",
+      "step1": {
+        "title": "Analyze",
+        "body": "We conduct a deep analysis of your operations. Not a surface-level audit — a forensic examination of where time, money, and resources are lost. We look at processes your team has accepted as 'normal' and find the inefficiencies hiding in plain sight."
+      },
+      "step2": {
+        "title": "Baseline",
+        "body": "We establish a fixed performance baseline from your historical data. This number represents your current state — the benchmark against which all improvements are measured. Once set, it never changes. That's our commitment to fairness."
+      },
+      "step3": {
+        "title": "Deploy",
+        "body": "We build custom AI systems tailored to your specific operations and deploy them on our own infrastructure. Your team doesn't need to manage servers, train models, or hire AI engineers. We handle everything."
+      },
+      "step4": {
+        "title": "Share",
+        "body": "As our systems generate savings, we split the value. Transparent reporting. Auditable metrics. No hidden fees, no surprises. The partnership compounds over time — the longer we work together, the more value we create."
+      }
+    },
+    "numbers": {
+      "label_systems": "Systems built.",
+      "label_features": "Features deployed.",
+      "label_loc": "Lines of code.",
+      "label_upfront": "Required upfront.",
+      "label_response": "Response time.",
+      "label_outcome": "Shared outcome."
+    },
+    "cta": {
+      "heading": "Interested in understanding what drives us?",
+      "link_principles": "Our Principles →",
+      "link_contact": "Get in touch →"
+    }
+  },
+  "principles": {
+    "header": {
+      "title": "Principles"
+    },
+    "thesis": {
+      "p1": "The enterprise software industry is built on a model that serves vendors, not clients.",
+      "p2": "For decades, the standard has been: buy a license, hire consultants to implement it, pay for maintenance, and hope it works. If it doesn't? You've already paid. The vendor has your money. The consultants have moved on.",
+      "p3": "This model persists not because it's good — but because no one with the technical capability to challenge it had the business model to replace it.",
+      "p4_accent": "Until now.",
+      "p5": "Outcome-based technology partnerships flip the equation. The provider takes the risk. The client gets the reward. And the only way the provider earns is by delivering measurable, undeniable results.",
+      "p6": "We believe this model will become the standard for enterprise technology within a decade. Not because it's idealistic — but because it's economically superior for everyone involved.",
+      "p7": "The companies that adopt it first will have a structural advantage. The companies that provide it will build the deepest client relationships in the industry.",
+      "p8_accent": "LOUWIETEC intends to be the company that provides it."
+    },
+    "three": {
+      "title_label": "Principles",
+      "outcome": {
+        "title": "Outcome-based.",
+        "body_html": "We earn only when our clients do. This is not a pricing strategy — it's a statement about how we believe business should work.<br><br>When a technology partner's revenue is tied to their client's results, everything changes. The incentive to cut corners disappears. The pressure to deliver becomes existential. And the relationship transforms from vendor-client to genuine partnership.<br><br>Every system we build, every line of code we write, every optimization we deploy exists for one reason: to move a number that both parties are watching.<br><br><span class=\"prose-highlight\">That's alignment you can't fake.</span>"
+      },
+      "permanent": {
+        "title": "Permanent infrastructure.",
+        "body_html": "We don't build tools you rent. We build assets that compound.<br><br>Every system we deploy becomes part of your operational fabric. It learns your patterns. It adapts to your workflows. It gets better over time — not because we sell you an upgrade, but because the system itself evolves.<br><br>This is the difference between buying software and investing in infrastructure. Software depreciates. Infrastructure appreciates.<br><br><span class=\"prose-highlight\">Our systems are designed to become more valuable the longer they run. Year one is good. Year three is transformative.</span>"
+      },
+      "longterm": {
+        "title": "Long-term conviction.",
+        "body_html": "We don't take projects. We take partnerships.<br><br>In an industry obsessed with quarterly results and short sales cycles, we take a different approach. We choose our partners carefully. We invest heavily in each relationship. And we commit for years, not months.<br><br>This means we say no more often than we say yes. Not every company is the right fit. But when we commit, we commit completely — with our technology, our infrastructure, and our economics on the line.<br><br><span class=\"prose-highlight\">The companies we work with, we work with for years. That's not a constraint. That's the point.</span>"
+      }
+    },
+    "trust": {
+      "heading": "A note on trust.",
+      "p1": "We ask our clients to trust us with their operations. In return, we put our own revenue at risk.",
+      "p2_html": "That exchange — <em style=\"color:var(--text-primary)\">vulnerability for vulnerability</em> — is the foundation of every partnership we build. It's uncomfortable. It's unusual. And it's exactly why it works.",
+      "p3": "Trust isn't built by contracts. It's built by alignment. And no model aligns interests more completely than ours."
+    },
+    "cta": {
+      "heading": "Let's start a conversation.",
+      "link_contact": "Get in touch →"
+    }
+  },
+  "contact": {
+    "header": {
+      "title": "Get in touch."
+    },
+    "info": {
+      "name": "Louis Wieshofer",
+      "role": "Founder",
+      "location": "Vienna, Austria"
+    },
+    "expect": {
+      "heading": "What to expect",
+      "item1": "A response within 24 hours.",
+      "item2": "An honest assessment of whether our model fits your situation.",
+      "item3": "If it does — a concrete proposal within two weeks."
+    },
+    "closing": {
+      "p1": "We don't do sales calls. We don't send brochures. We have a conversation, we listen, and if we believe we can deliver results, we propose a partnership.",
+      "p2_highlight": "If not, we'll tell you honestly."
+    }
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legal_header": "Angaben gemäß § 5 ECG:",
+    "name": "Louis Wieshofer",
+    "street": "Lange Gasse 65",
+    "location": "1080 Wien, Österreich",
+    "contact_header": "Kontakt:",
+    "email_label": "E-Mail:",
+    "email": "Office@louwietec.com",
+    "responsible_header": "Verantwortlich für den Inhalt:",
+    "responsible_person": "Louis Wieshofer",
+    "back_link": "← Zurück zur Hauptseite"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "intro": "This page explains how LOUWIETEC handles personal data when you visit this website. We do not run trackers, we do not set marketing cookies, and we do not share visitor data with third parties.",
+    "controller": {
+      "heading": "Controller",
+      "body": "Louis Wieshofer, Lange Gasse 65, 1080 Vienna, Austria. Email: Office@louwietec.com."
+    },
+    "hosting": {
+      "heading": "Hosting",
+      "body": "This website is hosted on GitHub Pages, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Content is delivered through GitHub's global CDN, which routes requests via edge servers located outside the EU, including in the United States. This involves a transfer of personal data (your IP address and request metadata) to the USA. The transfer is based on the EU-US Data Privacy Framework, under which GitHub is certified, in combination with the standard contractual clauses incorporated into GitHub's Data Protection Agreement. GitHub's privacy statement: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+    },
+    "logs": {
+      "heading": "Server log data",
+      "body": "When you load a page, GitHub's infrastructure records technical information: IP address, timestamp, requested URL, referrer, and user agent. These logs are processed under Art. 6(1)(f) GDPR for security and operational purposes. Retention is governed by GitHub's policies, since we do not host the server ourselves. We do not access or analyse these logs."
+    },
+    "cookies": {
+      "heading": "Cookies and local storage",
+      "body": "We do not set tracking cookies. The site uses one localStorage entry called \"louwietec_lang\" to remember your language preference (EN or DE). It is technically required for the language toggle and is not shared with anyone."
+    },
+    "fonts": {
+      "heading": "Fonts",
+      "body": "Inter and Playfair Display are served directly from this domain. No requests are made to Google Fonts or any other external font service. Your IP address is not transmitted to Google for typography."
+    },
+    "thirdparty": {
+      "heading": "External services",
+      "body": "The smooth-scrolling library Lenis is loaded from the jsDelivr CDN (cdn.jsdelivr.net). When the script is fetched, your IP address is transmitted to jsDelivr. We do not embed analytics, advertising networks, social-media trackers, or any other third-party services."
+    },
+    "rights": {
+      "heading": "Your rights",
+      "body": "Under GDPR you have the right to access, rectification, deletion, restriction of processing, objection, and data portability. To exercise any of these, write to Office@louwietec.com. You may also lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, DSB), Barichgasse 40-42, 1030 Vienna."
+    },
+    "contact": {
+      "heading": "Contact for data protection inquiries",
+      "body": "Email Office@louwietec.com. We respond within 30 days as required by Art. 12(3) GDPR."
+    },
+    "lastupdated": "Last updated: 7 May 2026.",
+    "back_link": "← Back to home"
+  },
+  "meta": {
+    "home": {
+      "title": "LOUWIETEC — We make companies unstoppable.",
+      "description": "LOUWIETEC — AI systems company founded by Louis Wieshofer in Vienna, Austria. We partner with enterprises on a pure outcome basis. Zero upfront. Shared savings. Predictive analysis, process automation, real-time decision support, cost intelligence.",
+      "og_title": "LOUWIETEC — We make companies unstoppable.",
+      "og_description": "AI systems company. Pure outcome basis. Vienna, Austria.",
+      "twitter_title": "LOUWIETEC — We make companies unstoppable.",
+      "twitter_description": "AI systems company. Pure outcome basis. Vienna, Austria."
+    },
+    "about": {
+      "title": "About — LOUWIETEC",
+      "description": "LOUWIETEC is an AI systems company built for a new era of enterprise partnership. Zero upfront. Shared savings. Vienna, Austria.",
+      "og_title": "About — LOUWIETEC",
+      "og_description": "An AI systems company built for a new era of enterprise partnership.",
+      "twitter_title": "About — LOUWIETEC",
+      "twitter_description": "An AI systems company built for a new era of enterprise partnership."
+    },
+    "approach": {
+      "title": "Approach — LOUWIETEC",
+      "description": "How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment.",
+      "og_title": "Approach — LOUWIETEC",
+      "og_description": "How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment.",
+      "twitter_title": "Approach — LOUWIETEC",
+      "twitter_description": "How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment."
+    },
+    "principles": {
+      "title": "Principles — LOUWIETEC",
+      "description": "Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds.",
+      "og_title": "Principles — LOUWIETEC",
+      "og_description": "Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds.",
+      "twitter_title": "Principles — LOUWIETEC",
+      "twitter_description": "Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds."
+    },
+    "contact": {
+      "title": "Contact — LOUWIETEC",
+      "description": "Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria. We respond within 24 hours.",
+      "og_title": "Contact — LOUWIETEC",
+      "og_description": "Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria.",
+      "twitter_title": "Contact — LOUWIETEC",
+      "twitter_description": "Get in touch with LOUWIETEC. Louis Wieshofer, Founder. Vienna, Austria."
+    },
+    "impressum": {
+      "title": "Impressum — LOUWIETEC",
+      "description": "Impressum — LOUWIETEC, Wien, Österreich.",
+      "og_title": "Impressum — LOUWIETEC",
+      "og_description": "Impressum — LOUWIETEC, Wien, Österreich.",
+      "twitter_title": "Impressum — LOUWIETEC",
+      "twitter_description": "Impressum — LOUWIETEC, Wien, Österreich."
+    },
+    "privacy": {
+      "title": "Privacy — LOUWIETEC",
+      "description": "Privacy policy of LOUWIETEC, Vienna, Austria.",
+      "og_title": "Privacy — LOUWIETEC",
+      "og_description": "Privacy policy of LOUWIETEC, Vienna, Austria.",
+      "twitter_title": "Privacy — LOUWIETEC",
+      "twitter_description": "Privacy policy of LOUWIETEC, Vienna, Austria."
+    }
+  }
+}

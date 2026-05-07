@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Approach — LOUWIETEC</title>
-    <meta name="description" content="How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment.">
+    <title data-i18n="meta.approach.title">Approach — LOUWIETEC</title>
+    <meta name="description" content="How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment." data-i18n-attr="content:meta.approach.description">
     <meta name="keywords" content="LOUWIETEC, Louis Wieshofer, AI systems, enterprise AI, outcome-based AI, AI automation, process automation, predictive analysis, Vienna Austria">
     <meta name="author" content="Louis Wieshofer">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#0A0E1A">
     <link rel="canonical" href="https://louwietec.com/approach.html">
+    <link rel="alternate" hreflang="en" href="https://louwietec.com/approach.html">
+    <link rel="alternate" hreflang="de" href="https://louwietec.com/approach.html?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://louwietec.com/approach.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louwietec.com/approach.html">
-    <meta property="og:title" content="Approach — LOUWIETEC">
-    <meta property="og:description" content="How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment.">
+    <meta property="og:title" content="Approach — LOUWIETEC" data-i18n-attr="content:meta.approach.og_title">
+    <meta property="og:description" content="How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment." data-i18n-attr="content:meta.approach.og_description">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="LOUWIETEC">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Approach — LOUWIETEC">
-    <meta name="twitter:description" content="How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment.">
+    <meta name="twitter:title" content="Approach — LOUWIETEC" data-i18n-attr="content:meta.approach.twitter_title">
+    <meta name="twitter:description" content="How LOUWIETEC works: we analyze operations, set a fixed baseline, deploy custom AI systems, and share the savings. Zero risk. Total alignment." data-i18n-attr="content:meta.approach.twitter_description">
     <meta property="og:image" content="https://louwietec.com/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:image" content="https://louwietec.com/assets/og-image.png">
     <link rel="icon" type="image/png" href="assets/louwietec-brain.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter/Inter-VariableFont-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair/PlayfairDisplay-VariableFont-latin.woff2" crossorigin>
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
@@ -70,7 +72,7 @@
 </head>
 <body class="page-approach">
 
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link" data-i18n="nav.skip_link">Skip to main content</a>
 
     <!-- Custom cursor -->
     <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
@@ -84,18 +86,23 @@
     <div class="gradient-orb gradient-orb--3" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main_navigation">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
+            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home" data-i18n-attr="aria-label:nav.logo_home">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="32" height="32">
             </a>
             <div class="nav-links">
-                <a href="about.html" class="nav-link" data-magnetic>About</a>
-                <a href="approach.html" class="nav-link" data-magnetic>Approach</a>
-                <a href="principles.html" class="nav-link" data-magnetic>Principles</a>
-                <a href="contact.html" class="nav-link" data-magnetic>Contact</a>
+                <a href="about.html" class="nav-link" data-magnetic data-i18n="nav.about">About</a>
+                <a href="approach.html" class="nav-link" data-magnetic data-i18n="nav.approach">Approach</a>
+                <a href="principles.html" class="nav-link" data-magnetic data-i18n="nav.principles">Principles</a>
+                <a href="contact.html" class="nav-link" data-magnetic data-i18n="nav.contact">Contact</a>
             </div>
-            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+            <div class="lang-toggle" role="group" aria-label="Language">
+                <button type="button" class="lang-toggle__btn lang-toggle__btn--active" data-lang="en" aria-pressed="true">EN</button>
+                <span class="lang-toggle__separator" aria-hidden="true">/</span>
+                <button type="button" class="lang-toggle__btn" data-lang="de" aria-pressed="false">DE</button>
+            </div>
+            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false" data-i18n-attr="aria-label:nav.menu_button">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -106,55 +113,59 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <div class="mobile-menu-inner">
-            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="about.html" class="mobile-menu-link" data-i18n="nav.about">About</a>
             <div class="mobile-menu-divider"></div>
-            <a href="approach.html" class="mobile-menu-link">Approach</a>
+            <a href="approach.html" class="mobile-menu-link" data-i18n="nav.approach">Approach</a>
             <div class="mobile-menu-divider"></div>
-            <a href="principles.html" class="mobile-menu-link">Principles</a>
+            <a href="principles.html" class="mobile-menu-link" data-i18n="nav.principles">Principles</a>
             <div class="mobile-menu-divider"></div>
-            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="contact.html" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
             <div class="mobile-menu-divider"></div>
-            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small">Impressum</a>
+            <a href="privacy.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.privacy">Privacy</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.impressum">Impressum</a>
         </div>
     </div>
 
     <main id="main">
 
         <!-- Page Header -->
-        <section class="page-header" aria-label="Page header">
-            <h1 class="page-header-title" data-reveal><span class="reveal-line">Approach</span></h1>
-            <p class="page-header-subtitle" data-reveal><span class="reveal-line">How we turn enterprise inefficiency into shared value.</span></p>
+        <section class="page-header" aria-label="Page header" data-i18n-attr="aria-label:aria.section.page_header">
+            <h1 class="page-header-title" data-reveal><span class="reveal-line" data-i18n="approach.header.title">Approach</span></h1>
         </section>
 
         <!-- Divider -->
         <div class="section-divider" aria-hidden="true"></div>
 
-        <!-- The Model -->
-        <section class="section-split" aria-label="The model">
-            <div class="split-layout">
-                <div class="split-left">
-                    <h2 class="section-heading" data-reveal><span class="reveal-line">The model</span></h2>
-                    <div class="gold-line" aria-hidden="true"></div>
-                    <span class="decorative-number" aria-hidden="true">01</span>
+        <!-- Modell -->
+        <section class="section-modell" aria-labelledby="modell-heading">
+            <div class="section-modell__inner">
+                <h2 id="modell-heading" class="section-modell__heading" data-reveal>
+                    <span class="reveal-line" data-i18n="approach.modell.heading">Model</span>
+                </h2>
+                <div class="section-modell__statement" data-reveal>
+                    <p class="section-modell__lead">
+                        <span class="reveal-line" data-i18n="approach.modell.statement1.lead">Every euro of engineering we invest is a bet on your success.</span>
+                    </p>
+                    <p class="section-modell__follow">
+                        <span class="reveal-line" data-i18n="approach.modell.statement1.follow">If our systems save nothing, we earn nothing.</span>
+                    </p>
                 </div>
-                <div class="split-right">
-                    <div class="glass-card" data-tilt data-animate>
-                        <div class="prose">
-                            <p>Most AI companies sell licenses. You pay whether the software works or not. Most consultancies sell hours. You pay whether their advice delivers or not.</p>
-
-                            <p><span class="prose-highlight">We sell neither.</span></p>
-
-                            <p>LOUWIETEC operates on a pure outcome basis. We build and deploy AI systems into your operations at our own cost. We charge nothing upfront — no license fees, no implementation costs, no consulting retainers.</p>
-
-                            <p>Instead, we establish a fixed performance baseline using your historical data — typically the average of the last seven to ten years. <span class="prose-highlight">This baseline is locked. It never changes. It never gets renegotiated.</span></p>
-
-                            <p>Everything our systems save above that baseline is split. You keep your share. We keep ours. If our systems save nothing, we earn nothing.</p>
-
-                            <p>This means we only deploy systems we're confident will deliver. And it means every euro of engineering we invest is a bet on your success.</p>
-
-                            <p><span class="prose-highlight">The result: zero risk for you. Total alignment between us.</span></p>
-                        </div>
-                    </div>
+                <div class="section-modell__statement" data-reveal>
+                    <p class="section-modell__lead">
+                        <span class="reveal-line" data-i18n="approach.modell.statement2.lead">We don't build tools you rent. We don't take projects. We don't run a sales funnel.</span>
+                    </p>
+                    <p class="section-modell__follow">
+                        <span class="reveal-line" data-i18n="approach.modell.statement2.follow">We take partnerships. Or nothing.</span>
+                    </p>
+                </div>
+                <div class="section-modell__statement" data-reveal>
+                    <p class="section-modell__lead">
+                        <span class="reveal-line" data-i18n="approach.modell.statement3.lead">Most AI companies sell licenses. Most consultancies sell hours.</span>
+                    </p>
+                    <p class="section-modell__follow">
+                        <span class="reveal-line" data-i18n="approach.modell.statement3.follow">Both are paid before the result is in.</span>
+                    </p>
                 </div>
             </div>
         </section>
@@ -163,73 +174,31 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- How It Works -->
-        <section class="section-bento" aria-label="How it works">
-            <h2 class="section-heading" data-reveal><span class="reveal-line">How it works</span></h2>
-            <div class="gold-line" aria-hidden="true"></div>
+        <section class="section-bento" aria-label="How it works" data-i18n-attr="aria-label:aria.section.how_it_works">
+            <h2 class="section-heading" data-reveal><span class="reveal-line" data-i18n="approach.howitworks.heading">How it works</span></h2>
+            <div class="accent-line" aria-hidden="true"></div>
             <span class="decorative-number" aria-hidden="true">02</span>
 
             <div class="bento-grid">
                 <div class="glass-card bento-large" data-tilt data-animate>
                     <span class="bento-number">01</span>
-                    <h3 class="bento-title">Analyze</h3>
-                    <p class="bento-desc">We conduct a deep analysis of your operations. Not a surface-level audit — a forensic examination of where time, money, and resources are lost. We look at processes your team has accepted as 'normal' and find the inefficiencies hiding in plain sight.</p>
+                    <h3 class="bento-title" data-i18n="approach.howitworks.step1.title">Analyze</h3>
+                    <p class="bento-desc" data-i18n="approach.howitworks.step1.body">We conduct a deep analysis of your operations. Not a surface-level audit — a forensic examination of where time, money, and resources are lost. We look at processes your team has accepted as 'normal' and find the inefficiencies hiding in plain sight.</p>
                 </div>
                 <div class="glass-card" data-tilt data-animate>
                     <span class="bento-number">02</span>
-                    <h3 class="bento-title">Baseline</h3>
-                    <p class="bento-desc">We establish a fixed performance baseline from your historical data. This number represents your current state — the benchmark against which all improvements are measured. Once set, it never changes. That's our commitment to fairness.</p>
+                    <h3 class="bento-title" data-i18n="approach.howitworks.step2.title">Baseline</h3>
+                    <p class="bento-desc" data-i18n="approach.howitworks.step2.body">We establish a fixed performance baseline from your historical data. This number represents your current state — the benchmark against which all improvements are measured. Once set, it never changes. That's our commitment to fairness.</p>
                 </div>
                 <div class="glass-card" data-tilt data-animate>
                     <span class="bento-number">03</span>
-                    <h3 class="bento-title">Deploy</h3>
-                    <p class="bento-desc">We build custom AI systems tailored to your specific operations and deploy them on our own infrastructure. Your team doesn't need to manage servers, train models, or hire AI engineers. We handle everything.</p>
+                    <h3 class="bento-title" data-i18n="approach.howitworks.step3.title">Deploy</h3>
+                    <p class="bento-desc" data-i18n="approach.howitworks.step3.body">We build custom AI systems tailored to your specific operations and deploy them on our own infrastructure. Your team doesn't need to manage servers, train models, or hire AI engineers. We handle everything.</p>
                 </div>
                 <div class="glass-card bento-large" data-tilt data-animate>
                     <span class="bento-number">04</span>
-                    <h3 class="bento-title">Share</h3>
-                    <p class="bento-desc">As our systems generate savings, we split the value. Transparent reporting. Auditable metrics. No hidden fees, no surprises. The partnership compounds over time — the longer we work together, the more value we create.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Divider -->
-        <div class="section-divider" aria-hidden="true"></div>
-
-        <!-- Capabilities -->
-        <section class="section-capabilities" aria-label="Capabilities">
-            <h2 class="section-heading section-heading--center" data-reveal><span class="reveal-line">What our systems do</span></h2>
-            <div class="gold-line" aria-hidden="true"></div>
-
-            <div class="capabilities-grid">
-                <div class="glass-card capability-card" data-tilt data-animate>
-                    <div class="capability-gold-line" aria-hidden="true"></div>
-                    <h3 class="capability-title">Predictive Analysis</h3>
-                    <p class="capability-desc">Our systems identify patterns in operational data and predict issues before they become costly — from maintenance failures to cash flow disruptions.</p>
-                </div>
-                <div class="glass-card capability-card" data-tilt data-animate>
-                    <div class="capability-gold-line" aria-hidden="true"></div>
-                    <h3 class="capability-title">Process Automation</h3>
-                    <p class="capability-desc">Repetitive tasks that consume your team's time are handled by AI systems that work around the clock. Faster, cheaper, and without human error.</p>
-                </div>
-                <div class="glass-card capability-card" data-tilt data-animate>
-                    <div class="capability-gold-line" aria-hidden="true"></div>
-                    <h3 class="capability-title">Real-Time Decision Support</h3>
-                    <p class="capability-desc">Dashboards and alerts that give your leadership team the information they need when they need it — not in a monthly report, but in the moment.</p>
-                </div>
-                <div class="glass-card capability-card" data-tilt data-animate>
-                    <div class="capability-gold-line" aria-hidden="true"></div>
-                    <h3 class="capability-title">Cost Intelligence</h3>
-                    <p class="capability-desc">Granular visibility into where money is spent, where it's wasted, and where small changes create outsized savings.</p>
-                </div>
-                <div class="glass-card capability-card" data-tilt data-animate>
-                    <div class="capability-gold-line" aria-hidden="true"></div>
-                    <h3 class="capability-title">Customer Operations</h3>
-                    <p class="capability-desc">AI-powered systems that handle customer inquiries, route requests, and resolve issues at a fraction of the cost and time of traditional support teams.</p>
-                </div>
-                <div class="glass-card capability-card" data-tilt data-animate>
-                    <div class="capability-gold-line" aria-hidden="true"></div>
-                    <h3 class="capability-title">Portfolio Optimization</h3>
-                    <p class="capability-desc">For organizations managing assets, properties, or investments: AI systems that optimize allocation, predict performance, and identify opportunities.</p>
+                    <h3 class="bento-title" data-i18n="approach.howitworks.step4.title">Share</h3>
+                    <p class="bento-desc" data-i18n="approach.howitworks.step4.body">As our systems generate savings, we split the value. Transparent reporting. Auditable metrics. No hidden fees, no surprises. The partnership compounds over time — the longer we work together, the more value we create.</p>
                 </div>
             </div>
         </section>
@@ -238,32 +207,32 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- Numbers -->
-        <section class="section-numbers" aria-label="Key figures">
+        <section class="section-numbers" aria-label="Key figures" data-i18n-attr="aria-label:aria.section.key_figures">
             <div class="glass-card numbers-card" data-tilt data-animate>
                 <div class="numbers-grid">
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="6">6</span>
-                        <span class="number-label">Systems built.</span>
+                        <span class="number-label" data-i18n="approach.numbers.label_systems">Systems built.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="182">182</span>
-                        <span class="number-label">Features deployed.</span>
+                        <span class="number-label" data-i18n="approach.numbers.label_features">Features deployed.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="160000" data-suffix="+">160,000+</span>
-                        <span class="number-label">Lines of code.</span>
+                        <span class="number-label" data-i18n="approach.numbers.label_loc">Lines of code.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="0" data-suffix=" &euro;">0 &euro;</span>
-                        <span class="number-label">Required upfront.</span>
+                        <span class="number-label" data-i18n="approach.numbers.label_upfront">Required upfront.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="24" data-suffix="h">24h</span>
-                        <span class="number-label">Response time.</span>
+                        <span class="number-label" data-i18n="approach.numbers.label_response">Response time.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="50" data-suffix="/50">50/50</span>
-                        <span class="number-label">Shared outcome.</span>
+                        <span class="number-label" data-i18n="approach.numbers.label_outcome">Shared outcome.</span>
                     </div>
                 </div>
             </div>
@@ -273,11 +242,11 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- CTA -->
-        <section class="section-cta" aria-label="Call to action">
-            <h2 class="cta-heading" data-reveal><span class="reveal-line">Interested in understanding what drives us?</span></h2>
+        <section class="section-cta" aria-label="Call to action" data-i18n-attr="aria-label:aria.section.call_to_action">
+            <h2 class="cta-heading" data-reveal><span class="reveal-line" data-i18n="approach.cta.heading">Interested in understanding what drives us?</span></h2>
             <div class="cta-links" data-animate>
-                <a href="principles.html" class="cta-link" data-magnetic>Our Principles &rarr;</a>
-                <a href="contact.html" class="cta-link cta-link--gold" data-magnetic>Get in touch &rarr;</a>
+                <a href="principles.html" class="cta-link" data-magnetic data-i18n="approach.cta.link_principles">Our Principles &rarr;</a>
+                <a href="contact.html" class="cta-link cta-link--accent" data-magnetic data-i18n="approach.cta.link_contact">Get in touch &rarr;</a>
             </div>
         </section>
 
@@ -287,26 +256,29 @@
     <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
             <div class="footer-watermark" aria-hidden="true">
-                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300">
+                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300" data-i18n-attr="alt:image.alt_logo_label">
             </div>
             <div class="footer-monogram">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="24" height="24">
             </div>
             <div class="footer-links">
-                <a href="about.html" class="footer-link">About</a>
+                <a href="about.html" class="footer-link" data-i18n="footer.link_about">About</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="approach.html" class="footer-link">Approach</a>
+                <a href="approach.html" class="footer-link" data-i18n="footer.link_approach">Approach</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="principles.html" class="footer-link">Principles</a>
+                <a href="principles.html" class="footer-link" data-i18n="footer.link_principles">Principles</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="contact.html" class="footer-link" data-i18n="footer.link_contact">Contact</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="impressum.html" class="footer-link">Impressum</a>
+                <a href="privacy.html" class="footer-link" data-i18n="footer.link_privacy">Privacy</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="impressum.html" class="footer-link" data-i18n="footer.link_impressum">Impressum</a>
             </div>
-            <p class="footer-text">&copy; 2026 LOUWIETEC <span class="footer-separator">&middot;</span> Vienna, Austria</p>
+            <p class="footer-text"><span data-i18n="footer.copyright">&copy; 2026 LOUWIETEC</span> <span class="footer-separator">&middot;</span> <span data-i18n="footer.location">Vienna, Austria</span></p>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

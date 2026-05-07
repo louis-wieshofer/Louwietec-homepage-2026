@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — LOUWIETEC</title>
-    <meta name="description" content="LOUWIETEC is an AI systems company built for a new era of enterprise partnership. Zero upfront. Shared savings. Vienna, Austria.">
+    <title data-i18n="meta.about.title">About — LOUWIETEC</title>
+    <meta name="description" content="LOUWIETEC is an AI systems company built for a new era of enterprise partnership. Zero upfront. Shared savings. Vienna, Austria." data-i18n-attr="content:meta.about.description">
     <meta name="keywords" content="LOUWIETEC, Louis Wieshofer, about, AI systems, enterprise AI, outcome-based AI, AI company Vienna, Founder">
     <meta name="author" content="Louis Wieshofer">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#0A0E1A">
     <link rel="canonical" href="https://louwietec.com/about.html">
+    <link rel="alternate" hreflang="en" href="https://louwietec.com/about.html">
+    <link rel="alternate" hreflang="de" href="https://louwietec.com/about.html?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://louwietec.com/about.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louwietec.com/about.html">
-    <meta property="og:title" content="About — LOUWIETEC">
-    <meta property="og:description" content="An AI systems company built for a new era of enterprise partnership.">
+    <meta property="og:title" content="About — LOUWIETEC" data-i18n-attr="content:meta.about.og_title">
+    <meta property="og:description" content="An AI systems company built for a new era of enterprise partnership." data-i18n-attr="content:meta.about.og_description">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="LOUWIETEC">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About — LOUWIETEC">
-    <meta name="twitter:description" content="An AI systems company built for a new era of enterprise partnership.">
+    <meta name="twitter:title" content="About — LOUWIETEC" data-i18n-attr="content:meta.about.twitter_title">
+    <meta name="twitter:description" content="An AI systems company built for a new era of enterprise partnership." data-i18n-attr="content:meta.about.twitter_description">
     <meta property="og:image" content="https://louwietec.com/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:image" content="https://louwietec.com/assets/og-image.png">
     <link rel="icon" type="image/png" href="assets/louwietec-brain.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter/Inter-VariableFont-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair/PlayfairDisplay-VariableFont-latin.woff2" crossorigin>
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
@@ -79,7 +81,7 @@
 </head>
 <body class="page-about">
 
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link" data-i18n="nav.skip_link">Skip to main content</a>
 
     <!-- Custom cursor -->
     <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
@@ -93,18 +95,23 @@
     <div class="gradient-orb gradient-orb--3" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main_navigation">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
+            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home" data-i18n-attr="aria-label:nav.logo_home">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="32" height="32">
             </a>
             <div class="nav-links">
-                <a href="about.html" class="nav-link nav-link--active" data-magnetic>About</a>
-                <a href="approach.html" class="nav-link" data-magnetic>Approach</a>
-                <a href="principles.html" class="nav-link" data-magnetic>Principles</a>
-                <a href="contact.html" class="nav-link" data-magnetic>Contact</a>
+                <a href="about.html" class="nav-link nav-link--active" data-magnetic data-i18n="nav.about">About</a>
+                <a href="approach.html" class="nav-link" data-magnetic data-i18n="nav.approach">Approach</a>
+                <a href="principles.html" class="nav-link" data-magnetic data-i18n="nav.principles">Principles</a>
+                <a href="contact.html" class="nav-link" data-magnetic data-i18n="nav.contact">Contact</a>
             </div>
-            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+            <div class="lang-toggle" role="group" aria-label="Language">
+                <button type="button" class="lang-toggle__btn lang-toggle__btn--active" data-lang="en" aria-pressed="true">EN</button>
+                <span class="lang-toggle__separator" aria-hidden="true">/</span>
+                <button type="button" class="lang-toggle__btn" data-lang="de" aria-pressed="false">DE</button>
+            </div>
+            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false" data-i18n-attr="aria-label:nav.menu_button">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -115,26 +122,26 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <div class="mobile-menu-inner">
-            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="about.html" class="mobile-menu-link" data-i18n="nav.about">About</a>
             <div class="mobile-menu-divider"></div>
-            <a href="approach.html" class="mobile-menu-link">Approach</a>
+            <a href="approach.html" class="mobile-menu-link" data-i18n="nav.approach">Approach</a>
             <div class="mobile-menu-divider"></div>
-            <a href="principles.html" class="mobile-menu-link">Principles</a>
+            <a href="principles.html" class="mobile-menu-link" data-i18n="nav.principles">Principles</a>
             <div class="mobile-menu-divider"></div>
-            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="contact.html" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
             <div class="mobile-menu-divider"></div>
-            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small">Impressum</a>
+            <a href="privacy.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.privacy">Privacy</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.impressum">Impressum</a>
         </div>
     </div>
 
     <main id="main">
 
         <!-- 1. PAGE HEADER -->
-        <section class="page-header" aria-label="Page introduction">
+        <section class="page-header" aria-label="Page introduction" data-i18n-attr="aria-label:aria.section.page_introduction">
             <div class="page-header-content">
-                <h1 class="page-header-title" data-reveal><span class="reveal-line">About</span></h1>
-                <div class="page-header-gold-line" aria-hidden="true"></div>
-                <p class="page-header-subtitle" data-animate>An AI systems company built for a new era of enterprise partnership.</p>
+                <h1 class="page-header-title" data-reveal><span class="reveal-line" data-i18n="about.header.title">About</span></h1>
             </div>
         </section>
 
@@ -142,31 +149,31 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- 3. OUR STORY — Split Layout -->
-        <section class="section-split" aria-label="Our story">
+        <section class="section-split" aria-label="Our story" data-i18n-attr="aria-label:aria.section.our_story">
             <div class="split-layout">
                 <div class="split-left">
-                    <h2 data-reveal><span class="reveal-line">Our story</span></h2>
-                    <div class="gold-line" aria-hidden="true"></div>
+                    <h2 data-reveal><span class="reveal-line" data-i18n="about.story.heading">Our story</span></h2>
+                    <div class="accent-line" aria-hidden="true"></div>
                     <span class="decorative-number" aria-hidden="true" style="bottom:-1rem;right:0;">01</span>
                 </div>
                 <div class="split-right">
                     <div class="glass-card" data-tilt data-animate>
                         <div class="prose">
-                            <p>LOUWIETEC was founded on a simple observation: the enterprise software industry is built on a broken model.</p>
+                            <p data-i18n="about.story.p1">LOUWIETEC was founded on a simple observation: the enterprise software industry is built on a broken model.</p>
 
-                            <p>Companies pay millions for systems they hope will work. Consultants bill thousands of hours with no guarantee of results. Vendors lock clients into multi-year contracts before delivering a single euro of value.</p>
+                            <p data-i18n="about.story.p2">Companies pay millions for systems they hope will work. Consultants bill thousands of hours with no guarantee of results. Vendors lock clients into multi-year contracts before delivering a single euro of value.</p>
 
-                            <p><span class="prose-highlight">What if we took the risk instead?</span></p>
+                            <p><span class="prose-highlight" data-i18n="about.story.p3_highlight">What if we took the risk instead?</span></p>
 
-                            <p>What if we built the systems, deployed them, ran them — and only earned money when they actually delivered measurable savings? Not theoretical savings in a pitch deck. Real savings. Auditable. Transparent. Undeniable.</p>
+                            <p data-i18n="about.story.p4">What if we built the systems, deployed them, ran them — and only earned money when they actually delivered measurable savings? Not theoretical savings in a pitch deck. Real savings. Auditable. Transparent. Undeniable.</p>
 
-                            <p>That question became LOUWIETEC.</p>
+                            <p data-i18n="about.story.p5">That question became LOUWIETEC.</p>
 
-                            <p>Today, we build proprietary AI systems that we deploy directly into our clients' operations. We charge nothing upfront. We take a share of the value we create — and nothing more.</p>
+                            <p data-i18n="about.story.p6">Today, we build proprietary AI systems that we deploy directly into our clients' operations. We charge nothing upfront. We take a share of the value we create — and nothing more.</p>
 
-                            <p>Our model aligns us completely with our clients. When they grow, we grow. When they save, we save. There is no scenario where we succeed and our client doesn't.</p>
+                            <p data-i18n="about.story.p7">Our model aligns us completely with our clients. When they grow, we grow. When they save, we save. There is no scenario where we succeed and our client doesn't.</p>
 
-                            <p><span class="prose-highlight">That's not a sales pitch. That's arithmetic.</span></p>
+                            <p><span class="prose-highlight" data-i18n="about.story.p8_highlight">That's not a sales pitch. That's arithmetic.</span></p>
                         </div>
                     </div>
                 </div>
@@ -177,13 +184,13 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- 5. WHAT WE BELIEVE — Thesis Card -->
-        <section class="section-thesis" aria-label="What we believe">
+        <section class="section-thesis" aria-label="What we believe" data-i18n-attr="aria-label:aria.section.what_we_believe">
             <div class="glass-card thesis-card" data-tilt data-animate="fade-scale">
                 <span class="thesis-quote-mark" aria-hidden="true">&ldquo;</span>
-                <p class="thesis-text">We believe the next generation of enterprise technology will not be sold. <span style="color:var(--text-primary);font-weight:700;">It will be invested.</span></p>
-                <p class="thesis-text">Software licenses, hourly billing, retainer agreements — these are relics of an era where technology was a cost center. In the world we're building, technology is an investment with measurable returns.</p>
-                <p class="thesis-text">Every system we build is a bet on our client's success. We bet our engineering. We bet our infrastructure. We bet our time. And we only win when the numbers prove we were right.</p>
-                <p class="thesis-text"><span style="color:var(--text-primary);font-weight:700;">This is not altruism. This is conviction.</span> We build systems that work, and we're willing to prove it with our own economics.</p>
+                <p class="thesis-text" data-i18n-html="about.thesis.p1_html">We believe the next generation of enterprise technology will not be sold. <span style="color:var(--text-primary);font-weight:700;">It will be invested.</span></p>
+                <p class="thesis-text" data-i18n="about.thesis.p2">Software licenses, hourly billing, retainer agreements — these are relics of an era where technology was a cost center. In the world we're building, technology is an investment with measurable returns.</p>
+                <p class="thesis-text" data-i18n="about.thesis.p3">Every system we build is a bet on our client's success. We bet our engineering. We bet our infrastructure. We bet our time. And we only win when the numbers prove we were right.</p>
+                <p class="thesis-text" data-i18n-html="about.thesis.p4_html"><span style="color:var(--text-primary);font-weight:700;">This is not altruism. This is conviction.</span> We build systems that work, and we're willing to prove it with our own economics.</p>
             </div>
         </section>
 
@@ -191,31 +198,31 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- 7. BUILT FOR ENTERPRISE — Bento Grid -->
-        <section class="section-bento" aria-label="Built for enterprise">
+        <section class="section-bento" aria-label="Built for enterprise" data-i18n-attr="aria-label:aria.section.built_for_enterprise">
             <div class="section-heading section-heading--center">
-                <h2 data-reveal><span class="reveal-line">Built for enterprise.</span></h2>
-                <div class="gold-line" aria-hidden="true"></div>
+                <h2 data-reveal><span class="reveal-line" data-i18n="about.enterprise.card_heading">Built for enterprise.</span></h2>
+                <div class="accent-line" aria-hidden="true"></div>
             </div>
             <div class="enterprise-grid">
                 <div class="glass-card enterprise-card" data-tilt data-animate>
-                    <div class="gold-line" aria-hidden="true"></div>
-                    <h3>Proprietary infrastructure.</h3>
-                    <p>Every system runs on infrastructure we own and manage. No shared environments. No third-party dependencies your IT team needs to worry about. We handle security, uptime, and maintenance — you handle your business.</p>
+                    <div class="accent-line" aria-hidden="true"></div>
+                    <h3 data-i18n="about.enterprise.card1.title">Proprietary infrastructure.</h3>
+                    <p data-i18n="about.enterprise.card1.body">Every system runs on infrastructure we own and manage. No shared environments. No third-party dependencies your IT team needs to worry about. We handle security, uptime, and maintenance — you handle your business.</p>
                 </div>
                 <div class="glass-card enterprise-card" data-tilt data-animate>
-                    <div class="gold-line" aria-hidden="true"></div>
-                    <h3>European data compliance.</h3>
-                    <p>All data processing happens within EU jurisdictions. Full GDPR compliance is not an add-on — it's the foundation. We build privacy into the architecture, not as an afterthought.</p>
+                    <div class="accent-line" aria-hidden="true"></div>
+                    <h3 data-i18n="about.enterprise.card2.title">European data compliance.</h3>
+                    <p data-i18n="about.enterprise.card2.body">All data processing happens within EU jurisdictions. Full GDPR compliance is not an add-on — it's the foundation. We build privacy into the architecture, not as an afterthought.</p>
                 </div>
                 <div class="glass-card enterprise-card" data-tilt data-animate>
-                    <div class="gold-line" aria-hidden="true"></div>
-                    <h3>Seamless integration.</h3>
-                    <p>Our systems connect to your existing tools and workflows through secure APIs. No rip-and-replace. No disruption. We fit into your operations, not the other way around.</p>
+                    <div class="accent-line" aria-hidden="true"></div>
+                    <h3 data-i18n="about.enterprise.card3.title">Seamless integration.</h3>
+                    <p data-i18n="about.enterprise.card3.body">Our systems connect to your existing tools and workflows through secure APIs. No rip-and-replace. No disruption. We fit into your operations, not the other way around.</p>
                 </div>
                 <div class="glass-card enterprise-card" data-tilt data-animate>
-                    <div class="gold-line" aria-hidden="true"></div>
-                    <h3>Continuous optimization.</h3>
-                    <p>Deployment is not the finish line — it's the starting point. Our systems learn, adapt, and improve continuously. Every month, the savings grow. That's the compound effect of AI done right.</p>
+                    <div class="accent-line" aria-hidden="true"></div>
+                    <h3 data-i18n="about.enterprise.card4.title">Continuous optimization.</h3>
+                    <p data-i18n="about.enterprise.card4.body">Deployment is not the finish line — it's the starting point. Our systems learn, adapt, and improve continuously. Every month, the savings grow. That's the compound effect of AI done right.</p>
                 </div>
             </div>
         </section>
@@ -224,21 +231,21 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- 9. FOUNDER -->
-        <section class="section-founder" aria-label="Founder">
-            <p class="founder-name" data-reveal><span class="reveal-line">Louis Wieshofer</span></p>
-            <p class="founder-role" data-animate>Founder</p>
-            <div class="founder-gold-line" aria-hidden="true"></div>
-            <p class="founder-bio" data-animate>Built LOUWIETEC from the ground up — from the first line of code to the business model to the vision for what enterprise AI can become when aligned with client success.<br>Based in Vienna. Building for Europe.</p>
+        <section class="section-founder" aria-label="Founder" data-i18n-attr="aria-label:aria.section.founder">
+            <p class="founder-name" data-reveal><span class="reveal-line" data-i18n="about.founder.name">Louis Wieshofer</span></p>
+            <p class="founder-role" data-animate data-i18n="about.founder.role">Founder</p>
+            <div class="founder-accent-line" aria-hidden="true"></div>
+            <p class="founder-bio" data-animate data-i18n-html="about.founder.bio_html">Built LOUWIETEC from the ground up — from the first line of code to the business model to the vision for what enterprise AI can become when aligned with client success.<br>Based in Vienna. Building for Europe.</p>
         </section>
 
         <!-- 10. DIVIDER -->
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- 11. CTA -->
-        <section class="section-cta" aria-label="Call to action">
-            <h2 class="cta-heading" data-reveal><span class="reveal-line">Want to understand how we work?</span></h2>
+        <section class="section-cta" aria-label="Call to action" data-i18n-attr="aria-label:aria.section.call_to_action">
+            <h2 class="cta-heading" data-reveal><span class="reveal-line" data-i18n="about.cta.heading">Want to understand how we work?</span></h2>
             <div class="cta-links" data-animate>
-                <a href="approach.html" class="cta-link" data-magnetic>Our Approach &rarr;</a>
+                <a href="approach.html" class="cta-link" data-magnetic data-i18n="about.cta.link_approach">Our Approach &rarr;</a>
             </div>
         </section>
 
@@ -248,26 +255,29 @@
     <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
             <div class="footer-watermark" aria-hidden="true">
-                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300">
+                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300" data-i18n-attr="alt:image.alt_logo_label">
             </div>
             <div class="footer-monogram">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="24" height="24">
             </div>
             <div class="footer-links">
-                <a href="about.html" class="footer-link">About</a>
+                <a href="about.html" class="footer-link" data-i18n="footer.link_about">About</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="approach.html" class="footer-link">Approach</a>
+                <a href="approach.html" class="footer-link" data-i18n="footer.link_approach">Approach</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="principles.html" class="footer-link">Principles</a>
+                <a href="principles.html" class="footer-link" data-i18n="footer.link_principles">Principles</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="contact.html" class="footer-link" data-i18n="footer.link_contact">Contact</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="impressum.html" class="footer-link">Impressum</a>
+                <a href="privacy.html" class="footer-link" data-i18n="footer.link_privacy">Privacy</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="impressum.html" class="footer-link" data-i18n="footer.link_impressum">Impressum</a>
             </div>
-            <p class="footer-text">&copy; 2026 LOUWIETEC <span class="footer-separator">&middot;</span> Vienna, Austria</p>
+            <p class="footer-text"><span data-i18n="footer.copyright">&copy; 2026 LOUWIETEC</span> <span class="footer-separator">&middot;</span> <span data-i18n="footer.location">Vienna, Austria</span></p>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

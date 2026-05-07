@@ -58,7 +58,6 @@
 
 ### Page Header
 - **Titel:** Über uns
-- **Untertitel:** Ein AI-Unternehmen, gebaut für eine neue Ära der Enterprise-Partnerschaft.
 
 ### Our Story (01)
 - LOUWIETEC entstand aus einer einfachen Beobachtung: Die Enterprise-Software-Industrie basiert auf einem kaputten Modell.
@@ -105,16 +104,28 @@ Deployment ist nicht das Ziel — es ist der Startpunkt. Unsere Systeme lernen, 
 
 ### Page Header
 - **Titel:** Ansatz
-- **Untertitel:** Wie wir Enterprise-Ineffizienz in geteilten Wert verwandeln.
 
-### The Model (01)
-- Die meisten AI-Unternehmen verkaufen Lizenzen. Sie zahlen, ob die Software funktioniert oder nicht. Die meisten Beratungen verkaufen Stunden. Sie zahlen, ob deren Rat liefert oder nicht.
-- **Wir verkaufen weder das eine noch das andere.**
-- LOUWIETEC arbeitet auf reiner Outcome-Basis. Wir bauen und deployen AI-Systeme in Ihren Betrieb auf eigene Kosten. Wir verlangen nichts vorab — keine Lizenzgebühren, keine Implementierungskosten, keine Beratungs-Retainer.
-- Stattdessen legen wir mit Ihnen eine fixe Performance-Baseline auf Basis Ihrer historischen Daten fest — typischerweise der Durchschnitt der letzten sieben bis zehn Jahre. Diese Baseline ist gesperrt. Sie ändert sich nie. Sie wird nie nachverhandelt.
-- Alles, was unsere Systeme über dieser Baseline einsparen, wird geteilt. Sie behalten Ihren Anteil. Wir behalten unseren. Wenn unsere Systeme nichts einsparen, verdienen wir nichts.
-- Das bedeutet: Wir deployen nur Systeme, von denen wir überzeugt sind, dass sie liefern. Und es bedeutet: Jeder Euro Engineering, den wir investieren, ist eine Wette auf Ihren Erfolg.
-- **Das Ergebnis: null Risiko für Sie. Vollständige Ausrichtung zwischen uns.**
+### Model
+
+- **Heading:** Modell
+
+**Statement 01 — Lead**
+Jeder Euro Engineering, den wir investieren, ist eine Wette auf Ihren Erfolg.
+
+**Statement 01 — Follow**
+Wenn unsere Systeme nichts einsparen, verdienen wir nichts.
+
+**Statement 02 — Lead**
+Wir bauen keine Tools, die Sie mieten. Wir nehmen keine Projekte. Wir laufen keinen Sales-Funnel.
+
+**Statement 02 — Follow**
+Wir gehen Partnerschaften ein, oder gar nichts.
+
+**Statement 03 — Lead**
+Die meisten AI-Unternehmen verkaufen Lizenzen. Die meisten Beratungen verkaufen Stunden.
+
+**Statement 03 — Follow**
+Beide werden bezahlt, bevor das Ergebnis vorliegt.
 
 ### How It Works (02) — 4 Steps
 
@@ -130,26 +141,6 @@ Wir bauen maßgeschneiderte AI-Systeme, exakt auf Ihre Operationen zugeschnitten
 **04 — Teilen**
 Während unsere Systeme Einsparungen erzeugen, teilen wir den Wert. Transparentes Reporting. Auditierbare Metriken. Keine versteckten Gebühren, keine Überraschungen. Die Partnerschaft skaliert über die Zeit — je länger wir zusammenarbeiten, desto mehr Wert entsteht.
 
-### Capabilities (6 Karten)
-
-**Predictive Analysis**
-Unsere Systeme erkennen Muster in operativen Daten und sagen Probleme voraus, bevor sie teuer werden — von Wartungsausfällen bis Cashflow-Engpässen.
-
-**Process Automation**
-Wiederkehrende Aufgaben, die Ihr Team Zeit kosten, übernehmen AI-Systeme, die rund um die Uhr arbeiten. Schneller, günstiger, fehlerfrei.
-
-**Real-Time Decision Support**
-Dashboards und Alerts, die Ihrem Führungsteam die nötigen Informationen liefern, wenn sie sie brauchen — nicht im Monatsbericht, sondern im Moment.
-
-**Cost Intelligence**
-Granulare Sicht darauf, wo Geld ausgegeben wird, wo es verschwendet wird, und wo kleine Änderungen überdurchschnittliche Einsparungen erzeugen.
-
-**Customer Operations**
-AI-Systeme, die Kundenanfragen bearbeiten, Anliegen zuordnen und Probleme lösen — zu einem Bruchteil der Kosten und Zeit klassischer Support-Teams.
-
-**Portfolio Optimization**
-Für Organisationen, die Assets, Immobilien oder Investments verwalten: AI-Systeme, die Allokation optimieren, Performance vorhersagen und Chancen identifizieren.
-
 ### Key Figures
 (gleich wie Homepage)
 
@@ -164,7 +155,6 @@ Für Organisationen, die Assets, Immobilien oder Investments verwalten: AI-Syste
 
 ### Page Header
 - **Titel:** Prinzipien
-- **Untertitel:** Was wir glauben — und warum es zählt.
 
 ### Our Thesis
 - Die Enterprise-Software-Industrie basiert auf einem Modell, das den Anbietern dient, nicht den Kunden.
@@ -220,7 +210,6 @@ Mit den Unternehmen, mit denen wir zusammenarbeiten, arbeiten wir über Jahre. D
 
 ### Page Header
 - **Titel:** Kontakt aufnehmen.
-- **Untertitel:** Wir sind selektiv darin, mit wem wir arbeiten. Aber wenn wir uns verpflichten, dann vollständig.
 
 ### Contact Info
 - **Name:** Louis Wieshofer

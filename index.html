@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOUWIETEC — We make companies unstoppable.</title>
-    <meta name="description" content="LOUWIETEC — AI systems company founded by Louis Wieshofer in Vienna, Austria. We partner with enterprises on a pure outcome basis. Zero upfront. Shared savings. Predictive analysis, process automation, real-time decision support, cost intelligence.">
+    <title data-i18n="meta.home.title">LOUWIETEC — We make companies unstoppable.</title>
+    <meta name="description" content="LOUWIETEC — AI systems company founded by Louis Wieshofer in Vienna, Austria. We partner with enterprises on a pure outcome basis. Zero upfront. Shared savings. Predictive analysis, process automation, real-time decision support, cost intelligence." data-i18n-attr="content:meta.home.description">
     <meta name="keywords" content="LOUWIETEC, Louis Wieshofer, AI systems, enterprise AI, outcome-based AI, AI company Vienna, AI Unternehmen Wien, Vienna Austria, AI automation, process automation, predictive analysis, cost intelligence, AI consulting, AI founder Vienna, permanent infrastructure, long-term conviction">
     <meta name="author" content="Louis Wieshofer">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="Nx8f-p-YnHfAIOnSDoPXzmmVQS-dR2b8dbJ9BSJQcLA" />
     <meta name="theme-color" content="#0A0E1A">
     <link rel="canonical" href="https://louwietec.com/">
+    <link rel="alternate" hreflang="en" href="https://louwietec.com/">
+    <link rel="alternate" hreflang="de" href="https://louwietec.com/?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://louwietec.com/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louwietec.com/">
-    <meta property="og:title" content="LOUWIETEC — We make companies unstoppable.">
-    <meta property="og:description" content="AI systems company. Pure outcome basis. Vienna, Austria.">
+    <meta property="og:title" content="LOUWIETEC — We make companies unstoppable." data-i18n-attr="content:meta.home.og_title">
+    <meta property="og:description" content="AI systems company. Pure outcome basis. Vienna, Austria." data-i18n-attr="content:meta.home.og_description">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="LOUWIETEC">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LOUWIETEC — We make companies unstoppable.">
-    <meta name="twitter:description" content="AI systems company. Pure outcome basis. Vienna, Austria.">
+    <meta name="twitter:title" content="LOUWIETEC — We make companies unstoppable." data-i18n-attr="content:meta.home.twitter_title">
+    <meta name="twitter:description" content="AI systems company. Pure outcome basis. Vienna, Austria." data-i18n-attr="content:meta.home.twitter_description">
     <meta property="og:image" content="https://louwietec.com/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:image" content="https://louwietec.com/assets/og-image.png">
     <link rel="icon" type="image/png" href="assets/louwietec-brain.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter/Inter-VariableFont-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair/PlayfairDisplay-VariableFont-latin.woff2" crossorigin>
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
@@ -140,7 +142,7 @@
 </head>
 <body class="loading page-home">
 
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link" data-i18n="nav.skip_link">Skip to main content</a>
 
     <!-- Preloader (homepage only) -->
     <div class="preloader" id="preloader" aria-hidden="true">
@@ -164,18 +166,23 @@
     <div class="gradient-orb gradient-orb--3" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main_navigation">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
+            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home" data-i18n-attr="aria-label:nav.logo_home">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="32" height="32">
             </a>
             <div class="nav-links">
-                <a href="about.html" class="nav-link" data-magnetic>About</a>
-                <a href="approach.html" class="nav-link" data-magnetic>Approach</a>
-                <a href="principles.html" class="nav-link" data-magnetic>Principles</a>
-                <a href="contact.html" class="nav-link" data-magnetic>Contact</a>
+                <a href="about.html" class="nav-link" data-magnetic data-i18n="nav.about">About</a>
+                <a href="approach.html" class="nav-link" data-magnetic data-i18n="nav.approach">Approach</a>
+                <a href="principles.html" class="nav-link" data-magnetic data-i18n="nav.principles">Principles</a>
+                <a href="contact.html" class="nav-link" data-magnetic data-i18n="nav.contact">Contact</a>
             </div>
-            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+            <div class="lang-toggle" role="group" aria-label="Language">
+                <button type="button" class="lang-toggle__btn lang-toggle__btn--active" data-lang="en" aria-pressed="true">EN</button>
+                <span class="lang-toggle__separator" aria-hidden="true">/</span>
+                <button type="button" class="lang-toggle__btn" data-lang="de" aria-pressed="false">DE</button>
+            </div>
+            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false" data-i18n-attr="aria-label:nav.menu_button">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -186,22 +193,24 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <div class="mobile-menu-inner">
-            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="about.html" class="mobile-menu-link" data-i18n="nav.about">About</a>
             <div class="mobile-menu-divider"></div>
-            <a href="approach.html" class="mobile-menu-link">Approach</a>
+            <a href="approach.html" class="mobile-menu-link" data-i18n="nav.approach">Approach</a>
             <div class="mobile-menu-divider"></div>
-            <a href="principles.html" class="mobile-menu-link">Principles</a>
+            <a href="principles.html" class="mobile-menu-link" data-i18n="nav.principles">Principles</a>
             <div class="mobile-menu-divider"></div>
-            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="contact.html" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
             <div class="mobile-menu-divider"></div>
-            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small">Impressum</a>
+            <a href="privacy.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.privacy">Privacy</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.impressum">Impressum</a>
         </div>
     </div>
 
     <main id="main">
 
         <!-- HERO (100vh) -->
-        <section id="hero" class="hero" aria-label="Introduction">
+        <section id="hero" class="hero" aria-label="Introduction" data-i18n-attr="aria-label:aria.section.introduction">
             <canvas id="gradient-mesh" class="gradient-mesh-canvas" aria-hidden="true"></canvas>
             <div class="hero-brackets" aria-hidden="true">
                 <span></span><span></span><span></span><span></span>
@@ -210,11 +219,11 @@
                 <div class="hero-monogram monogram-breathing">
                     <canvas id="monogram-particles" width="200" height="200" aria-hidden="true"></canvas>
                     <div class="hero-monogram-glow">
-                        <img src="assets/louwietec-brain.png" alt="LOUWIETEC Monogram" width="160" height="160">
+                        <img src="assets/louwietec-brain.png" alt="LOUWIETEC Monogram" width="160" height="160" data-i18n-attr="alt:image.alt_monogram">
                     </div>
                 </div>
-                <div class="hero-gold-line" aria-hidden="true"></div>
-                <h1 class="hero-title" data-reveal><span class="reveal-line">LOUWIETEC</span></h1>
+                <div class="hero-accent-line" aria-hidden="true"></div>
+                <h1 class="hero-title" data-reveal><span class="reveal-line" data-i18n="home.hero.title">LOUWIETEC</span></h1>
                 <p class="hero-tagline" id="hero-tagline"></p>
             </div>
             <div class="scroll-indicator" aria-hidden="true">
@@ -228,18 +237,18 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- THESIS -->
-        <section class="section-thesis" aria-label="Thesis">
+        <section class="section-thesis" aria-label="Thesis" data-i18n-attr="aria-label:aria.section.thesis">
             <div class="glass-card thesis-card" data-tilt data-animate="fade-scale">
                 <span class="thesis-quote-mark" aria-hidden="true">&ldquo;</span>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">Most enterprises lose millions</span>
-                    <span class="reveal-line">to satisfactory performance.</span>
+                    <span class="reveal-line" data-i18n="home.thesis.line1">Most enterprises lose millions</span>
+                    <span class="reveal-line" data-i18n="home.thesis.line2">to satisfactory performance.</span>
                 </p>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">Not to failure — to the gap between</span>
-                    <span class="reveal-line">where they are and where they could be.</span>
+                    <span class="reveal-line" data-i18n="home.thesis.line3">Not to failure — to the gap between</span>
+                    <span class="reveal-line" data-i18n="home.thesis.line4">where they are and where they could be.</span>
                 </p>
-                <p class="thesis-accent" data-reveal><span class="reveal-line">We close that gap.</span></p>
+                <p class="thesis-accent" data-reveal><span class="reveal-line" data-i18n="home.thesis.line5">We close that gap.</span></p>
             </div>
         </section>
 
@@ -247,12 +256,12 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- WHAT WE ARE (short intro) -->
-        <section class="section-intro" aria-label="What we are">
+        <section class="section-intro" aria-label="What we are" data-i18n-attr="aria-label:aria.section.what_we_are">
             <div class="intro-text" data-animate>
-                <p>LOUWIETEC is an AI systems company that invests technology into enterprises and shares the outcome.</p>
-                <p class="mt-sm"><span class="prose-highlight">We build. We deploy. We optimize.</span><br>Our clients pay nothing upfront — only a share of the measurable savings we create.</p>
+                <p data-i18n="home.intro.p1">LOUWIETEC is an AI systems company that invests technology into enterprises and shares the outcome.</p>
+                <p class="mt-sm" data-i18n-html="home.intro.p2_html"><span class="prose-highlight">We build. We deploy. We optimize.</span><br>Our clients pay nothing upfront — only a share of the measurable savings we create.</p>
                 <p class="mt-md">
-                    <a href="about.html" class="cta-link" data-magnetic>Learn more about us &rarr;</a>
+                    <a href="about.html" class="cta-link" data-magnetic data-i18n="home.intro.cta">Learn more about us &rarr;</a>
                 </p>
             </div>
         </section>
@@ -261,32 +270,32 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- NUMBERS (6 items, 2x3 grid) -->
-        <section class="section-numbers" aria-label="Key figures">
+        <section class="section-numbers" aria-label="Key figures" data-i18n-attr="aria-label:aria.section.key_figures">
             <div class="glass-card numbers-card" data-tilt data-animate>
                 <div class="numbers-grid">
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="6">6</span>
-                        <span class="number-label">Systems built.</span>
+                        <span class="number-label" data-i18n="home.numbers.label_systems">Systems built.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="182">182</span>
-                        <span class="number-label">Features deployed.</span>
+                        <span class="number-label" data-i18n="home.numbers.label_features">Features deployed.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="160000" data-suffix="+">160,000+</span>
-                        <span class="number-label">Lines of code.</span>
+                        <span class="number-label" data-i18n="home.numbers.label_loc">Lines of code.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="0" data-suffix=" &euro;">0 &euro;</span>
-                        <span class="number-label">Required upfront.</span>
+                        <span class="number-label" data-i18n="home.numbers.label_upfront">Required upfront.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="24" data-suffix="h">24h</span>
-                        <span class="number-label">Response time.</span>
+                        <span class="number-label" data-i18n="home.numbers.label_response">Response time.</span>
                     </div>
                     <div class="number-item">
                         <span class="number-value number-reveal" data-target="50" data-suffix="/50">50/50</span>
-                        <span class="number-label">Shared outcome.</span>
+                        <span class="number-label" data-i18n="home.numbers.label_outcome">Shared outcome.</span>
                     </div>
                 </div>
             </div>
@@ -296,11 +305,11 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- CTA -->
-        <section class="section-cta" aria-label="Call to action">
-            <h2 class="cta-heading" data-reveal><span class="reveal-line">Ready to explore what's possible?</span></h2>
+        <section class="section-cta" aria-label="Call to action" data-i18n-attr="aria-label:aria.section.call_to_action">
+            <h2 class="cta-heading" data-reveal><span class="reveal-line" data-i18n="home.cta.heading">Ready to explore what's possible?</span></h2>
             <div class="cta-links" data-animate>
-                <a href="approach.html" class="cta-link" data-magnetic>Our Approach &rarr;</a>
-                <a href="contact.html" class="cta-link cta-link--gold" data-magnetic>Get in touch &rarr;</a>
+                <a href="approach.html" class="cta-link" data-magnetic data-i18n="home.cta.link_approach">Our Approach &rarr;</a>
+                <a href="contact.html" class="cta-link cta-link--accent" data-magnetic data-i18n="home.cta.link_contact">Get in touch &rarr;</a>
             </div>
         </section>
 
@@ -310,26 +319,29 @@
     <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
             <div class="footer-watermark" aria-hidden="true">
-                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300">
+                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300" data-i18n-attr="alt:image.alt_logo_label">
             </div>
             <div class="footer-monogram">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="24" height="24">
             </div>
             <div class="footer-links">
-                <a href="about.html" class="footer-link">About</a>
+                <a href="about.html" class="footer-link" data-i18n="footer.link_about">About</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="approach.html" class="footer-link">Approach</a>
+                <a href="approach.html" class="footer-link" data-i18n="footer.link_approach">Approach</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="principles.html" class="footer-link">Principles</a>
+                <a href="principles.html" class="footer-link" data-i18n="footer.link_principles">Principles</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="contact.html" class="footer-link" data-i18n="footer.link_contact">Contact</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="impressum.html" class="footer-link">Impressum</a>
+                <a href="privacy.html" class="footer-link" data-i18n="footer.link_privacy">Privacy</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="impressum.html" class="footer-link" data-i18n="footer.link_impressum">Impressum</a>
             </div>
-            <p class="footer-text">&copy; 2026 LOUWIETEC <span class="footer-separator">&middot;</span> Vienna, Austria</p>
+            <p class="footer-text"><span data-i18n="footer.copyright">&copy; 2026 LOUWIETEC</span> <span class="footer-separator">&middot;</span> <span data-i18n="footer.location">Vienna, Austria</span></p>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

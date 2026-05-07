@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principles — LOUWIETEC</title>
-    <meta name="description" content="Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds.">
+    <title data-i18n="meta.principles.title">Principles — LOUWIETEC</title>
+    <meta name="description" content="Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds." data-i18n-attr="content:meta.principles.description">
     <meta name="keywords" content="LOUWIETEC, Louis Wieshofer, principles, outcome-based AI, permanent infrastructure, long-term conviction, enterprise AI, Vienna Austria">
     <meta name="author" content="Louis Wieshofer">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#0A0E1A">
     <link rel="canonical" href="https://louwietec.com/principles.html">
+    <link rel="alternate" hreflang="en" href="https://louwietec.com/principles.html">
+    <link rel="alternate" hreflang="de" href="https://louwietec.com/principles.html?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://louwietec.com/principles.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louwietec.com/principles.html">
-    <meta property="og:title" content="Principles — LOUWIETEC">
-    <meta property="og:description" content="Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds.">
+    <meta property="og:title" content="Principles — LOUWIETEC" data-i18n-attr="content:meta.principles.og_title">
+    <meta property="og:description" content="Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds." data-i18n-attr="content:meta.principles.og_description">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="LOUWIETEC">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Principles — LOUWIETEC">
-    <meta name="twitter:description" content="Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds.">
+    <meta name="twitter:title" content="Principles — LOUWIETEC" data-i18n-attr="content:meta.principles.twitter_title">
+    <meta name="twitter:description" content="Outcome-based. Permanent infrastructure. Long-term conviction. The principles that drive everything LOUWIETEC builds." data-i18n-attr="content:meta.principles.twitter_description">
     <meta property="og:image" content="https://louwietec.com/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:image" content="https://louwietec.com/assets/og-image.png">
     <link rel="icon" type="image/png" href="assets/louwietec-brain.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter/Inter-VariableFont-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair/PlayfairDisplay-VariableFont-latin.woff2" crossorigin>
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
@@ -50,7 +52,7 @@
 </head>
 <body class="page-principles">
 
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link" data-i18n="nav.skip_link">Skip to main content</a>
 
     <!-- Custom cursor -->
     <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
@@ -64,18 +66,23 @@
     <div class="gradient-orb gradient-orb--3" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main_navigation">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home">
+            <a href="index.html" class="nav-logo" data-magnetic aria-label="LOUWIETEC Home" data-i18n-attr="aria-label:nav.logo_home">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="32" height="32">
             </a>
             <div class="nav-links">
-                <a href="about.html" class="nav-link" data-magnetic>About</a>
-                <a href="approach.html" class="nav-link" data-magnetic>Approach</a>
-                <a href="principles.html" class="nav-link" data-magnetic>Principles</a>
-                <a href="contact.html" class="nav-link" data-magnetic>Contact</a>
+                <a href="about.html" class="nav-link" data-magnetic data-i18n="nav.about">About</a>
+                <a href="approach.html" class="nav-link" data-magnetic data-i18n="nav.approach">Approach</a>
+                <a href="principles.html" class="nav-link" data-magnetic data-i18n="nav.principles">Principles</a>
+                <a href="contact.html" class="nav-link" data-magnetic data-i18n="nav.contact">Contact</a>
             </div>
-            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+            <div class="lang-toggle" role="group" aria-label="Language">
+                <button type="button" class="lang-toggle__btn lang-toggle__btn--active" data-lang="en" aria-pressed="true">EN</button>
+                <span class="lang-toggle__separator" aria-hidden="true">/</span>
+                <button type="button" class="lang-toggle__btn" data-lang="de" aria-pressed="false">DE</button>
+            </div>
+            <button class="nav-hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false" data-i18n-attr="aria-label:nav.menu_button">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -86,53 +93,54 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <div class="mobile-menu-inner">
-            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="about.html" class="mobile-menu-link" data-i18n="nav.about">About</a>
             <div class="mobile-menu-divider"></div>
-            <a href="approach.html" class="mobile-menu-link">Approach</a>
+            <a href="approach.html" class="mobile-menu-link" data-i18n="nav.approach">Approach</a>
             <div class="mobile-menu-divider"></div>
-            <a href="principles.html" class="mobile-menu-link">Principles</a>
+            <a href="principles.html" class="mobile-menu-link" data-i18n="nav.principles">Principles</a>
             <div class="mobile-menu-divider"></div>
-            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="contact.html" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
             <div class="mobile-menu-divider"></div>
-            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small">Impressum</a>
+            <a href="privacy.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.privacy">Privacy</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="impressum.html" class="mobile-menu-link mobile-menu-link--small" data-i18n="nav.impressum">Impressum</a>
         </div>
     </div>
 
     <main id="main">
 
         <!-- Page Header -->
-        <section class="page-header" aria-label="Page header">
-            <h1 class="page-header-title" data-reveal><span class="reveal-line">Principles</span></h1>
-            <p class="page-header-subtitle" data-reveal><span class="reveal-line">What we believe, and why it matters.</span></p>
+        <section class="page-header" aria-label="Page header" data-i18n-attr="aria-label:aria.section.page_header">
+            <h1 class="page-header-title" data-reveal><span class="reveal-line" data-i18n="principles.header.title">Principles</span></h1>
         </section>
 
         <!-- Divider -->
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- Our Thesis -->
-        <section class="section-thesis" aria-label="Our thesis">
+        <section class="section-thesis" aria-label="Our thesis" data-i18n-attr="aria-label:aria.section.our_thesis">
             <div class="glass-card thesis-card thesis-card--centered" data-tilt>
                 <span class="thesis-quote-mark" aria-hidden="true">&ldquo;</span>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">The enterprise software industry is built on a model that serves vendors, not clients.</span>
+                    <span class="reveal-line" data-i18n="principles.thesis.p1">The enterprise software industry is built on a model that serves vendors, not clients.</span>
                 </p>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">For decades, the standard has been: buy a license, hire consultants to implement it, pay for maintenance, and hope it works. If it doesn't? You've already paid. The vendor has your money. The consultants have moved on.</span>
+                    <span class="reveal-line" data-i18n="principles.thesis.p2">For decades, the standard has been: buy a license, hire consultants to implement it, pay for maintenance, and hope it works. If it doesn't? You've already paid. The vendor has your money. The consultants have moved on.</span>
                 </p>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">This model persists not because it's good — but because no one with the technical capability to challenge it had the business model to replace it.</span>
+                    <span class="reveal-line" data-i18n="principles.thesis.p3">This model persists not because it's good — but because no one with the technical capability to challenge it had the business model to replace it.</span>
                 </p>
-                <p class="thesis-accent" data-reveal><span class="reveal-line">Until now.</span></p>
+                <p class="thesis-accent" data-reveal><span class="reveal-line" data-i18n="principles.thesis.p4_accent">Until now.</span></p>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">Outcome-based technology partnerships flip the equation. The provider takes the risk. The client gets the reward. And the only way the provider earns is by delivering measurable, undeniable results.</span>
-                </p>
-                <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">We believe this model will become the standard for enterprise technology within a decade. Not because it's idealistic — but because it's economically superior for everyone involved.</span>
+                    <span class="reveal-line" data-i18n="principles.thesis.p5">Outcome-based technology partnerships flip the equation. The provider takes the risk. The client gets the reward. And the only way the provider earns is by delivering measurable, undeniable results.</span>
                 </p>
                 <p class="thesis-text" data-reveal>
-                    <span class="reveal-line">The companies that adopt it first will have a structural advantage. The companies that provide it will build the deepest client relationships in the industry.</span>
+                    <span class="reveal-line" data-i18n="principles.thesis.p6">We believe this model will become the standard for enterprise technology within a decade. Not because it's idealistic — but because it's economically superior for everyone involved.</span>
                 </p>
-                <p class="thesis-accent" data-reveal><span class="reveal-line">LOUWIETEC intends to be the company that provides it.</span></p>
+                <p class="thesis-text" data-reveal>
+                    <span class="reveal-line" data-i18n="principles.thesis.p7">The companies that adopt it first will have a structural advantage. The companies that provide it will build the deepest client relationships in the industry.</span>
+                </p>
+                <p class="thesis-accent" data-reveal><span class="reveal-line" data-i18n="principles.thesis.p8_accent">LOUWIETEC intends to be the company that provides it.</span></p>
             </div>
         </section>
 
@@ -140,30 +148,30 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- Three Principles — Horizontal Scroll -->
-        <section id="principles-scroll" class="section-principles" aria-label="Three principles">
+        <section id="principles-scroll" class="section-principles" aria-label="Three principles" data-i18n-attr="aria-label:aria.section.three_principles">
             <div class="principles-sticky">
                 <div class="principles-title-fixed">
-                    <h2>Principles</h2>
+                    <h2 data-i18n="principles.three.title_label">Principles</h2>
                     <div class="gradient-divider"></div>
                 </div>
                 <div class="horizontal-track" id="horizontal-track">
 
                     <div class="glass-card principle-card" data-tilt>
-                        <p class="principle-title">Outcome-based.</p>
-                        <div class="principle-gold-line"></div>
-                        <p class="principle-desc">We earn only when our clients do. This is not a pricing strategy — it's a statement about how we believe business should work.<br><br>When a technology partner's revenue is tied to their client's results, everything changes. The incentive to cut corners disappears. The pressure to deliver becomes existential. And the relationship transforms from vendor-client to genuine partnership.<br><br>Every system we build, every line of code we write, every optimization we deploy exists for one reason: to move a number that both parties are watching.<br><br><span class="prose-highlight">That's alignment you can't fake.</span></p>
+                        <p class="principle-title" data-i18n="principles.three.outcome.title">Outcome-based.</p>
+                        <div class="principle-accent-line"></div>
+                        <p class="principle-desc" data-i18n-html="principles.three.outcome.body_html">We earn only when our clients do. This is not a pricing strategy — it's a statement about how we believe business should work.<br><br>When a technology partner's revenue is tied to their client's results, everything changes. The incentive to cut corners disappears. The pressure to deliver becomes existential. And the relationship transforms from vendor-client to genuine partnership.<br><br>Every system we build, every line of code we write, every optimization we deploy exists for one reason: to move a number that both parties are watching.<br><br><span class="prose-highlight">That's alignment you can't fake.</span></p>
                     </div>
 
                     <div class="glass-card principle-card" data-tilt>
-                        <p class="principle-title">Permanent infrastructure.</p>
-                        <div class="principle-gold-line"></div>
-                        <p class="principle-desc">We don't build tools you rent. We build assets that compound.<br><br>Every system we deploy becomes part of your operational fabric. It learns your patterns. It adapts to your workflows. It gets better over time — not because we sell you an upgrade, but because the system itself evolves.<br><br>This is the difference between buying software and investing in infrastructure. Software depreciates. Infrastructure appreciates.<br><br><span class="prose-highlight">Our systems are designed to become more valuable the longer they run. Year one is good. Year three is transformative.</span></p>
+                        <p class="principle-title" data-i18n="principles.three.permanent.title">Permanent infrastructure.</p>
+                        <div class="principle-accent-line"></div>
+                        <p class="principle-desc" data-i18n-html="principles.three.permanent.body_html">We don't build tools you rent. We build assets that compound.<br><br>Every system we deploy becomes part of your operational fabric. It learns your patterns. It adapts to your workflows. It gets better over time — not because we sell you an upgrade, but because the system itself evolves.<br><br>This is the difference between buying software and investing in infrastructure. Software depreciates. Infrastructure appreciates.<br><br><span class="prose-highlight">Our systems are designed to become more valuable the longer they run. Year one is good. Year three is transformative.</span></p>
                     </div>
 
                     <div class="glass-card principle-card" data-tilt>
-                        <p class="principle-title">Long-term conviction.</p>
-                        <div class="principle-gold-line"></div>
-                        <p class="principle-desc">We don't take projects. We take partnerships.<br><br>In an industry obsessed with quarterly results and short sales cycles, we take a different approach. We choose our partners carefully. We invest heavily in each relationship. And we commit for years, not months.<br><br>This means we say no more often than we say yes. Not every company is the right fit. But when we commit, we commit completely — with our technology, our infrastructure, and our economics on the line.<br><br><span class="prose-highlight">The companies we work with, we work with for years. That's not a constraint. That's the point.</span></p>
+                        <p class="principle-title" data-i18n="principles.three.longterm.title">Long-term conviction.</p>
+                        <div class="principle-accent-line"></div>
+                        <p class="principle-desc" data-i18n-html="principles.three.longterm.body_html">We don't take projects. We take partnerships.<br><br>In an industry obsessed with quarterly results and short sales cycles, we take a different approach. We choose our partners carefully. We invest heavily in each relationship. And we commit for years, not months.<br><br>This means we say no more often than we say yes. Not every company is the right fit. But when we commit, we commit completely — with our technology, our infrastructure, and our economics on the line.<br><br><span class="prose-highlight">The companies we work with, we work with for years. That's not a constraint. That's the point.</span></p>
                     </div>
 
                 </div>
@@ -174,12 +182,12 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- A Note on Trust -->
-        <section class="section-trust" aria-label="A note on trust">
+        <section class="section-trust" aria-label="A note on trust" data-i18n-attr="aria-label:aria.section.a_note_on_trust">
             <div class="trust-content" data-animate>
-                <h2 data-reveal><span class="reveal-line">A note on trust.</span></h2>
-                <p>We ask our clients to trust us with their operations. In return, we put our own revenue at risk.</p>
-                <p>That exchange — <em style="color:var(--text-primary)">vulnerability for vulnerability</em> — is the foundation of every partnership we build. It's uncomfortable. It's unusual. And it's exactly why it works.</p>
-                <p>Trust isn't built by contracts. It's built by alignment. And no model aligns interests more completely than ours.</p>
+                <h2 data-reveal><span class="reveal-line" data-i18n="principles.trust.heading">A note on trust.</span></h2>
+                <p data-i18n="principles.trust.p1">We ask our clients to trust us with their operations. In return, we put our own revenue at risk.</p>
+                <p data-i18n-html="principles.trust.p2_html">That exchange — <em style="color:var(--text-primary)">vulnerability for vulnerability</em> — is the foundation of every partnership we build. It's uncomfortable. It's unusual. And it's exactly why it works.</p>
+                <p data-i18n="principles.trust.p3">Trust isn't built by contracts. It's built by alignment. And no model aligns interests more completely than ours.</p>
             </div>
         </section>
 
@@ -187,10 +195,10 @@
         <div class="section-divider" aria-hidden="true"></div>
 
         <!-- CTA -->
-        <section class="section-cta" aria-label="Call to action">
-            <h2 class="cta-heading" data-reveal><span class="reveal-line">Let's start a conversation.</span></h2>
+        <section class="section-cta" aria-label="Call to action" data-i18n-attr="aria-label:aria.section.call_to_action">
+            <h2 class="cta-heading" data-reveal><span class="reveal-line" data-i18n="principles.cta.heading">Let's start a conversation.</span></h2>
             <div class="cta-links" data-animate>
-                <a href="contact.html" class="cta-link cta-link--gold" data-magnetic>Get in touch &rarr;</a>
+                <a href="contact.html" class="cta-link cta-link--accent" data-magnetic data-i18n="principles.cta.link_contact">Get in touch &rarr;</a>
             </div>
         </section>
 
@@ -200,26 +208,29 @@
     <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
             <div class="footer-watermark" aria-hidden="true">
-                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300">
+                <img src="assets/louwietec-brain.png" alt="LOUWIETEC logo" width="300" height="300" data-i18n-attr="alt:image.alt_logo_label">
             </div>
             <div class="footer-monogram">
                 <img src="assets/louwietec-brain.png" alt="LOUWIETEC" width="24" height="24">
             </div>
             <div class="footer-links">
-                <a href="about.html" class="footer-link">About</a>
+                <a href="about.html" class="footer-link" data-i18n="footer.link_about">About</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="approach.html" class="footer-link">Approach</a>
+                <a href="approach.html" class="footer-link" data-i18n="footer.link_approach">Approach</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="principles.html" class="footer-link">Principles</a>
+                <a href="principles.html" class="footer-link" data-i18n="footer.link_principles">Principles</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="contact.html" class="footer-link" data-i18n="footer.link_contact">Contact</a>
                 <span class="footer-separator">&middot;</span>
-                <a href="impressum.html" class="footer-link">Impressum</a>
+                <a href="privacy.html" class="footer-link" data-i18n="footer.link_privacy">Privacy</a>
+                <span class="footer-separator">&middot;</span>
+                <a href="impressum.html" class="footer-link" data-i18n="footer.link_impressum">Impressum</a>
             </div>
-            <p class="footer-text">&copy; 2026 LOUWIETEC <span class="footer-separator">&middot;</span> Vienna, Austria</p>
+            <p class="footer-text"><span data-i18n="footer.copyright">&copy; 2026 LOUWIETEC</span> <span class="footer-separator">&middot;</span> <span data-i18n="footer.location">Vienna, Austria</span></p>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

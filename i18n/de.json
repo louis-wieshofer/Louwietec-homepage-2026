@@ -1,0 +1,354 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "approach": "Ansatz",
+    "principles": "Prinzipien",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "impressum": "Impressum",
+    "skip_link": "Zum Hauptinhalt springen",
+    "menu_button": "Menü",
+    "main_navigation": "Hauptnavigation",
+    "logo_home": "LOUWIETEC Startseite"
+  },
+  "footer": {
+    "copyright": "© 2026 LOUWIETEC",
+    "location": "Wien, Österreich",
+    "link_about": "Über uns",
+    "link_approach": "Ansatz",
+    "link_principles": "Prinzipien",
+    "link_contact": "Kontakt",
+    "link_privacy": "Datenschutz",
+    "link_impressum": "Impressum"
+  },
+  "aria": {
+    "section": {
+      "page_header": "Seitenkopf",
+      "page_introduction": "Seiten-Einführung",
+      "introduction": "Einführung",
+      "thesis": "These",
+      "what_we_are": "Was wir sind",
+      "key_figures": "Kennzahlen",
+      "call_to_action": "Handlungsaufforderung",
+      "our_story": "Unsere Geschichte",
+      "what_we_believe": "Was wir glauben",
+      "built_for_enterprise": "Für Enterprise gebaut",
+      "founder": "Founder",
+      "how_it_works": "Wie es funktioniert",
+      "three_principles": "Drei Prinzipien",
+      "our_thesis": "Unsere These",
+      "a_note_on_trust": "Ein Wort zum Vertrauen",
+      "contact_information": "Kontaktinformation",
+      "what_to_expect": "Was Sie erwartet",
+      "closing": "Abschluss"
+    }
+  },
+  "image": {
+    "alt_logo": "LOUWIETEC",
+    "alt_logo_label": "LOUWIETEC Logo",
+    "alt_loading": "LOUWIETEC lädt",
+    "alt_monogram": "LOUWIETEC Monogramm"
+  },
+  "home": {
+    "hero": {
+      "title": "LOUWIETEC",
+      "tagline": "We make companies unstoppable."
+    },
+    "thesis": {
+      "line1": "Die meisten Unternehmen verlieren Millionen",
+      "line2": "an akzeptable Performance.",
+      "line3": "Nicht durch Versagen — durch die Lücke zwischen",
+      "line4": "ihrem Ist-Zustand und dem, was möglich wäre.",
+      "line5": "Wir schließen diese Lücke."
+    },
+    "intro": {
+      "p1": "LOUWIETEC ist ein AI-Unternehmen, das Technologie in Unternehmen investiert und am Ergebnis beteiligt ist.",
+      "p2_html": "<span class=\"prose-highlight\">Wir bauen. Wir deployen. Wir optimieren.</span><br>Unsere Kunden zahlen nichts vorab — nur einen Anteil an den messbaren Einsparungen, die wir erzeugen.",
+      "cta": "Mehr über uns →"
+    },
+    "numbers": {
+      "label_systems": "Systeme gebaut.",
+      "label_features": "Features deployed.",
+      "label_loc": "Codezeilen.",
+      "label_upfront": "Vorabkosten.",
+      "label_response": "Reaktionszeit.",
+      "label_outcome": "Geteiltes Ergebnis."
+    },
+    "cta": {
+      "heading": "Bereit zu sehen, was möglich ist?",
+      "link_approach": "Unser Ansatz →",
+      "link_contact": "Kontakt aufnehmen →"
+    }
+  },
+  "about": {
+    "header": {
+      "title": "Über uns"
+    },
+    "story": {
+      "heading": "Unsere Geschichte",
+      "p1": "LOUWIETEC entstand aus einer einfachen Beobachtung: Die Enterprise-Software-Industrie basiert auf einem kaputten Modell.",
+      "p2": "Unternehmen zahlen Millionen für Systeme, von denen sie hoffen, dass sie funktionieren. Berater verrechnen tausende Stunden ohne Garantie für Ergebnisse. Anbieter ketten Kunden an mehrjährige Verträge, bevor auch nur ein Euro Wert geliefert wurde.",
+      "p3_highlight": "Was, wenn wir das Risiko übernehmen?",
+      "p4": "Was, wenn wir die Systeme bauen, deployen, betreiben — und nur dann verdienen, wenn sie messbare Einsparungen liefern? Keine theoretischen Einsparungen in einem Pitch-Deck. Echte Einsparungen. Auditierbar. Transparent. Unwiderlegbar.",
+      "p5": "Aus dieser Frage entstand LOUWIETEC.",
+      "p6": "Heute bauen wir proprietäre AI-Systeme, die wir direkt in den Betrieb unserer Kunden deployen. Wir verlangen nichts vorab. Wir nehmen einen Anteil am Wert, den wir schaffen — und nichts darüber hinaus.",
+      "p7": "Unser Modell richtet uns vollständig auf unsere Kunden aus. Wenn sie wachsen, wachsen wir. Wenn sie sparen, sparen wir. Es gibt kein Szenario, in dem wir gewinnen und unser Kunde nicht.",
+      "p8_highlight": "Das ist kein Verkaufsargument. Das ist Mathematik."
+    },
+    "thesis": {
+      "p1_html": "Wir glauben: Die nächste Generation der Enterprise-Technologie wird nicht verkauft. <span style=\"color:var(--text-primary);font-weight:700;\">Sie wird investiert.</span>",
+      "p2": "Software-Lizenzen, Stundenabrechnung, Retainer-Verträge — das sind Relikte einer Ära, in der Technologie ein Kostenfaktor war. In der Welt, die wir bauen, ist Technologie ein Investment mit messbarer Rendite.",
+      "p3": "Jedes System, das wir bauen, ist eine Wette auf den Erfolg unserer Kunden. Wir setzen unser Engineering ein. Wir setzen unsere Infrastruktur ein. Wir setzen unsere Zeit ein. Und wir gewinnen nur, wenn die Zahlen beweisen, dass wir richtig lagen.",
+      "p4_html": "<span style=\"color:var(--text-primary);font-weight:700;\">Das ist kein Altruismus. Das ist Überzeugung.</span> Wir bauen Systeme, die funktionieren — und sind bereit, das mit unserer eigenen Wirtschaftlichkeit zu beweisen."
+    },
+    "enterprise": {
+      "card_heading": "Für Enterprise gebaut.",
+      "card1": {
+        "title": "Proprietäre Infrastruktur.",
+        "body": "Jedes System läuft auf Infrastruktur, die wir selbst betreiben. Keine geteilten Umgebungen. Keine Drittanbieter-Abhängigkeiten, um die sich Ihre IT kümmern muss. Wir verantworten Sicherheit, Verfügbarkeit und Wartung — Sie verantworten Ihr Geschäft."
+      },
+      "card2": {
+        "title": "Europäische Datensouveränität.",
+        "body": "Sämtliche Datenverarbeitung findet innerhalb der EU statt. DSGVO-Konformität ist kein Add-on — sie ist das Fundament. Wir bauen Privatsphäre in die Architektur ein, nicht im Nachhinein."
+      },
+      "card3": {
+        "title": "Nahtlose Integration.",
+        "body": "Unsere Systeme verbinden sich über sichere APIs mit Ihren bestehenden Tools und Workflows. Kein Rip-and-Replace. Keine Disruption. Wir fügen uns in Ihren Betrieb ein, nicht umgekehrt."
+      },
+      "card4": {
+        "title": "Kontinuierliche Optimierung.",
+        "body": "Deployment ist nicht das Ziel — es ist der Startpunkt. Unsere Systeme lernen, passen sich an, verbessern sich kontinuierlich. Jeden Monat wachsen die Einsparungen. Das ist der Compounding-Effekt von AI, richtig umgesetzt."
+      }
+    },
+    "founder": {
+      "name": "Louis Wieshofer",
+      "role": "Founder",
+      "bio_html": "Hat LOUWIETEC von Grund auf aufgebaut — von der ersten Codezeile über das Geschäftsmodell bis zur Vision dessen, was Enterprise-AI werden kann, wenn sie auf den Erfolg des Kunden ausgerichtet ist.<br>Wien. Für Europa."
+    },
+    "cta": {
+      "heading": "Verstehen, wie wir arbeiten?",
+      "link_approach": "Unser Ansatz →"
+    }
+  },
+  "approach": {
+    "header": {
+      "title": "Ansatz"
+    },
+    "modell": {
+      "heading": "Modell",
+      "statement1": {
+        "lead": "Jeder Euro Engineering, den wir investieren, ist eine Wette auf Ihren Erfolg.",
+        "follow": "Wenn unsere Systeme nichts einsparen, verdienen wir nichts."
+      },
+      "statement2": {
+        "lead": "Wir bauen keine Tools, die Sie mieten. Wir nehmen keine Projekte. Wir laufen keinen Sales-Funnel.",
+        "follow": "Wir gehen Partnerschaften ein, oder gar nichts."
+      },
+      "statement3": {
+        "lead": "Die meisten AI-Unternehmen verkaufen Lizenzen. Die meisten Beratungen verkaufen Stunden.",
+        "follow": "Beide werden bezahlt, bevor das Ergebnis vorliegt."
+      }
+    },
+    "howitworks": {
+      "heading": "Wie es funktioniert",
+      "step1": {
+        "title": "Analysieren",
+        "body": "Wir führen eine tiefe Analyse Ihrer Operationen durch. Kein Oberflächen-Audit — eine forensische Untersuchung, wo Zeit, Geld und Ressourcen verloren gehen. Wir schauen auf Prozesse, die Ihr Team als „normal\" akzeptiert hat, und finden die Ineffizienzen, die im Verborgenen liegen."
+      },
+      "step2": {
+        "title": "Baseline festlegen",
+        "body": "Wir etablieren eine fixe Performance-Baseline aus Ihren historischen Daten. Diese Zahl repräsentiert Ihren Ist-Zustand — den Maßstab, an dem alle Verbesserungen gemessen werden. Einmal gesetzt, ändert sie sich nie. Das ist unsere Verpflichtung zur Fairness."
+      },
+      "step3": {
+        "title": "Deployen",
+        "body": "Wir bauen maßgeschneiderte AI-Systeme, exakt auf Ihre Operationen zugeschnitten, und deployen sie auf unserer eigenen Infrastruktur. Ihr Team muss keine Server verwalten, keine Modelle trainieren, keine AI-Engineers einstellen. Wir kümmern uns um alles."
+      },
+      "step4": {
+        "title": "Teilen",
+        "body": "Während unsere Systeme Einsparungen erzeugen, teilen wir den Wert. Transparentes Reporting. Auditierbare Metriken. Keine versteckten Gebühren, keine Überraschungen. Die Partnerschaft skaliert über die Zeit — je länger wir zusammenarbeiten, desto mehr Wert entsteht."
+      }
+    },
+    "numbers": {
+      "label_systems": "Systeme gebaut.",
+      "label_features": "Features deployed.",
+      "label_loc": "Codezeilen.",
+      "label_upfront": "Vorabkosten.",
+      "label_response": "Reaktionszeit.",
+      "label_outcome": "Geteiltes Ergebnis."
+    },
+    "cta": {
+      "heading": "Was uns antreibt, verstehen?",
+      "link_principles": "Unsere Prinzipien →",
+      "link_contact": "Kontakt aufnehmen →"
+    }
+  },
+  "principles": {
+    "header": {
+      "title": "Prinzipien"
+    },
+    "thesis": {
+      "p1": "Die Enterprise-Software-Industrie basiert auf einem Modell, das den Anbietern dient, nicht den Kunden.",
+      "p2": "Über Jahrzehnte hinweg war der Standard: Lizenz kaufen, Berater für die Implementierung anheuern, Wartung zahlen — und hoffen, dass es funktioniert. Wenn nicht? Sie haben bereits gezahlt. Der Anbieter hat Ihr Geld. Die Berater sind weitergezogen.",
+      "p3": "Dieses Modell hält sich nicht, weil es gut ist — sondern weil bisher niemand mit der technischen Fähigkeit, es herauszufordern, das Geschäftsmodell hatte, es zu ersetzen.",
+      "p4_accent": "Bis jetzt.",
+      "p5": "Outcome-basierte Technologie-Partnerschaften drehen die Gleichung um. Der Anbieter trägt das Risiko. Der Kunde bekommt den Ertrag. Und der Anbieter verdient nur dadurch, messbare, unwiderlegbare Ergebnisse zu liefern.",
+      "p6": "Wir glauben: Dieses Modell wird innerhalb eines Jahrzehnts zum Standard für Enterprise-Technologie. Nicht weil es idealistisch ist — sondern weil es ökonomisch überlegen ist, für alle Beteiligten.",
+      "p7": "Die Unternehmen, die es zuerst übernehmen, werden einen strukturellen Vorteil haben. Die Unternehmen, die es anbieten, werden die tiefsten Kundenbeziehungen der Branche aufbauen.",
+      "p8_accent": "LOUWIETEC will das Unternehmen sein, das es anbietet."
+    },
+    "three": {
+      "title_label": "Prinzipien",
+      "outcome": {
+        "title": "Outcome-basiert.",
+        "body_html": "Wir verdienen nur, wenn unsere Kunden verdienen. Das ist keine Preisstrategie — das ist ein Statement darüber, wie Geschäft unserer Überzeugung nach funktionieren sollte.<br><br>Wenn der Umsatz eines Technologie-Partners an die Ergebnisse seines Kunden gekoppelt ist, ändert sich alles. Der Anreiz, Abkürzungen zu nehmen, verschwindet. Der Druck zu liefern wird existenziell. Und die Beziehung verwandelt sich von Anbieter-Kunde in echte Partnerschaft.<br><br>Jedes System, das wir bauen, jede Codezeile, jede Optimierung — alles existiert aus einem Grund: eine Zahl zu bewegen, die beide Seiten beobachten.<br><br><span class=\"prose-highlight\">Diese Ausrichtung lässt sich nicht vortäuschen.</span>"
+      },
+      "permanent": {
+        "title": "Permanente Infrastruktur.",
+        "body_html": "Wir bauen keine Tools, die Sie mieten. Wir bauen Assets, die kompoundieren.<br><br>Jedes System, das wir deployen, wird Teil Ihres operativen Gewebes. Es lernt Ihre Muster. Es passt sich Ihren Workflows an. Es wird über die Zeit besser — nicht weil wir Ihnen ein Upgrade verkaufen, sondern weil das System selbst sich weiterentwickelt.<br><br>Das ist der Unterschied zwischen dem Kauf von Software und der Investition in Infrastruktur. Software verliert an Wert. Infrastruktur gewinnt an Wert.<br><br><span class=\"prose-highlight\">Unsere Systeme sind so gebaut, dass sie wertvoller werden, je länger sie laufen. Jahr eins ist gut. Jahr drei ist transformativ.</span>"
+      },
+      "longterm": {
+        "title": "Langfristige Überzeugung.",
+        "body_html": "Wir nehmen keine Projekte. Wir gehen Partnerschaften ein.<br><br>In einer Branche, die von Quartalszahlen und kurzen Sales-Zyklen besessen ist, wählen wir einen anderen Weg. Wir wählen unsere Partner sorgfältig. Wir investieren stark in jede Beziehung. Und wir verpflichten uns für Jahre, nicht Monate.<br><br>Das bedeutet: Wir sagen häufiger Nein als Ja. Nicht jedes Unternehmen ist die richtige Passform. Aber wenn wir uns verpflichten, dann vollständig — mit unserer Technologie, unserer Infrastruktur und unserer Wirtschaftlichkeit auf der Linie.<br><br><span class=\"prose-highlight\">Mit den Unternehmen, mit denen wir zusammenarbeiten, arbeiten wir über Jahre. Das ist kein Beiwerk. Das ist der Punkt.</span>"
+      }
+    },
+    "trust": {
+      "heading": "Ein Wort zum Vertrauen.",
+      "p1": "Wir bitten unsere Kunden, uns mit ihrem Betrieb zu vertrauen. Im Gegenzug setzen wir unseren eigenen Umsatz aufs Spiel.",
+      "p2_html": "Dieser Austausch — <em style=\"color:var(--text-primary)\">Verletzlichkeit gegen Verletzlichkeit</em> — ist das Fundament jeder Partnerschaft, die wir aufbauen. Es ist unbequem. Es ist ungewöhnlich. Und genau deshalb funktioniert es.",
+      "p3": "Vertrauen entsteht nicht durch Verträge. Es entsteht durch Ausrichtung. Und kein Modell richtet Interessen vollständiger aus als unseres."
+    },
+    "cta": {
+      "heading": "Lassen Sie uns ins Gespräch kommen.",
+      "link_contact": "Kontakt aufnehmen →"
+    }
+  },
+  "contact": {
+    "header": {
+      "title": "Kontakt aufnehmen."
+    },
+    "info": {
+      "name": "Louis Wieshofer",
+      "role": "Founder",
+      "location": "Wien, Österreich"
+    },
+    "expect": {
+      "heading": "Was Sie erwartet",
+      "item1": "Eine Antwort innerhalb von 24 Stunden.",
+      "item2": "Eine ehrliche Einschätzung, ob unser Modell zu Ihrer Situation passt.",
+      "item3": "Wenn ja — ein konkretes Angebot innerhalb von zwei Wochen."
+    },
+    "closing": {
+      "p1": "Wir machen keine Sales-Calls. Wir verschicken keine Broschüren. Wir führen ein Gespräch, wir hören zu — und wenn wir glauben, dass wir Ergebnisse liefern können, schlagen wir eine Partnerschaft vor.",
+      "p2_highlight": "Wenn nicht, sagen wir es Ihnen ehrlich."
+    }
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legal_header": "Angaben gemäß § 5 ECG:",
+    "name": "Louis Wieshofer",
+    "street": "Lange Gasse 65",
+    "location": "1080 Wien, Österreich",
+    "contact_header": "Kontakt:",
+    "email_label": "E-Mail:",
+    "email": "Office@louwietec.com",
+    "responsible_header": "Verantwortlich für den Inhalt:",
+    "responsible_person": "Louis Wieshofer",
+    "back_link": "← Zurück zur Hauptseite"
+  },
+  "privacy": {
+    "title": "Datenschutz",
+    "intro": "Diese Seite erklärt, wie LOUWIETEC mit personenbezogenen Daten umgeht, wenn Sie diese Website besuchen. Wir setzen keine Tracker ein, wir verwenden keine Marketing-Cookies und wir geben Besucherdaten nicht an Dritte weiter.",
+    "controller": {
+      "heading": "Verantwortlicher",
+      "body": "Louis Wieshofer, Lange Gasse 65, 1080 Wien, Österreich. E-Mail: Office@louwietec.com."
+    },
+    "hosting": {
+      "heading": "Hosting",
+      "body": "Diese Website wird auf GitHub Pages gehostet, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Die Auslieferung erfolgt über das globale CDN von GitHub, das Anfragen über Edge-Server außerhalb der EU – auch in den USA – routet. Damit ist eine Übermittlung personenbezogener Daten (IP-Adresse und Request-Metadaten) in die USA verbunden. Rechtsgrundlage der Übermittlung ist das EU-US Data Privacy Framework, unter dem GitHub zertifiziert ist, in Verbindung mit den Standardvertragsklauseln gemäß GitHubs Datenverarbeitungsvereinbarung. Datenschutzerklärung von GitHub: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+    },
+    "logs": {
+      "heading": "Server-Logdaten",
+      "body": "Beim Aufruf einer Seite erfasst die Infrastruktur von GitHub technische Informationen: IP-Adresse, Zeitstempel, aufgerufene URL, Referrer und User-Agent. Diese Daten werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zu Sicherheits- und Betriebszwecken verarbeitet. Die Aufbewahrungsdauer richtet sich nach den Richtlinien von GitHub, da wir den Server nicht selbst betreiben. Wir greifen nicht auf diese Logs zu und werten sie nicht aus."
+    },
+    "cookies": {
+      "heading": "Cookies und Local Storage",
+      "body": "Wir setzen keine Tracking-Cookies. Die Website nutzt einen einzigen localStorage-Eintrag namens „louwietec_lang\", um Ihre Sprachpräferenz (EN oder DE) zu speichern. Dieser Eintrag ist für den Sprachumschalter technisch erforderlich und wird mit niemandem geteilt."
+    },
+    "fonts": {
+      "heading": "Schriften",
+      "body": "Die Schriften Inter und Playfair Display werden direkt von dieser Domain ausgeliefert. Es werden keine Anfragen an Google Fonts oder andere externe Schriftdienste gestellt. Ihre IP-Adresse wird nicht für Typografie an Google übermittelt."
+    },
+    "thirdparty": {
+      "heading": "Externe Dienste",
+      "body": "Die Smooth-Scroll-Bibliothek Lenis wird über das jsDelivr-CDN (cdn.jsdelivr.net) geladen. Beim Abruf des Skripts wird Ihre IP-Adresse an jsDelivr übermittelt. Wir binden weder Analyse-Tools noch Werbenetzwerke noch Social-Media-Tracker noch sonstige Drittanbieter-Dienste ein."
+    },
+    "rights": {
+      "heading": "Ihre Rechte",
+      "body": "Nach DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch und Datenübertragbarkeit. Zur Ausübung dieser Rechte schreiben Sie an Office@louwietec.com. Sie haben außerdem das Recht, eine Beschwerde bei der österreichischen Datenschutzbehörde (DSB), Barichgasse 40-42, 1030 Wien, einzubringen."
+    },
+    "contact": {
+      "heading": "Kontakt für Datenschutzanfragen",
+      "body": "E-Mail an Office@louwietec.com. Wir antworten innerhalb von 30 Tagen, wie es Art. 12 Abs. 3 DSGVO vorsieht."
+    },
+    "lastupdated": "Stand: 7. Mai 2026.",
+    "back_link": "← Zurück zur Hauptseite"
+  },
+  "meta": {
+    "home": {
+      "title": "LOUWIETEC — We make companies unstoppable.",
+      "description": "LOUWIETEC — AI-Unternehmen, gegründet von Louis Wieshofer in Wien, Österreich. Wir gehen Partnerschaften mit Unternehmen auf reiner Outcome-Basis ein. Null Vorabkosten. Geteilte Einsparungen. Predictive Analysis, Process Automation, Real-Time Decision Support, Cost Intelligence.",
+      "og_title": "LOUWIETEC — We make companies unstoppable.",
+      "og_description": "AI-Unternehmen. Reine Outcome-Basis. Wien, Österreich.",
+      "twitter_title": "LOUWIETEC — We make companies unstoppable.",
+      "twitter_description": "AI-Unternehmen. Reine Outcome-Basis. Wien, Österreich."
+    },
+    "about": {
+      "title": "Über uns — LOUWIETEC",
+      "description": "LOUWIETEC ist ein AI-Unternehmen, gebaut für eine neue Ära der Enterprise-Partnerschaft. Null Vorabkosten. Geteilte Einsparungen. Wien, Österreich.",
+      "og_title": "Über uns — LOUWIETEC",
+      "og_description": "Ein AI-Unternehmen, gebaut für eine neue Ära der Enterprise-Partnerschaft.",
+      "twitter_title": "Über uns — LOUWIETEC",
+      "twitter_description": "Ein AI-Unternehmen, gebaut für eine neue Ära der Enterprise-Partnerschaft."
+    },
+    "approach": {
+      "title": "Ansatz — LOUWIETEC",
+      "description": "Wie LOUWIETEC arbeitet: Wir analysieren Operationen, etablieren eine fixe Baseline, deployen maßgeschneiderte AI-Systeme und teilen die Einsparungen. Null Risiko. Vollständige Ausrichtung.",
+      "og_title": "Ansatz — LOUWIETEC",
+      "og_description": "Wie LOUWIETEC arbeitet: Wir analysieren Operationen, etablieren eine fixe Baseline, deployen maßgeschneiderte AI-Systeme und teilen die Einsparungen. Null Risiko. Vollständige Ausrichtung.",
+      "twitter_title": "Ansatz — LOUWIETEC",
+      "twitter_description": "Wie LOUWIETEC arbeitet: Wir analysieren Operationen, etablieren eine fixe Baseline, deployen maßgeschneiderte AI-Systeme und teilen die Einsparungen. Null Risiko. Vollständige Ausrichtung."
+    },
+    "principles": {
+      "title": "Prinzipien — LOUWIETEC",
+      "description": "Outcome-basiert. Permanente Infrastruktur. Langfristige Überzeugung. Die Prinzipien hinter allem, was LOUWIETEC baut.",
+      "og_title": "Prinzipien — LOUWIETEC",
+      "og_description": "Outcome-basiert. Permanente Infrastruktur. Langfristige Überzeugung. Die Prinzipien hinter allem, was LOUWIETEC baut.",
+      "twitter_title": "Prinzipien — LOUWIETEC",
+      "twitter_description": "Outcome-basiert. Permanente Infrastruktur. Langfristige Überzeugung. Die Prinzipien hinter allem, was LOUWIETEC baut."
+    },
+    "contact": {
+      "title": "Kontakt — LOUWIETEC",
+      "description": "Kontaktieren Sie LOUWIETEC. Louis Wieshofer, Founder. Wien, Österreich. Wir antworten innerhalb von 24 Stunden.",
+      "og_title": "Kontakt — LOUWIETEC",
+      "og_description": "Kontaktieren Sie LOUWIETEC. Louis Wieshofer, Founder. Wien, Österreich.",
+      "twitter_title": "Kontakt — LOUWIETEC",
+      "twitter_description": "Kontaktieren Sie LOUWIETEC. Louis Wieshofer, Founder. Wien, Österreich."
+    },
+    "impressum": {
+      "title": "Impressum — LOUWIETEC",
+      "description": "Impressum — LOUWIETEC, Wien, Österreich.",
+      "og_title": "Impressum — LOUWIETEC",
+      "og_description": "Impressum — LOUWIETEC, Wien, Österreich.",
+      "twitter_title": "Impressum — LOUWIETEC",
+      "twitter_description": "Impressum — LOUWIETEC, Wien, Österreich."
+    },
+    "privacy": {
+      "title": "Datenschutz — LOUWIETEC",
+      "description": "Datenschutzerklärung von LOUWIETEC, Wien, Österreich.",
+      "og_title": "Datenschutz — LOUWIETEC",
+      "og_description": "Datenschutzerklärung von LOUWIETEC, Wien, Österreich.",
+      "twitter_title": "Datenschutz — LOUWIETEC",
+      "twitter_description": "Datenschutzerklärung von LOUWIETEC, Wien, Österreich."
+    }
+  }
+}

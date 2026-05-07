@@ -10,6 +10,22 @@
 (function () {
     'use strict';
 
+    /* ── Reduced-motion helper ─────────────────────────────── */
+
+    function prefersReducedMotion() {
+        return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    window.prefersReducedMotion = prefersReducedMotion;
+
+    if (window.matchMedia) {
+        var rmQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (rmQuery && typeof rmQuery.addEventListener === 'function') {
+            rmQuery.addEventListener('change', function () {
+                /* Best-effort hook: future inits read the live state via prefersReducedMotion(). */
+            });
+        }
+    }
+
     /* ── Preloader (homepage only) ─────────────────────────── */
 
     function Preloader(callback) {
@@ -88,6 +104,10 @@
 
     NetworkGrid.prototype.loop = function () {
         var self = this;
+        if (prefersReducedMotion()) {
+            if (this._reducedDrawn) return;
+            this._reducedDrawn = true;
+        }
         if (document.hidden) { requestAnimationFrame(function () { self.loop(); }); return; }
         var ctx = this.ctx, w = this.canvas.width, h = this.canvas.height;
         ctx.clearRect(0, 0, w, h);
@@ -148,6 +168,7 @@
 
         ctx.restore();
         ctx.globalAlpha = 1;
+        if (prefersReducedMotion()) return;
         requestAnimationFrame(function () { self.loop(); });
     };
 
@@ -180,6 +201,10 @@
 
     GradientMesh.prototype.loop = function () {
         var self = this;
+        if (prefersReducedMotion()) {
+            if (this._reducedDrawn) return;
+            this._reducedDrawn = true;
+        }
         if (document.hidden) { requestAnimationFrame(function () { self.loop(); }); return; }
         var ctx = this.ctx, w = this.canvas.width, h = this.canvas.height;
         ctx.clearRect(0, 0, w, h);
@@ -195,6 +220,7 @@
             ctx.fillStyle = grad;
             ctx.fillRect(0, 0, w, h);
         }
+        if (prefersReducedMotion()) return;
         requestAnimationFrame(function () { self.loop(); });
     };
 
@@ -220,6 +246,10 @@
 
     MonogramParticles.prototype.loop = function () {
         var self = this;
+        if (prefersReducedMotion()) {
+            if (this._reducedDrawn) return;
+            this._reducedDrawn = true;
+        }
         if (document.hidden) { requestAnimationFrame(function () { self.loop(); }); return; }
         var ctx = this.ctx, cx = this.canvas.width / 2, cy = this.canvas.height / 2;
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -232,12 +262,14 @@
             ctx.fillStyle = 'rgba(70,140,220,' + p.opacity + ')';
             ctx.fill();
         }
+        if (prefersReducedMotion()) return;
         requestAnimationFrame(function () { self.loop(); });
     };
 
     /* ── CustomCursor (V6: dot only, hover-grow) ─────────────── */
 
     function CustomCursor() {
+        if (prefersReducedMotion()) return;
         if (window.matchMedia('(pointer:coarse)').matches) return;
         var dot = document.getElementById('cursor-dot');
         if (!dot) return;
@@ -271,6 +303,7 @@
     /* ── CardTilt ───────────────────────────────────────────── */
 
     function CardTilt() {
+        if (prefersReducedMotion()) return;
         if (window.matchMedia('(pointer:coarse)').matches) return;
         document.querySelectorAll('[data-tilt]').forEach(function (card) {
             card.addEventListener('mousemove', function (e) {
@@ -287,6 +320,7 @@
     /* ── CardGlow ──────────────────────────────────────────── */
 
     function CardGlow() {
+        if (prefersReducedMotion()) return;
         if (window.matchMedia('(pointer:coarse)').matches) return;
         document.querySelectorAll('.glass-card').forEach(function (card) {
             card.addEventListener('mousemove', function (e) {
@@ -304,6 +338,7 @@
     /* ── MagneticElements ──────────────────────────────────── */
 
     function MagneticElements() {
+        if (prefersReducedMotion()) return;
         if (window.matchMedia('(pointer:coarse)').matches) return;
         document.querySelectorAll('[data-magnetic]').forEach(function (el) {
             el.addEventListener('mousemove', function (e) {
@@ -343,8 +378,21 @@
     function NumberReveal() {
         var els = document.querySelectorAll('.number-reveal');
         if (!els.length) return;
-        var revealed = false;
 
+        function setFinal(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            var suffix = el.getAttribute('data-suffix') || '';
+            el.classList.add('revealed');
+            if (isNaN(target) || target === 0) { el.textContent = '0' + suffix; return; }
+            el.textContent = target.toLocaleString('en-US') + suffix;
+        }
+
+        if (prefersReducedMotion()) {
+            els.forEach(setFinal);
+            return;
+        }
+
+        var revealed = false;
         var obs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting && !revealed) {
@@ -406,6 +454,18 @@
 
     function ScrollAnimations() {
         var reveals = document.querySelectorAll('[data-reveal]');
+        var anims = document.querySelectorAll('[data-animate]');
+        var dividers = document.querySelectorAll('.section-divider');
+        var accent = document.querySelector('.thesis-accent');
+
+        if (prefersReducedMotion()) {
+            reveals.forEach(function (el) { el.classList.add('in-view'); });
+            anims.forEach(function (el) { el.classList.add('in-view'); });
+            dividers.forEach(function (el) { el.classList.add('in-view'); });
+            if (accent) accent.classList.add('glow-pulse');
+            return;
+        }
+
         if (reveals.length) {
             var ro = new IntersectionObserver(function (entries) {
                 entries.forEach(function (e) {
@@ -415,7 +475,6 @@
             reveals.forEach(function (el) { ro.observe(el); });
         }
 
-        var anims = document.querySelectorAll('[data-animate]');
         if (anims.length) {
             var ao = new IntersectionObserver(function (entries) {
                 entries.forEach(function (e) {
@@ -430,7 +489,6 @@
             anims.forEach(function (el) { ao.observe(el); });
         }
 
-        var dividers = document.querySelectorAll('.section-divider');
         if (dividers.length) {
             var divo = new IntersectionObserver(function (entries) {
                 entries.forEach(function (e) {
@@ -440,7 +498,6 @@
             dividers.forEach(function (el) { divo.observe(el); });
         }
 
-        var accent = document.querySelector('.thesis-accent');
         if (accent) {
             var to = new IntersectionObserver(function (entries) {
                 if (entries[0].isIntersecting) { accent.classList.add('glow-pulse'); to.unobserve(accent); }
@@ -565,13 +622,7 @@
                 link.classList.add('nav-link--active');
             }
         });
-        // Also highlight in mobile menu
-        document.querySelectorAll('.mobile-menu-link').forEach(function (link) {
-            var href = link.getAttribute('href');
-            if (href === path || (path.endsWith(href))) {
-                link.style.color = 'var(--accent-gold)';
-            }
-        });
+        // Active mobile-menu-link inherits style from CSS — no JS-side color override.
     }
 
     /* ── Init ──────────────────────────────────────────────── */
@@ -582,8 +633,8 @@
         var lenisRef = { current: null };
         var horizontalScroll = null;
 
-        // 1. Lenis v1.3+
-        if (typeof Lenis !== 'undefined') {
+        // 1. Lenis v1.3+ (skip when user prefers reduced motion → native scroll fallback)
+        if (typeof Lenis !== 'undefined' && !prefersReducedMotion()) {
             var lenis = new Lenis({
                 duration: 1.2,
                 easing: function (t) { return 1 - Math.pow(2, -10 * t); },
@@ -647,9 +698,13 @@
 
                 new Preloader(function () {
                     if (hero) hero.classList.add('hero--animate');
-                    setTimeout(function () {
-                        new TypingEffect(tagline, 'We make companies unstoppable.', 55);
-                    }, 2000);
+                    if (prefersReducedMotion()) {
+                        if (tagline) tagline.textContent = 'We make companies unstoppable.';
+                    } else {
+                        setTimeout(function () {
+                            new TypingEffect(tagline, 'We make companies unstoppable.', 55);
+                        }, 2000);
+                    }
                     initShared();
                 });
             } else {
@@ -715,7 +770,11 @@
                 var tagline = document.getElementById('hero-tagline');
                 new Preloader(function () {
                     if (hero) hero.classList.add('hero--animate');
-                    setTimeout(function () { new TypingEffect(tagline, 'We make companies unstoppable.', 55); }, 2000);
+                    if (prefersReducedMotion()) {
+                        if (tagline) tagline.textContent = 'We make companies unstoppable.';
+                    } else {
+                        setTimeout(function () { new TypingEffect(tagline, 'We make companies unstoppable.', 55); }, 2000);
+                    }
                     initFallbackShared();
                 });
             } else {
