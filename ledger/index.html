@@ -182,6 +182,37 @@
 </div>
 </section>
 
+<section id="reservieren" class="sec sec--stage sec--tight" data-reserve-form hidden data-diff-ignore>
+<div class="container">
+<form class="form" data-form="reserve" data-endpoint="/reserve" data-mailto="reserve" data-produkt="ledger" novalidate aria-labelledby="res-h">
+<p class="kicker">Erstanwender-Programm</p>
+<h2 id="res-h" data-reserve-title>LEDGER — Erstanwender-Platz reservieren</h2>
+<p class="field__hint">Kostenlos und unverbindlich. Je Branche ist die Zahl der Erstanwender-Plätze begrenzt; ist das Kontingent voll, kommen Sie auf die Warteliste.</p>
+<input type="hidden" name="ts" value="">
+<input type="hidden" name="produkt" value="ledger">
+<div class="hp" aria-hidden="true"><label for="res-website">Website</label><input id="res-website" type="text" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="grid grid--2">
+<div class="field" data-field="firma"><label class="field__label" for="res-firma">Firma</label><input id="res-firma" name="firma" type="text" required autocomplete="organization" aria-describedby="res-firma-err"><p id="res-firma-err" class="field__error" data-error-for="firma" hidden></p></div>
+<div class="field" data-field="name"><label class="field__label" for="res-name">Name</label><input id="res-name" name="name" type="text" required autocomplete="name" aria-describedby="res-name-err"><p id="res-name-err" class="field__error" data-error-for="name" hidden></p></div>
+</div>
+<div class="field" data-field="email"><label class="field__label" for="res-email">E-Mail</label><input id="res-email" name="email" type="email" required autocomplete="email" aria-describedby="res-email-err"><p id="res-email-err" class="field__error" data-error-for="email" hidden></p></div>
+<div class="grid grid--2">
+<div class="field" data-field="edition"><label class="field__label" for="res-edition">Edition</label><select id="res-edition" name="edition" required aria-describedby="res-edition-err"><option value="">Bitte wählen</option><option value="starter">Starter</option><option value="pro">Pro</option><option value="group">Group</option></select><p id="res-edition-err" class="field__error" data-error-for="edition" hidden></p></div>
+<div class="field" data-field="branche"><label class="field__label" for="res-branche">Branche</label><select id="res-branche" name="branche" required aria-describedby="res-branche-err"><option value="">Bitte wählen</option><option value="banking">Banking</option><option value="versicherung">Versicherung</option><option value="leasing">Leasing</option><option value="inkasso">Inkasso</option><option value="gesundheit">Gesundheit</option><option value="energie">Energie</option><option value="industrie">Industrie</option><option value="handel">Handel</option><option value="dienstleistung">Dienstleistung</option><option value="oeffentlich">Öffentliche Hand</option><option value="sonstige">Sonstige</option></select><p id="res-branche-err" class="field__error" data-error-for="branche" hidden></p></div>
+</div>
+<fieldset data-field="betriebsort"><legend>Betriebsort</legend><div class="choice-row"><label class="choice"><input type="radio" name="betriebsort" value="cloud" required> LOUWIETEC-Cloud (EU)</label><label class="choice"><input type="radio" name="betriebsort" value="onprem"> Managed On-Prem in Ihrem Haus</label></div><p class="field__error" data-error-for="betriebsort" hidden></p></fieldset>
+<div class="field field--check" data-field="consent"><input id="res-consent" name="consent" type="checkbox" required aria-describedby="res-consent-err"><label for="res-consent">Ich habe den <a href="/rechtliches/datenschutz/">Datenschutzhinweis</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Reservierung einverstanden.</label><p id="res-consent-err" class="field__error" data-error-for="consent" hidden></p></div>
+<div class="btn-row"><button class="btn btn--primary" type="submit" data-submit>Kostenlos reservieren</button><a class="btn btn--secondary" data-form-mailto hidden href="mailto:office@louwietec.com">Per E-Mail reservieren</a></div>
+<p class="form__status" data-form-status role="status" aria-live="polite"></p>
+<div class="form__success" data-form-success hidden>
+<p><strong data-reserve-result></strong></p>
+<p class="mono small" data-reserve-meta></p>
+<div class="btn-row" data-reserve-next hidden></div>
+</div>
+</form>
+</div>
+</section>
+
 </main>
 <!-- @partial:footer -->
 <footer class="site-footer sec sec--stage" data-footer>
