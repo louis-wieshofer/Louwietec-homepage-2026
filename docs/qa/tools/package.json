@@ -10,7 +10,8 @@
     "make:brand": "node make-brand.mjs",
     "font:metrics": "node font-metrics.mjs",
     "check:copy": "node diff-copy.mjs",
-    "check:links": "node check-links.mjs"
+    "check:links": "node check-links.mjs",
+    "screens": "node screens.mjs"
   },
   "devDependencies": {
     "fontkit": "^2.0.4",
