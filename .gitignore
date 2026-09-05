@@ -1,1 +1,3 @@
 node_modules/
+docs/qa/tools/node_modules/
+.qa-scratch/
