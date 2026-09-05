@@ -33,6 +33,10 @@ html.js-motion [data-hero-headline].is-in [data-word] { opacity: 1; transform: n
 /* Papier schiebt sich über die Bühne (Transform von motion.js/ScrollTrigger gesteuert) */
 html.js-motion .sec--slide { will-change: transform; }
 
+/* Andocken: das Header-Logo glüht kurz, wenn das Hero-Icon ankommt */
+html.js-motion .brand__icon { transition: filter .4s ease-out; }
+html.js-motion .brand.is-docked .brand__icon { filter: drop-shadow(0 0 10px var(--signal)); }
+
 /* ---------- Beweiskette ---------- */
 html.js-motion .chain__link a {
   transition: border-color var(--snap-ms) var(--ease-snap), background-color var(--snap-ms) var(--ease-snap), box-shadow var(--snap-ms) var(--ease-snap);

@@ -30,6 +30,8 @@ function loadScript(src) {
 export function teardown() {
   if (torn) return; torn = true;
   document.documentElement.classList.remove('js-motion');
+  window.__lwMotionReady = false;
+  document.dispatchEvent(new CustomEvent('lw:motion-failed'));
   document.querySelectorAll(REVEAL_SEL).forEach((el) => el.classList.add('is-in'));
   try { stRef && stRef.killAll(); } catch (e) { /* egal */ }
   try { lenis && lenis.destroy(); } catch (e) { /* egal */ }
@@ -91,6 +93,8 @@ export async function init() {
     });
     setupSlides(gsap, ScrollTrigger);
     window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+    window.__lwMotionReady = true;
+    document.dispatchEvent(new CustomEvent('lw:motion-ready'));
   } catch (err) {
     console.warn('[LOUWIETEC] Bewegung deaktiviert:', err.message);
     teardown();

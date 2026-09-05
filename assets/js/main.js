@@ -12,8 +12,8 @@ const REGISTRY = [
   { when: () => motion() && document.querySelector('[data-chain]'), load: () => import('./chain.js'), critical: true },
   { when: () => motion() && document.querySelector('[data-hash-ticker]'), load: () => import('./ticker.js') },
   { when: () => motion(), load: () => import('./motion.js'), critical: true },
-  // ab Phase 4/5:
-  // { when: () => document.querySelector('[data-hero]'),         load: () => import('./hero.js') },
+  { when: () => motion() && document.querySelector('[data-hero]'), load: () => import('./hero.js') },
+  // ab Phase 5:
   // { when: () => document.querySelector('[data-form]'),         load: () => import('./forms.js') },
   // { when: () => document.querySelector('[data-product-cta]'),  load: () => import('./products.js') },
   // { when: () => document.querySelector('[data-jobs]'),         load: () => import('./jobs.js') },
