@@ -81,14 +81,20 @@ export async function init() {
     lenis.on('scroll', () => { ScrollTrigger.update(); document.dispatchEvent(new CustomEvent('lw:scroll')); });
     gsap.ticker.add((t) => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
-    document.addEventListener('lw:scrollto', (e) => lenis.scrollTo(e.detail.target, { offset: -headerH() }));
+    // Sanft zu einem Ziel: vorher die native Position übernehmen (Fokus-/Programm-Scrolls kommen erst mit dem
+    // nächsten scroll-Event bei Lenis an; sonst rechnet scrollTo(Element) vom veralteten Wert aus).
+    const smoothTo = (target) => {
+      if (Math.abs(lenis.actualScroll - lenis.animatedScroll) > 1) lenis.scrollTo(lenis.actualScroll, { immediate: true, force: true });
+      lenis.scrollTo(target, { offset: -headerH() });
+    };
+    document.addEventListener('lw:scrollto', (e) => smoothTo(e.detail.target));
     document.addEventListener('click', (e) => {
       const a = e.target.closest('a[href^="#"]');
       if (!a || a.closest('[data-chain-rail]')) return;
       const target = document.querySelector(a.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(target, { offset: -headerH() });
+      smoothTo(target);
       history.replaceState(null, '', a.getAttribute('href'));
     });
     setupSlides(gsap, ScrollTrigger);

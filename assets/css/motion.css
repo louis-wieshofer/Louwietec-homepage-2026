@@ -6,22 +6,15 @@
    und Keyframes; site.css rendert jeden Endzustand vollständig.
    ========================================================================== */
 
-/* ---------- Reveals: Inhalte treten beim Scrollen ein ---------- */
-html.js-motion .sec > .container > :not([data-hero-headline]):not(.hero__text):not(script),
-html.js-motion .sec .prose > *,
-html.js-motion .grid > *,
-html.js-motion .room-block > *,
-html.js-motion .faq > *,
-html.js-motion .insights > li,
-html.js-motion .hero__text > * {
+/* ---------- Reveals: Inhalte treten beim Scrollen ein ----------
+   Die Ziel-Liste steht in :where(), damit der Vorher-Zustand die Spezifität (0,1,1) behält und die
+   Zeigen-Regel html.js-motion .is-in (0,2,1) immer gewinnt. Dieselbe Liste steht als REVEAL_SEL in motion.js. */
+html.js-motion :where(.sec > .container > :not([data-hero-headline]):not(.hero__text):not(script), .sec .prose > *, .grid > *, .room-block > *, .faq > *, .insights > li, .hero__text > *) {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity .6s var(--ease-out) var(--reveal-delay, 0ms), transform .6s var(--ease-out) var(--reveal-delay, 0ms);
 }
-html.js-motion .is-in,
-html.js-motion .is-in > *,
-html.js-motion .sec > .container > .is-in,
-html.js-motion .hero__text > .is-in { opacity: 1; transform: none; }
+html.js-motion .is-in { opacity: 1; transform: none; }
 
 /* Hero-Headline Wort für Wort */
 html.js-motion [data-hero-headline] [data-word] {
