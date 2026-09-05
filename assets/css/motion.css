@@ -1,0 +1,8 @@
+/* ==========================================================================
+   LOUWIETEC — motion.css
+   Wird nur mit media="(prefers-reduced-motion: no-preference)" geladen und
+   greift nur unter html.js-motion. Hier stehen ausschließlich Vorher-Zustände
+   und Übergänge; site.css rendert jeden Endzustand vollständig.
+   Inhalt folgt in Phase 3 (Beweiskette, Lücke, Siegel, Raum-Motive, Countdown).
+   ========================================================================== */
+html.js-motion { scroll-behavior: auto; }
