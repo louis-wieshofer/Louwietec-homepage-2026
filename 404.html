@@ -109,6 +109,17 @@
 </div>
 </footer>
 <!-- /@partial:footer -->
+<script>
+/* Weiterleitungskarte für Alt-Adressen, die GitHub Pages nicht per Datei abfangen kann (/en/…, ?lang=…). */
+(function () {
+  var p = location.pathname.replace(/\/+$/, '').toLowerCase();
+  var map = { '/en': '/', '/en/index': '/', '/en/about': '/ueber-uns/', '/en/approach': '/', '/en/principles': '/ueber-uns/', '/en/contact': '/kontakt/', '/en/impressum': '/rechtliches/impressum/', '/en/privacy': '/rechtliches/datenschutz/' };
+  var key = p.replace(/\.html$/, '');
+  if (map[key]) { location.replace(map[key]); return; }
+  if (key.indexOf('/en/') === 0) { location.replace('/'); return; }
+  if (/[?&]lang=/.test(location.search) && p === '') { location.replace('/'); }
+})();
+</script>
 <!-- @partial:scripts -->
 <script type="module" src="/assets/js/main.js"></script>
 <!-- /@partial:scripts -->
