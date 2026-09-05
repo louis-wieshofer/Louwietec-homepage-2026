@@ -59,7 +59,12 @@ for (const f of others) {
       const src = m[1];
       if (!/^\/assets\/(brand|frames)\//.test(src) && !src.startsWith('data:')) fail(`${rel}: <img src="${src}"> außerhalb /assets/brand|frames/`);
     }
-    for (const m of s.matchAll(/<(?:script|link)\b[^>]*\s(?:src|href)="(https?:\/\/[^"]+)"/g)) fail(`${rel}: externer Verweis ${m[1]}`);
+    for (const m of s.matchAll(/<script\b[^>]*\ssrc="(https?:\/\/[^"]+)"/g)) fail(`${rel}: externes Skript ${m[1]}`);
+    for (const m of s.matchAll(/<link\b([^>]*)>/g)) {
+      const rel = (m[1].match(/\srel="([^"]+)"/) || [])[1] || '';
+      const href = (m[1].match(/\shref="(https?:\/\/[^"]+)"/) || [])[1];
+      if (href && /stylesheet|preload|modulepreload|icon|manifest|prefetch/.test(rel) && !/^https:\/\/(www\.)?louwietec\.com\//.test(href)) fail(`${path.relative(ROOT, f)}: externe Ressource ${href}`);
+    }
     if (!/<html[^>]*\slang="de"/.test(s)) fail(`${rel}: <html lang="de"> fehlt`);
   }
 }

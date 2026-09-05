@@ -12,7 +12,10 @@
     "check:copy": "node diff-copy.mjs",
     "check:links": "node check-links.mjs",
     "screens": "node screens.mjs",
-    "make:frames": "node make-dummy-frames.mjs"
+    "make:frames": "node make-dummy-frames.mjs",
+    "check:contract": "node check-contract.mjs",
+    "test:integration": "node integration.spec.mjs",
+    "test:integration:live": "LW_LIVE=1 node integration.spec.mjs"
   },
   "devDependencies": {
     "fontkit": "^2.0.4",
