@@ -1,8 +1,136 @@
 /* ==========================================================================
    LOUWIETEC — motion.css
    Wird nur mit media="(prefers-reduced-motion: no-preference)" geladen und
-   greift nur unter html.js-motion. Hier stehen ausschließlich Vorher-Zustände
-   und Übergänge; site.css rendert jeden Endzustand vollständig.
-   Inhalt folgt in Phase 3 (Beweiskette, Lücke, Siegel, Raum-Motive, Countdown).
+   greift nur unter html.js-motion (gesetzt von boot.js, entfernt von motion.js
+   bei jedem Fehler). Hier stehen ausschließlich Vorher-Zustände, Übergänge
+   und Keyframes; site.css rendert jeden Endzustand vollständig.
    ========================================================================== */
-html.js-motion { scroll-behavior: auto; }
+
+/* ---------- Reveals: Inhalte treten beim Scrollen ein ---------- */
+html.js-motion .sec > .container > :not([data-hero-headline]):not(.hero__text):not(script),
+html.js-motion .sec .prose > *,
+html.js-motion .grid > *,
+html.js-motion .room-block > *,
+html.js-motion .faq > *,
+html.js-motion .insights > li,
+html.js-motion .hero__text > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s var(--ease-out) var(--reveal-delay, 0ms), transform .6s var(--ease-out) var(--reveal-delay, 0ms);
+}
+html.js-motion .is-in,
+html.js-motion .is-in > *,
+html.js-motion .sec > .container > .is-in,
+html.js-motion .hero__text > .is-in { opacity: 1; transform: none; }
+
+/* Hero-Headline Wort für Wort */
+html.js-motion [data-hero-headline] [data-word] {
+  display: inline-block; opacity: 0; transform: translateY(.28em);
+  transition: opacity .55s var(--ease-out) var(--word-delay, 0ms), transform .55s var(--ease-out) var(--word-delay, 0ms);
+}
+html.js-motion [data-hero-headline].is-in [data-word] { opacity: 1; transform: none; }
+
+/* Papier schiebt sich über die Bühne (Transform von motion.js/ScrollTrigger gesteuert) */
+html.js-motion .sec--slide { will-change: transform; }
+
+/* ---------- Beweiskette ---------- */
+html.js-motion .chain__link a {
+  transition: border-color var(--snap-ms) var(--ease-snap), background-color var(--snap-ms) var(--ease-snap), box-shadow var(--snap-ms) var(--ease-snap);
+}
+html.js-motion .chain__link.is-snap a { box-shadow: 0 0 0 1px var(--ink), 0 0 0 3px var(--signal), 0 0 22px var(--signal); }
+html.js-motion .chain__link.is-gap a { border-top-color: transparent; animation: chain-gap 1.6s ease-in-out infinite; }
+html.js-motion .chain__link.is-lit a { background: var(--signal); box-shadow: 0 0 0 1px var(--ink), 0 0 18px var(--signal); }
+html.js-motion .chain__link.is-lit.is-closed a { transition-duration: 240ms; }
+@keyframes chain-gap { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+html.js-motion .chain__progress { transition: background .2s linear; }
+@media (max-width: 63.9375rem) {
+  html.js-motion .chain__link a { transition-duration: var(--snap-ms-mobile); }
+  html.js-motion .chain__link.is-snap a { box-shadow: 0 0 0 1px var(--ink), 0 0 0 2px var(--signal); }
+}
+
+/* ---------- Siegel: fällt mit Stempel-Bewegung ---------- */
+html.js-motion .seal { opacity: 0; transform: rotate(-6deg) scale(1.4); }
+html.js-motion .seal.is-stamped {
+  opacity: 1; transform: rotate(-3deg) scale(1);
+  transition: transform 260ms var(--ease-snap), opacity 120ms ease-out;
+}
+
+/* ---------- Countdown: Einrasten ---------- */
+html.js-motion .count [data-countdown-big] { display: inline-block; transition: text-shadow .3s ease-out; }
+html.js-motion .count.is-snapped [data-countdown-big] { text-shadow: 0 0 28px rgba(79, 141, 255, .55); }
+
+/* ---------- Hash-Ticker ---------- */
+html.js-motion .hash-ticker span { transition: opacity .5s ease-out, transform .5s var(--ease-out); }
+html.js-motion .hash-ticker span.is-new { opacity: 0; transform: translateY(6px); }
+
+/* ---------- Miniaturen (Start) ---------- */
+html.js-motion .minichain__link { transition: border-color 160ms var(--ease-snap), background-color 160ms var(--ease-snap), color 160ms, box-shadow 160ms; }
+html.js-motion .minichain__link.is-snap { box-shadow: 0 0 0 2px var(--signal), 0 0 14px var(--signal); }
+html.js-motion .dotgrid__pattern circle, html.js-motion .dotgrid__card { transform-box: fill-box; transform-origin: center; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle { animation: dot-in .6s var(--ease-out) both; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle:nth-child(2) { animation-delay: 60ms; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle:nth-child(3) { animation-delay: 120ms; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle:nth-child(4) { animation-delay: 180ms; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle:nth-child(5) { animation-delay: 240ms; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle:nth-child(6) { animation-delay: 300ms; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle:nth-child(7) { animation-delay: 360ms; }
+html.js-motion .demo.is-replay .dotgrid__pattern circle:nth-child(8) { animation-delay: 420ms; }
+html.js-motion .demo.is-replay .dotgrid__card { animation: card-rise .7s var(--ease-out) .5s both; }
+@keyframes dot-in { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: none; } }
+@keyframes card-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+html.js-motion .takt li { transition: background-color 140ms var(--ease-snap), height 140ms var(--ease-snap); }
+html.js-motion .takt__check svg path { stroke-dasharray: 32; stroke-dashoffset: 32; transition: stroke-dashoffset .5s var(--ease-out) .1s, stroke .2s; }
+html.js-motion .takt li.is-done.takt__check svg path { stroke-dashoffset: 0; }
+
+/* ---------- LEDGER ---------- */
+html.js-motion .ledgerchain li { transition: opacity .35s ease-out, transform .35s var(--ease-out), border-color .25s, color .25s; }
+html.js-motion .ledgerchain li.is-new { opacity: 0; transform: translateY(10px); }
+html.js-motion .ledgerchain li.is-out { opacity: 0; transform: translateX(-12px); }
+html.js-motion .tamper__status { transition: color .25s; }
+html.js-motion [data-demo="ledger-report"] .report-doc { clip-path: inset(0 0 100% 0); transition: clip-path .7s var(--ease-out); }
+html.js-motion [data-demo="ledger-report"].is-in .report-doc { clip-path: inset(0 0 0 0); }
+html.js-motion [data-demo="ledger-report"].is-in .report-doc:nth-child(2) { transition-delay: .25s; }
+html.js-motion [data-demo="ledger-report"].is-in .report-doc:nth-child(3) { transition-delay: .5s; }
+html.js-motion [data-demo="ledger-report"] .stamp--verified { opacity: 0; transform: rotate(-2deg) scale(1.3); transition: opacity .15s .95s, transform .26s var(--ease-snap) .95s; }
+html.js-motion [data-demo="ledger-report"].is-in .stamp--verified { opacity: 1; transform: rotate(-2deg) scale(1); }
+
+/* ---------- LENS ---------- */
+html.js-motion [data-demo="lens-grid"] .dotgrid__pattern circle { opacity: 0; transform: scale(.2); transform-box: fill-box; transform-origin: center; transition: opacity .4s var(--ease-out), transform .4s var(--ease-out); }
+html.js-motion [data-demo="lens-grid"].is-in .dotgrid__pattern circle { opacity: 1; transform: none; }
+html.js-motion [data-demo="lens-grid"].is-in .dotgrid__pattern circle:nth-child(n+2) { transition-delay: calc(60ms * (var(--i, 1))); }
+html.js-motion [data-demo="lens-grid"] .dotgrid__cards > g { opacity: 0; transform: translateY(16px); transition: opacity .5s var(--ease-out), transform .5s var(--ease-out); }
+html.js-motion [data-demo="lens-grid"].is-in .dotgrid__cards > g { opacity: 1; transform: none; }
+html.js-motion [data-demo="lens-grid"].is-in .dotgrid__cards > g:nth-child(1) { transition-delay: .7s; }
+html.js-motion [data-demo="lens-grid"].is-in .dotgrid__cards > g:nth-child(2) { transition-delay: .95s; }
+html.js-motion [data-demo="lens-grid"].is-in .dotgrid__cards > g:nth-child(3) { transition-delay: 1.2s; }
+html.js-motion .insights > li { transition-delay: var(--reveal-delay, 0ms); }
+html.js-motion [data-demo="lens-trend"] .tip { stroke-dasharray: 160; stroke-dashoffset: 160; transition: stroke-dashoffset 1s var(--ease-out) .3s; }
+html.js-motion [data-demo="lens-trend"].is-in .tip { stroke-dashoffset: 0; }
+html.js-motion [data-demo="lens-trend"] .marker, html.js-motion [data-demo="lens-trend"] .alarm-chip { opacity: 0; transition: opacity .3s 1.3s; }
+html.js-motion [data-demo="lens-trend"].is-in .marker { opacity: 1; animation: pulse 1.6s ease-in-out 1.6s 3; transform-box: fill-box; transform-origin: center; }
+html.js-motion [data-demo="lens-trend"].is-in .alarm-chip { opacity: 1; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.6); } }
+
+/* ---------- FORGE ---------- */
+html.js-motion [data-demo="forge-dokument"] .automat__station { opacity: .35; transition: opacity .35s, border-color .35s, background-color .35s; }
+html.js-motion [data-demo="forge-dokument"].is-in .automat__station { opacity: 1; }
+html.js-motion [data-demo="forge-dokument"].is-in .automat__station:nth-child(2) { transition-delay: .3s; }
+html.js-motion [data-demo="forge-dokument"].is-in .automat__station:nth-child(3) { transition-delay: .6s; }
+html.js-motion [data-demo="forge-dokument"].is-in .automat__station:nth-child(4) { transition-delay: .9s; }
+html.js-motion [data-demo="forge-angebot"] .fold span:last-child { transform: perspective(600px) rotateX(-70deg); transform-origin: left center; opacity: .4; transition: transform .8s var(--ease-out) .2s, opacity .6s .2s; }
+html.js-motion [data-demo="forge-angebot"].is-in .fold span:last-child { transform: none; opacity: 1; }
+html.js-motion [data-demo="forge-report"] .bars-h span { transform: scaleY(0); transform-origin: bottom; transition: transform .6s var(--ease-out); }
+html.js-motion [data-demo="forge-report"].is-in .bars-h span { transform: none; }
+html.js-motion [data-demo="forge-report"].is-in .bars-h span:nth-child(2) { transition-delay: .1s; }
+html.js-motion [data-demo="forge-report"].is-in .bars-h span:nth-child(3) { transition-delay: .2s; }
+html.js-motion [data-demo="forge-report"].is-in .bars-h span:nth-child(4) { transition-delay: .3s; }
+html.js-motion [data-demo="forge-report"].is-in .bars-h span:nth-child(5) { transition-delay: .4s; }
+html.js-motion [data-demo="forge-report"].is-in .bars-h span:nth-child(6) { transition-delay: .5s; }
+html.js-motion [data-demo="forge-mail"] .mail__draft { opacity: 0; transform: translateY(8px); transition: opacity .5s .4s, transform .5s var(--ease-out) .4s; }
+html.js-motion [data-demo="forge-mail"].is-in .mail__draft { opacity: 1; transform: none; }
+
+/* ---------- Investoren: drei Sätze nacheinander ---------- */
+html.js-motion .these__s { display: block; opacity: 0; transform: translateY(12px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+html.js-motion [data-demo="invest-thesen"].is-in .these__s { opacity: 1; transform: none; }
+html.js-motion [data-demo="invest-thesen"].is-in .these__s:nth-child(2) { transition-delay: .6s; }
+html.js-motion [data-demo="invest-thesen"].is-in .these__s:nth-child(3) { transition-delay: 1.2s; }
