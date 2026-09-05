@@ -1,0 +1,18 @@
+{
+  "name": "louwietec-qa-tools",
+  "private": true,
+  "type": "module",
+  "description": "Dev-only Prüf- und Erzeugungsskripte für die LOUWIETEC-Website. Erzeugen keine Seiten; die Site braucht keinen Build.",
+  "scripts": {
+    "check:partials": "node check-partials.mjs",
+    "fix:partials": "node check-partials.mjs --fix",
+    "check:hausgesetze": "node check-verify-green.mjs",
+    "make:brand": "node make-brand.mjs",
+    "font:metrics": "node font-metrics.mjs"
+  },
+  "devDependencies": {
+    "fontkit": "^2.0.4",
+    "png-to-ico": "3.0.2",
+    "sharp": "0.35.4"
+  }
+}
