@@ -21,6 +21,7 @@ Playwright + Chromium werden aus der Umgebung verwendet (kein Download nötig).
 | `diff-copy.mjs` (`--page /ledger/`, `--expected`) | Wortgleichheit: Texte-Dokument gegen die zehn Inhaltsseiten; Extra-Zeilen nur per `docs/qa/extra-text-allowlist.txt`; Report `docs/qa/copy-diff/<datum>/` | Phase 2 ff. |
 | `check-links.mjs` | Interne Verweise, Anker, Manifest-Icons, CSS-`url()` gegen das Dateisystem; Report `docs/qa/links/<datum>/` | Phase 2 ff. |
 | `screens.mjs` (`--shots`, `--video`) | Screenshots aller Seiten (Desktop/Mobil, Bewegung/Reduced-Motion) und Scroll-Video der Startseite; Report `docs/qa/screens/<datum>/report.md`; Server auf Port 8080 nötig | Phase 3 ff. |
+| `make-dummy-frames.mjs [version]` | Test-Bildsequenz (30 Frames 16:9 + 9:16, WebP) und `manifest.json` für die Frame-Scrub-Schnittstelle des Heros | Phase 4 |
 | `make-brand.mjs` | Marken-Assets aus den Root-Logos (transparente Varianten, Weiß, Tinte, Favicons, Manifest) | Phase 1 |
 | `font-metrics.mjs` | Fallback-Metriken der Schriften und Glyph-Abdeckung | Phase 1 |
 
