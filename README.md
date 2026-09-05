@@ -4,7 +4,7 @@ Quellcode der Website von LOUWIETEC (Wien) unter `https://louwietec.com`.
 Reines HTML, CSS und JavaScript **ohne Build-Schritt**: GitHub Pages liefert den Root des
 Branches `main` unverändert aus. Was im Repo liegt, ist das, was ausgeliefert wird.
 
-Stand: Phase 1 (Fundament) auf `feature/website-v2`, siehe [Phasenstand](#phasenstand).
+Stand: Phasen 0 bis 5 abgeschlossen auf `feature/website-v2` (QA und SEO/GEO folgen), siehe [Phasenstand](#phasenstand).
 Backend-Code gehört nicht in dieses Repo; die Website spricht den getrennten Backend-Dienst
 ausschließlich über den [Schnittstellen-Vertrag](docs/CONTRACT.md) an.
 
@@ -24,43 +24,46 @@ Kurzfassung, Details und Belege in [docs/HOSTING.md](docs/HOSTING.md):
 
 ## Repo-Struktur
 
-### Ist-Stand (Phase 1)
+### Ist-Stand (nach Phase 5)
 
 ```
-CNAME  .nojekyll  .gitignore  README.md  favicon.ico  site.webmanifest  404.html
-IMG_0707.png  IMG_0710.png            Quell-Logos (Volllogo, Icon), bleiben im Root
+CNAME  .nojekyll  .gitignore  README.md  favicon.ico  site.webmanifest  jobs.json  404.html
+index.html                              Startseite (Beweiskette, Hero, Siegel)
+ledger/ lens/ forge/                    Produktseiten mit Reservierungsformular (Buttons aus GET /config)
+kostenlos/ investoren/ karriere/        Selbstcheck + Lagereport, Investoren, offene Rollen (jobs.json)
+ueber-uns/ kontakt/ faq/                weitere Inhaltsseiten (je index.html)
+rechtliches/{impressum,datenschutz,agb}/  Platzhalter „in Gründung“, Inhalt folgt
+styleguide/                             lebende Design-Abnahme (noindex)
+about.html approach.html principles.html contact.html impressum.html privacy.html en/index.html
+                                        Redirect-Stubs der alten Adressen (Karte in docs/HOSTING.md)
+IMG_0707.png  IMG_0710.png              Quell-Logos (Volllogo, Icon), bleiben im Root
 assets/
   brand/          icon, icon-white, icon-ink, logo-full, logo-full-white (.png + .webp),
                   favicon-16/32, apple-touch-icon, icon-192/512/512-maskable, hero-poster.svg
   css/            site.css (Tokens, Fonts, Base, Flächen, Komponenten, Endzustände)
-                  motion.css (Hülle; Inhalt folgt in Phase 3)
-  fonts/geist/    Geist-latin, Geist-latin-ext, GeistMono-latin, GeistMono-latin-ext (.woff2), OFL.txt
-  js/             boot.js, config.js, main.js, nav.js
+                  rooms.css (Raum-Motive, Hero-Layout, Demos)  motion.css (nur Vorher-Zustände, Übergänge)
+  fonts/geist/    Geist / Geist Mono, latin + latin-ext (.woff2), OFL.txt
+  frames/v0-dummy/  Test-Bildsequenz + manifest.json für den Frame-Hero (echte Sequenz folgt)
+  js/             boot, config, main, nav, api, forms, products, analytics, jobs,
+                  motion, chain, hero, countdown, beleg, belege, ticker, demos
+  vendor/         gsap 3.15.0 + ScrollTrigger, lenis 1.3.26 (mit Lizenzen, kein CDN)
   louwietec-brain.png, og-image.png   Alt-Pfade aus v1, bleiben bis alle Verweise umgestellt sind
 docs/
   CONTRACT.md     Schnittstellen-Vertrag v1, byteweise unverändert (identisch im Backend-Repo)
   HOSTING.md      Hosting-, Pages- und Domain-Fakten, Redirect-Karte
-  copy/Website_Texte_Final_v2.md   Texte der zehn Inhaltsseiten, wortgleich zu übernehmen
+  PAGES.md        Seitenkarte, belege.md Beleg-Register
+  copy/Website_Texte_Final_v2.md   Texte der zehn Inhaltsseiten, wortgleich übernommen
   partials/       head-common.html, header.html, footer.html, scripts.html (Quelle der gemeinsamen Blöcke)
-  qa/README.md, qa/tools/          Prüf- und Erzeugungsskripte, dev-only
+  qa/README.md, qa/tools/          Prüf- und Erzeugungsskripte, dev-only; Reports unter qa/<bereich>/<datum>/
   reports/PHASE-n.md               Ampel-Bericht je Phase
 ```
 
 ### Geplant (noch nicht vorhanden)
 
-Die folgenden Pfade sind im Architekturplan festgelegt und entstehen in der genannten Phase.
-
 | Pfad | Phase | Inhalt |
 |---|---|---|
-| `styleguide/index.html` | 1 | Tokens und Komponenten als Design-Abnahme, `noindex` |
-| `index.html`, `ledger/`, `lens/`, `forge/`, `kostenlos/`, `investoren/`, `karriere/`, `ueber-uns/`, `kontakt/`, `faq/` (je `index.html`) | 2 | die zehn Inhaltsseiten |
-| `rechtliches/{impressum,datenschutz,agb}/index.html` | 2, Inhalt 5 | Platzhalter „in Gründung“ bis zur GmbH-Eintragung |
-| `assets/vendor/gsap/…`, `assets/vendor/lenis/…` | 3 | GSAP, ScrollTrigger, Lenis vendored mit Lizenzdateien (kein CDN) |
-| `assets/css/rooms.css`, `assets/js/{motion,chain,beleg,belege,countdown,ticker,demos}.js` | 3 | Beweiskette, Siegel, Raum-Motive, Countdown |
-| `assets/js/hero.js`, `assets/frames/<version>/` | 4 | Hero-Platzhalter und Frame-Scrub-Schnittstelle (zunächst Dummy-Frames) |
-| `assets/js/{api,forms,products,analytics,jobs}.js`, `jobs.json` | 5 | Anbindung nach Vertrag |
-| `about.html`, `approach.html`, `principles.html`, `contact.html`, `impressum.html`, `privacy.html`, `en/index.html` | 5 | Redirect-Stubs (Meta-Refresh + `<link rel="canonical">`), Karte in `docs/HOSTING.md` |
-| `robots.txt`, `sitemap.xml`, `llms.txt`, OG-Bilder, JSON-LD | 6b | SEO/GEO, erst nach bestandener QA |
+| `docs/qa/tools/{lighthouse,a11y,perf-budget}.mjs`, Reports unter `docs/qa/` | 6 | Lighthouse ≥ 90, axe + Tastatur-Walk, Performance-Budget |
+| `robots.txt`, `sitemap.xml`, `llms.txt`, OG-Bilder, JSON-LD, `check-seo.mjs` | 6b | SEO/GEO, erst nach bestandener QA |
 
 ## Arbeitsweise
 
@@ -164,15 +167,20 @@ node docs/qa/tools/check-partials.mjs          # Gate: gemeinsame Blöcke byteid
 node docs/qa/tools/check-partials.mjs --fix    # Blöcke aus docs/partials/ in die Seiten schreiben
 node docs/qa/tools/check-verify-green.mjs      # Hausgesetze: --verify 3x im CSS, kein Gold, kein "Trusted by",
                                                # <img> nur aus /assets/brand|frames/, Radius 0, keine Fremd-Skripte
+node docs/qa/tools/diff-copy.mjs               # Gate: Wortgleichheit der zehn Seiten mit dem Texte-Dokument
+node docs/qa/tools/check-links.mjs             # Gate: interne Verweise, Anker, Manifest, CSS-url()
+node docs/qa/tools/check-contract.mjs          # Gate: Formulare und config.js gegen docs/CONTRACT.md
+node docs/qa/tools/integration.spec.mjs        # Gate: zwölf Integrationstests gegen das Testdouble (LW_LIVE=1: echtes Backend)
+node docs/qa/tools/screens.mjs                 # Screenshots aller Seiten + Scroll-Video (Server auf 8080)
 node docs/qa/tools/make-brand.mjs              # Marken-Assets aus IMG_0707.png / IMG_0710.png erzeugen
+node docs/qa/tools/make-dummy-frames.mjs       # Test-Bildsequenz für den Frame-Hero
 node docs/qa/tools/font-metrics.mjs            # Fallback-Metriken und Glyph-Abdeckung der Schriften
 ```
 
 Für Screenshots und Browser-Tests: lokaler Server (`python3 -m http.server 8080 --directory .`)
 und Playwright mit Chromium. Reports landen unter `docs/qa/<bereich>/<datum>/` und werden im
-jeweiligen Phasenbericht referenziert. Weitere Skripte (Wortgleichheits-Diff, Link-Check,
-Vertrags-Check, Lighthouse, Accessibility, Screenshots, Performance-Budget, SEO-Check,
-Mock-Fixture und Integrationstests) folgen in den Phasen 2 bis 6b.
+jeweiligen Phasenbericht referenziert. Lighthouse, Accessibility-Lauf, Performance-Budget und
+SEO-Check folgen in den Phasen 6 und 6b.
 
 ## Branching
 
@@ -197,11 +205,11 @@ bleibt eine eigene Freigabe.
 | Phase | Inhalt | Gate | Stand | Bericht |
 |---|---|---|---|---|
 | 0 Archiv | Archiv-Branch, Tag, Pages/CNAME dokumentiert, Arbeits-Branch | Branch-Liste; Archiv identisch mit altem `main` | abgeschlossen, Ampel gelb (Tag-Push offen) | [PHASE-0.md](docs/reports/PHASE-0.md) |
-| 1 Fundament | Struktur, Tokens, Schriften, Header/Footer, Logo-Regeln, 404, `docs/CONTRACT.md`, `config.js` | `/styleguide/` zeigt Tokens und Komponenten | in Arbeit | `docs/reports/PHASE-1.md` (folgt) |
-| 2 Inhalte | Zehn Seiten wortgleich, Tabellen, Meta, FAQ | Diff je Seite gegen Texte-Dokument = 0; Link-Check fehlerfrei | offen | — |
-| 3 Bewegung | Beweiskette, Lücke, Siegel, Raum-Motive, Countdown, Beleg-Zeichen | Scroll-Video Desktop und Mobil; Reduced-Motion-Screenshots | offen | — |
-| 4 Hero | Canvas-Platzhalter, Frame-Scrub-Schnittstelle | Test mit 30 Dummy-Frames | offen | — |
-| 5 Anbindung | Formulare gegen Testdouble, `/config`-Buttons, Fallback, Analytics-Ereignisse, `jobs.json`, Rechtliches, Redirect-Stubs | Jedes Formular sendet; Fallback-Test; Ereignisse sichtbar | offen | — |
+| 1 Fundament | Struktur, Tokens, Schriften, Header/Footer, Logo-Regeln, 404, `docs/CONTRACT.md`, `config.js` | `/styleguide/` zeigt Tokens und Komponenten | abgeschlossen, Nachtrag aus Review offen | [PHASE-1.md](docs/reports/PHASE-1.md) |
+| 2 Inhalte | Zehn Seiten wortgleich, Tabellen, Meta, FAQ | Diff je Seite gegen Texte-Dokument = 0; Link-Check fehlerfrei | abgeschlossen | [PHASE-2.md](docs/reports/PHASE-2.md) |
+| 3 Bewegung | Beweiskette, Lücke, Siegel, Raum-Motive, Countdown, Beleg-Zeichen | Scroll-Video Desktop und Mobil; Reduced-Motion-Screenshots | abgeschlossen | [PHASE-3.md](docs/reports/PHASE-3.md) |
+| 4 Hero | Canvas-Platzhalter, Frame-Scrub-Schnittstelle | Test mit 30 Dummy-Frames | abgeschlossen | [PHASE-4.md](docs/reports/PHASE-4.md) |
+| 5 Anbindung | Formulare gegen Testdouble, `/config`-Buttons, Fallback, Analytics-Ereignisse, `jobs.json`, Rechtliches, Redirect-Stubs | Jedes Formular sendet; Fallback-Test; Ereignisse sichtbar | abgeschlossen (zwölf Tests grün gegen Testdouble) | [PHASE-5.md](docs/reports/PHASE-5.md) |
 | 6 QA | Lighthouse ≥ 90 (mobil und Desktop), Gerätetest, Reduced-Motion, Tastatur, Baff-Test | Reports unter `docs/qa/` | offen | — |
 | 6b SEO/GEO | JSON-LD, OG-Bilder, `sitemap.xml`, `robots.txt`, `llms.txt`, hreflang-Vorbereitung | SEO-Check grün, Lighthouse SEO ≥ 90 | offen | — |
 | 7 Integration und Go-Live | Integrationstag mit Session 2 (zwölf Tests aus dem Vertrag), PR nach `main`, Redirects, Sitemap einreichen | Alle zwölf Tests grün; `louwietec.com` live | offen | — |
