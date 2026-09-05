@@ -13,11 +13,11 @@ const REGISTRY = [
   { when: () => motion() && document.querySelector('[data-hash-ticker]'), load: () => import('./ticker.js') },
   { when: () => motion(), load: () => import('./motion.js'), critical: true },
   { when: () => motion() && document.querySelector('[data-hero]'), load: () => import('./hero.js') },
-  // ab Phase 5:
-  // { when: () => document.querySelector('[data-form]'),         load: () => import('./forms.js') },
-  // { when: () => document.querySelector('[data-product-cta]'),  load: () => import('./products.js') },
-  // { when: () => document.querySelector('[data-jobs]'),         load: () => import('./jobs.js') },
-  // { when: () => true,                                          load: () => import('./analytics.js') },
+  // Anbindung (Vertrag v1): Formulare, /config-Buttons, Rollen, Messkette
+  { when: () => document.querySelector('form[data-form]'), load: () => import('./forms.js') },
+  { when: () => document.querySelector('[data-product-cta]'), load: () => import('./products.js') },
+  { when: () => document.querySelector('[data-jobs]'), load: () => import('./jobs.js') },
+  { when: () => true, load: () => import('./analytics.js') },
 ];
 
 const motion = () => document.documentElement.classList.contains('js-motion');

@@ -550,6 +550,14 @@ legend { font-weight: 600; margin-bottom: .5rem; padding: 0; }
 .choice { display: inline-flex; align-items: center; gap: .5rem; font-size: var(--step-small); }
 .choice input { width: 1.1rem; height: 1.1rem; accent-color: var(--accent); }
 
+/* Backend-Zustände (api.js setzt body[data-backend]) */
+body[data-backend="down"] [data-requires-backend] { display: none !important; }
+[data-product-cta] { min-height: 3rem; }
+[data-product-cta]:empty::after { content: ""; display: inline-block; width: 16rem; max-width: 100%; height: 3rem; border: 1px dashed var(--line); }
+form.is-sent .field, form.is-sent fieldset, form.is-sent .btn-row, form.is-sent .field__hint, form.is-sent .grid { display: none; }
+form.is-sent .form__success { display: block; }
+form.is-sent [data-reserve-next].btn-row { display: flex; }
+
 /* Hinweis-Kästen */
 .note { padding: var(--s-4); border-left: 3px solid var(--accent); background: var(--surface-2); font-size: var(--step-small); }
 .note--work::before { content: "in Arbeit"; display: block; font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: .4rem; }
