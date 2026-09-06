@@ -5,8 +5,15 @@
    Bewegung ausschließlich in motion.css unter html.js-motion.
    ========================================================================== */
 
-/* ---------- Hero (Start) ---------- */
-.hero { min-height: calc(100dvh - var(--header-h)); display: grid; align-items: end; overflow: hidden; padding-block: var(--s-7) var(--s-7); }
+/* ---------- Hero (Start) ----------
+   Die Sektion ist Anker und Wrapper; die Bühne (.hero__stage) trägt Canvas, Poster, Text.
+   Mit Bewegung wird der Wrapper vorab um die Pin-Strecke höher und die Bühne klebt per sticky —
+   kein Pin-Spacer zur Laufzeit, kein Layout-Shift (CLS 0). Still: Bühne = normale Sektion. */
+.hero { padding: 0; }
+.hero__stage { position: relative; min-height: calc(100dvh - var(--header-h)); display: grid; align-items: end; overflow: hidden; padding-block: var(--s-7) var(--s-7); }
+html.js-motion .hero { --hero-pin: 150vh; min-height: calc(100vh - var(--header-h) + var(--hero-pin)); min-height: calc(100svh - var(--header-h) + var(--hero-pin)); }
+html.js-motion .hero__stage { position: sticky; top: var(--header-h); height: calc(100vh - var(--header-h)); height: calc(100svh - var(--header-h)); min-height: 0; }
+@media (max-width: 63.9375rem) { html.js-motion .hero { --hero-pin: 80vh; } }
 .hero__canvas, .hero__poster {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
   pointer-events: none;
@@ -22,7 +29,7 @@ html.js-motion .hero__poster { opacity: 0; }
 .hero__dock { position: absolute; right: var(--gutter); bottom: var(--s-6); width: clamp(3rem, 6vw, 5rem); height: auto; opacity: 0; pointer-events: none; }
 .hero__dock[data-docked] { opacity: 1; }
 @media (max-width: 47.9375rem) {
-  .hero { align-items: start; padding-top: var(--s-6); }
+  .hero__stage { align-items: start; padding-top: var(--s-6); }
   .hero__poster { object-position: 65% center; }
 }
 

@@ -123,6 +123,7 @@ function drawCover(ctx, img, w, h) {
 /* ---------- Aufbau ---------- */
 export async function init() {
   const hero = document.querySelector('[data-hero]');
+  const stage = hero?.querySelector('.hero__stage') || hero; // sichtbare Bühne (sticky); der Wrapper trägt die Pin-Strecke
   const canvas = hero?.querySelector('[data-hero-canvas]');
   if (!hero || !canvas || !document.documentElement.classList.contains('js-motion')) return;
   const ctx = canvas.getContext('2d', { alpha: true });
@@ -137,7 +138,7 @@ export async function init() {
   let dots = [], links = [];
   const resize = () => {
     dpr = Math.min(2, window.devicePixelRatio || 1);
-    w = hero.clientWidth; h = hero.clientHeight;
+    w = stage.clientWidth; h = stage.clientHeight;
     canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
     canvas.style.width = `${w}px`; canvas.style.height = `${h}px`;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -170,8 +171,8 @@ export async function init() {
     if (dock) { dock.removeAttribute('data-docked'); dock.style.transition = 'none'; dock.style.transform = ''; dock.style.opacity = ''; }
   };
 
-  // Scroll-Fortschritt: gepinnt mit ScrollTrigger (sobald motion.js die Vendor-Skripte geladen hat), sonst über die Hero-Höhe
-  const pinLength = isMobile() ? '+=80%' : '+=150%';
+  // Scroll-Fortschritt: die Bühne klebt per CSS (sticky) im vorab hohen Wrapper; ScrollTrigger liest nur den
+  // Fortschritt (Wrapper-Oberkante am Header → Wrapper-Unterkante am Viewport-Ende). Kein Pin, kein Spacer, kein Shift.
   const setProgress = (p) => { progress = Math.min(1, Math.max(0, p)); tryDock(); undock(); };
   const headerH = () => { const v = getComputedStyle(document.documentElement).getPropertyValue('--header-h').trim(); return v.endsWith('rem') ? parseFloat(v) * 16 : parseFloat(v) || 64; };
   const motionReady = () => new Promise((resolve) => {
@@ -183,9 +184,9 @@ export async function init() {
     document.addEventListener('lw:motion-failed', () => done(false), { once: true });
   });
   if (await motionReady() && window.gsap && window.ScrollTrigger) {
-    window.ScrollTrigger.create({ trigger: hero, start: () => `top ${headerH()}px`, end: pinLength, pin: true, pinSpacing: true, scrub: true, onUpdate: (self) => setProgress(self.progress) });
+    window.ScrollTrigger.create({ trigger: hero, start: () => `top ${headerH()}px`, end: 'bottom bottom', scrub: true, onUpdate: (self) => setProgress(self.progress) });
   } else {
-    const onScroll = () => setProgress(window.scrollY / Math.max(1, hero.offsetHeight));
+    const onScroll = () => setProgress(window.scrollY / Math.max(1, hero.offsetHeight - stage.offsetHeight || hero.offsetHeight));
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   }
 
