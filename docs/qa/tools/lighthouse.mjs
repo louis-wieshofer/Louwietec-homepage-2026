@@ -51,7 +51,9 @@ try {
   for (const form of forms) {
     for (const u of PAGES) {
       const flags = { port: chrome.port, output: ['html', 'json'], logLevel: 'error', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'] };
-      const config = { extends: 'lighthouse:default', settings: { formFactor: form, screenEmulation: form === 'desktop' ? { mobile: false, width: 1440, height: 900, deviceScaleFactor: 1, disabled: false } : { mobile: true, width: 390, height: 844, deviceScaleFactor: 3, disabled: false }, throttlingMethod: 'simulate', locale: 'de' } };
+      // Drosselung wie in den Lighthouse-Presets: mobil = „Slow 4G“ + CPU ×4 (Standard), Desktop = 40 ms RTT, 10 Mbit/s, CPU ×1
+      const throttling = form === 'desktop' ? { rttMs: 40, throughputKbps: 10 * 1024, cpuSlowdownMultiplier: 1, requestLatencyMs: 0, downloadThroughputKbps: 0, uploadThroughputKbps: 0 } : undefined;
+      const config = { extends: 'lighthouse:default', settings: { formFactor: form, screenEmulation: form === 'desktop' ? { mobile: false, width: 1440, height: 900, deviceScaleFactor: 1, disabled: false } : { mobile: true, width: 390, height: 844, deviceScaleFactor: 3, disabled: false }, throttlingMethod: 'simulate', ...(throttling ? { throttling } : {}), locale: 'de' } };
       const result = await lighthouse(BASE + u, flags, config);
       const lhr = result.lhr;
       const score = (c) => Math.round((lhr.categories[c]?.score ?? 0) * 100);
@@ -72,7 +74,7 @@ try {
   await chrome.kill();
   if (server) server.kill();
 }
-const md = [`# Lighthouse — ${today}`, '', `Schwelle ${THRESHOLD} für Performance, Accessibility, Best Practices${seoGate ? ' und SEO' : '; SEO wird mitgemessen, zählt erst ab Phase 6b'}. Lokaler Server ohne Kompression und HTTP/2 (GitHub Pages liefert beides), simulierte Drosselung.`, '',
+const md = [`# Lighthouse — ${today}`, '', `Schwelle ${THRESHOLD} für Performance, Accessibility, Best Practices${seoGate ? ' und SEO' : '; SEO wird mitgemessen, zählt erst ab Phase 6b'}. Lokaler Server ohne Kompression und HTTP/2 (GitHub Pages liefert beides); simulierte Drosselung: mobil Slow 4G + CPU ×4, Desktop 40 ms RTT / 10 Mbit/s / CPU ×1 (Lighthouse-Presets). Konsolenfehler durch das nicht erreichbare Backend (web.service.louwietec.com) zählen in Best Practices mit, bis Session 2 den Dienst bereitstellt.`, '',
   '| Seite | Form | Perf | A11y | Best Practices | SEO | LCP | CLS | TBT | Befunde |', '|---|---|---|---|---|---|---|---|---|---|',
   ...rows.map((r) => `| ${r.u} | ${r.form} | ${r.performance} | ${r.accessibility} | ${r['best-practices']} | ${r.seo} | ${r.lcp} | ${r.cls} | ${r.tbt} | ${r.fails.join(', ') || '—'} |`), '',
   failures ? `**${failures} Messungen unter der Schwelle.**` : '**Alle Messungen ≥ Schwelle.**', ''].join('\n');
