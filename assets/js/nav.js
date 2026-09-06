@@ -3,8 +3,10 @@
    · [data-nav="…"] Links · Sektionen .sec--stage / .sec--paper / .site-footer */
 
 function headerHeight() {
-  const v = getComputedStyle(document.documentElement).getPropertyValue('--header-h').trim();
-  return v.endsWith('rem') ? parseFloat(v) * 16 : parseFloat(v) || 64;
+  const cs = getComputedStyle(document.documentElement);
+  const rem = parseFloat(cs.fontSize) || 16;   // echte Root-Schriftgröße (Nutzer-Einstellung), nicht fest 16 px
+  const v = cs.getPropertyValue('--header-h').trim();
+  return v.endsWith('rem') ? parseFloat(v) * rem : parseFloat(v) || 4 * rem;
 }
 
 function initToggle() {
@@ -25,8 +27,11 @@ function initToggle() {
     if (e.key === 'Escape' && !menu.hidden) { open(false); toggle.focus(); }
   });
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) open(false); });
-  const mq = window.matchMedia('(min-width: 64rem)');
-  mq.addEventListener('change', () => { if (mq.matches && !menu.hidden) open(false); });
+  if (typeof window.matchMedia === 'function') {
+    const mq = window.matchMedia('(min-width: 64rem)');
+    const onChange = () => { if (mq.matches && !menu.hidden) open(false); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange); else if (mq.addListener) mq.addListener(onChange);
+  }
 }
 
 function initCurrent() {
@@ -64,7 +69,8 @@ function initSurface() {
 }
 
 export function init() {
-  initToggle();
-  initCurrent();
-  initSurface();
+  // entkoppelt: ein scheiternder Teilschritt reißt die anderen nicht mit
+  for (const step of [initToggle, initCurrent, initSurface]) {
+    try { step(); } catch (err) { console.warn('[LOUWIETEC] nav:', step.name, err); }
+  }
 }

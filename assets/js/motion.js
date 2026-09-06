@@ -13,8 +13,10 @@ const REVEAL_SEL = '.sec > .container > :not([data-hero-headline]):not(.hero__te
 let lenis = null, gsapRef = null, stRef = null, torn = false;
 
 function headerH() {
-  const v = getComputedStyle(document.documentElement).getPropertyValue('--header-h').trim();
-  return v.endsWith('rem') ? parseFloat(v) * 16 : parseFloat(v) || 64;
+  const cs = getComputedStyle(document.documentElement);
+  const rem = parseFloat(cs.fontSize) || 16;   // echte Root-Schriftgröße, nicht fest 16 px
+  const v = cs.getPropertyValue('--header-h').trim();
+  return v.endsWith('rem') ? parseFloat(v) * rem : parseFloat(v) || 4 * rem;
 }
 
 function loadScript(src) {
@@ -88,14 +90,22 @@ export async function init() {
       lenis.scrollTo(target, { offset: -headerH() });
     };
     document.addEventListener('lw:scrollto', (e) => smoothTo(e.detail.target));
+    // In-Page-Anker sanft anfahren. Ausgenommen: die Kette (eigener Handler) und der Skip-Link — der braucht die
+    // native Fragment-Navigation, damit der Fokus-Startpunkt nach #main wandert (WCAG 2.4.1).
     document.addEventListener('click', (e) => {
       const a = e.target.closest('a[href^="#"]');
-      if (!a || a.closest('[data-chain-rail]')) return;
-      const target = document.querySelector(a.getAttribute('href'));
+      if (!a || a.classList.contains('skip-link') || a.closest('[data-chain-rail]')) return;
+      const href = a.getAttribute('href');
+      if (href.length < 2) return;                       // href="#": dem Browser überlassen
+      let target;
+      try { target = document.querySelector(href); } catch (err) { return; }   // ungültiger Selektor → nativ
       if (!target) return;
       e.preventDefault();
       smoothTo(target);
-      history.replaceState(null, '', a.getAttribute('href'));
+      // Fokus folgt dem Scroll, damit der nächste Tab hinter dem Ziel landet
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      history.replaceState(null, '', href);
     });
     setupSlides(gsap, ScrollTrigger);
     window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
