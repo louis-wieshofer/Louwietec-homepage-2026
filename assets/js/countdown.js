@@ -24,7 +24,7 @@ export function init() {
     const start = performance.now(), dur = 1600, from = 999;
     const ease = (t) => 1 - Math.pow(1 - t, 3);
     const step = (now) => {
-      const t = Math.min(1, (now - start) / dur);
+      const t = Math.min(1, Math.max(0, (now - start) / dur));   // rAF-Zeitstempel kann vor start liegen → nie über 999
       const val = Math.round(from + (days - from) * ease(t));
       big.textContent = String(val);
       if (t < 1) requestAnimationFrame(step);

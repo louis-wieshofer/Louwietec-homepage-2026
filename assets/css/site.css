@@ -509,6 +509,7 @@ body[data-chain] { --content-offset: var(--rail-w); }
   line-height: .9; letter-spacing: -.05em; font-variant-numeric: tabular-nums;
   color: var(--fg);
 }
+.count [data-countdown-big] { display: inline-block; min-width: 3ch; text-align: right; font-variant-numeric: tabular-nums; }   /* fester Zahlenkasten: kein Shift beim Herunterzählen */
 .count__unit { font-size: .22em; letter-spacing: .12em; text-transform: uppercase; vertical-align: .9em; margin-left: .2em; color: var(--accent); font-weight: 500; }
 .count__line { font-size: var(--step-lead); margin-top: var(--s-3); }
 .count__line time { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
