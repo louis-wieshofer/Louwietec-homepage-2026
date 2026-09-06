@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-labelledby="t">
+  <title id="t">Aus Rauschen wird eine Kette: dreizehn Glieder, die sich schließen.</title>
+  <defs>
+    <linearGradient id="fade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#4F8DFF" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#4F8DFF" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <!-- Rauschen: Punkte, die links dicht und rechts selten werden -->
+  <g fill="#4F8DFF" fill-opacity=".55">
+    <circle cx="112" cy="212" r="3"/><circle cx="188" cy="618" r="2.5"/><circle cx="246" cy="402" r="2"/><circle cx="301" cy="811" r="3"/>
+    <circle cx="352" cy="286" r="2"/><circle cx="411" cy="704" r="2.5"/><circle cx="466" cy="151" r="2"/><circle cx="512" cy="934" r="3"/>
+    <circle cx="573" cy="372" r="2"/><circle cx="629" cy="562" r="2.5"/><circle cx="688" cy="240" r="2"/><circle cx="735" cy="846" r="2"/>
+    <circle cx="790" cy="452" r="2"/><circle cx="861" cy="676" r="2"/><circle cx="932" cy="318" r="1.8"/><circle cx="1008" cy="781" r="1.8"/>
+    <circle cx="1090" cy="486" r="1.6"/><circle cx="1174" cy="228" r="1.6"/><circle cx="1260" cy="860" r="1.5"/><circle cx="1355" cy="384" r="1.4"/>
+    <circle cx="1447" cy="641" r="1.3"/><circle cx="1552" cy="296" r="1.2"/><circle cx="1668" cy="732" r="1.1"/><circle cx="1784" cy="470" r="1"/>
+  </g>
+  <!-- Dreizehn Glieder, Radius 0, von offen (links) zu geschlossen (rechts) -->
+  <g fill="none" stroke="url(#fade)" stroke-width="4" transform="translate(160 505)">
+    <rect x="0"    y="0"  width="150" height="70"/>
+    <rect x="120"  y="-20" width="70" height="110" stroke-dasharray="20 14"/>
+    <rect x="160"  y="0"  width="150" height="70"/>
+    <rect x="280"  y="-20" width="70" height="110" stroke-dasharray="24 10"/>
+    <rect x="320"  y="0"  width="150" height="70"/>
+    <rect x="440"  y="-20" width="70" height="110" stroke-dasharray="30 6"/>
+    <rect x="480"  y="0"  width="150" height="70"/>
+    <rect x="600"  y="-20" width="70" height="110"/>
+    <rect x="640"  y="0"  width="150" height="70"/>
+    <rect x="760"  y="-20" width="70" height="110"/>
+    <rect x="800"  y="0"  width="150" height="70"/>
+    <rect x="920"  y="-20" width="70" height="110"/>
+    <rect x="960"  y="0"  width="150" height="70" fill="#4F8DFF" fill-opacity=".18"/>
+  </g>
+  <!-- Hash-Textur, leise -->
+  <g font-family="Geist Mono, ui-monospace, monospace" font-size="18" fill="#F6F5F1" fill-opacity=".14">
+    <text x="160" y="660">a91f…3c7e  prev 7d2c…e10a  ts 2026-09-05T00:00:00Z</text>
+    <text x="160" y="692">c4b8…09f1  prev a91f…3c7e  ts 2026-09-05T00:00:01Z</text>
+    <text x="160" y="724">e7d3…5a6b  prev c4b8…09f1  ts 2026-09-05T00:00:02Z</text>
+  </g>
+</svg>

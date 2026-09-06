@@ -1,0 +1,66 @@
+# Screens & Video — 2026-09-06
+
+Alle 15 Seiten × Desktop/Mobil × Bewegung/still wurden erzeugt und geprüft (Tabelle unten); im Repo liegen aus Platzgründen nur zehn repräsentative Screenshots (Start, LEDGER, LENS, FORGE, Kostenlos, Karriere) und die beiden Scroll-Videos. Vollständiger Satz jederzeit per `node docs/qa/tools/screens.mjs`.
+
+- start-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- ledger-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- lens-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- forge-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- kostenlos-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- investoren-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- karriere-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- ueber-uns-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- kontakt-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- faq-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- rechtliches-impressum-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- rechtliches-datenschutz-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- rechtliches-agb-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- styleguide-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- 404-html-desktop.png: kein Überlauf · js-motion an · Fehler 0
+- start-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- ledger-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- lens-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- forge-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- kostenlos-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- investoren-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- karriere-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- ueber-uns-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- kontakt-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- faq-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- rechtliches-impressum-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- rechtliches-datenschutz-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- rechtliches-agb-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- styleguide-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- 404-html-desktop-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- start-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- ledger-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- lens-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- forge-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- kostenlos-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- investoren-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- karriere-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- ueber-uns-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- kontakt-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- faq-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- rechtliches-impressum-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- rechtliches-datenschutz-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- rechtliches-agb-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- styleguide-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- 404-html-mobile.png: kein Überlauf · js-motion an · Fehler 0
+- start-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- ledger-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- lens-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- forge-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- kostenlos-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- investoren-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- karriere-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- ueber-uns-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- kontakt-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- faq-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- rechtliches-impressum-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- rechtliches-datenschutz-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- rechtliches-agb-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- styleguide-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- 404-html-mobile-reduced.png: kein Überlauf · js-motion aus · Fehler 0
+- start-scroll-desktop.webm: Kette 5/5 geschlossen · Siegel gefallen · 817 KB
+- start-scroll-mobile.webm: Kette 5/5 geschlossen · Siegel gefallen · 921 KB

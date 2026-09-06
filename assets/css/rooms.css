@@ -1,0 +1,159 @@
+/* ==========================================================================
+   LOUWIETEC — rooms.css
+   Raum-Motive und Demonstrationen (Start, LEDGER, LENS, FORGE, Investoren).
+   Wird nur auf diesen Seiten geladen. Auch hier gilt: Endzustände statisch,
+   Bewegung ausschließlich in motion.css unter html.js-motion.
+   ========================================================================== */
+
+/* ---------- Hero (Start) ----------
+   Die Sektion ist Anker und Wrapper; die Bühne (.hero__stage) trägt Canvas, Poster, Text.
+   Mit Bewegung wird der Wrapper vorab um die Pin-Strecke höher und die Bühne klebt per sticky —
+   kein Pin-Spacer zur Laufzeit, kein Layout-Shift (CLS 0). Still: Bühne = normale Sektion. */
+.hero { padding: 0; }
+.hero__stage { position: relative; min-height: calc(100dvh - var(--header-h)); display: grid; align-items: end; overflow: hidden; padding-block: var(--s-7) var(--s-7); }
+html.js-motion .hero { --hero-pin: 150vh; min-height: calc(100vh - var(--header-h) + var(--hero-pin)); min-height: calc(100svh - var(--header-h) + var(--hero-pin)); }
+html.js-motion .hero__stage { position: sticky; top: var(--header-h); height: calc(100vh - var(--header-h)); height: calc(100svh - var(--header-h)); min-height: 0; }
+@media (max-width: 63.9375rem) { html.js-motion .hero { --hero-pin: 80vh; } }
+.hero__canvas, .hero__poster {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
+  pointer-events: none;
+}
+.hero__poster { opacity: .55; }
+.hero__canvas { display: none; }
+html.js-motion .hero__canvas { display: block; }
+html.js-motion .hero__poster { opacity: 0; }
+.hero__content { position: relative; z-index: 1; display: grid; gap: var(--s-4); max-width: 60rem; }
+.hero__content .display { max-width: 12ch; }
+.hero__text { display: grid; gap: .6em; max-width: var(--measure); }
+.hero__text p { margin: 0; }
+.hero__dock { position: absolute; right: var(--gutter); bottom: var(--s-6); width: clamp(3rem, 6vw, 5rem); height: auto; opacity: 0; pointer-events: none; }
+.hero__dock[data-docked] { opacity: 1; }
+@media (max-width: 47.9375rem) {
+  .hero__stage { align-items: start; padding-top: var(--s-6); }
+  .hero__poster { object-position: 65% center; }
+}
+
+/* ---------- Demo-Figuren (gemeinsam) ---------- */
+.demo {
+  margin: 0; padding: var(--s-4);
+  border: 1px solid var(--line); background: var(--surface-2);
+  color: var(--fg);
+}
+.demo figcaption {
+  margin-top: var(--s-3); font-size: var(--step-mono-xs); letter-spacing: .1em;
+  text-transform: uppercase; color: var(--fg-muted);
+}
+.demo--mini { padding: var(--s-3); }
+.demo--mini figcaption { margin-top: var(--s-2); }
+.card .demo { background: var(--bg); }
+
+/* Kette in Miniatur (Start · LEDGER) */
+.minichain { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; }
+.minichain__link {
+  position: relative; padding: .55rem .5rem .45rem;
+  border: 2px solid var(--signal); font-size: var(--step-mono-xs); color: var(--fg-muted);
+  text-align: center; letter-spacing: .02em;
+}
+.minichain__link:not(.is-closed) { border-top-color: transparent; color: transparent; }
+.minichain__link.is-closed { background: rgba(79, 141, 255, .1); color: var(--fg); }
+.minichain__link + .minichain__link::before {
+  content: ""; position: absolute; left: -.5rem; top: 50%; width: .5rem; height: 2px; background: var(--signal); transform: translateY(-50%);
+}
+.minichain__link:not(.is-closed)::before { background: transparent; }
+
+/* Punktraster (Start · LENS) */
+.dotgrid { width: 100%; height: auto; color: var(--fg-muted); }
+.dotgrid__pattern circle { opacity: 1; }
+.dotgrid__card { opacity: 1; }
+
+/* Taktlinie (Start · FORGE) */
+.takt { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(14, 1fr); gap: 3px; align-items: end; height: 2.25rem; }
+.takt li { height: 1.1rem; background: var(--line-strong); }
+.takt li.is-done { background: var(--signal); }
+.takt li.takt__check { height: 2.25rem; background: transparent; display: grid; place-items: center; }
+.takt__check svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: var(--signal); stroke-width: 2.4; stroke-linecap: square; }
+.takt__check:not(.is-done) svg { stroke: var(--line-strong); }
+
+/* Beweisblock (Start · Gläserner Anbieter) */
+.proof-block { padding: var(--s-4); border: 1px solid var(--line); background: var(--surface-2); }
+.proof-block .kicker { margin-bottom: var(--s-3); }
+.trust-line { color: var(--fg-muted); letter-spacing: .02em; }
+
+/* Siegel-Platz (Start · Abschluss) */
+.seal-wrap { display: flex; justify-content: flex-start; }
+
+/* ---------- LEDGER ---------- */
+.ledgerchain { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; font-family: var(--font-mono); font-size: var(--step-mono-xs); }
+.ledgerchain li { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: .75rem; align-items: baseline; padding: .6rem .75rem; border: 1px solid var(--line); background: var(--bg); }
+.ledgerchain .n { color: var(--fg-muted); }
+.ledgerchain .h { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ledgerchain .p { color: var(--fg-muted); }
+.ledgerchain li.is-broken { border-color: var(--alarm); color: var(--alarm); }
+.ledgerchain li.is-broken .p, .ledgerchain li.is-broken .n { color: var(--alarm); }
+.tamper__status { margin-top: var(--s-3); font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .06em; text-transform: uppercase; color: var(--fg-muted); }
+.tamper__status.is-alarm { color: var(--alarm); }
+.tamper__actions { margin-top: var(--s-3); display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.report-doc { position: relative; padding: var(--s-4); border: 1px solid var(--line-strong); background: var(--bg); box-shadow: 6px 6px 0 var(--surface-3); }
+.report-doc h4 { font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--fg-muted); font-weight: 500; margin-bottom: .6rem; }
+.report-doc .bars { display: grid; gap: .35rem; }
+.report-doc .bars span { display: block; height: .45rem; background: var(--line-strong); }
+.report-doc .bars span:nth-child(2) { width: 80%; } .report-doc .bars span:nth-child(3) { width: 55%; } .report-doc .bars span:nth-child(4) { width: 70%; }
+.report-doc .cal { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; }
+.report-doc .cal span { display: block; aspect-ratio: 1; background: var(--signal); opacity: .8; }
+.report-doc .cal span.is-note { background: var(--alarm); }
+.report-doc + .report-doc { margin-top: var(--s-3); }
+
+/* ---------- LENS ---------- */
+.insights { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+.insights li { padding: var(--s-4); border: 1px solid var(--line); background: var(--surface-2); font-size: var(--step-body); }
+.insights li::before { content: ""; display: block; width: 1.5rem; height: 3px; background: var(--accent); margin-bottom: .75rem; }
+.trend { width: 100%; height: auto; }
+.trend .axis { stroke: var(--line-strong); stroke-width: 1; }
+.trend .line { fill: none; stroke: var(--signal); stroke-width: 2.5; stroke-linejoin: round; }
+.trend .tip { fill: none; stroke: var(--alarm); stroke-width: 2.5; stroke-linejoin: round; }
+.trend .marker { fill: var(--alarm); }
+.trend text { font-family: var(--font-mono); font-size: 9px; fill: var(--fg-muted); }
+.alarm-chip { display: inline-block; margin-top: var(--s-3); font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .1em; text-transform: uppercase; padding: .3em .6em; border: 1px solid var(--alarm); color: var(--alarm); }
+
+/* ---------- FORGE ---------- */
+.automat { display: grid; grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr)); gap: .5rem; align-items: center; }   /* umbricht in engen Karten auf 2 Spalten statt zu überlaufen */
+.automat__station { padding: .6rem .4rem; border: 1px solid var(--line); text-align: center; font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .06em; text-transform: uppercase; color: var(--fg-muted); }
+.automat__station.is-active { border-color: var(--signal); color: var(--fg); background: rgba(79,141,255,.08); }
+.automat__doc { display: block; width: 1.3rem; height: 1.6rem; border: 2px solid var(--signal); margin: 0 auto .5rem; }
+@media (max-width: 47.9375rem) { .automat__station { overflow-wrap: anywhere; } }
+.fold { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.fold span { display: block; height: 3.5rem; border: 1px solid var(--line-strong); background: var(--bg); }
+.fold span:last-child { background: rgba(79,141,255,.1); border-color: var(--signal); }
+.bars-h { display: grid; grid-template-columns: repeat(6, 1fr); gap: .4rem; align-items: end; height: 4rem; }
+.bars-h span { display: block; background: var(--signal); }
+.mail { display: grid; gap: .5rem; }
+.mail__env { height: 2.4rem; border: 1px solid var(--line-strong); position: relative; }
+.mail__env::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 50%; border-bottom: 1px solid var(--line-strong); clip-path: polygon(0 0, 50% 100%, 100% 0); background: var(--line); }
+.mail__draft { padding: .6rem .75rem; border: 1px solid var(--signal); background: rgba(79,141,255,.08); font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .06em; text-transform: uppercase; color: var(--fg); }
+.takt--large { height: 3rem; }
+.takt--large li { height: 1.5rem; }
+.takt--large li.takt__check { height: 3rem; }
+
+/* ---------- Investoren ---------- */
+.these { display: grid; gap: var(--s-6); }
+.these p { font-size: var(--step-h2); line-height: 1.15; letter-spacing: -.02em; font-weight: 500; max-width: 26ch; }
+.these .mono { color: var(--signal); }
+
+/* ---------- Raum-Blöcke: Text + Demonstration ---------- */
+.room-intro { padding-top: clamp(3rem, 6vw, 6rem); }
+.room-blocks { display: grid; gap: var(--s-7); }
+.room-block { display: grid; gap: var(--s-4); align-items: start; }
+.room-block__text { max-width: var(--measure); }
+.room-block__text h3 { margin-bottom: var(--s-3); font-weight: 600; }
+@media (min-width: 64rem) {
+  .room-block { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--s-6); }
+  .room-block:nth-child(even) .room-block__text { order: 2; }
+}
+/* Demonstration auf eigener Bühnen-Fläche (z. B. Bericht mit Verifiziert-Stempel: Grün nur auf Tinte) */
+.demo--stage {
+  --bg: var(--ink); --fg: var(--paper); --fg-muted: rgba(246,245,241,.66); --line: rgba(246,245,241,.16);
+  --line-strong: rgba(246,245,241,.45); --surface-2: var(--ink-2); --surface-3: var(--ink-3); --accent: var(--signal); --alarm: #E5484D;
+  background: var(--ink); color: var(--paper); border-color: var(--line);
+}
+html:not(.js) .tamper__actions { display: none; }
+.product-cta { padding-top: var(--s-4); border-top: 1px solid var(--line); }

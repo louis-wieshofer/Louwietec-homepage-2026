@@ -1,0 +1,16 @@
+{
+  "version": "v0-dummy",
+  "fps": 30,
+  "count": 30,
+  "width": 640,
+  "height": 360,
+  "pattern": "frame_{i:04}.webp",
+  "intro_end": 12,
+  "poster": "poster.webp",
+  "portrait": {
+    "pattern": "portrait/frame_{i:04}.webp",
+    "width": 360,
+    "height": 640
+  },
+  "hinweis": "Test-Sequenz (Vorschau). Die Higgsfield-Sequenz ersetzt diesen Ordner; Schnittstelle: hero.js liest dieses Manifest."
+}

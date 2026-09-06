@@ -1,0 +1,5 @@
+# Freigegebene Zeilen außerhalb des Texte-Dokuments (normalisiert verglichen). Freigabe durch Louis offen — siehe docs/reports/PHASE-2.md.
+# /kontakt/ — erfüllt die Vorgabe „E-Mail-Adresse direkt · Wien, Österreich“
+office@louwietec.com · Wien, Österreich
+# /faq/ — das Dokument hat für diese Seite keine H1; Vorschlag aus dem Seitentitel „FAQ / EINWÄNDE“
+FAQ / Einwände

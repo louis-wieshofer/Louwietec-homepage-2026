@@ -1,9 +1,27 @@
 {
   "name": "LOUWIETEC",
   "short_name": "LOUWIETEC",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#0A0E1A",
-  "theme_color": "#0A0E1A",
-  "lang": "en"
+  "lang": "de",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F6F5F1",
+  "theme_color": "#0B0F19",
+  "icons": [
+    {
+      "src": "/assets/brand/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
 }

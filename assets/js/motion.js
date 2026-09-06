@@ -1,0 +1,125 @@
+/* motion.js — Bewegung, nur unter html.js-motion. Lädt GSAP, ScrollTrigger und Lenis (vendored),
+   verbindet sanftes Scrollen mit ScrollTrigger, inszeniert Papier-Einschub, Reveals und die
+   Hero-Headline. Scheitert etwas, fällt die Seite auf die stille Version zurück (Klasse js-motion weg).
+   Vorher-Zustände stehen in motion.css (media-gegatet, unter html.js-motion). */
+
+const VENDOR = [
+  '/assets/vendor/gsap/3.15.0/gsap.min.js',
+  '/assets/vendor/gsap/3.15.0/ScrollTrigger.min.js',
+  '/assets/vendor/lenis/1.3.26/lenis.min.js',
+];
+// Ziel-Liste der Reveals — dieselbe wie in boot.js (erster Viewport) und motion.css (Vorher-Zustand)
+const REVEAL_SEL = window.LW_REVEAL_SEL || '.sec > .container > :not([data-hero-headline]):not(.hero__text):not(script), .sec .prose > *, .grid > *, .room-block > *, .faq > *, .insights > li, .hero__text > *';
+
+let lenis = null, gsapRef = null, stRef = null, torn = false;
+
+function headerH() {
+  const cs = getComputedStyle(document.documentElement);
+  const rem = parseFloat(cs.fontSize) || 16;   // echte Root-Schriftgröße, nicht fest 16 px
+  const v = cs.getPropertyValue('--header-h').trim();
+  return v.endsWith('rem') ? parseFloat(v) * rem : parseFloat(v) || 4 * rem;
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = src; s.async = false;
+    s.onload = resolve; s.onerror = () => reject(new Error(`Vendor nicht geladen: ${src}`));
+    document.head.appendChild(s);
+  });
+}
+
+/** Stille Version wiederherstellen: alles sichtbar, nichts bewegt sich mehr. */
+export function teardown() {
+  if (torn) return; torn = true;
+  document.documentElement.classList.remove('js-motion');
+  window.__lwMotionReady = false;
+  document.dispatchEvent(new CustomEvent('lw:motion-failed'));
+  document.querySelectorAll(REVEAL_SEL).forEach((el) => el.classList.add('is-in'));
+  try { stRef && stRef.killAll(); } catch (e) { /* egal */ }
+  try { lenis && lenis.destroy(); } catch (e) { /* egal */ }
+  window.__lwLenis = null;
+}
+
+function setupReveals() {
+  // boot.js hat die Ziele im ersten Viewport bereits sichtbar gemacht (is-in is-initial); hier nur der Rest
+  const targets = Array.from(document.querySelectorAll(REVEAL_SEL)).filter((el) => !el.classList.contains('is-in'));
+  // Stagger je Elterncontainer, gedeckelt
+  const byParent = new Map();
+  targets.forEach((el) => { const p = el.parentElement; if (!byParent.has(p)) byParent.set(p, []); byParent.get(p).push(el); });
+  byParent.forEach((els) => els.forEach((el, i) => { el.style.setProperty('--reveal-delay', `${Math.min(i, 6) * 60}ms`); }));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+  targets.forEach((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-in'); else io.observe(el);
+  });
+}
+
+function setupSlides(gsap, ScrollTrigger) {
+  document.querySelectorAll('.sec--slide').forEach((sec) => {
+    gsap.fromTo(sec, { y: '6vh' }, { y: 0, ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'top 55%', scrub: true } });
+  });
+}
+
+function setupHeadline() {
+  const h = document.querySelector('[data-hero-headline]');
+  if (!h || h.classList.contains('is-in')) return; // boot.js hat die Sequenz schon gestartet
+  h.querySelectorAll('[data-word]').forEach((w, i) => { w.style.setProperty('--word-delay', `${180 + i * 110}ms`); });
+  requestAnimationFrame(() => h.classList.add('is-in'));
+}
+
+export async function init() {
+  const html = document.documentElement;
+  if (!html.classList.contains('js-motion')) return;
+  setupHeadline();
+  setupReveals();
+  try {
+    for (const src of VENDOR) await loadScript(src);
+    const { gsap, ScrollTrigger, Lenis } = window;
+    if (!gsap || !ScrollTrigger || !Lenis) throw new Error('Vendor unvollständig');
+    gsapRef = gsap; stRef = ScrollTrigger;
+    gsap.registerPlugin(ScrollTrigger);
+    lenis = new Lenis({ autoRaf: false, smoothWheel: true, syncTouch: false, lerp: 0.1 });
+    window.__lwLenis = lenis;
+    lenis.on('scroll', () => { ScrollTrigger.update(); document.dispatchEvent(new CustomEvent('lw:scroll')); });
+    gsap.ticker.add((t) => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    // Sanft zu einem Ziel: vorher die native Position übernehmen (Fokus-/Programm-Scrolls kommen erst mit dem
+    // nächsten scroll-Event bei Lenis an; sonst rechnet scrollTo(Element) vom veralteten Wert aus).
+    const smoothTo = (target) => {
+      if (Math.abs(lenis.actualScroll - lenis.animatedScroll) > 1) lenis.scrollTo(lenis.actualScroll, { immediate: true, force: true });
+      lenis.scrollTo(target, { offset: -headerH() });
+    };
+    document.addEventListener('lw:scrollto', (e) => smoothTo(e.detail.target));
+    // In-Page-Anker sanft anfahren. Ausgenommen: die Kette (eigener Handler) und der Skip-Link — der braucht die
+    // native Fragment-Navigation, damit der Fokus-Startpunkt nach #main wandert (WCAG 2.4.1).
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a || a.classList.contains('skip-link') || a.closest('[data-chain-rail]')) return;
+      const href = a.getAttribute('href');
+      if (href.length < 2) return;                       // href="#": dem Browser überlassen
+      let target;
+      try { target = document.querySelector(href); } catch (err) { return; }   // ungültiger Selektor → nativ
+      if (!target) return;
+      e.preventDefault();
+      smoothTo(target);
+      // Fokus folgt dem Scroll, damit der nächste Tab hinter dem Ziel landet
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      history.replaceState(null, '', href);
+    });
+    setupSlides(gsap, ScrollTrigger);
+    window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+    window.__lwMotionReady = true;
+    document.dispatchEvent(new CustomEvent('lw:motion-ready'));
+  } catch (err) {
+    console.warn('[LOUWIETEC] Bewegung deaktiviert:', err.message);
+    teardown();
+    return;
+  }
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  mq.addEventListener('change', () => { if (mq.matches) teardown(); });
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') window.__lw = { gsap: gsapRef, lenis };
+}

@@ -1,1 +1,7 @@
-node_modules/
+node_modules
+docs/qa/tools/node_modules
+.qa-scratch/
+
+# Lighthouse-Einzelberichte (nur mit --full erzeugt, ~1 MB je Messung)
+docs/qa/lighthouse/**/*.report.html
+docs/qa/lighthouse/**/*.report.json

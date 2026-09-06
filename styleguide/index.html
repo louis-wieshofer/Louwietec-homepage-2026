@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="stage">
+<head>
+<!-- @partial:head-common -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B0F19">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/assets/brand/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/geist/Geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/geist/GeistMono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/motion.css" media="screen and (prefers-reduced-motion: no-preference)">
+<script src="/assets/js/boot.js"></script>
+<link rel="modulepreload" href="/assets/js/main.js">
+<!-- /@partial:head-common -->
+<title>Styleguide | LOUWIETEC</title>
+<meta name="robots" content="noindex">
+<style>
+/* Styleguide-eigene Hilfsklassen (.sg-*): nur Tokens, Radius 0. Keine Komponente der Website. */
+.sg-swatches { display: grid; gap: var(--s-3); grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr)); }
+.sg-swatch { border: 1px solid var(--line-strong); background: var(--bg); }
+.sg-swatch__chip { height: 5.5rem; display: flex; align-items: center; justify-content: center; }
+.sg-swatch__meta { padding: .6rem .75rem; font-size: var(--step-small); border-top: 1px solid var(--line); }
+.sg-swatch__meta .mono { display: block; font-size: var(--step-mono-xs); color: var(--fg-muted); margin-top: .2rem; }
+.sg-table { width: 100%; border-collapse: collapse; font-size: var(--step-small); border-top: 1px solid var(--line-strong); }
+.sg-table th, .sg-table td { text-align: left; vertical-align: top; padding: .7rem .75rem; border-bottom: 1px solid var(--line); }
+.sg-table thead th { font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--fg-muted); font-weight: 500; }
+.sg-table tr > *:first-child { padding-left: 0; }
+.sg-table tr > *:last-child { padding-right: 0; }
+.sg-spec { display: block; font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .06em; color: var(--fg-muted); margin-bottom: .35rem; }
+.sg-small { font-size: var(--step-small); }
+.sg-box { padding: var(--s-4); background: var(--bg); color: var(--fg); border: 1px solid var(--line-strong); }
+.sg-row { display: flex; flex-wrap: wrap; gap: var(--s-4); align-items: center; }
+.sg-icon-img { width: 6rem; height: auto; }
+.sg-logo-img { width: min(20rem, 100%); height: auto; }
+.sg-sample > * + * { margin-top: var(--s-5); }
+</style>
+</head>
+<body data-page="styleguide" data-backend="pending">
+<!-- @partial:header -->
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-beleg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></symbol></svg>
+<header class="site-header" data-header>
+<div class="container site-header__inner">
+<a class="brand" href="/" data-logo-dock-target><img class="brand__icon" src="/assets/brand/icon-192.png" width="32" height="32" alt="" decoding="async"><span class="brand__word">LOUWIETEC</span><span class="sr-only"> – Startseite</span></a>
+<nav class="site-nav" data-nav aria-label="Hauptnavigation">
+<ul class="site-nav__list">
+<li><a class="is-product" href="/ledger/" data-nav="ledger">LEDGER</a></li>
+<li><a class="is-product" href="/lens/" data-nav="lens">LENS</a></li>
+<li><a class="is-product" href="/forge/" data-nav="forge">FORGE</a></li>
+<li><a href="/kostenlos/" data-nav="kostenlos">Kostenlos</a></li>
+<li><a href="/investoren/" data-nav="investoren">Investoren &amp; Partner</a></li>
+<li><a href="/ueber-uns/" data-nav="ueber-uns">Über uns</a></li>
+<li><a href="/kontakt/" data-nav="kontakt">Kontakt</a></li>
+</ul>
+</nav>
+<button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-menu"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="sr-only">Menü</span></button>
+</div>
+<nav class="site-menu" id="site-menu" data-menu aria-label="Menü" hidden>
+<div class="container">
+<ul>
+<li><a class="is-product" href="/ledger/" data-nav="ledger">LEDGER</a></li>
+<li><a class="is-product" href="/lens/" data-nav="lens">LENS</a></li>
+<li><a class="is-product" href="/forge/" data-nav="forge">FORGE</a></li>
+<li><a href="/kostenlos/" data-nav="kostenlos">Kostenlos</a></li>
+<li><a href="/investoren/" data-nav="investoren">Investoren &amp; Partner</a></li>
+<li><a href="/karriere/" data-nav="karriere">Karriere</a></li>
+<li><a href="/ueber-uns/" data-nav="ueber-uns">Über uns</a></li>
+<li><a href="/kontakt/" data-nav="kontakt">Kontakt</a></li>
+<li><a href="/faq/" data-nav="faq">FAQ</a></li>
+</ul>
+<div class="site-menu__legal"><a href="/rechtliches/impressum/">Impressum</a><a href="/rechtliches/datenschutz/">Datenschutz</a><a href="/rechtliches/agb/">AGB</a></div>
+</div>
+</nav>
+</header>
+<!-- /@partial:header -->
+<main id="main" tabindex="-1" data-copy-root>
+
+<!-- 1 · Intro (Bühne) -->
+<section class="sec sec--stage" id="intro">
+<div class="texture" aria-hidden="true">
+<!-- Textur: echte SHA-256 über „LOUWIETEC textur 0…100“, Kurzform erste 4 + … + letzte 4 Hex-Zeichen. Nur Muster. -->
+<span data-t="292b…5351 prev ee6a…a73a   bb6d…c892 prev 292b…5351   9527…f5c1 prev bb6d…c892   3a36…3f9c prev 9527…f5c1   73c6…8988 prev 3a36…3f9c   063d…82fd prev 73c6…8988   86b5…b492 prev 063d…82fd   4c76…29b3 prev 86b5…b492   c083…0cbd prev 4c76…29b3   2d72…ce33 prev c083…0cbd"></span>
+<span data-t="cd05…3454 prev 2d72…ce33   16e8…d45e prev cd05…3454   3522…9845 prev 16e8…d45e   7049…205f prev 3522…9845   bf60…c1a5 prev 7049…205f   c07c…2b0f prev bf60…c1a5   576e…b6cb prev c07c…2b0f   798f…f01e prev 576e…b6cb   1907…d0eb prev 798f…f01e   f3c7…5e9a prev 1907…d0eb"></span>
+<span data-t="1a3b…b584 prev f3c7…5e9a   c583…54e3 prev 1a3b…b584   90be…9b45 prev c583…54e3   d5a1…812b prev 90be…9b45   f15a…9ea8 prev d5a1…812b   740e…917d prev f15a…9ea8   1000…5441 prev 740e…917d   3a8e…55ef prev 1000…5441   27e3…a433 prev 3a8e…55ef   0e4d…08cd prev 27e3…a433"></span>
+<span data-t="9cd9…3db9 prev 0e4d…08cd   52f3…d9ae prev 9cd9…3db9   f089…eaee prev 52f3…d9ae   d93f…3fdf prev f089…eaee   0aca…fc44 prev d93f…3fdf   a101…e14e prev 0aca…fc44   73f4…8ac0 prev a101…e14e   158c…3724 prev 73f4…8ac0   4150…1f68 prev 158c…3724   c805…d007 prev 4150…1f68"></span>
+<span data-t="f22b…e682 prev c805…d007   496e…2d57 prev f22b…e682   5b0b…2f2d prev 496e…2d57   e0a4…0622 prev 5b0b…2f2d   3b15…1392 prev e0a4…0622   edfd…4c2c prev 3b15…1392   941b…5ab0 prev edfd…4c2c   f7ac…fd1e prev 941b…5ab0   93b1…c875 prev f7ac…fd1e   e301…670a prev 93b1…c875"></span>
+<span data-t="4ab8…35a9 prev e301…670a   3061…6444 prev 4ab8…35a9   7cf3…8041 prev 3061…6444   3ca0…9d27 prev 7cf3…8041   a24a…192e prev 3ca0…9d27   3a91…12fe prev a24a…192e   aed4…7102 prev 3a91…12fe   2500…a53f prev aed4…7102   c82f…08c2 prev 2500…a53f   01d0…5f68 prev c82f…08c2"></span>
+<span data-t="2ab8…bc85 prev 01d0…5f68   60a2…ba61 prev 2ab8…bc85   9a68…488a prev 60a2…ba61   5113…cfbb prev 9a68…488a   de58…24b0 prev 5113…cfbb   afdc…3106 prev de58…24b0   4ff5…e41a prev afdc…3106   05a7…85d9 prev 4ff5…e41a   6e76…8751 prev 05a7…85d9   6d4c…f504 prev 6e76…8751"></span>
+<span data-t="74e4…ee70 prev 6d4c…f504   9909…34bf prev 74e4…ee70   0ef8…28f7 prev 9909…34bf   2eef…dcdb prev 0ef8…28f7   318c…7aec prev 2eef…dcdb   5cb5…2911 prev 318c…7aec   64fd…711e prev 5cb5…2911   e0ac…dcee prev 64fd…711e   e291…e6ed prev e0ac…dcee   bd14…d8a8 prev e291…e6ed"></span>
+<span data-t="35d7…6888 prev bd14…d8a8   4cd0…313e prev 35d7…6888   11d1…dd71 prev 4cd0…313e   9945…5c95 prev 11d1…dd71   8046…4f9e prev 9945…5c95   e1d1…c1b6 prev 8046…4f9e   7f2f…e01d prev e1d1…c1b6   bcf6…915a prev 7f2f…e01d   b669…1c6c prev bcf6…915a   03a1…83f7 prev b669…1c6c"></span>
+<span data-t="9d00…3e11 prev 03a1…83f7   c712…343d prev 9d00…3e11   6d80…60b9 prev c712…343d   d033…0183 prev 6d80…60b9   6237…d0a1 prev d033…0183   e3bb…3c93 prev 6237…d0a1   7f2a…d058 prev e3bb…3c93   f85b…5202 prev 7f2a…d058   5efe…3b11 prev f85b…5202   0737…8fca prev 5efe…3b11"></span>
+</div>
+<div class="container stack">
+<p class="kicker">STYLEGUIDE · PHASE 1 · LEBENDE DESIGN-ABNAHME</p>
+<h1 class="display">KI, der man glauben kann.</h1>
+<p class="tagline">We make companies unstoppable.</p>
+<div class="btn-row">
+<a class="btn btn--primary" href="/kontakt/">Gespräch anfragen — Antwort in 24 h</a>
+<a class="btn btn--secondary" href="/#faehigkeiten">Die drei Produkte</a>
+</div>
+<p class="muted sg-small measure">Diese Seite zeigt jeden Baustein der Website in seinem Endzustand, so wie site.css ihn ohne Bewegung rendert. Bewegung folgt in Phase 3 ausschließlich in motion.css. Was hier steht, gilt; was hier fehlt, gibt es nicht.</p>
+</div>
+</section>
+
+<!-- 2 · Farben (Papier) -->
+<section class="sec sec--paper" id="farben">
+<div class="container stack">
+<p class="kicker">02 · Farben</p>
+<h2>Zwei Flächen, eine Signalfarbe, ein seltenes Grün.</h2>
+<p class="measure">Bühne (Tinte) und Papier wechseln sich ab. Signal-Blau ist die Interaktionsfarbe und lebt auf der Bühne; auf Papier übernimmt Navy für Text, Links und Fokus. Verifiziert-Grün erscheint auf der ganzen Website genau dreimal und immer nur auf Tinte.</p>
+<div class="sg-swatches">
+<div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--ink)"></div><div class="sg-swatch__meta">Tinte · Bühne<span class="mono">--ink · #0B0F19</span></div></div>
+<div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--paper)"></div><div class="sg-swatch__meta">Papier · Lesefläche<span class="mono">--paper · #F6F5F1</span></div></div>
+<div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--signal)"></div><div class="sg-swatch__meta">Signal · Kette, Interaktion, Glühen (Bühne)<span class="mono">--signal · #4F8DFF</span></div></div>
+<!-- Der Grünwert steht hier als Dokumentationstext (&#35; als Entity), damit check-verify-green ihn nicht als
+     Farbanwendung außerhalb des CSS zählt. Die Fläche selbst zeigt das Grün über seinen Träger, den Stempel —
+     eine vierte Anwendung des Tokens gibt es nicht. -->
+<div class="sg-swatch"><div class="sg-swatch__chip" data-surface="stage" style="background: var(--ink)"><span class="stamp--verified">Verifiziert</span></div><div class="sg-swatch__meta">Verifiziert · genau dreimal, nur auf Tinte<span class="mono">--verify · &#35;2FD37A</span></div></div>
+<div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--navy)"></div><div class="sg-swatch__meta">Navy · Text, Links, Fokus auf Papier<span class="mono">--navy · #14213D</span></div></div>
+<div class="sg-swatch"><div class="sg-swatch__chip" data-surface="stage" style="background: var(--alarm)"></div><div class="sg-swatch__meta">Alarm Bühne · „Manipulation erkannt“<span class="mono">--alarm (Bühne) · #E5484D</span></div></div>
+<div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--alarm)"></div><div class="sg-swatch__meta">Alarm Papier · Formularfehler<span class="mono">--alarm (Papier) · #B3261E</span></div></div>
+<div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--ink-2)"></div><div class="sg-swatch__meta">Tinte 2 · Karten auf der Bühne<span class="mono">--ink-2 · #121826</span></div></div>
+<div class="sg-swatch"><div class="sg-swatch__chip" style="background: var(--paper-2)"></div><div class="sg-swatch__meta">Papier 2 · Karten, Hinweise auf Papier<span class="mono">--paper-2 · #ECEAE3</span></div></div>
+</div>
+<h3 class="mt-6">Kontraste</h3>
+<p class="measure sg-small muted">Gemessen nach WCAG 2.x. Regel: Text mindestens 4,5:1, grafische UI-Elemente mindestens 3:1. Was darunter liegt, wird nicht als Text verwendet.</p>
+<div class="table-wrap">
+<table class="sg-table">
+<caption class="sr-only">Gemessene Kontrastwerte der Farbpaare mit der jeweils geltenden Regel</caption>
+<thead><tr><th scope="col">Paar</th><th scope="col">Kontrast</th><th scope="col">Regel · Verwendung</th></tr></thead>
+<tbody>
+<tr><th scope="row">Tinte auf Papier</th><td class="num">17,55:1</td><td>Text ≥ 4,5:1 · Fließtext, Überschriften</td></tr>
+<tr><th scope="row">Signal auf Tinte</th><td class="num">6,01:1</td><td>Text ≥ 4,5:1 · Links und Akzent nur auf der Bühne</td></tr>
+<tr><th scope="row">Signal auf Papier</th><td class="num">2,92:1</td><td>nie als Text oder Fokusring auf Papier · nur Flächen ohne Textfunktion</td></tr>
+<tr><th scope="row">Tinte auf Signal</th><td class="num">6,01:1</td><td>Text ≥ 4,5:1 · Beschriftung des Primärbuttons</td></tr>
+<tr><th scope="row">Navy auf Papier</th><td class="num">14,64:1</td><td>Text ≥ 4,5:1 · Links, Fokus, Akzent auf Papier</td></tr>
+<tr><th scope="row">Verify auf Tinte</th><td class="num">9,78:1</td><td>Text ≥ 4,5:1 · nur Bühne: Siegel, Beleg-ok, Stempel</td></tr>
+<tr><th scope="row">Verify auf Papier</th><td class="num">1,80:1</td><td>nie · Grün kommt auf Papier nicht vor</td></tr>
+<tr><th scope="row">Alarm Bühne (#E5484D) auf Tinte</th><td class="num">4,89:1</td><td>Text ≥ 4,5:1 · nur Bühne</td></tr>
+<tr><th scope="row">Alarm Papier (#B3261E) auf Papier</th><td class="num">5,99:1</td><td>Text ≥ 4,5:1 · Fehlertexte in Formularen</td></tr>
+<tr><th scope="row">Gedämpfter Text Papier (#606267)</th><td class="num">5,60:1</td><td>Text ≥ 4,5:1 · Kicker, Hinweise, Tagline</td></tr>
+<tr><th scope="row">Gedämpfter Text Bühne (#A6A7A8)</th><td class="num">7,95:1</td><td>Text ≥ 4,5:1 · Kicker, Hinweise, Ticker</td></tr>
+<tr><th scope="row">Papier auf Tinte 2</th><td class="num">16,25:1</td><td>Text ≥ 4,5:1 · Kartentext auf der Bühne</td></tr>
+<tr><th scope="row">Tinte auf Papier 2</th><td class="num">15,91:1</td><td>Text ≥ 4,5:1 · Kartentext, Hinweise auf Papier</td></tr>
+<tr><th scope="row">Signal auf Tinte 2</th><td class="num">5,56:1</td><td>Text ≥ 4,5:1 · Links in Bühnen-Karten</td></tr>
+<tr><th scope="row">Markenblau (#3C7CCC) auf Tinte</th><td class="num">4,51:1</td><td>Text ≥ 4,5:1 knapp erfüllt · nur im Logo</td></tr>
+<tr><th scope="row">Markenblau (#3C7CCC) auf Papier</th><td class="num">3,89:1</td><td>UI ≥ 3:1 · nie als Text, nur im Logo</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- 3 · Typografie (Papier) -->
+<section class="sec sec--paper" id="typografie">
+<div class="container">
+<div class="stack">
+<p class="kicker">03 · Typografie</p>
+<h2>Geist für Sprache, Geist Mono für Beweis.</h2>
+<p class="measure">Beide Schriften sind selbst gehostet (Latin und Latin-Extended, variabel 100–900). Überall, wo Zahlen, Hashes, Zeitstempel oder Zustände stehen, ist die Schrift Mono — man sieht dem Text an, dass er ein Nachweis ist. Die Muster unten sind wortgleiche Zeilen aus dem Texte-Dokument.</p>
+</div>
+<!-- Muster-Überschriften tragen role="none": sie zeigen die Stile, ohne die Gliederung der Seite zu verändern. -->
+<div class="sg-sample mt-6">
+<div><span class="sg-spec">.display · var(--step-hero) · clamp(3rem, 1rem + 8vw, 8rem)</span><p class="display">Erst prüfen. Dann glauben.</p></div>
+<div><span class="sg-spec">h1 · var(--step-h1) · clamp(2.25rem, 1rem + 4.5vw, 5.5rem)</span><h1 role="none">Die Stelle, die Sie nicht besetzen können, gibt es als Software. Lieferzeit: 14 Tage.</h1></div>
+<div><span class="sg-spec">h2 · var(--step-h2) · clamp(1.75rem, 1rem + 2.5vw, 3.5rem)</span><h2 role="none">Wenn die Prüfung kommt, entscheidet nicht, was Ihre KI konnte. Sondern was Sie beweisen können.</h2></div>
+<div><span class="sg-spec">h3 · var(--step-h3) · clamp(1.25rem, 1rem + 1vw, 1.75rem)</span><h3 role="none">Souverän, wie Sie es definieren.</h3></div>
+<div><span class="sg-spec">.lead · var(--step-lead)</span><p class="lead">Irgendwo in Ihrem Haus sitzt jemand und tut jeden Tag dasselbe: Rechnungen abtippen, Angebote zusammenkopieren, Berichte bauen, Mails sortieren. Nicht, weil es niemand automatisieren könnte — sondern weil Softwareprojekte teuer beginnen und ungewiss enden.</p></div>
+<div><span class="sg-spec">Fließtext · var(--step-body) · 1.0625rem</span><p class="measure">Ihre Wettbewerber setzen KI ein. Ihre Mitarbeiter benutzen sie längst — gefragt oder ungefragt. Und ab Dezember 2027 fragt der Gesetzgeber nach Nachweisen, die heute kaum ein Unternehmen liefern kann.</p></div>
+<div><span class="sg-spec">.small · var(--step-small) · .875rem</span><p class="sg-small measure">Alle Preise zzgl. USt. · Geld-zurück im ersten Monat · Monatlich kündbar</p></div>
+<div><span class="sg-spec">.mono · var(--font-mono) · tabular-nums</span><p class="mono measure">Sitz in Wien · EU-Betrieb · Vollständiges Impressum, AGB, Datenschutz · Antwort in 24 Stunden</p></div>
+<div><span class="sg-spec">.kicker · var(--step-mono-xs) · Versalien, Akzentpunkt</span><p class="kicker">LEDGER · KI-NACHWEIS · BY LOUWIETEC</p></div>
+</div>
+</div>
+</section>
+
+<!-- 4 · Flächen & Rhythmus: Bühne, dann Papier schiebt sich darüber -->
+<section class="sec sec--stage" id="flaechen">
+<div class="container stack">
+<p class="kicker">04 · Flächen &amp; Rhythmus</p>
+<h2>Bühne.</h2>
+<p class="lead">Auf der Bühne lebt die Bewegung: Hero, Produkt-Demonstrationen, Investoren-These. Tiefes Tintenschwarz, Signal-Blau, Hash-Textur.</p>
+<p class="muted sg-small measure">Die folgende Papier-Sektion trägt .sec--slide: statische Kante und Schatten. In Phase 3 kommt in motion.css der Einschub dazu; der Endzustand ist dieser.</p>
+</div>
+</section>
+<section class="sec sec--paper sec--slide" id="papier">
+<div class="container stack">
+<p class="kicker">04 · Flächen &amp; Rhythmus</p>
+<h2>Papier.</h2>
+<p class="lead">Papier schiebt sich über die Bühne wie ein Bericht auf den Tisch. Hier wird gelesen: Texte, Konditionen, FAQ.</p>
+</div>
+</section>
+
+<!-- 5 · Buttons auf Papier -->
+<section class="sec sec--paper" id="buttons-papier">
+<div class="container stack">
+<p class="kicker">05 · Buttons · Papier</p>
+<h2>Vier Buttons, eine Interaktionsfarbe.</h2>
+<p class="measure">Primär trägt Signal mit Tinte als Schrift (6,0:1) und auf Papier eine Tintenkante. Sekundär ist eine Linie. Ghost ist Text mit Unterstrich in der Akzentfarbe der Fläche. Vault trägt die Schwere des Datenraum-Buttons. Deaktivierte Buttons sind dieselben mit halber Deckung.</p>
+<div class="btn-row">
+<button class="btn btn--primary" type="button">Gespräch anfragen — Antwort in 24 h</button>
+<button class="btn btn--secondary" type="button">Die drei Produkte</button>
+<button class="btn btn--ghost" type="button">Zu LEDGER</button>
+<button class="btn btn--vault" type="button">Investoren-Kontakt</button>
+</div>
+<p class="sg-spec mt-5">:disabled</p>
+<div class="btn-row">
+<button class="btn btn--primary" type="button" disabled>Gespräch anfragen — Antwort in 24 h</button>
+<button class="btn btn--secondary" type="button" disabled>Die drei Produkte</button>
+<button class="btn btn--ghost" type="button" disabled>Zu LEDGER</button>
+<button class="btn btn--vault" type="button" disabled>Investoren-Kontakt</button>
+</div>
+</div>
+</section>
+<!-- 5 · Buttons auf Bühne -->
+<section class="sec sec--stage" id="buttons-buehne">
+<div class="container stack">
+<p class="kicker">05 · Buttons · Bühne</p>
+<h2>Dieselben Buttons auf Tinte.</h2>
+<p class="measure">Auf der Bühne wird die Primärkante Signal, Ghost unterstreicht in Signal, der Fokusring ist Signal. Nichts sonst ändert sich.</p>
+<div class="btn-row">
+<button class="btn btn--primary" type="button">Gespräch anfragen — Antwort in 24 h</button>
+<button class="btn btn--secondary" type="button">Die drei Produkte</button>
+<button class="btn btn--ghost" type="button">Zu LEDGER</button>
+<button class="btn btn--vault" type="button">Investoren-Kontakt</button>
+</div>
+<p class="sg-spec mt-5">:disabled</p>
+<div class="btn-row">
+<button class="btn btn--primary" type="button" disabled>Gespräch anfragen — Antwort in 24 h</button>
+<button class="btn btn--secondary" type="button" disabled>Die drei Produkte</button>
+<button class="btn btn--ghost" type="button" disabled>Zu LEDGER</button>
+<button class="btn btn--vault" type="button" disabled>Investoren-Kontakt</button>
+</div>
+</div>
+</section>
+
+<!-- 6 · Karten (Bühne) — Texte: Seite 1, Sektion „Drei Fähigkeiten, ein Haus“ -->
+<section class="sec sec--stage" id="karten">
+<div class="container stack">
+<p class="kicker">06 · Karten</p>
+<h2>Beweisen. Verstehen. Handeln.</h2>
+<div class="grid grid--3">
+<article class="card">
+<p class="card__kicker">LEDGER · BY LOUWIETEC</p>
+<h3 class="card__title">Der Flugschreiber für Ihre KI.</h3>
+<p class="card__claim">Zeichnet jede KI-Nutzung lückenlos und manipulationssicher auf — Betriebsort Ihre Wahl, prüfbar durch Dritte. Auf Knopfdruck der Bericht, den Revision, Wirtschaftsprüfer und Aufsicht sehen wollen.</p>
+<p><a class="card__link" href="/ledger/">Zu LEDGER</a></p>
+</article>
+<article class="card">
+<p class="card__kicker">LENS · BY LOUWIETEC</p>
+<h3 class="card__title">Verstehen Sie Ihre Daten. Ohne sie herzugeben.</h3>
+<p class="card__claim">Ihre Exporte hinein, Entscheidungen heraus: Wo Sie verdienen, was sich verändert, wovon Sie abhängen — jede Aussage belegt.</p>
+<p><a class="card__link" href="/lens/">Zu LENS</a></p>
+</article>
+<article class="card">
+<p class="card__kicker">FORGE · BY LOUWIETEC</p>
+<h3 class="card__title">Ihre Automatisierung. In 14 Tagen. Zum Festpreis.</h3>
+<p class="card__claim">Aus dem Katalog gewählt, von unserer Fabrik gebaut, von uns betrieben. Und jeder Lauf: beweisbar.</p>
+<p><a class="card__link" href="/forge/">Zu FORGE</a></p>
+</article>
+</div>
+<p class="muted sg-small measure">Karten liegen auf Tinte 2 mit feiner Linie. In Phase 3 tragen sie ihr Bewegungsmotiv als Miniatur; der Endzustand ist dieser.</p>
+</div>
+</section>
+
+<!-- 7 · Konditionen (Papier) — Tabelle: Seite 2, LEDGER -->
+<section class="sec sec--paper" id="konditionen">
+<div class="container stack">
+<p class="kicker">07 · Konditionen</p>
+<h2>Konditionen</h2>
+<p class="measure sg-small muted">Klar wie ein Vertrag: Mono für Entgelte, Linien statt Zebra. Unter 768 px wird jede Zeile zu einer Karte; die Spaltenköpfe kommen aus data-label und sind kein Text.</p>
+<div class="table-wrap">
+<table class="konditionen">
+<caption class="sr-only">Konditionen LEDGER: Edition, Zielgruppe und Entgelt</caption>
+<thead><tr><th scope="col">Edition</th><th scope="col">Für wen</th><th scope="col">Entgelt</th></tr></thead>
+<tbody>
+<tr><th scope="row" data-label="Edition">Starter</th><td data-label="Für wen">1 KI-System · Kette · Monatsbericht · Portal</td><td class="num" data-label="Entgelt">1.990 €/Monat + 5.000 € Einrichtung</td></tr>
+<tr><th scope="row" data-label="Edition">Pro</th><td data-label="Für wen">+ Revisionsreport · Alarme · Mehrbenutzer · API</td><td class="num" data-label="Entgelt">2.990 €/Monat</td></tr>
+<tr><th scope="row" data-label="Edition">Group</th><td data-label="Für wen">mehrere Systeme (+990 €/M je System) · Mandanten · zentrale Sicht</td><td class="num" data-label="Entgelt">ab 6.000 €/Monat</td></tr>
+<tr><th scope="row" data-label="Edition">Enterprise</th><td data-label="Für wen">unbegrenzt · Aufsichts-Paket · Air-Gap · individuelle Modelle</td><td class="num" data-label="Entgelt">ab 60.000 €/Jahr · Verhandlung</td></tr>
+</tbody>
+</table>
+</div>
+<p class="konditionen-note">Alle Preise zzgl. USt. · <strong>Betriebsort: LOUWIETEC-Cloud (EU) oder Managed On-Prem in Ihrem Haus — Ihre Wahl, ohne Aufpreis</strong> (Air-Gap-Betrieb: Enterprise) · Erster voller Monat: Geld-zurück-Garantie · Monatlich kündbar · <strong>Erstanwender je Branche: reduzierte Konditionen gegen Referenznennung — begrenzt, auf Anfrage.</strong></p>
+</div>
+</section>
+
+<!-- 8 · Beleg-Zeichen (Papier) -->
+<section class="sec sec--paper" id="beleg">
+<div class="container stack">
+<p class="kicker">08 · Beleg-Zeichen · Papier</p>
+<h2>Jede Zahl trägt ein Beleg-Zeichen.</h2>
+<p class="measure">Das Zeichen ist eine Komponente (Inline-SVG, Schaltfläche mit Popover-Vertrag). Grundzustand gedämpft, bei Zeiger und Fokus in der Akzentfarbe der Fläche. Das Popover ist immer Tinte, damit ein bestandener Beleg lesbar bleibt.</p>
+<p class="lead">Sitz in Wien · EU-Betrieb · Vollständiges Impressum, AGB, Datenschutz · Antwort in <span class="num">24</span> Stunden<button type="button" class="beleg" aria-label="Beleg anzeigen" aria-expanded="false" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button></p>
+<div>
+<span class="sg-spec">.beleg-pop · statisch positioniert zur Ansicht (im Betrieb absolut, ein Singleton)</span>
+<div class="beleg-pop" role="dialog" aria-label="Beleg" style="position:static; display:inline-block">
+<p class="beleg-pop__title">Antwort in 24 Stunden</p>
+<p class="beleg-pop__status">Beleg folgt</p>
+<p class="beleg-pop__artefakt">Messreihe startet mit der ersten Anfrage.</p>
+</div>
+</div>
+<div>
+<span class="sg-spec">Fließtext-Variante · .glyph-beleg (Zeichen U+2316 aus der Symbol-Schrift, kein Bestandteil von Geist)</span>
+<p class="measure">Jede Zahl auf dieser Website trägt ein Beleg-Zeichen <span class="glyph-beleg">⌖</span> — ein Klick zeigt das Artefakt dahinter. Was noch nicht fertig ist, steht ehrlich als „in Arbeit“ da.</p>
+</div>
+</div>
+</section>
+<!-- 8 · Beleg-Zeichen (Bühne) — Zustand .is-ok nur hier -->
+<section class="sec sec--stage" id="beleg-buehne">
+<div class="container stack">
+<p class="kicker">08 · Beleg-Zeichen · Bühne</p>
+<h2>Bestanden heißt Grün. Nur auf Tinte.</h2>
+<p class="measure">Der Zustand .is-ok ist die zweite der drei Anwendungen von Verifiziert-Grün. Er kommt nur auf der Bühne vor; auf Papier bleibt ein bestandener Beleg in der Akzentfarbe.</p>
+<p class="lead">Antwort in <span class="num">24</span> Stunden<button type="button" class="beleg is-ok" aria-label="Beleg anzeigen" aria-expanded="false" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button></p>
+<p class="lead">Antwort in <span class="num">24</span> Stunden<button type="button" class="beleg" aria-label="Beleg anzeigen" aria-expanded="false" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button></p>
+<div>
+<span class="sg-spec">.beleg-pop auf der Bühne · unverändert Tinte</span>
+<div class="beleg-pop" role="dialog" aria-label="Beleg" style="position:static; display:inline-block">
+<p class="beleg-pop__title">Antwort in 24 Stunden</p>
+<p class="beleg-pop__status">Beleg folgt</p>
+<p class="beleg-pop__artefakt">Messreihe startet mit der ersten Anfrage.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 9 · Siegel & Stempel (Bühne) -->
+<section class="sec sec--stage" id="siegel">
+<div class="container stack">
+<p class="kicker">09 · Siegel &amp; Stempel</p>
+<h2>Das Siegel fällt am Ende. Der Stempel steht im Bericht.</h2>
+<p class="measure">Verifiziert-Grün kommt auf der Website genau dreimal vor: beim geschlossenen Siegel, beim bestandenen Beleg und beim Verifiziert-Stempel. Sonst nirgends. Seltenheit macht es wertvoll — und check-verify-green zählt es maschinell.</p>
+<div class="sg-row">
+<div class="seal is-stamped" aria-hidden="true">VERIFIZIERT</div>
+<span class="stamp--verified">Verifiziert</span>
+</div>
+<p class="muted sg-small measure">Das Siegel ist für Screenreader verborgen (aria-hidden); der Sinn steht im Text der Abschluss-Sektion. Der Stempel ist Text.</p>
+</div>
+</section>
+
+<!-- 10 · Beweiskette (Bühne) -->
+<section class="sec sec--stage" id="beweiskette">
+<div class="container stack">
+<p class="kicker">10 · Beweiskette</p>
+<h2>Fünf Glieder, eine Lücke.</h2>
+<p class="measure">Die Kette ist die Fortschrittsanzeige der Startseite: am Desktop links am Rand, mobil oben. Mit jedem Abschnitt schließt sich ein Glied. Glied 2 bleibt offen — die Vertrauenslücke — bis der Besucher die drei Fähigkeiten erreicht. Das letzte Glied ist voll gefüllt.</p>
+<nav class="chain chain--demo" aria-label="Abschnitte">
+<ol>
+<li class="chain__link is-closed" data-chain-link="hero"><a href="#beweiskette" aria-label="Hero"></a></li>
+<li class="chain__link" data-chain-link="luecke"><a href="#beweiskette" aria-label="Die Vertrauenslücke"></a></li>
+<li class="chain__link is-closed" data-chain-link="faehigkeiten"><a href="#beweiskette" aria-label="Drei Fähigkeiten, ein Haus"></a></li>
+<li class="chain__link is-closed" data-chain-link="glaesern"><a href="#beweiskette" aria-label="Der gläserne Anbieter"></a></li>
+<li class="chain__link is-closed chain__link--final" data-chain-link="abschluss"><a href="#beweiskette" aria-label="Abschluss"></a></li>
+</ol>
+</nav>
+<p class="muted sg-small measure">Zustände: .is-closed (gefüllt, Signal 18 %), offen (Oberkante fehlt — die Lücke), .chain__link--final.is-closed (voll Signal). Ohne JavaScript und bei reduzierter Bewegung ist alles geschlossen.</p>
+</div>
+</section>
+
+<!-- 11 · Countdown (Bühne) — 453 = Stand vom 2026-09-05 (Tage bis 2027-12-02, aufgerundet); countdown.js aktualisiert in Phase 3 -->
+<section class="sec sec--stage" id="countdown">
+<div class="container stack">
+<p class="kicker">11 · Countdown</p>
+<h2>Die Zahl ist die Bühne.</h2>
+<div class="count" aria-hidden="true">453<span class="count__unit">Tage</span></div>
+<p class="count__line">Noch <strong><time datetime="2027-12-02">453</time> Tage</strong> bis zur Nachweispflicht für Hochrisiko-KI (EU AI Act, 02.12.2027).</p>
+<p class="muted sg-small measure">Statischer Wert im Markup, Stand 05.09.2026. Nur im LEDGER-Raum. Farben: Signal und Papier, sonst nichts.</p>
+</div>
+</section>
+
+<!-- 12 · Hash-Ticker (Bühne) -->
+<section class="sec sec--stage" id="hash-ticker">
+<div class="container stack">
+<p class="kicker">12 · Hash-Ticker</p>
+<h2>Echte Hashes, ehrlich beschriftet.</h2>
+<p class="muted">Beweiskette startet mit dem ersten Kunden.</p>
+<!-- Sechs echte SHA-256 über die Zeichenketten „LOUWIETEC styleguide 0“ … „LOUWIETEC styleguide 6“ (UTF-8),
+     Kurzform: erste 4 + … + letzte 4 Hex-Zeichen; „prev“ zeigt den jeweils vorherigen Hash.
+     Prüfbar mit: printf 'LOUWIETEC styleguide 1' | sha256sum -->
+<div class="hash-ticker" aria-hidden="true">
+<span>0619…3cab prev 212d…293a</span>
+<span>8fd1…260e prev 0619…3cab</span>
+<span>ed70…ff8b prev 8fd1…260e</span>
+<span>ee00…66e6 prev ed70…ff8b</span>
+<span>bf29…cf84 prev ee00…66e6</span>
+<span>b8a8…2cc0 prev bf29…cf84</span>
+</div>
+<p class="muted sg-small measure">Kein „letzte Verifikation“-Block, solange es keine Datenquelle gibt. Der Ticker zeigt Textur, keine Behauptung.</p>
+</div>
+</section>
+
+<!-- 13 · Formular-Elemente (Papier) — nichts wird gesendet (type="button") -->
+<section class="sec sec--paper" id="formular">
+<div class="container stack">
+<p class="kicker">13 · Formular-Elemente</p>
+<h2>Formulare ohne Fremd-Tools.</h2>
+<p class="measure">Felder mit Linie, Radius 0, Fokus in Navy. Fehler in Alarm-Rot mit Text, nie nur Farbe. Der Honeypot liegt außerhalb des Bildschirms und außerhalb der Tab-Reihenfolge. Diese Vorschau sendet nichts.</p>
+<form class="form" novalidate data-diff-ignore>
+<div class="field">
+<label class="field__label" for="sg-firma">Firma*</label>
+<input id="sg-firma" name="firma" type="text" required autocomplete="organization">
+</div>
+<div class="field">
+<label class="field__label" for="sg-email">E-Mail*</label>
+<input id="sg-email" name="email" type="email" required autocomplete="email" aria-invalid="true" aria-describedby="sg-email-error">
+<p class="field__error" id="sg-email-error">Bitte prüfen Sie diese Angabe.</p>
+</div>
+<div class="field">
+<label class="field__label" for="sg-anliegen">Anliegen</label>
+<select id="sg-anliegen" name="anliegen">
+<option value="">Bitte wählen</option>
+<option value="ledger">LEDGER</option>
+<option value="lens">LENS</option>
+<option value="forge">FORGE</option>
+<option value="enterprise">Enterprise</option>
+<option value="investor">Investor &amp; Partner</option>
+<option value="presse">Presse</option>
+<option value="sonstiges">Sonstiges</option>
+</select>
+</div>
+<div class="field">
+<label class="field__label" for="sg-nachricht">Nachricht</label>
+<textarea id="sg-nachricht" name="nachricht" rows="5"></textarea>
+</div>
+<div class="field field--check">
+<input id="sg-consent" name="consent" type="checkbox">
+<label for="sg-consent">Ich habe den Datenschutzhinweis gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</label>
+</div>
+<div class="hp" aria-hidden="true">
+<label for="sg-website">Website</label>
+<input id="sg-website" name="website" type="text" tabindex="-1" autocomplete="off">
+</div>
+<button class="btn btn--primary" type="button">Absenden</button>
+<p class="form__status" role="status"></p>
+</form>
+</div>
+</section>
+
+<!-- 14 · Hinweise (Papier) -->
+<section class="sec sec--paper" id="hinweise">
+<div class="container stack">
+<p class="kicker">14 · Hinweise</p>
+<h2>Ehrlich beschriftet.</h2>
+<div class="note note--work measure">Was noch nicht fertig ist, steht ehrlich als „in Arbeit“ da.</div>
+<p><span class="tag">Vorschau · Beispieldaten</span></p>
+<p class="muted sg-small measure">Jede Produktoberfläche ist entweder echt oder trägt sichtbar dieses Etikett.</p>
+</div>
+</section>
+
+<!-- 15 · Logo-Regeln (Papier) -->
+<section class="sec sec--paper" id="logo">
+<div class="container stack">
+<p class="kicker">15 · Logo-Regeln</p>
+<h2>Icon oben, Volllogo unten. Nie beide gemeinsam.</h2>
+<p class="measure">Das Gehirn-Icon steht im Header (links, mit „LOUWIETEC“ als gesetzte Geist-Schrift daneben), als Favicon und für Akzente. Das Volllogo mit Schriftzug und Slogan erscheint nur im Footer und im Abbinder von „Über uns“. Auf einer Fläche kommen nie beide vor.</p>
+<div class="grid grid--2">
+<div class="sg-box">
+<span class="sg-spec">Icon · Header, Favicon, Akzente · /assets/brand/icon-192.png</span>
+<img class="sg-icon-img" src="/assets/brand/icon-192.png" width="192" height="192" alt="LOUWIETEC-Icon: stilisiertes Gehirn in Markenblau" loading="lazy" decoding="async">
+</div>
+<div class="sg-box">
+<span class="sg-spec">Volllogo · nur Footer und Über-uns-Abbinder · /assets/brand/logo-full.png</span>
+<img class="sg-logo-img" src="/assets/brand/logo-full.png" width="1241" height="382" alt="LOUWIETEC – We make companies unstoppable." loading="lazy" decoding="async">
+</div>
+<div class="sg-box" data-surface="stage">
+<span class="sg-spec">Weiß-Variante auf Bühne · /assets/brand/icon-white.png</span>
+<img class="sg-icon-img" src="/assets/brand/icon-white.png" width="797" height="797" alt="LOUWIETEC-Icon in Weiß auf Tinte" loading="lazy" decoding="async">
+</div>
+<div class="sg-box">
+<span class="sg-spec">Tinten-Variante auf Papier · /assets/brand/icon-ink.png</span>
+<img class="sg-icon-img" src="/assets/brand/icon-ink.png" width="797" height="797" alt="LOUWIETEC-Icon in Tinte auf Papier" loading="lazy" decoding="async">
+</div>
+<div class="sg-box" data-surface="stage">
+<span class="sg-spec">Volllogo Weiß · Footer auf Bühne · /assets/brand/logo-full-white.png</span>
+<img class="sg-logo-img" src="/assets/brand/logo-full-white.png" width="1241" height="382" alt="LOUWIETEC – We make companies unstoppable. (Weiß auf Tinte)" loading="lazy" decoding="async">
+</div>
+</div>
+<p class="muted sg-small measure">Keine Fotos, keine Stock-Illustrationen, keine erfundenen Kundenlogos. Nur Typografie, Linien, Punkte, Kette, Licht.</p>
+</div>
+</section>
+
+</main>
+<!-- @partial:footer -->
+<footer class="site-footer sec sec--stage" data-footer>
+<div class="container">
+<div class="site-footer__grid">
+<div><a href="/" aria-label="LOUWIETEC – Startseite"><img class="site-footer__logo" src="/assets/brand/logo-full-white.png" width="1241" height="382" alt="LOUWIETEC – We make companies unstoppable." loading="lazy" decoding="async"></a></div>
+<nav aria-label="Produkte">
+<h2 class="site-footer__h">Produkte</h2>
+<ul>
+<li><a class="is-product" href="/ledger/">LEDGER <small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/lens/">LENS <small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/forge/">FORGE <small>by LOUWIETEC</small></a></li>
+</ul>
+</nav>
+<nav aria-label="Unternehmen">
+<h2 class="site-footer__h">Unternehmen</h2>
+<ul>
+<li><a href="/kostenlos/">Kostenlos</a></li>
+<li><a href="/investoren/">Investoren &amp; Partner</a></li>
+<li><a href="/karriere/">Karriere</a></li>
+<li><a href="/ueber-uns/">Über uns</a></li>
+<li><a href="/kontakt/">Kontakt</a></li>
+<li><a href="/faq/">FAQ</a></li>
+</ul>
+</nav>
+<nav aria-label="Rechtliches">
+<h2 class="site-footer__h">Rechtliches</h2>
+<ul>
+<li><a href="/rechtliches/impressum/">Impressum</a></li>
+<li><a href="/rechtliches/datenschutz/">Datenschutz</a></li>
+<li><a href="/rechtliches/agb/">AGB</a></li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__meta">
+<span><a href="mailto:office@louwietec.com">office@louwietec.com</a> · Wien, Österreich</span>
+<span class="mono">© 2026 LOUWIETEC</span>
+</div>
+</div>
+</footer>
+<!-- /@partial:footer -->
+<!-- @partial:scripts -->
+<script type="module" src="/assets/js/main.js"></script>
+<!-- /@partial:scripts -->
+</body>
+</html>
