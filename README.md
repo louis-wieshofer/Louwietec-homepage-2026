@@ -4,7 +4,7 @@ Quellcode der Website von LOUWIETEC (Wien) unter `https://louwietec.com`.
 Reines HTML, CSS und JavaScript **ohne Build-Schritt**: GitHub Pages liefert den Root des
 Branches `main` unverändert aus. Was im Repo liegt, ist das, was ausgeliefert wird.
 
-Stand: Phasen 0 bis 5 abgeschlossen auf `feature/website-v2` (QA und SEO/GEO folgen), siehe [Phasenstand](#phasenstand).
+Stand: Website v2 live auf `main` seit 2026-09-06 (Phasen 0 bis 6; SEO/GEO zurückgestellt, Integrationstag mit dem Backend offen), siehe [Phasenstand](#phasenstand).
 Backend-Code gehört nicht in dieses Repo; die Website spricht den getrennten Backend-Dienst
 ausschließlich über den [Schnittstellen-Vertrag](docs/CONTRACT.md) an.
 
@@ -211,9 +211,9 @@ bleibt eine eigene Freigabe.
 | 3 Bewegung | Beweiskette, Lücke, Siegel, Raum-Motive, Countdown, Beleg-Zeichen | Scroll-Video Desktop und Mobil; Reduced-Motion-Screenshots | abgeschlossen | [PHASE-3.md](docs/reports/PHASE-3.md) |
 | 4 Hero | Canvas-Platzhalter, Frame-Scrub-Schnittstelle | Test mit 30 Dummy-Frames | abgeschlossen | [PHASE-4.md](docs/reports/PHASE-4.md) |
 | 5 Anbindung | Formulare gegen Testdouble, `/config`-Buttons, Fallback, Analytics-Ereignisse, `jobs.json`, Rechtliches, Redirect-Stubs | Jedes Formular sendet; Fallback-Test; Ereignisse sichtbar | abgeschlossen (zwölf Tests grün gegen Testdouble) | [PHASE-5.md](docs/reports/PHASE-5.md) |
-| 6 QA | Lighthouse ≥ 90 (mobil und Desktop), Gerätetest, Reduced-Motion, Tastatur, Baff-Test | Reports unter `docs/qa/` | offen | — |
+| 6 QA | Lighthouse ≥ 90 (mobil und Desktop), Gerätetest, Reduced-Motion, Tastatur, Baff-Test | Reports unter `docs/qa/` | abgeschlossen (Baff-Test simuliert; Seiten-Reviews laufen nach) | [PHASE-6.md](docs/reports/PHASE-6.md) |
 | 6b SEO/GEO | JSON-LD, OG-Bilder, `sitemap.xml`, `robots.txt`, `llms.txt`, hreflang-Vorbereitung | SEO-Check grün, Lighthouse SEO ≥ 90 | zurückgestellt (Entscheidung Louis, 2026-09-06); Arbeitsliste im Bericht | [PHASE-6b.md](docs/reports/PHASE-6b.md) |
-| 7 Integration und Go-Live | PR nach `main` und Merge (Freigabe Louis 2026-09-06); Integrationstag mit Session 2 (zwölf Tests gegen das echte Backend) folgt, wenn das Backend fertig ist | Website live auf `louwietec.com`; bis zum Integrationstag läuft die Anbindung im mailto-Fallback | in Arbeit | — |
+| 7 Integration und Go-Live | PR nach `main` und Merge (Freigabe Louis 2026-09-06); Integrationstag mit Session 2 (zwölf Tests gegen das echte Backend) folgt, wenn das Backend fertig ist | Website live auf `louwietec.com`; bis zum Integrationstag läuft die Anbindung im mailto-Fallback | Merge 2026-09-06, Integrationstag offen | [PHASE-7.md](docs/reports/PHASE-7.md) |
 
 Phase 6b ist gegenüber dem Phasenplan der Orchestrierung ergänzt (SEO/GEO erst nach
 bestandener QA, vor dem Pull Request).
