@@ -1,6 +1,6 @@
 /* products.js — Buttons je Produkt ausschließlich aus GET /config (Vertrag §2):
-   reserve → „Erstanwender-Platz reservieren — kostenlos“
-   deposit → zusätzlich „Platz fixieren — {deposit_eur} € Anzahlung, anrechenbar, rückforderbar“
+   reserve → „Erstanwender-Platz reservieren, kostenlos“
+   deposit → zusätzlich „Platz fixieren: {deposit_eur} € Anzahlung, anrechenbar, rückforderbar“
    live    → „Jetzt buchen“ (Checkout)
    Enterprise hat nie einen Kaufen-Button (statisch: „Gespräch anfragen“). Backend down → nur Reservierung im mailto-Modus.
    DOM-Vertrag: [data-product-cta=produkt][data-reserve-target="#id"] · section[data-reserve-form] mit form[data-form=reserve] */
@@ -8,8 +8,8 @@ import { ready, state } from './api.js';
 import { PRODUCT_NAMES } from './config.js';
 
 const TEXT = Object.freeze({
-  reserve: 'Erstanwender-Platz reservieren — kostenlos',
-  deposit: (eur) => `Platz fixieren — ${eur} € Anzahlung, anrechenbar, rückforderbar`,
+  reserve: 'Erstanwender-Platz reservieren, kostenlos',
+  deposit: (eur) => `Platz fixieren: ${eur} € Anzahlung, anrechenbar, rückforderbar`,
   live: 'Jetzt buchen',
 });
 
@@ -70,7 +70,7 @@ export async function init() {
     host.setAttribute('data-status', status || (up ? 'unbekannt' : 'down'));
     if (section) {
       const title = section.querySelector('[data-reserve-title]');
-      if (title) title.textContent = `${PRODUCT_NAMES[produkt] || produkt} — Erstanwender-Platz reservieren`;
+      if (title) title.textContent = `${PRODUCT_NAMES[produkt] || produkt}: Erstanwender-Platz reservieren`;
     }
   }
   state.products = config?.products || null;

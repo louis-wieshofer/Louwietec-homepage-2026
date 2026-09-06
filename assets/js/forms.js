@@ -96,7 +96,7 @@ function applyBackendState(form, up) {
   if (!up) {
     if (submit) submit.hidden = true;
     if (mailto) { mailto.hidden = false; mailto.href = mailtoHref(form, payload(form)); }
-    setStatus(form, 'Der Dienst ist gerade nicht erreichbar — die direkte E-Mail tut es genauso.');
+    setStatus(form, 'Der Dienst ist gerade nicht erreichbar, die direkte E-Mail tut es genauso.');
   } else {
     if (submit) submit.hidden = false;
     if (mailto) mailto.hidden = true;
@@ -121,8 +121,8 @@ function showSuccess(form, data, result) {
     const res = q(form, '[data-reserve-result]'), meta = q(form, '[data-reserve-meta]'), next = q(form, '[data-reserve-next]');
     const produkt = PRODUCT_NAMES[data.produkt] || data.produkt;
     if (res) res.textContent = result.status === 'warteliste'
-      ? `Das Erstanwender-Kontingent für ${produkt} in Ihrer Branche ist vergeben — Sie stehen auf der Warteliste. Wir melden uns.`
-      : `Reserviert. Ihr Erstanwender-Platz für ${produkt} ist vorgemerkt — Sie erhalten eine Bestätigung per E-Mail.`;
+      ? `Das Erstanwender-Kontingent für ${produkt} in Ihrer Branche ist vergeben, Sie stehen auf der Warteliste. Wir melden uns.`
+      : `Reserviert. Ihr Erstanwender-Platz für ${produkt} ist vorgemerkt, Sie erhalten eine Bestätigung per E-Mail.`;
     if (meta) meta.textContent = `Reservierung ${result.reservation_id || ''} · freie Plätze in Ihrer Branche: ${result.plaetze_frei ?? '–'}`;
     form.dataset.reservationId = result.reservation_id || '';
     form.dataset.reservationEmail = data.email;
@@ -132,7 +132,7 @@ function showSuccess(form, data, result) {
       const eur = state.config?.deposit_eur ?? 89;
       const b = document.createElement('button'); b.type = 'button'; b.className = 'btn btn--primary'; b.setAttribute('data-requires-backend', '');
       b.dataset.track = 'cta_click'; b.dataset.trackTarget = 'deposit'; b.dataset.trackProdukt = data.produkt; b.dataset.trackEdition = data.edition;
-      b.textContent = `Platz fixieren — ${eur} € Anzahlung, anrechenbar, rückforderbar`;
+      b.textContent = `Platz fixieren: ${eur} € Anzahlung, anrechenbar, rückforderbar`;
       b.addEventListener('click', async () => {
         b.disabled = true; setStatus(form, 'Anzahlung wird vorbereitet …');
         const r = await post('/reserve/deposit', { reservation_id: result.reservation_id, email: data.email });
