@@ -15,7 +15,10 @@
     "make:frames": "node make-dummy-frames.mjs",
     "check:contract": "node check-contract.mjs",
     "test:integration": "node integration.spec.mjs",
-    "test:integration:live": "LW_LIVE=1 node integration.spec.mjs"
+    "test:integration:live": "LW_LIVE=1 node integration.spec.mjs",
+    "lighthouse": "node lighthouse.mjs",
+    "a11y": "node a11y.mjs",
+    "perf": "node perf-budget.mjs"
   },
   "devDependencies": {
     "fontkit": "^2.0.4",

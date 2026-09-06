@@ -1,4 +1,4 @@
-# Link-Check — 2026-09-05
+# Link-Check — 2026-09-06
 
 22 HTML-Dateien · 743 interne Verweise · 47 Anker · 36 externe/mailto
 

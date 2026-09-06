@@ -7,8 +7,12 @@ GitHub Pages liefert den Root von `main` unverändert aus.
 ## Einrichtung
 
 ```bash
-cd docs/qa/tools && npm install
+cd docs/qa/tools && npm ci
 ```
+
+`docs/qa/tools/package-lock.json` ist committet und legt die Auflösung aller Abhängigkeiten fest, damit die
+Gates reproduzierbar laufen; `npm ci` installiert genau diesen Stand. `npm install` nur, um Abhängigkeiten
+bewusst zu ändern — dann das aktualisierte Lockfile mit committen.
 
 Playwright + Chromium werden aus der Umgebung verwendet (kein Download nötig).
 
@@ -23,6 +27,9 @@ Playwright + Chromium werden aus der Umgebung verwendet (kein Download nötig).
 | `check-contract.mjs` | Formulare und `config.js` gegen `docs/CONTRACT.md` (Enums, Endpunkte, Pflichtfelder, Honeypot, `ts`, `consent`); der Vertrag wird geparst, keine zweite Wahrheit | Phase 5 ff. |
 | `integration.spec.mjs` (`[Nr …]`, `LW_LIVE=1`) | Die zwölf Integrationstests aus Vertrag §4.3 in Chromium: Healthz, `/config`-Buttons, alle Formulare mit exakten Feldnamen, Honeypot, Zeit-Test, Kontingent → Warteliste, mailto-Fallback, CORS-Ablehnung, Ereignisse, Fehlerhülle, Enterprise-Anliegen, Rate-Limit; Report `docs/qa/integration/<datum>/`; startet bei Bedarf den Server auf 8080 | Phase 5 ff.; Phase 7 mit `LW_LIVE=1` |
 | `mock-fixture.mjs` | Testdouble des Backends per Playwright-Route (kein Server, kein Port, kein Backend-Code): antwortet auf `web.service.louwietec.com` vertragsgemäß inkl. Spam-Schutz, Kontingent, Rate-Limit, Fehlerhülle; `installUmamiStub()` zeichnet Ereignisse auf | Hilfsmodul |
+| `lighthouse.mjs` (`[/seite …]`, `--mobile|--desktop`, `--seo`) | Lighthouse für alle Seiten, mobil und Desktop; Gate ≥ 90 für Performance, Accessibility, Best Practices (SEO mitgemessen, Gate erst ab Phase 6b mit `--seo`); Reports `docs/qa/lighthouse/<datum>/` (HTML + JSON + `summary.md`) | Phase 6 ff. |
+| `a11y.mjs` (`[/seite …]`) | axe-core (WCAG 2.1 AA + Best Practice) in 1440 und 390, Tastatur-Walk (alle Interaktiven erreichbar, Fokus sichtbar, Honeypot unerreichbar), Skip-Link mit und ohne Bewegung, Beleg-Popover per Tastatur, mobiles Menü; Report `docs/qa/a11y/<datum>/` | Phase 6 ff. |
+| `perf-budget.mjs` (`[/seite …]`) | Budget je Seite: Transfer ≤ 600 KB (ohne Frames, Text komprimiert geschätzt), ≤ 2 Schriftdateien, kein Bild > 200 KB, CLS = 0 (still und mit Bewegung), keine Fremd-Anfragen; Report `docs/qa/perf/<datum>/` | Phase 6 ff. |
 | `screens.mjs` (`--shots`, `--video`) | Screenshots aller Seiten (Desktop/Mobil, Bewegung/Reduced-Motion) und Scroll-Video der Startseite; Report `docs/qa/screens/<datum>/report.md`; Server auf Port 8080 nötig | Phase 3 ff. |
 | `make-dummy-frames.mjs [version]` | Test-Bildsequenz (30 Frames 16:9 + 9:16, WebP) und `manifest.json` für die Frame-Scrub-Schnittstelle des Heros | Phase 4 |
 | `make-brand.mjs` | Marken-Assets aus den Root-Logos (transparente Varianten, Weiß, Tinte, Favicons, Manifest) | Phase 1 |
