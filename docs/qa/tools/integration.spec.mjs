@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * integration.spec.mjs — die zwölf Tests des Integrationstags (Vertrag §4.3), Website-Seite.
+ * integration.spec.mjs, die zwölf Tests des Integrationstags (Vertrag §4.3), Website-Seite.
  * Standard: gegen den Playwright-Mock (mock-fixture.mjs). Mit LW_LIVE=1 laufen die Tests ohne Mock gegen
- * das echte Backend (Integrationstag) — dann muss die Seite von einer erlaubten Origin ausgeliefert werden.
+ * das echte Backend (Integrationstag), dann muss die Seite von einer erlaubten Origin ausgeliefert werden.
  * Startet bei Bedarf einen lokalen Server (Port 8080). Report → docs/qa/integration/<datum>/report.md. Exit 1 bei Fehlern.
  *   node docs/qa/tools/integration.spec.mjs            # alle Tests
  *   node docs/qa/tools/integration.spec.mjs 3 7 10     # nur diese Tests
@@ -71,8 +71,8 @@ const TESTS = [
         await page.waitForSelector('[data-product-cta] button', { timeout: 5000 });
         const texts = await page.locator('[data-product-cta] button').allTextContents();
         assert(texts.length === expect, `${status}: ${texts.length} Buttons statt ${expect} (${texts.join(' | ')})`);
-        assert(texts.includes('Erstanwender-Platz reservieren — kostenlos'), `${status}: Reserve-Button fehlt`);
-        if (status === 'deposit') assert(texts.some((t) => t === 'Platz fixieren — 120 € Anzahlung, anrechenbar, rückforderbar'), `deposit: Text/Betrag aus /config fehlt (${texts.join(' | ')})`);
+        assert(texts.includes('Erstanwender-Platz reservieren, kostenlos'), `${status}: Reserve-Button fehlt`);
+        if (status === 'deposit') assert(texts.some((t) => t === 'Platz fixieren: 120 € Anzahlung, anrechenbar, rückforderbar'), `deposit: Text/Betrag aus /config fehlt (${texts.join(' | ')})`);
         if (status === 'live') assert(texts.includes('Jetzt buchen'), 'live: „Jetzt buchen“ fehlt');
         const ent = await page.locator('[data-product-cta-enterprise]').first();
         assert((await ent.textContent()).trim() === 'Gespräch anfragen' && (await ent.getAttribute('href')).includes('anliegen=enterprise'), 'Enterprise: nur „Gespräch anfragen“ → Kontakt');
@@ -83,7 +83,7 @@ const TESTS = [
     const cases = [
       ['/kontakt/', 'kontakt', KONTAKT, ['firma', 'name', 'email', 'anliegen', 'nachricht', 'consent', 'website', 'ts']],
       ['/investoren/', 'investoren', { name: 'Test Person', organisation: 'Prüf AG', email: 'i@example.com', rolle: 'pruefer', nachricht: 'Format-Gespräch.', consent: true }, ['name', 'organisation', 'email', 'rolle', 'nachricht', 'consent', 'website', 'ts']],
-      ['/karriere/', 'karriere', { name: 'Test Person', email: 'k@example.com', link: 'https://example.com/cv', rolle: 'Initiativ — überzeuge uns.', motivation: 'Gebaut: …', consent: true }, ['name', 'email', 'link', 'rolle', 'motivation', 'consent', 'website', 'ts']],
+      ['/karriere/', 'karriere', { name: 'Test Person', email: 'k@example.com', link: 'https://example.com/cv', rolle: 'Initiativ: überzeuge uns.', motivation: 'Gebaut: …', consent: true }, ['name', 'email', 'link', 'rolle', 'motivation', 'consent', 'website', 'ts']],
       ['/kostenlos/', 'lagereport', { email: 'l@example.com', consent: true }, ['email', 'consent', 'website', 'ts']],
       ['/kostenlos/', 'selbstcheck', { q0: '2', q1: '1', q2: '2', q3: '0', q4: '2', q5: '1', q6: '2', q7: '2', q8: '1', q9: '2', firma: 'Testfirma', email: 's@example.com', consent: true }, ['email', 'firma', 'antworten', 'consent', 'website', 'ts']],
       ['/lens/', 'reserve', { firma: 'Testfirma', name: 'Test Person', email: 'r@example.com', edition: 'starter', branche: 'banking', betriebsort: 'cloud', consent: true }, ['firma', 'name', 'email', 'produkt', 'edition', 'branche', 'betriebsort', 'consent', 'website', 'ts']],
@@ -138,7 +138,7 @@ const TESTS = [
     await page.waitForSelector('body[data-backend="down"]', { timeout: 4000 });
     await page.waitForSelector('[data-product-cta] button');
     const texts = await page.locator('[data-product-cta] button').allTextContents();
-    assert(texts.length === 1 && texts[0] === 'Erstanwender-Platz reservieren — kostenlos', `down: Buttons ${texts.join(' | ')}`);
+    assert(texts.length === 1 && texts[0] === 'Erstanwender-Platz reservieren, kostenlos', `down: Buttons ${texts.join(' | ')}`);
     await page.click('[data-product-cta] button'); await page.waitForSelector('[data-reserve-form]:not([hidden])');
     await page.selectOption('form[data-form="reserve"] [name="edition"]', 'starter');
     assert(await page.locator('form[data-form="reserve"] [data-submit]').isHidden(), 'Absenden sollte verborgen sein');
@@ -210,6 +210,6 @@ await browser.close();
 if (server) server.kill();
 fs.mkdirSync(OUT, { recursive: true });
 const passed = results.filter((r) => r.ok).length;
-fs.writeFileSync(path.join(OUT, 'report.md'), [`# Integrationstests — ${today} (${LIVE ? 'echtes Backend' : 'Mock-Fixture'})`, '', `${passed}/${results.length} bestanden`, '', '| # | Test | Ergebnis | Dauer |', '|---|---|---|---|', ...results.map((r) => `| ${r.n} | ${r.name} | ${r.ok ? '✓' : '✗ ' + r.error} | ${r.ms} ms |`), ''].join('\n'));
+fs.writeFileSync(path.join(OUT, 'report.md'), [`# Integrationstests, ${today} (${LIVE ? 'echtes Backend' : 'Mock-Fixture'})`, '', `${passed}/${results.length} bestanden`, '', '| # | Test | Ergebnis | Dauer |', '|---|---|---|---|', ...results.map((r) => `| ${r.n} | ${r.name} | ${r.ok ? '✓' : '✗ ' + r.error} | ${r.ms} ms |`), ''].join('\n'));
 console.log(`\n${passed}/${results.length} bestanden · Report: ${path.relative(ROOT, OUT)}/report.md`);
 process.exit(passed === results.length ? 0 : 1);

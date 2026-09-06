@@ -54,7 +54,7 @@ export function ready() {
 /** Deutsche Statustexte je Fehlercode (Vorschläge, Freigabe offen). */
 export const ERROR_TEXT = Object.freeze({
   VALIDATION_ERROR: 'Bitte prüfen Sie Ihre Angaben.',
-  SPAM_REJECTED: 'Die Anfrage wurde als Spam eingestuft. Bitte warten Sie einen Moment und versuchen Sie es erneut — oder schreiben Sie uns direkt.',
+  SPAM_REJECTED: 'Die Anfrage wurde als Spam eingestuft. Bitte warten Sie einen Moment und versuchen Sie es erneut oder schreiben Sie uns direkt.',
   RATE_LIMITED: 'Zu viele Anfragen. Bitte versuchen Sie es in einer Minute erneut.',
   PRODUCT_NOT_LIVE: 'Dieses Produkt ist noch nicht buchbar. Reservieren Sie kostenlos, wir melden uns.',
   NOT_FOUND: 'Der Dienst ist gerade nicht erreichbar. Bitte nutzen Sie die direkte E-Mail.',

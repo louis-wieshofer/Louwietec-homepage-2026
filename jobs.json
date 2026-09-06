@@ -4,6 +4,6 @@
   "roles": [
     { "id": "werkpartner-entwicklung", "titel": "Werkpartner Entwicklung (Python/Container)", "art": "projektbasiert", "ort": "Wien / remote", "beschreibung": "", "aktiv": true },
     { "id": "werkpartner-pruefwesen", "titel": "Werkpartner Prüfwesen & Compliance (WP-/Revisions-Hintergrund)", "art": "projektbasiert", "ort": "Wien / remote", "beschreibung": "", "aktiv": true },
-    { "id": "initiativ", "titel": "Initiativ — überzeuge uns.", "art": "projektbasiert", "ort": "Wien / remote", "beschreibung": "", "aktiv": true }
+    { "id": "initiativ", "titel": "Initiativ: überzeuge uns.", "art": "projektbasiert", "ort": "Wien / remote", "beschreibung": "", "aktiv": true }
   ]
 }
