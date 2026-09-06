@@ -17,15 +17,16 @@ export const DEADLINE = '2027-12-02T00:00:00+01:00'; // Nachweispflicht Hochrisi
 export const FRAMES_BASE = '/assets/frames/';
 export const FRAMES_VERSION = 'v0-dummy';
 
-/* Aufzählungen — wörtlich aus Vertrag §1, beidseitig verbindlich */
+/* Aufzählungen — wörtlich aus Vertrag §1, beidseitig verbindlich (jede Liste selbst eingefroren) */
+const list = (...v) => Object.freeze(v);
 export const ENUMS = Object.freeze({
-  produkt: ['ledger', 'lens', 'forge'],
-  edition: ['starter', 'pro', 'group'],
-  betriebsort: ['cloud', 'onprem'],
-  anliegen: ['ledger', 'lens', 'forge', 'enterprise', 'investor', 'presse', 'sonstiges'],
-  rolle: ['pruefer', 'implementierer', 'kapital', 'sonstiges'],
-  branche: ['banking', 'versicherung', 'leasing', 'inkasso', 'gesundheit', 'energie', 'industrie', 'handel', 'dienstleistung', 'oeffentlich', 'sonstige'],
-  status: ['reserve', 'deposit', 'live'],
+  produkt: list('ledger', 'lens', 'forge'),
+  edition: list('starter', 'pro', 'group'),
+  betriebsort: list('cloud', 'onprem'),
+  anliegen: list('ledger', 'lens', 'forge', 'enterprise', 'investor', 'presse', 'sonstiges'),
+  rolle: list('pruefer', 'implementierer', 'kapital', 'sonstiges'),
+  branche: list('banking', 'versicherung', 'leasing', 'inkasso', 'gesundheit', 'energie', 'industrie', 'handel', 'dienstleistung', 'oeffentlich', 'sonstige'),
+  status: list('reserve', 'deposit', 'live'),
 });
 
 /* Fehlercodes — vollständige Liste aus Vertrag §1 (+ NETWORK nur clientseitig) */

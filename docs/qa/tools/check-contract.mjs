@@ -36,7 +36,8 @@ ok(`Vertrag gelesen: ${Object.keys(enums).length} Enums, ${Object.keys(endpoints
 const cfg = fs.readFileSync(path.join(ROOT, 'assets/js/config.js'), 'utf8');
 const cfgEnums = {};
 const block = cfg.match(/ENUMS = Object\.freeze\(\{([\s\S]*?)\}\)/);
-if (block) for (const m of block[1].matchAll(/(\w+): \[([^\]]+)\]/g)) cfgEnums[m[1]] = [...m[2].matchAll(/'([a-z]+)'/g)].map((x) => x[1]);
+// Listen als [ … ] oder list( … ) (jede Liste einzeln eingefroren)
+if (block) for (const m of block[1].matchAll(/(\w+): (?:\[|list\()([^\])]+)[\])]/g)) cfgEnums[m[1]] = [...m[2].matchAll(/'([a-z]+)'/g)].map((x) => x[1]);
 for (const [name, vals] of Object.entries(enums)) {
   const c = cfgEnums[name];
   if (!c) { fail(`config.js: Enum „${name}“ fehlt`); continue; }
