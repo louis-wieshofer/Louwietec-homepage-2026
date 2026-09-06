@@ -145,13 +145,14 @@ html[data-theme="stage"],
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* Metrik-kompatible Fallbacks gegen Layout-Shift beim Swap.
-   Werte berechnet aus den OS/2- und hhea-Tabellen (siehe docs/qa/tools/font-metrics.mjs). */
+   size-adjust = Vorschubbreite eines deutschen Textmusters Geist ÷ Liberation Sans (1,04); ascent/descent aus hhea,
+   geteilt durch size-adjust (die Overrides werden mit skaliert). Siehe docs/qa/tools/font-metrics.mjs. */
 @font-face {
   font-family: "Geist Fallback";
   src: local("Arial"), local("Liberation Sans"), local("Helvetica Neue"), local("Helvetica");
-  size-adjust: 100.2%;
-  ascent-override: 100.3%;
-  descent-override: 29.4%;
+  size-adjust: 104%;
+  ascent-override: 96.6%;
+  descent-override: 28.4%;
   line-gap-override: 0%;
 }
 @font-face {
@@ -254,6 +255,7 @@ hr { border: 0; border-top: 1px solid var(--line); }
   transform: translateY(-200%);
 }
 .skip-link:focus-visible { transform: none; outline-color: var(--signal); outline-offset: -5px; }
+main:focus, main:focus-visible { outline: 0; }   /* Skip-Link-Ziel (tabindex=-1): Fokus programmatisch, kein Rahmen um den Inhalt */
 
 /* Header */
 .site-header {
@@ -263,7 +265,7 @@ hr { border: 0; border-top: 1px solid var(--line); }
 }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between; gap: var(--s-4);
-  min-height: var(--header-h);
+  min-height: calc(var(--header-h) - 1px);   /* + 1 px border-bottom des Headers = --header-h */
 }
 .brand {
   display: inline-flex; align-items: center; gap: .65rem;
@@ -310,6 +312,7 @@ body[data-page="faq"] [data-nav="faq"],
   border-top: 1px solid var(--line);
   background: var(--bg); color: var(--fg);
   padding-block: var(--s-4) var(--s-6);
+  max-height: calc(100dvh - var(--header-h)); overflow-y: auto; overscroll-behavior: contain;   /* kurze Viewports: Menü scrollt selbst */
 }
 .site-menu ul { list-style: none; padding: 0; display: grid; gap: .25rem; }
 .site-menu a {
@@ -326,6 +329,7 @@ body[data-page="faq"] [data-nav="faq"],
   html:not(.js) .site-nav { display: block; width: 100%; padding-bottom: var(--s-3); }
   html:not(.js) .site-nav__list { flex-wrap: wrap; gap: .5rem 1rem; }
   html:not(.js) .site-header__inner { flex-wrap: wrap; }
+  html:not(.js) .site-header { position: static; }   /* Header ist dann höher als --header-h: Ankerziele und Kette rechnen sonst falsch */
 }
 @media (min-width: 64rem) {
   .site-menu { display: none !important; }
@@ -416,7 +420,7 @@ body[data-page="faq"] [data-nav="faq"],
     font-family: var(--font-mono); font-size: var(--step-mono-xs); letter-spacing: .12em;
     text-transform: uppercase; color: var(--fg-muted); font-weight: 500; margin-bottom: .15rem;
   }
-  .konditionen tbody th { font-size: var(--step-h3); }
+  .konditionen tbody th { font-size: var(--step-h3); white-space: normal; }
 }
 .konditionen-note { font-size: var(--step-small); color: var(--fg-muted); margin-top: var(--s-3); }
 
@@ -474,26 +478,24 @@ body[data-page="faq"] [data-nav="faq"],
 .chain ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; position: relative; z-index: 1; }
 .chain__link a {
   display: block; width: 12px; height: 22px; pointer-events: auto;
-  border: 2px solid var(--signal); background: transparent;
+  border: 2px solid var(--signal); background: rgba(79, 141, 255, .18);   /* geschlossen: Signal 18 % */
   box-shadow: 0 0 0 1px var(--ink);
 }
 .chain__link a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; box-shadow: 0 0 0 1px var(--ink), 0 0 0 7px var(--ink); }
-.chain__link:not(.is-closed) a { border-top-color: transparent; }
-.chain__link.is-closed a { background: rgba(79, 141, 255, .18); }
-.chain__link--final.is-closed a { background: var(--signal); }
+.chain__link--final a { background: var(--signal); }
 .chain__progress {
   position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%);
   background: linear-gradient(to bottom, var(--signal) var(--progress, 100%), rgba(79,141,255,.15) 0);
 }
-html:not(.js) .chain__link a, .chain__link.is-closed a { border-top-color: var(--signal); }
 @media (max-width: 63.9375rem) {
   .chain {
     top: var(--header-h); bottom: auto; left: 0; right: 0; width: auto; height: var(--rail-h-mobile);
     align-items: stretch;
   }
   .chain ol { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; width: 100%; padding-inline: var(--gutter); }
-  .chain__link a { width: 100%; height: var(--rail-h-mobile); border-width: 1px; }
-  .chain__link:not(.is-closed) a { border-top-color: var(--signal); border-right-color: transparent; }
+  .chain__link a { position: relative; width: 100%; height: var(--rail-h-mobile); border-width: 1px; }
+  /* Trefffläche 24 px (WCAG 2.5.8): unsichtbar nach unten verlängert; nach oben deckt der Header (z 50) ohnehin ab */
+  .chain__link a::after { content: ""; position: absolute; inset: 0 0 -16px; }
   .chain__progress { display: none; }
 }
 .chain--demo { position: static; width: auto; height: auto; pointer-events: auto; justify-content: flex-start; }
@@ -573,7 +575,7 @@ form.is-sent [data-reserve-next].btn-row { display: flex; }
 .site-footer li a { color: var(--fg); text-decoration: none; font-size: var(--step-small); }
 .site-footer li a:hover { text-decoration: underline; }
 .site-footer li a.is-product { font-family: var(--font-mono); letter-spacing: .08em; font-size: var(--step-mono-xs); font-weight: 600; }
-.site-footer li a.is-product small { font-family: var(--font-sans); letter-spacing: 0; font-weight: 400; color: var(--fg-muted); text-transform: none; font-size: var(--step-small); margin-left: .35rem; }
+.site-footer li a.is-product small { font-family: var(--font-sans); letter-spacing: 0; font-weight: 400; color: var(--fg-muted); text-transform: none; font-size: var(--step-small); margin-left: .15rem; }
 .site-footer__meta {
   margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--line);
   display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); justify-content: space-between;
@@ -608,4 +610,6 @@ form.is-sent [data-reserve-next].btn-row { display: flex; }
   body, .sec { background: #fff; color: #000; }
   .sec--slide { box-shadow: none; }
   a { color: #000; }
+  .btn--primary, .seal, .stamp--verified { background: #fff; color: #000; box-shadow: none; }
+  .beleg-pop { display: none !important; }
 }

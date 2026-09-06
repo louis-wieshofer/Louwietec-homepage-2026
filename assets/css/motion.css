@@ -1,6 +1,6 @@
 /* ==========================================================================
    LOUWIETEC — motion.css
-   Wird nur mit media="(prefers-reduced-motion: no-preference)" geladen und
+   Wird nur mit media="screen and (prefers-reduced-motion: no-preference)" geladen und
    greift nur unter html.js-motion (gesetzt von boot.js, entfernt von motion.js
    bei jedem Fehler). Hier stehen ausschließlich Vorher-Zustände, Übergänge
    und Keyframes; site.css rendert jeden Endzustand vollständig.
@@ -34,6 +34,8 @@ html.js-motion .brand.is-docked .brand__icon { filter: drop-shadow(0 0 10px var(
 html.js-motion .chain__link a {
   transition: border-color var(--snap-ms) var(--ease-snap), background-color var(--snap-ms) var(--ease-snap), box-shadow var(--snap-ms) var(--ease-snap);
 }
+/* Offenes Glied (Vorher-Zustand): Oberkante fehlt, keine Füllung — site.css rendert alle Glieder geschlossen */
+html.js-motion .chain__link:not(.is-closed) a { border-top-color: transparent; background: transparent; }
 html.js-motion .chain__link.is-snap a { box-shadow: 0 0 0 1px var(--ink), 0 0 0 3px var(--signal), 0 0 22px var(--signal); }
 html.js-motion .chain__link.is-gap a { border-top-color: transparent; animation: chain-gap 1.6s ease-in-out infinite; }
 html.js-motion .chain__link.is-lit a { background: var(--signal); box-shadow: 0 0 0 1px var(--ink), 0 0 18px var(--signal); }
@@ -43,10 +45,11 @@ html.js-motion .chain__progress { transition: background .2s linear; }
 @media (max-width: 63.9375rem) {
   html.js-motion .chain__link a { transition-duration: var(--snap-ms-mobile); }
   html.js-motion .chain__link.is-snap a { box-shadow: 0 0 0 1px var(--ink), 0 0 0 2px var(--signal); }
+  html.js-motion .chain__link:not(.is-closed) a { border-top-color: var(--signal); border-right-color: transparent; }   /* mobil fehlt die rechte Kante */
 }
 
 /* ---------- Siegel: fällt mit Stempel-Bewegung ---------- */
-html.js-motion .seal { opacity: 0; transform: rotate(-6deg) scale(1.4); }
+html.js-motion [data-seal]:not(.is-stamped) { opacity: 0; transform: rotate(-6deg) scale(1.4); }   /* nur das Siegel, das chain.js stempelt */
 html.js-motion .seal.is-stamped {
   opacity: 1; transform: rotate(-3deg) scale(1);
   transition: transform 260ms var(--ease-snap), opacity 120ms ease-out;
@@ -131,3 +134,10 @@ html.js-motion .these__s { display: block; opacity: 0; transform: translateY(12p
 html.js-motion [data-demo="invest-thesen"].is-in .these__s { opacity: 1; transform: none; }
 html.js-motion [data-demo="invest-thesen"].is-in .these__s:nth-child(2) { transition-delay: .6s; }
 html.js-motion [data-demo="invest-thesen"].is-in .these__s:nth-child(3) { transition-delay: 1.2s; }
+
+/* ---------- Druck: Gürtel und Hosenträger ----------
+   head-common lädt diese Datei nur für screen; falls sie doch einmal ohne media-Attribut eingebunden wird,
+   druckt trotzdem nie ein Vorher-Zustand. */
+@media print {
+  html.js-motion * { opacity: 1 !important; transform: none !important; clip-path: none !important; animation: none !important; transition: none !important; }
+}
