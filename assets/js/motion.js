@@ -8,7 +8,8 @@ const VENDOR = [
   '/assets/vendor/gsap/3.15.0/ScrollTrigger.min.js',
   '/assets/vendor/lenis/1.3.26/lenis.min.js',
 ];
-const REVEAL_SEL = '.sec > .container > :not([data-hero-headline]):not(.hero__text):not(script), .sec .prose > *, .grid > *, .room-block > *, .faq > *, .insights > li, .hero__text > *';
+// Ziel-Liste der Reveals — dieselbe wie in boot.js (erster Viewport) und motion.css (Vorher-Zustand)
+const REVEAL_SEL = window.LW_REVEAL_SEL || '.sec > .container > :not([data-hero-headline]):not(.hero__text):not(script), .sec .prose > *, .grid > *, .room-block > *, .faq > *, .insights > li, .hero__text > *';
 
 let lenis = null, gsapRef = null, stRef = null, torn = false;
 
@@ -41,7 +42,8 @@ export function teardown() {
 }
 
 function setupReveals() {
-  const targets = Array.from(document.querySelectorAll(REVEAL_SEL));
+  // boot.js hat die Ziele im ersten Viewport bereits sichtbar gemacht (is-in is-initial); hier nur der Rest
+  const targets = Array.from(document.querySelectorAll(REVEAL_SEL)).filter((el) => !el.classList.contains('is-in'));
   // Stagger je Elterncontainer, gedeckelt
   const byParent = new Map();
   targets.forEach((el) => { const p = el.parentElement; if (!byParent.has(p)) byParent.set(p, []); byParent.get(p).push(el); });
@@ -62,9 +64,10 @@ function setupSlides(gsap, ScrollTrigger) {
 }
 
 function setupHeadline() {
-  const words = document.querySelectorAll('[data-hero-headline] [data-word]');
-  words.forEach((w, i) => { w.style.setProperty('--word-delay', `${180 + i * 110}ms`); });
-  requestAnimationFrame(() => document.querySelector('[data-hero-headline]')?.classList.add('is-in'));
+  const h = document.querySelector('[data-hero-headline]');
+  if (!h || h.classList.contains('is-in')) return; // boot.js hat die Sequenz schon gestartet
+  h.querySelectorAll('[data-word]').forEach((w, i) => { w.style.setProperty('--word-delay', `${180 + i * 110}ms`); });
+  requestAnimationFrame(() => h.classList.add('is-in'));
 }
 
 export async function init() {

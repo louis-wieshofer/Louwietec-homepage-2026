@@ -15,6 +15,7 @@ html.js-motion :where(.sec > .container > :not([data-hero-headline]):not(.hero__
   transition: opacity .6s var(--ease-out) var(--reveal-delay, 0ms), transform .6s var(--ease-out) var(--reveal-delay, 0ms);
 }
 html.js-motion .is-in { opacity: 1; transform: none; }
+html.js-motion .is-initial { transition: none; }   /* erster Viewport (boot.js): sofort da, kein Einblenden — LCP wie in der stillen Version */
 
 /* Hero-Headline Wort für Wort */
 html.js-motion [data-hero-headline] [data-word] {
@@ -56,7 +57,7 @@ html.js-motion .seal.is-stamped {
 }
 
 /* ---------- Countdown: Einrasten ---------- */
-html.js-motion .count [data-countdown-big] { display: inline-block; transition: text-shadow .3s ease-out; }
+html.js-motion .count [data-countdown-big] { transition: text-shadow .3s ease-out; }
 html.js-motion .count.is-snapped [data-countdown-big] { text-shadow: 0 0 28px rgba(79, 141, 255, .55); }
 
 /* ---------- Hash-Ticker ---------- */
