@@ -10,6 +10,7 @@
  *   node docs/qa/tools/lighthouse.mjs /ledger/ /faq/  # nur diese Seiten
  *   node docs/qa/tools/lighthouse.mjs --seo           # SEO als Gate mitzählen (Phase 6b)
  *   node docs/qa/tools/lighthouse.mjs --mobile|--desktop
+ *   node docs/qa/tools/lighthouse.mjs --full            # zusätzlich HTML- und JSON-Einzelberichte (~1 MB je Messung, nicht committen)
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,6 +29,7 @@ const CHROME = process.env.CHROME_PATH || fs.readdirSync('/opt/pw-browsers').fil
 const ALL = ['/', '/ledger/', '/lens/', '/forge/', '/kostenlos/', '/investoren/', '/karriere/', '/ueber-uns/', '/kontakt/', '/faq/', '/rechtliches/impressum/', '/rechtliches/datenschutz/', '/rechtliches/agb/'];
 const argv = process.argv.slice(2);
 const seoGate = argv.includes('--seo');
+const full = argv.includes('--full');   // Einzelberichte nur auf Wunsch: 27 Messungen ≈ 37 MB
 const forms = argv.includes('--mobile') ? ['mobile'] : argv.includes('--desktop') ? ['desktop'] : ['mobile', 'desktop'];
 const pages = argv.filter((a) => a.startsWith('/'));
 const PAGES = pages.length ? pages : ALL;
@@ -59,8 +61,7 @@ try {
       const score = (c) => Math.round((lhr.categories[c]?.score ?? 0) * 100);
       const s = { performance: score('performance'), accessibility: score('accessibility'), 'best-practices': score('best-practices'), seo: score('seo') };
       const base = path.join(OUT, `${name(u)}-${form}`);
-      fs.writeFileSync(`${base}.report.html`, result.report[0]);
-      fs.writeFileSync(`${base}.report.json`, result.report[1]);
+      if (full) { fs.writeFileSync(`${base}.report.html`, result.report[0]); fs.writeFileSync(`${base}.report.json`, result.report[1]); }
       const gated = ['performance', 'accessibility', 'best-practices', ...(seoGate ? ['seo'] : [])];
       const bad = gated.filter((c) => s[c] < THRESHOLD);
       if (bad.length) failures++;
