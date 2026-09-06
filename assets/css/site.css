@@ -233,6 +233,7 @@ hr { border: 0; border-top: 1px solid var(--line); }
   mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
 }
 .texture > span { display: block; padding-inline: var(--gutter); }
+.texture > span::before { content: attr(data-t); }   /* Textur als generierter Inhalt: kein DOM-Text (dekorativ, nicht für Screenreader, nicht kontrastpflichtig) */
 .sec > .container { position: relative; z-index: 1; }
 
 /* Raster-Helfer */
