@@ -62,8 +62,7 @@ docs/
 
 | Pfad | Phase | Inhalt |
 |---|---|---|
-| Reports unter `docs/qa/{lighthouse,a11y,perf,screens}/` | 6 | vollständige Messläufe aller Seiten |
-| `robots.txt`, `sitemap.xml`, `llms.txt`, OG-Bilder, JSON-LD, `check-seo.mjs` | 6b | SEO/GEO, erst nach bestandener QA |
+| `robots.txt`, `sitemap.xml`, `llms.txt`, OG-Bilder, JSON-LD, `check-seo.mjs` | 6b | SEO/GEO, zurückgestellt (siehe `docs/reports/PHASE-6b.md`) |
 
 ## Arbeitsweise
 
@@ -213,8 +212,8 @@ bleibt eine eigene Freigabe.
 | 4 Hero | Canvas-Platzhalter, Frame-Scrub-Schnittstelle | Test mit 30 Dummy-Frames | abgeschlossen | [PHASE-4.md](docs/reports/PHASE-4.md) |
 | 5 Anbindung | Formulare gegen Testdouble, `/config`-Buttons, Fallback, Analytics-Ereignisse, `jobs.json`, Rechtliches, Redirect-Stubs | Jedes Formular sendet; Fallback-Test; Ereignisse sichtbar | abgeschlossen (zwölf Tests grün gegen Testdouble) | [PHASE-5.md](docs/reports/PHASE-5.md) |
 | 6 QA | Lighthouse ≥ 90 (mobil und Desktop), Gerätetest, Reduced-Motion, Tastatur, Baff-Test | Reports unter `docs/qa/` | offen | — |
-| 6b SEO/GEO | JSON-LD, OG-Bilder, `sitemap.xml`, `robots.txt`, `llms.txt`, hreflang-Vorbereitung | SEO-Check grün, Lighthouse SEO ≥ 90 | offen | — |
-| 7 Integration und Go-Live | Integrationstag mit Session 2 (zwölf Tests aus dem Vertrag), PR nach `main`, Redirects, Sitemap einreichen | Alle zwölf Tests grün; `louwietec.com` live | offen | — |
+| 6b SEO/GEO | JSON-LD, OG-Bilder, `sitemap.xml`, `robots.txt`, `llms.txt`, hreflang-Vorbereitung | SEO-Check grün, Lighthouse SEO ≥ 90 | zurückgestellt (Entscheidung Louis, 2026-09-06); Arbeitsliste im Bericht | [PHASE-6b.md](docs/reports/PHASE-6b.md) |
+| 7 Integration und Go-Live | PR nach `main` und Merge (Freigabe Louis 2026-09-06); Integrationstag mit Session 2 (zwölf Tests gegen das echte Backend) folgt, wenn das Backend fertig ist | Website live auf `louwietec.com`; bis zum Integrationstag läuft die Anbindung im mailto-Fallback | in Arbeit | — |
 
 Phase 6b ist gegenüber dem Phasenplan der Orchestrierung ergänzt (SEO/GEO erst nach
 bestandener QA, vor dem Pull Request).
