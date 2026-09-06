@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0B0F19">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" href="/assets/brand/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -39,7 +39,7 @@
 </nav>
 <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-menu"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="sr-only">Menü</span></button>
 </div>
-<div class="site-menu" id="site-menu" data-menu hidden>
+<nav class="site-menu" id="site-menu" data-menu aria-label="Menü" hidden>
 <div class="container">
 <ul>
 <li><a class="is-product" href="/ledger/" data-nav="ledger">LEDGER</a></li>
@@ -54,10 +54,10 @@
 </ul>
 <div class="site-menu__legal"><a href="/rechtliches/impressum/">Impressum</a><a href="/rechtliches/datenschutz/">Datenschutz</a><a href="/rechtliches/agb/">AGB</a></div>
 </div>
-</div>
+</nav>
 </header>
 <!-- /@partial:header -->
-<main id="main" data-copy-root>
+<main id="main" tabindex="-1" data-copy-root>
 
 <section id="intro" class="sec sec--stage room-intro" data-room="lens">
 <div class="container">
@@ -213,9 +213,9 @@
 <nav aria-label="Produkte">
 <h2 class="site-footer__h">Produkte</h2>
 <ul>
-<li><a class="is-product" href="/ledger/">LEDGER<small>by LOUWIETEC</small></a></li>
-<li><a class="is-product" href="/lens/">LENS<small>by LOUWIETEC</small></a></li>
-<li><a class="is-product" href="/forge/">FORGE<small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/ledger/">LEDGER <small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/lens/">LENS <small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/forge/">FORGE <small>by LOUWIETEC</small></a></li>
 </ul>
 </nav>
 <nav aria-label="Unternehmen">

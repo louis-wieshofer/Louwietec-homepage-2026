@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0B0F19">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" href="/assets/brand/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -58,7 +58,7 @@
 </nav>
 <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-menu"><span class="nav-toggle__bars" aria-hidden="true"></span><span class="sr-only">Menü</span></button>
 </div>
-<div class="site-menu" id="site-menu" data-menu hidden>
+<nav class="site-menu" id="site-menu" data-menu aria-label="Menü" hidden>
 <div class="container">
 <ul>
 <li><a class="is-product" href="/ledger/" data-nav="ledger">LEDGER</a></li>
@@ -73,10 +73,10 @@
 </ul>
 <div class="site-menu__legal"><a href="/rechtliches/impressum/">Impressum</a><a href="/rechtliches/datenschutz/">Datenschutz</a><a href="/rechtliches/agb/">AGB</a></div>
 </div>
-</div>
+</nav>
 </header>
 <!-- /@partial:header -->
-<main id="main" data-copy-root>
+<main id="main" tabindex="-1" data-copy-root>
 
 <!-- 1 · Intro (Bühne) -->
 <section class="sec sec--stage" id="intro">
@@ -335,7 +335,7 @@
 <h2>Das Siegel fällt am Ende. Der Stempel steht im Bericht.</h2>
 <p class="measure">Verifiziert-Grün kommt auf der Website genau dreimal vor: beim geschlossenen Siegel, beim bestandenen Beleg und beim Verifiziert-Stempel. Sonst nirgends. Seltenheit macht es wertvoll — und check-verify-green zählt es maschinell.</p>
 <div class="sg-row">
-<div class="seal" aria-hidden="true">VERIFIZIERT</div>
+<div class="seal is-stamped" aria-hidden="true">VERIFIZIERT</div>
 <span class="stamp--verified">Verifiziert</span>
 </div>
 <p class="muted sg-small measure">Das Siegel ist für Screenreader verborgen (aria-hidden); der Sinn steht im Text der Abschluss-Sektion. Der Stempel ist Text.</p>
@@ -350,11 +350,11 @@
 <p class="measure">Die Kette ist die Fortschrittsanzeige der Startseite: am Desktop links am Rand, mobil oben. Mit jedem Abschnitt schließt sich ein Glied. Glied 2 bleibt offen — die Vertrauenslücke — bis der Besucher die drei Fähigkeiten erreicht. Das letzte Glied ist voll gefüllt.</p>
 <nav class="chain chain--demo" aria-label="Abschnitte">
 <ol>
-<li class="chain__link is-closed" data-chain-link="hero"><a href="#" aria-label="Hero"></a></li>
-<li class="chain__link" data-chain-link="luecke"><a href="#" aria-label="Die Vertrauenslücke"></a></li>
-<li class="chain__link is-closed" data-chain-link="faehigkeiten"><a href="#" aria-label="Drei Fähigkeiten, ein Haus"></a></li>
-<li class="chain__link is-closed" data-chain-link="glaesern"><a href="#" aria-label="Der gläserne Anbieter"></a></li>
-<li class="chain__link is-closed chain__link--final" data-chain-link="abschluss"><a href="#" aria-label="Abschluss"></a></li>
+<li class="chain__link is-closed" data-chain-link="hero"><a href="#beweiskette" aria-label="Hero"></a></li>
+<li class="chain__link" data-chain-link="luecke"><a href="#beweiskette" aria-label="Die Vertrauenslücke"></a></li>
+<li class="chain__link is-closed" data-chain-link="faehigkeiten"><a href="#beweiskette" aria-label="Drei Fähigkeiten, ein Haus"></a></li>
+<li class="chain__link is-closed" data-chain-link="glaesern"><a href="#beweiskette" aria-label="Der gläserne Anbieter"></a></li>
+<li class="chain__link is-closed chain__link--final" data-chain-link="abschluss"><a href="#beweiskette" aria-label="Abschluss"></a></li>
 </ol>
 </nav>
 <p class="muted sg-small measure">Zustände: .is-closed (gefüllt, Signal 18 %), offen (Oberkante fehlt — die Lücke), .chain__link--final.is-closed (voll Signal). Ohne JavaScript und bei reduzierter Bewegung ist alles geschlossen.</p>
@@ -492,9 +492,9 @@
 <nav aria-label="Produkte">
 <h2 class="site-footer__h">Produkte</h2>
 <ul>
-<li><a class="is-product" href="/ledger/">LEDGER<small>by LOUWIETEC</small></a></li>
-<li><a class="is-product" href="/lens/">LENS<small>by LOUWIETEC</small></a></li>
-<li><a class="is-product" href="/forge/">FORGE<small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/ledger/">LEDGER <small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/lens/">LENS <small>by LOUWIETEC</small></a></li>
+<li><a class="is-product" href="/forge/">FORGE <small>by LOUWIETEC</small></a></li>
 </ul>
 </nav>
 <nav aria-label="Unternehmen">
