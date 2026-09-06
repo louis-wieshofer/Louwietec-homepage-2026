@@ -429,8 +429,9 @@ body[data-page="faq"] [data-nav="faq"],
 .beleg {
   display: inline-flex; align-items: center; justify-content: center;
   width: 1.35em; height: 1.35em; margin-left: .15em; vertical-align: -.25em;
-  color: var(--fg-muted); border: 0; background: none;
+  color: var(--fg-muted); border: 0; background: none; position: relative;
 }
+.beleg::after { content: ""; position: absolute; inset: -4px; }   /* Trefffläche ≥ 24 px auch im Fließtext (WCAG 2.5.8), Optik unverändert */
 .beleg svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .beleg:hover, .beleg:focus-visible, .beleg[aria-expanded="true"] { color: var(--accent); }
 .beleg.is-ok { color: var(--accent); }
