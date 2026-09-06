@@ -62,7 +62,7 @@ docs/
 
 | Pfad | Phase | Inhalt |
 |---|---|---|
-| `docs/qa/tools/{lighthouse,a11y,perf-budget}.mjs`, Reports unter `docs/qa/` | 6 | Lighthouse ≥ 90, axe + Tastatur-Walk, Performance-Budget |
+| Reports unter `docs/qa/{lighthouse,a11y,perf,screens}/` | 6 | vollständige Messläufe aller Seiten |
 | `robots.txt`, `sitemap.xml`, `llms.txt`, OG-Bilder, JSON-LD, `check-seo.mjs` | 6b | SEO/GEO, erst nach bestandener QA |
 
 ## Arbeitsweise
@@ -172,6 +172,9 @@ node docs/qa/tools/check-links.mjs             # Gate: interne Verweise, Anker, 
 node docs/qa/tools/check-contract.mjs          # Gate: Formulare und config.js gegen docs/CONTRACT.md
 node docs/qa/tools/integration.spec.mjs        # Gate: zwölf Integrationstests gegen das Testdouble (LW_LIVE=1: echtes Backend)
 node docs/qa/tools/screens.mjs                 # Screenshots aller Seiten + Scroll-Video (Server auf 8080)
+node docs/qa/tools/lighthouse.mjs              # Gate ab Phase 6: Lighthouse ≥ 90 (mobil + Desktop, alle Seiten)
+node docs/qa/tools/a11y.mjs                    # Gate ab Phase 6: axe + Tastatur-Walk, Skip-Link, Popover, Menü
+node docs/qa/tools/perf-budget.mjs             # Gate ab Phase 6: Transfer, Schriften, Bilder, CLS 0, keine Fremd-Anfragen
 node docs/qa/tools/make-brand.mjs              # Marken-Assets aus IMG_0707.png / IMG_0710.png erzeugen
 node docs/qa/tools/make-dummy-frames.mjs       # Test-Bildsequenz für den Frame-Hero
 node docs/qa/tools/font-metrics.mjs            # Fallback-Metriken und Glyph-Abdeckung der Schriften
@@ -179,8 +182,7 @@ node docs/qa/tools/font-metrics.mjs            # Fallback-Metriken und Glyph-Abd
 
 Für Screenshots und Browser-Tests: lokaler Server (`python3 -m http.server 8080 --directory .`)
 und Playwright mit Chromium. Reports landen unter `docs/qa/<bereich>/<datum>/` und werden im
-jeweiligen Phasenbericht referenziert. Lighthouse, Accessibility-Lauf, Performance-Budget und
-SEO-Check folgen in den Phasen 6 und 6b.
+jeweiligen Phasenbericht referenziert. Der SEO-Check folgt in Phase 6b.
 
 ## Branching
 
@@ -205,7 +207,7 @@ bleibt eine eigene Freigabe.
 | Phase | Inhalt | Gate | Stand | Bericht |
 |---|---|---|---|---|
 | 0 Archiv | Archiv-Branch, Tag, Pages/CNAME dokumentiert, Arbeits-Branch | Branch-Liste; Archiv identisch mit altem `main` | abgeschlossen, Ampel gelb (Tag-Push offen) | [PHASE-0.md](docs/reports/PHASE-0.md) |
-| 1 Fundament | Struktur, Tokens, Schriften, Header/Footer, Logo-Regeln, 404, `docs/CONTRACT.md`, `config.js` | `/styleguide/` zeigt Tokens und Komponenten | abgeschlossen, Nachtrag aus Review offen | [PHASE-1.md](docs/reports/PHASE-1.md) |
+| 1 Fundament | Struktur, Tokens, Schriften, Header/Footer, Logo-Regeln, 404, `docs/CONTRACT.md`, `config.js` | `/styleguide/` zeigt Tokens und Komponenten | abgeschlossen inkl. Nachtrag aus fünf Reviews | [PHASE-1.md](docs/reports/PHASE-1.md) |
 | 2 Inhalte | Zehn Seiten wortgleich, Tabellen, Meta, FAQ | Diff je Seite gegen Texte-Dokument = 0; Link-Check fehlerfrei | abgeschlossen | [PHASE-2.md](docs/reports/PHASE-2.md) |
 | 3 Bewegung | Beweiskette, Lücke, Siegel, Raum-Motive, Countdown, Beleg-Zeichen | Scroll-Video Desktop und Mobil; Reduced-Motion-Screenshots | abgeschlossen | [PHASE-3.md](docs/reports/PHASE-3.md) |
 | 4 Hero | Canvas-Platzhalter, Frame-Scrub-Schnittstelle | Test mit 30 Dummy-Frames | abgeschlossen | [PHASE-4.md](docs/reports/PHASE-4.md) |
