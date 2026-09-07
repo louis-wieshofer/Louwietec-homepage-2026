@@ -105,15 +105,15 @@ Description, `<html lang="de" data-theme="stage|paper">`, `<body data-page="…"
 ### Hausgesetze
 
 - **Tokens:** `--ink #0B0F19`, `--paper #F6F5F1`, `--signal #4F8DFF`, `--verify #2FD37A`,
-  `--navy #14213D`, `--radius 10px` (`--radius-sm 4px` für schmale Elemente). Schriften Geist und Geist Mono, selbst gehostet
+  `--navy #14213D`, `--radius 16px` (`--radius-sm 6px` für schmale Elemente). Schriften Geist und Geist Mono, selbst gehostet
   (Lizenz: `assets/fonts/geist/OFL.txt`).
 - **Verifiziert-Grün** `--verify` kommt im CSS **genau dreimal** zur Anwendung (Siegel,
   bestandener Beleg, Verifiziert-Stempel) und nur auf Tinte-Flächen (auf Papier 1,8:1).
   `--signal` nie als Text oder Fokusring auf Papier (2,9:1); dort `--navy`.
-- **Eckenradius 10 px** auf allen Flächen (Karten, Knöpfe, Felder, Popover, Siegel, Demos);
-  `--radius-sm` 4 px für Elemente unter etwa 40 px Breite (Kettenglieder, Chips, Stempel).
+- **Eckenradius 16 px** auf allen Flächen (Karten, Knöpfe, Felder, Popover, Siegel, Demos);
+  `--radius-sm` 6 px für Elemente unter etwa 40 px Breite (Kettenglieder, Chips, Stempel).
   Feste Pixelwerte sind verboten, gerundet wird ausschließlich über die beiden Tokens.
-  Diese Regel ersetzt seit 2026-09-06 das ursprüngliche „Radius 0“ des Design-Plans (Entscheidung Louis).
+  Diese Regel ersetzt seit 2026-09-06 das ursprüngliche „Radius 0“ des Design-Plans (Entscheidung Louis; Stärke am 2026-09-07 von 10 auf 16 px angehoben).
 - **Keine Fremd-Requests:** keine CDNs, keine Google Fonts zur Laufzeit, nichts
   Cookie-Setzendes, nichts aus US-Clouds. Bibliotheken werden vendored. Einzige externe Hosts
   sind die beiden Vertragshosts.

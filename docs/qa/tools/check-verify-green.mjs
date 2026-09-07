@@ -7,7 +7,7 @@
  *   · kein Gold, keine „Trusted by“-Leiste, keine Stock-/Foto-Bilder: Bild-URLs
  *     (<img>/<source>/<video>/<image>, auch srcset und poster) nur aus /assets/brand/, /assets/frames/ oder data:.
  *   · border-radius (auch Longhands wie border-top-left-radius) immer 0, var(--radius) oder var(--radius-sm);
- *     beide Tokens sind genau einmal definiert (10 px bzw. 4 px, Entscheidung Louis 2026-09-06 statt „Radius 0“).
+ *     beide Tokens sind genau einmal definiert (16 px bzw. 6 px, Entscheidung Louis 2026-09-07 statt „Radius 0“).
  *     Feste Pixelwerte bleiben verboten, damit der Radius an einer Stelle steuerbar bleibt.
  *   · keine Fremd-Requests: kein http(s)://-Verweis in src/srcset/href/poster/data von
  *     <script>/<link>/<img>/<source>/<video>/<audio>/<track>/<image>; <iframe>/<object>/<embed> gar nicht.
@@ -41,8 +41,8 @@ const ok = (msg) => console.log(`✓ ${msg}`);
 let uses = 0, defs = 0;
 const radiusDefs = [];
 const radiusSmDefs = [];
-const RADIUS_VALUE = '10px';
-const RADIUS_SM_VALUE = '4px';
+const RADIUS_VALUE = '16px';
+const RADIUS_SM_VALUE = '6px';
 function checkCss(raw, where) {
   const css = stripCssComments(raw);
   uses += count(css, /var\(--verify\)/g);

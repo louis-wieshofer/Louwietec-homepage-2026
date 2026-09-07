@@ -54,7 +54,7 @@ const easeInOut = (t) => (t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 
 /** Gerundetes Rechteck als Pfad (Eckenradius der Website, proportional zur Gliedgröße). */
 function roundRect(ctx, x, y, w, h) {
-  const r = Math.min(4, w / 4, h / 4);
+  const r = Math.min(6, w / 4, h / 4);
   ctx.beginPath();
   if (typeof ctx.roundRect === 'function') { ctx.roundRect(x, y, w, h, r); return; }
   ctx.moveTo(x + r, y);

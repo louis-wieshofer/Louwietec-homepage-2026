@@ -15,11 +15,11 @@
   --signal: #4F8DFF;
   --verify: #2FD37A;          /* genau dreimal verwendet: Siegel · Beleg-ok · Verifiziert-Stempel */
   --navy: #14213D;
-  /* Eckenradius: 10 px auf allen Flächen (Entscheidung Louis, 2026-09-06; ersetzt „Radius 0“ des
+  /* Eckenradius: 16 px auf allen Flächen (Entscheidung Louis, 2026-09-07; ersetzt „Radius 0“ des
      Design-Plans). --radius-sm für Elemente, die schmaler als ~40 px sind (Kettenglieder, Marken,
      Chips) — dort würde der volle Radius die Form zur Pille verziehen. */
-  --radius: 10px;
-  --radius-sm: 4px;
+  --radius: 16px;
+  --radius-sm: 6px;
 
   /* Flächen-Tinten */
   --ink-2: #121826;
