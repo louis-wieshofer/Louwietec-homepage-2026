@@ -52,6 +52,19 @@ function assignTargets(dots, links) {
 }
 const easeInOut = (t) => (t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 
+/** Gerundetes Rechteck als Pfad (Eckenradius der Website, proportional zur Gliedgröße). */
+function roundRect(ctx, x, y, w, h) {
+  const r = Math.min(4, w / 4, h / 4);
+  ctx.beginPath();
+  if (typeof ctx.roundRect === 'function') { ctx.roundRect(x, y, w, h, r); return; }
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
 function drawPlaceholder(ctx, w, h, p, dots, links, tick) {
   ctx.clearRect(0, 0, w, h);
   const k = easeInOut(Math.min(1, Math.max(0, p / 0.85)));
@@ -74,14 +87,16 @@ function drawPlaceholder(ctx, w, h, p, dots, links, tick) {
     const grow = 0.6 + 0.4 * a;
     ctx.strokeStyle = `rgba(79,141,255,${(0.25 + 0.75 * a).toFixed(3)})`;
     ctx.shadowColor = 'rgba(79,141,255,.55)'; ctx.shadowBlur = a >= 1 && shown - i < 1.6 ? 18 : 0;
-    ctx.strokeRect(l.x - l.w * grow / 2, l.y - l.h * grow / 2, l.w * grow, l.h * grow);
+    roundRect(ctx, l.x - l.w * grow / 2, l.y - l.h * grow / 2, l.w * grow, l.h * grow);
+    ctx.stroke();
     ctx.shadowBlur = 0;
   });
   // letztes Glied gefüllt, wenn die Kette steht
   if (p > 0.9) {
     const l = links[LINKS - 1];
     ctx.fillStyle = `rgba(79,141,255,${((p - 0.9) * 2).toFixed(3)})`;
-    ctx.fillRect(l.x - l.w / 2, l.y - l.h / 2, l.w, l.h);
+    roundRect(ctx, l.x - l.w / 2, l.y - l.h / 2, l.w, l.h);
+    ctx.fill();
   }
   // leise Textur: Zeitstempel-Zeile
   ctx.font = `${Math.max(10, w / 110)}px "Geist Mono", ui-monospace, monospace`;

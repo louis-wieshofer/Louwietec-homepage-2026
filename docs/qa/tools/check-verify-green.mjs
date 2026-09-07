@@ -6,8 +6,9 @@
  *     in HTML/JS/SVG kommt der Hex-Wert nicht vor. CSS-Kommentare zählen nicht mit.
  *   · kein Gold, keine „Trusted by“-Leiste, keine Stock-/Foto-Bilder: Bild-URLs
  *     (<img>/<source>/<video>/<image>, auch srcset und poster) nur aus /assets/brand/, /assets/frames/ oder data:.
- *   · border-radius (auch Longhands wie border-top-left-radius) immer 0 oder var(--radius);
- *     --radius ist genau einmal definiert und lautet 0.
+ *   · border-radius (auch Longhands wie border-top-left-radius) immer 0, var(--radius) oder var(--radius-sm);
+ *     beide Tokens sind genau einmal definiert (10 px bzw. 4 px, Entscheidung Louis 2026-09-06 statt „Radius 0“).
+ *     Feste Pixelwerte bleiben verboten, damit der Radius an einer Stelle steuerbar bleibt.
  *   · keine Fremd-Requests: kein http(s)://-Verweis in src/srcset/href/poster/data von
  *     <script>/<link>/<img>/<source>/<video>/<audio>/<track>/<image>; <iframe>/<object>/<embed> gar nicht.
  *     <link> wird nur für ladende rel-Werte geprüft (stylesheet, preload, icon, manifest …);
@@ -39,15 +40,19 @@ const ok = (msg) => console.log(`✓ ${msg}`);
 // Eine CSS-Prüfung für Stylesheets, <style>-Blöcke und style="…"
 let uses = 0, defs = 0;
 const radiusDefs = [];
+const radiusSmDefs = [];
+const RADIUS_VALUE = '10px';
+const RADIUS_SM_VALUE = '4px';
 function checkCss(raw, where) {
   const css = stripCssComments(raw);
   uses += count(css, /var\(--verify\)/g);
   defs += count(css, /#2fd37a/gi);
   for (const m of css.matchAll(/--radius\s*:\s*([^;}]+)/g)) radiusDefs.push({ where, value: m[1].trim() });
+  for (const m of css.matchAll(/--radius-sm\s*:\s*([^;}]+)/g)) radiusSmDefs.push({ where, value: m[1].trim() });
   const radii = [...css.matchAll(/border(?:-[a-z]+)*-radius\s*:\s*([^;}]+)/g)]
     .map((m) => m[1].replace(/\s*!important\s*$/, '').trim())
-    .filter((v) => !/^(0|0px|var\(--radius\))$/.test(v));
-  if (radii.length) fail(`${where}: border-radius ≠ 0: ${radii.join(', ')}`);
+    .filter((v) => !/^(0|0px|var\(--radius(-sm)?\))$/.test(v));
+  if (radii.length) fail(`${where}: border-radius weder 0 noch var(--radius)/var(--radius-sm): ${radii.join(', ')}`);
   if (/\bgold\b/i.test(css)) fail(`${where}: „gold“ gefunden`);
   if (/url\(\s*["']?https?:\/\//i.test(css)) fail(`${where}: externe URL im CSS`);
 }
@@ -98,8 +103,10 @@ for (const f of others) {
 // Summen (CSS-Dateien + HTML-Styles)
 uses === 3 ? ok(`var(--verify) im CSS: ${uses}× (Soll 3)`) : fail(`var(--verify) im CSS: ${uses}× (Soll 3)`);
 defs === 1 ? ok(`#2FD37A im CSS: ${defs}× (Soll 1)`) : fail(`#2FD37A im CSS: ${defs}× (Soll 1)`);
-if (radiusDefs.length === 1 && /^0(px)?$/.test(radiusDefs[0].value)) ok(`--radius: ${radiusDefs[0].value} (genau einmal, in ${radiusDefs[0].where})`);
-else fail(`--radius muss genau einmal definiert sein und 0 lauten: ${radiusDefs.map((d) => `${d.where} → ${d.value}`).join(', ') || 'keine Definition'}`);
+if (radiusDefs.length === 1 && radiusDefs[0].value === RADIUS_VALUE) ok(`--radius: ${radiusDefs[0].value} (genau einmal, in ${radiusDefs[0].where})`);
+else fail(`--radius muss genau einmal definiert sein und ${RADIUS_VALUE} lauten: ${radiusDefs.map((d) => `${d.where} → ${d.value}`).join(', ') || 'keine Definition'}`);
+if (radiusSmDefs.length === 1 && radiusSmDefs[0].value === RADIUS_SM_VALUE) ok(`--radius-sm: ${radiusSmDefs[0].value} (genau einmal, in ${radiusSmDefs[0].where})`);
+else fail(`--radius-sm muss genau einmal definiert sein und ${RADIUS_SM_VALUE} lauten: ${radiusSmDefs.map((d) => `${d.where} → ${d.value}`).join(', ') || 'keine Definition'}`);
 ok(`${cssFiles.length} CSS-Dateien und ${others.length} HTML/JS/SVG/JSON-Dateien geprüft (Grün, Gold, „Trusted by“, Radius, Fremdbilder, Fremd-Requests)`);
 
 console.log(problems ? `${problems} Verstöße` : 'Alle Hausgesetze eingehalten.');
