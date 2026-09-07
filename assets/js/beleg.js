@@ -21,12 +21,18 @@ function fill(id) {
   const b = BELEGE[id] || { titel: id, status: 'folgt', artefakt: '', hinweis: '' };
   pop.querySelector('[data-beleg-title]').textContent = b.titel;
   pop.querySelector('[data-beleg-status]').textContent = STATUS_TEXT[b.status] || STATUS_TEXT.folgt;
+  // Fundstelle immer als Text; bei geprüfter Quelle zusätzlich der Weg zum Original.
   const art = pop.querySelector('[data-beleg-artefakt]');
-  art.textContent = '';
+  art.replaceChildren();
+  if (b.hinweis) art.appendChild(document.createTextNode(b.hinweis));
   if (b.status === 'ok' && b.artefakt) {
-    const a = document.createElement('a'); a.href = b.artefakt; a.textContent = 'Artefakt öffnen'; art.appendChild(a);
-  } else if (b.hinweis) {
-    art.textContent = b.hinweis;
+    if (b.hinweis) art.appendChild(document.createElement('br'));
+    const a = document.createElement('a');
+    a.href = b.artefakt;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = 'Quelle öffnen (EUR-Lex)';
+    art.appendChild(a);
   }
 }
 
