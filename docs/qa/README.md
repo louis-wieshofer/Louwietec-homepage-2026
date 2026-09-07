@@ -21,7 +21,7 @@ Playwright + Chromium werden aus der Umgebung verwendet (kein Download nötig).
 | Skript | Zweck | Gate |
 |---|---|---|
 | `check-partials.mjs` (`--fix`) | Gemeinsame Blöcke (head-common, header, footer, scripts) byteidentisch mit `docs/partials/` | Phase 1 ff. |
-| `check-verify-green.mjs` | Hausgesetze: Verifiziert-Grün genau 3× im CSS, kein Gold, kein „Trusted by“, Bilder nur aus `/assets/brand|frames/`, Radius 0, keine Fremd-Skripte | Phase 1 ff. |
+| `check-verify-green.mjs` | Hausgesetze: Verifiziert-Grün genau 3× im CSS, kein Gold, kein „Trusted by“, Bilder nur aus `/assets/brand|frames/`, Eckenradius nur über `--radius`/`--radius-sm`, keine Fremd-Skripte | Phase 1 ff. |
 | `diff-copy.mjs` (`--page /ledger/`, `--expected`) | Wortgleichheit: Texte-Dokument gegen die zehn Inhaltsseiten; Extra-Zeilen nur per `docs/qa/extra-text-allowlist.txt`; Report `docs/qa/copy-diff/<datum>/` | Phase 2 ff. |
 | `check-links.mjs` | Interne Verweise, Anker, Manifest-Icons, CSS-`url()` gegen das Dateisystem; Report `docs/qa/links/<datum>/` | Phase 2 ff. |
 | `check-contract.mjs` | Formulare und `config.js` gegen `docs/CONTRACT.md` (Enums, Endpunkte, Pflichtfelder, Honeypot, `ts`, `consent`); der Vertrag wird geparst, keine zweite Wahrheit | Phase 5 ff. |
