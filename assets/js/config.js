@@ -5,7 +5,7 @@
 
 export const API_BASE = 'https://web.service.louwietec.com';
 export const ANALYTICS = 'https://analytics.service.louwietec.com';
-export const ANALYTICS_WEBSITE_ID = ''; // offen: Website-ID der Umami-Instanz (Session 2)
+export const ANALYTICS_WEBSITE_ID = 'bf18706f-40d6-4872-9778-b20020b34c75'; // Umami-Instanz analytics.service.louwietec.com
 export const ANALYTICS_DOMAINS = 'louwietec.com,www.louwietec.com';
 
 export const CONTRACT_VERSION = '1.0';
